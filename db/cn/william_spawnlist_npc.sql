@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-7-3 ���� 12:56:35
+Navicat MySQL Data Transfer
+
+Source Server         : localhost
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : l1j-cn
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-04 02:11:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for william_spawnlist_npc
+-- Table structure for `william_spawnlist_npc`
 -- ----------------------------
+DROP TABLE IF EXISTS `william_spawnlist_npc`;
 CREATE TABLE `william_spawnlist_npc` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `location` varchar(19) NOT NULL DEFAULT '',
@@ -28,7 +35,7 @@ CREATE TABLE `william_spawnlist_npc` (
 ) ENGINE=MyISAM AUTO_INCREMENT=99057 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records 
+-- Records of william_spawnlist_npc
 -- ----------------------------
 INSERT INTO `william_spawnlist_npc` VALUES ('99011', '武器商人(天宝)', '1', '99000', '32778', '32873', '0', '0', '6', '0', '613', '0');
 INSERT INTO `william_spawnlist_npc` VALUES ('99012', '吉利乌斯', '1', '50051', '32777', '32877', '0', '0', '6', '0', '613', '0');
@@ -57,21 +64,7 @@ INSERT INTO `william_spawnlist_npc` VALUES ('99034', '顽强的欧浩', '1', '81
 INSERT INTO `william_spawnlist_npc` VALUES ('99035', '灿烂的艾咪', '1', '81285', '32781', '32886', '0', '0', '6', '0', '613', '0');
 INSERT INTO `william_spawnlist_npc` VALUES ('99036', '米米', '1', '81286', '32781', '32888', '0', '0', '6', '0', '613', '0');
 INSERT INTO `william_spawnlist_npc` VALUES ('99037', '宠物竞速管理人杜波', '1', '91002', '32775', '32859', '0', '0', '4', '0', '613', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99038', '天神祝福A', '1', '99990', '33454', '32796', '0', '0', '6', '0', '4', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99039', '龙幻魔法商人', '1', '99014', '33456', '32788', '0', '0', '4', '0', '4', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99040', '法师魔法商人', '1', '99015', '33454', '32786', '0', '0', '4', '0', '4', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99041', '精灵魔法商人', '1', '99016', '33452', '32784', '0', '0', '4', '0', '4', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99042', '王族魔法商人', '1', '99017', '33450', '32782', '0', '0', '4', '0', '4', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99043', '骑士魔法商人', '1', '99018', '33448', '32780', '0', '0', '4', '0', '4', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99044', '黑妖魔法商人', '1', '99019', '33446', '32778', '0', '0', '4', '0', '4', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99045', '传送魔法阵', '1', '99020', '33452', '32812', '0', '0', '2', '0', '4', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99046', 'BOSS馆', '1', '99993', '33426', '32803', '0', '0', '4', '0', '4', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99047', '\\f=双倍经验地图', '1', '99002', '33447', '32796', '0', '0', '0', '0', '4', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99048', '天堂点将官', '1', '99003', '33450', '32793', '0', '0', '4', '0', '4', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99049', '\\f2混沌精灵使者', '1', '99004', '33449', '32792', '0', '0', '6', '0', '4', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99050', '赌博商人', '1', '99005', '33440', '32810', '0', '0', '4', '0', '4', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99051', '\\f2猜数字', '1', '99006', '33437', '32810', '0', '0', '4', '0', '4', '0');
-INSERT INTO `william_spawnlist_npc` VALUES ('99052', '鬼火', '1', '99007', '33435', '32820', '0', '0', '4', '0', '4', '0');
+INSERT INTO `william_spawnlist_npc` VALUES ('99038', '天神祝福A', '1', '99990', '33436', '32806', '0', '0', '1', '0', '4', '0');
 INSERT INTO `william_spawnlist_npc` VALUES ('99053', '消耗品商人', '1', '99010', '33449', '32817', '0', '0', '6', '0', '4', '0');
 INSERT INTO `william_spawnlist_npc` VALUES ('99054', '传送卷商人', '1', '99013', '33449', '32819', '0', '0', '6', '0', '4', '0');
 INSERT INTO `william_spawnlist_npc` VALUES ('99055', '武器商人', '1', '99011', '33449', '32825', '0', '0', '6', '0', '4', '0');

@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-6-25 ���� 12:58:22
+Navicat MySQL Data Transfer
+
+Source Server         : localhost
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : l1j-cn
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-04 02:05:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for spawnlist_npc
+-- Table structure for `spawnlist_npc`
 -- ----------------------------
+DROP TABLE IF EXISTS `spawnlist_npc`;
 CREATE TABLE `spawnlist_npc` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `location` varchar(19) NOT NULL DEFAULT '',
@@ -28,7 +35,7 @@ CREATE TABLE `spawnlist_npc` (
 ) ENGINE=MyISAM AUTO_INCREMENT=99059 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records 
+-- Records of spawnlist_npc
 -- ----------------------------
 INSERT INTO `spawnlist_npc` VALUES ('1', '古代短剑商人', '1', '81003', '33063', '33390', '0', '0', '2', '0', '4', '100');
 INSERT INTO `spawnlist_npc` VALUES ('2', '古代长剑商人', '1', '81004', '33063', '33391', '0', '0', '2', '0', '4', '100');
@@ -89,7 +96,7 @@ INSERT INTO `spawnlist_npc` VALUES ('50024', '艾勒里斯', '1', '50046', '3393
 INSERT INTO `spawnlist_npc` VALUES ('50025', '奇宁', '1', '50608', '34109', '33350', '0', '0', '4', '0', '4', '100');
 INSERT INTO `spawnlist_npc` VALUES ('50026', '吉利乌斯', '1', '50051', '34063', '32278', '0', '0', '5', '0', '4', '100');
 INSERT INTO `spawnlist_npc` VALUES ('50027', '莱思利', '1', '50039', '33709', '32499', '0', '0', '6', '0', '4', '100');
-INSERT INTO `spawnlist_npc` VALUES ('50028', '尔玛', '1', '50036', '33438', '32805', '0', '0', '4', '0', '4', '100');
+INSERT INTO `spawnlist_npc` VALUES ('50028', '尔玛', '1', '50036', '33437', '32795', '0', '0', '4', '0', '4', '100');
 INSERT INTO `spawnlist_npc` VALUES ('50029', '丹尼尔', '1', '50079', '32659', '32524', '0', '0', '6', '0', '4', '100');
 INSERT INTO `spawnlist_npc` VALUES ('50030', '保罗', '1', '50080', '32657', '32540', '0', '0', '4', '0', '4', '100');
 INSERT INTO `spawnlist_npc` VALUES ('50031', '鲁比恩', '1', '50065', '33054', '32348', '0', '0', '4', '0', '4', '0');
@@ -2308,3 +2315,11 @@ INSERT INTO `spawnlist_npc` VALUES ('89928', '钓鱼池的鱼儿', '1', '81309',
 INSERT INTO `spawnlist_npc` VALUES ('89929', '钓鱼池的鱼儿', '1', '81308', '32775', '32813', '0', '0', '3', '0', '5300', '0');
 INSERT INTO `spawnlist_npc` VALUES ('99057', '守护塔', '1', '9010', '32704', '32829', '0', '0', '4', '0', '205', '0');
 INSERT INTO `spawnlist_npc` VALUES ('99058', '守护塔', '1', '9030', '32702', '32829', '0', '0', '7', '0', '207', '0');
+INSERT INTO `spawnlist_npc` VALUES ('50036', '商店村传送师', '1', '50060', '33077', '33383', '0', '0', '5', '0', '4', '100');
+INSERT INTO `spawnlist_npc` VALUES ('50037', '商店村传送师', '1', '50060', '33095', '33358', '0', '0', '5', '0', '4', '100');
+INSERT INTO `spawnlist_npc` VALUES ('50038', '商店村传送师', '1', '50027', '32634', '32797', '0', '0', '6', '0', '4', '100');
+INSERT INTO `spawnlist_npc` VALUES ('50039', '商店村传送师', '1', '50027', '32629', '32721', '0', '0', '5', '0', '4', '100');
+INSERT INTO `spawnlist_npc` VALUES ('50041', '商店村传送师', '1', '50050', '34061', '32305', '0', '0', '4', '0', '4', '100');
+INSERT INTO `spawnlist_npc` VALUES ('50042', '商店村传送师', '1', '50050', '34062', '32273', '0', '0', '4', '0', '4', '100');
+INSERT INTO `spawnlist_npc` VALUES ('50043', '商店村传送师', '1', '50034', '33438', '32809', '0', '0', '5', '0', '4', '100');
+INSERT INTO `spawnlist_npc` VALUES ('50044', '商店村传送师', '1', '50034', '33510', '32766', '0', '0', '4', '0', '4', '100');
