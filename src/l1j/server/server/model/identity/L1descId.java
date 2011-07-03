@@ -4724,8 +4724,20 @@ public class L1descId {
 		public static final int $8886 = 8886;
 
 		/**  */
+		public static final int $9568 = 9568;
+		/** 猎人项链 */
+		public static final int $9569 = 9569;
+		/** 战士项链 */
+		public static final int $9570 = 9570;
+		/** 祭司项链 */
+		public static final int $9571 = 9571;
+		/** 魔导士项链 */
+		public static final int $9572 = 9572;
+		/** 剑士项链 */
+		public static final int $9573 = 9573;
+		/** 骑士项链 */
 		public static final int $9574 = 9574;
-		/**  */
+		/** \f3权贵项链(双倍经验) */
 		public static final int $9575 = 9575;
 		/** \f2【白金攻击钢手】 */
 		public static final int $9576 = 9576;

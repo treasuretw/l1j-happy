@@ -833,6 +833,20 @@ public class L1Magic {
 			magicDamage += (Random.nextInt(dice) + 1);
 		}
 		magicDamage += value;
+		
+		// 装备项链获得特殊能力 add (PC NPC)
+		if ((_calcType == PC_PC) || (_calcType == PC_NPC)) {
+
+			if (_pc.getInventory().checkEquipped(10060)) { // 魔导士项链 by 丫杰
+				magicDamage *= 2; // 魔法攻击力翻倍
+			}
+			if (_pc.getInventory().checkEquipped(10061)) { // 祭司项链 转换伤害补充魔力 by 丫杰
+				int dmgMp = 0;
+				dmgMp = (short) (_pc.getCurrentMp() + (magicDamage / 5));
+				_pc.setCurrentMp(dmgMp);  // 魔法攻击力的1/5转化为自身魔力
+			}
+		}
+		// 装备项链获得特殊能力 end (PC NPC)
 
 		if ((_calcType == PC_PC) || (_calcType == PC_NPC)) {
 			int weaponAddDmg = 0; // 武器による追加ダメージ

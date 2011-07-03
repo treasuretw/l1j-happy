@@ -88,6 +88,13 @@ public class CalcExp {
 		int partyHateExp = 0;
 		int partyHateLawful = 0;
 		int ownHateExp = 0;
+		
+		// 权贵项链 经验加倍 by 丫杰 add
+		int ed2 = 3; // 经验倍数
+		if (l1pcinstance.getInventory().checkEquipped(10057)) {
+			exp = (int) (exp * ed2);
+		}
+		// 权贵项链 经验加倍 by 丫杰 end
 
 		if (acquisitorList.size() != hateList.size()) {
 			return;
@@ -202,7 +209,11 @@ public class CalcExp {
 					}
 				}
 
-				party_exp = (int) (party_exp * (1 + pt_bonus + pri_bonus));
+				if (l1pcinstance.getInventory().checkEquipped(10057)) { // 权贵项链 经验加倍 by 丫杰
+					party_exp = (int) (party_exp * ed2 * (1 + pt_bonus + pri_bonus));
+				} else {
+					party_exp = (int) (party_exp * (1 + pt_bonus + pri_bonus));
+				}
 
 				// 自キャラクターとそのペット・サモンのヘイトの合计を算出
 				if (party_level > 0) {

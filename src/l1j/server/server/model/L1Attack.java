@@ -36,6 +36,7 @@ import l1j.server.server.serverpackets.S_DoActionGFX;
 import l1j.server.server.serverpackets.S_EffectLocation;
 import l1j.server.server.serverpackets.S_ServerMessage;
 import l1j.server.server.serverpackets.S_SkillIconGFX;
+import l1j.server.server.serverpackets.S_SkillSound;
 import l1j.server.server.serverpackets.S_SystemMessage;
 import l1j.server.server.serverpackets.S_UseArrowSkill;
 import l1j.server.server.serverpackets.S_UseAttackSkill;
@@ -959,6 +960,37 @@ public class L1Attack {
 	// ●●●● プレイヤー から プレイヤー へのダメージ算出 ●●●●
 	public int calcPcPcDamage() {
 
+		// 装备项链获得特殊功能 add (PC PC)
+		if (_pc.getInventory().checkEquipped(10058) // 骑士项链  by 丫杰
+				&& _weaponType == 4 // 持单手剑
+				&& Random.nextInt(100) < 30) { // 机率30%发动
+			_pc.sendPackets(new S_SkillSound(_targetId, 4548));
+			_pc.broadcastPacket(new S_SkillSound(_targetId, 4548));
+			_damage *= 2; // 产生2倍伤害
+		}
+		if (_pc.getInventory().checkEquipped(10059) // 剑士项链  by 丫杰
+				&& _weaponType == 50 // 持双手剑
+				&& Random.nextInt(100) < 15) { // 机率15%发动
+			_pc.sendPackets(new S_SkillSound(_targetId, 4580));
+			_pc.broadcastPacket(new S_SkillSound(_targetId, 4580));
+			_damage *= 4; // 产生4倍伤害
+		}
+		if (_pc.getInventory().checkEquipped(10062) // 战士项链  by 丫杰
+				&& Random.nextInt(100) < 15 // 机率15%发动
+				&& (_weaponType == 4 || _weaponType == 46)) {
+			int _damageHp = 0;
+			_damage += _pc.getStr(); // 追加力量值的伤害
+			_damageHp = (short) (_pc.getCurrentHp() + (_damage / 2)); // 目前血量+伤害/2
+			_pc.setCurrentHp(_damageHp); // 补到自己身上
+		}
+		if (_pc.getInventory().checkEquipped(10063) // 猎人项链 by 丫杰
+				&& _weaponType == 20 // 持弓
+				&& Random.nextInt(100) < 60) { // 机率60%发动
+			_pc.sendPackets(new S_SkillSound(_targetId, 4630));
+			_pc.broadcastPacket(new S_SkillSound(_targetId, 4630));
+			_damage *= 2; // 伤害*2
+		}
+		// 装备项链获得特殊功能 end (PC PC)
 
 		// 计算武器总伤害
 		int weaponTotalDamage = calcWeponDamage(_weaponSmall);
@@ -1090,6 +1122,38 @@ public class L1Attack {
 				&& (_weaponLarge > 0)) {
 			weaponMaxDamage = _weaponLarge;
 		}
+		
+		// 装备项链获得特殊功能 add (PC NPC)
+		if (_pc.getInventory().checkEquipped(10058) // 骑士项链  by 丫杰
+				&& _weaponType == 4 // 持单手剑
+				&& Random.nextInt(100) < 30) { // 机率30%发动
+			_pc.sendPackets(new S_SkillSound(_targetId, 4548));
+			_pc.broadcastPacket(new S_SkillSound(_targetId, 4548));
+			_damage *= 2; // 产生2倍伤害
+		}
+		if (_pc.getInventory().checkEquipped(10059) // 剑士项链  by 丫杰
+				&& _weaponType == 50 // 持双手剑
+				&& Random.nextInt(100) < 15) { // 机率15%发动
+			_pc.sendPackets(new S_SkillSound(_targetId, 4580));
+			_pc.broadcastPacket(new S_SkillSound(_targetId, 4580));
+			_damage *= 4; // 产生4倍伤害
+		}
+		if (_pc.getInventory().checkEquipped(10062) // 战士项链  by 丫杰
+				&& Random.nextInt(100) < 15 // 机率15%发动
+				&& (_weaponType == 4 || _weaponType == 46)) {
+			int _damageHp = 0;
+			_damage += _pc.getStr(); // 追加力量值的伤害
+			_damageHp = (short) (_pc.getCurrentHp() + (_damage / 2)); // 目前血量+伤害/2
+			_pc.setCurrentHp(_damageHp); // 补到自己身上
+		}
+		if (_pc.getInventory().checkEquipped(10063) // 猎人项链 by 丫杰
+				&& _weaponType == 20 // 持弓
+				&& Random.nextInt(100) < 60) { // 机率60%发动
+			_pc.sendPackets(new S_SkillSound(_targetId, 4630));
+			_pc.broadcastPacket(new S_SkillSound(_targetId, 4630));
+			_damage *= 2; // 伤害*2
+		}
+		// 装备项链获得特殊功能 add (PC NPC)
 
 		// 计算武器总伤害
 		int weaponTotalDamage = calcWeponDamage(weaponMaxDamage) ;
