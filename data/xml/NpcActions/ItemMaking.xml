@@ -1,0 +1,3636 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<NpcActionList>
+
+<!--有问题-->
+	<!--娜鲁帕 / 霸王头盔->木制的夹克-->
+	<Action Name="request wooden jacket" NpcId="70838">
+		<MakeItem>
+			<Item Amount="1" ItemId="21107" />		<!--霸王头盔-->
+			<Material Amount="6" ItemId="40502" />	<!--线-->
+			<Material Amount="10" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+
+	<!--罗宾孙 / 霸王头盔->木制的夹克-->
+	<Action Name="request silver arrow" NpcId="70840">
+		<MakeItem>
+			<Item Amount="200" ItemId="40744" />		<!--银箭-->
+			<Material Amount="1" ItemId="173" />		<!--短弓-->
+			<Material Amount="1" ItemId="21107" />	<!--霸王头盔-->
+			<Material Amount="1" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+
+<!--L1J-TW-->
+<!--说话之岛-->
+	<!--雷德斯-->
+	<Action Name="request petfood" NpcId="70526">
+		<MakeItem>
+			<Item Amount="1" ItemId="40070" />		<!--进化果实-->
+			<Material Amount="20" ItemId="40428" />	<!--月光之泪-->
+		</MakeItem>
+	</Action>
+
+	<!--拉比安尼-->
+	<Action Name="request tear of dark">
+		<MakeItem>
+			<Item Amount="1" ItemId="40525" />		<!--格兰肯之泪-->
+			<Material Amount="1" ItemId="40324" />	<!--五级黑魔石-->
+			<Material Amount="1" ItemId="40443" />	<!--黑色米索莉-->
+			<Material Amount="3" ItemId="40524" />	<!--黑色血痕-->
+		</MakeItem>
+	</Action>
+	<Action Name="request spellbook62">
+		<MakeItem>
+			<Item Amount="1" ItemId="40208" />		<!--魔法书(治愈能量风暴)-->
+			<Material Amount="1" ItemId="40162" />	<!--高仑之心-->
+			<Material Amount="1" ItemId="40169" />	<!--飞龙之心-->
+			<Material Amount="1" ItemId="40409" />	<!--不死鸟之心-->
+			<Material Amount="1" ItemId="40413" />	<!--冰之女王之心-->
+		</MakeItem>
+	</Action>
+	<Action Name="request spellbook113">
+		<MakeItem>
+			<Item Amount="1" ItemId="40227" />		<!--魔法书(激励士气)-->
+			<Material Amount="1" ItemId="40162" />	<!--高仑之心-->
+			<Material Amount="1" ItemId="40169" />	<!--飞龙之心-->
+			<Material Amount="1" ItemId="40409" />	<!--不死鸟之心-->
+			<Material Amount="1" ItemId="40413" />	<!--冰之女王之心-->
+		</MakeItem>
+	</Action>
+	<Action Name="request spellbook116">
+		<MakeItem>
+			<Item Amount="1" ItemId="40230" />		<!--魔法书(冲击士气)-->
+			<Material Amount="2" ItemId="40162" />	<!--高仑之心-->
+			<Material Amount="2" ItemId="40169" />	<!--飞龙之心-->
+			<Material Amount="2" ItemId="40409" />	<!--不死鸟之心-->
+			<Material Amount="2" ItemId="40413" />	<!--冰之女王之心-->
+		</MakeItem>
+	</Action>
+	<Action Name="request spellbook114">
+		<MakeItem>
+			<Item Amount="1" ItemId="40229" />		<!--魔法书(钢铁士气)-->
+			<Material Amount="4" ItemId="40162" />	<!--高仑之心-->
+			<Material Amount="4" ItemId="40169" />	<!--飞龙之心-->
+			<Material Amount="4" ItemId="40409" />	<!--不死鸟之心-->
+			<Material Amount="4" ItemId="40413" />	<!--冰之女王之心-->
+		</MakeItem>
+	</Action>
+	<Action Name="request spellbook117">
+		<MakeItem>
+			<Item Amount="1" ItemId="40231" />		<!--魔法书(援护盟友)-->
+			<Material Amount="3" ItemId="40162" />	<!--高仑之心-->
+			<Material Amount="3" ItemId="40169" />	<!--飞龙之心-->
+			<Material Amount="3" ItemId="40409" />	<!--不死鸟之心-->
+			<Material Amount="3" ItemId="40413" />	<!--冰之女王之心-->
+		</MakeItem>
+	</Action>
+
+<!--古鲁丁村庄-->
+	<!--拉罗森-->
+	<Action Name="D" NpcId="80099">
+		<MakeItem>
+			<Item Amount="1" ItemId="41315" />		<!--圣水-->
+			<Material Amount="300" ItemId="40308" />	<!--金币-->
+		</MakeItem>
+	</Action>
+
+	<!--奖牌兑换管理人-->
+	<Action Name="request new surprise bag" NpcId="80089">
+		<MakeItem>
+			<Item Amount="1" ItemId="41416" />		<!--惊喜箱-->
+			<Material Amount="150" ItemId="41309" />	<!--宠物战金牌-->
+		</MakeItem>
+	</Action>
+	<Action Name="request gold apple" NpcId="80089">
+		<MakeItem>
+			<Item Amount="1" ItemId="41310" />		<!--胜利果实-->
+			<Material Amount="3000" ItemId="41309" />	<!--宠物战金牌-->
+		</MakeItem>
+	</Action>
+
+	<!--阿罗卡-->
+	<Action Name="request bag of arka" NpcId="80078">
+		<MakeItem>
+			<Item Amount="1" ItemId="41247" />		<!--魔法娃娃的袋子-->
+			<Material Amount="1" ItemId="41251" />	<!--骷髅圣杯-->
+			<Material Amount="1" ItemId="41252" />	<!--珍奇的乌龟-->
+			<Material Amount="1" ItemId="41253" />	<!--王宫料理师的调味料-->
+			<Material Amount="1" ItemId="41254" />	<!--胜利的徽章-->
+		</MakeItem>
+	</Action>
+
+	<!--波伦-->
+	<Action Name="a" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40433" />	<!--犰狳之爪-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="b" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40434" />	<!--犰狳的尾巴-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="c" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40435" />	<!--深渊之花的花苞-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="d" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40436" />	<!--深渊之花的根-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="e" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40437" />	<!--深渊花枝条-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="f" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40491" />	<!--格利芬羽毛-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="g" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40720" />	<!--黑暗之翼-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="h" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40484" />	<!--金属蜈蚣的毒液-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="i" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40485" />	<!--金属蜈蚣的牙-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="j" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40483" />	<!--金属蜈蚣的皮-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="k" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40472" />	<!--地狱犬之皮-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="l" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40438" />	<!--蝙蝠之牙-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="m" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40511" />	<!--地图:妖精森林-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="n" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40512" />	<!--污浊安特的树枝-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="o" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40510" />	<!--污浊安特的树皮-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="p" NpcId="80084">
+		<MakeItem>
+			<Item Amount="1" ItemId="41355" />		<!--波伦的袋子-->
+			<Material Amount="10" ItemId="40451" />	<!--黑暗妖精袋子-->
+			<Succeed>
+				<ShowHtml HtmlId="rparum1" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="rparum2" />
+			</Fail>
+		</MakeItem>
+	</Action>
+
+	<!--菲力士-->
+	<Action Name="0" NpcId="80102">
+		<MakeItem>
+			<Item Amount="1" ItemId="41329" />		<!--标本制作委托书-->
+			<Material Amount="50000" ItemId="40308" />	<!--金币-->
+			<Fail>
+				<ShowHtml HtmlId="fillis5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="2" NpcId="80102">
+		<MakeItem>
+			<Item Amount="1" ItemId="41383" />		<!--巨大兵蚁标本-->
+			<Material Amount="100" ItemId="41330" />	<!--狩猎蚂蚁之证-->
+			<Material Amount="20000" ItemId="40308" />	<!--金币-->
+			<Fail>
+				<ShowHtml HtmlId="fillis7" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="3" NpcId="80102">
+		<MakeItem>
+			<Item Amount="1" ItemId="41384" />		<!--熊标本-->
+			<Material Amount="100" ItemId="41331" />	<!--狩猎熊之证-->
+			<Material Amount="20000" ItemId="40308" />	<!--金币-->
+			<Fail>
+				<ShowHtml HtmlId="fillis7" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="4" NpcId="80102">
+		<MakeItem>
+			<Item Amount="1" ItemId="41385" />		<!--蛇女标本-->
+			<Material Amount="100" ItemId="41332" />	<!--狩猎蛇女之证-->
+			<Material Amount="20000" ItemId="40308" />	<!--金币-->
+			<Fail>
+				<ShowHtml HtmlId="fillis7" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="5" NpcId="80102">
+		<MakeItem>
+			<Item Amount="1" ItemId="41386" />		<!--黑虎标本-->
+			<Material Amount="100" ItemId="41333" />	<!--狩猎黑虎之证-->
+			<Material Amount="20000" ItemId="40308" />	<!--金币-->
+			<Fail>
+				<ShowHtml HtmlId="fillis7" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="6" NpcId="80102">
+		<MakeItem>
+			<Item Amount="1" ItemId="41387" />		<!--鹿标本-->
+			<Material Amount="100" ItemId="41334" />	<!--狩猎鹿之证-->
+			<Material Amount="20000" ItemId="40308" />	<!--金币-->
+			<Fail>
+				<ShowHtml HtmlId="fillis7" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="7" NpcId="80102">
+		<MakeItem>
+			<Item Amount="1" ItemId="41388" />		<!--哈维标本-->
+			<Material Amount="100" ItemId="41335" />	<!--狩猎哈维之证-->
+			<Material Amount="20000" ItemId="40308" />	<!--金币-->
+			<Fail>
+				<ShowHtml HtmlId="fillis7" />
+			</Fail>
+		</MakeItem>
+	</Action>
+
+	<!--祭坛-->
+	<Action Name="A" NpcId="80094" AmountInputable="false">
+		<MakeItem>
+			<Item Amount="1" ItemId="41325" />		<!--勇士之证-->
+			<Material Amount="1" ItemId="41319" />	<!--菊花花束-->
+			<Material Amount="20" ItemId="41327" />	<!--幽灵之气息-->
+			<Succeed>
+				<ShowHtml HtmlId="altar3" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="altar8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="B" NpcId="80094">
+		<MakeItem>
+			<Item Amount="1" ItemId="41325" />		<!--勇士之证-->
+			<Material Amount="1" ItemId="41320" />	<!--黛西花束-->
+			<Material Amount="20" ItemId="41327" />	<!--幽灵之气息-->
+			<Succeed>
+				<ShowHtml HtmlId="altar3" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="altar8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="C" NpcId="80094">
+		<MakeItem>
+			<Item Amount="1" ItemId="41325" />		<!--勇士之证-->
+			<Material Amount="1" ItemId="41321" />	<!--玫瑰花束-->
+			<Material Amount="20" ItemId="41327" />	<!--幽灵之气息-->
+			<Succeed>
+				<ShowHtml HtmlId="altar3" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="altar8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="D" NpcId="80094">
+		<MakeItem>
+			<Item Amount="1" ItemId="41325" />		<!--勇士之证-->
+			<Material Amount="1" ItemId="41322" />	<!--卡拉花束-->
+			<Material Amount="20" ItemId="41327" />	<!--幽灵之气息-->
+			<Succeed>
+				<ShowHtml HtmlId="altar3" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="altar8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="E" NpcId="80094">
+		<MakeItem>
+			<Item Amount="1" ItemId="41325" />		<!--勇士之证-->
+			<Material Amount="1" ItemId="41323" />	<!--太阳花花束-->
+			<Material Amount="20" ItemId="41327" />	<!--幽灵之气息-->
+			<Succeed>
+				<ShowHtml HtmlId="altar3" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="altar8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="F" NpcId="80094">
+		<MakeItem>
+			<Item Amount="1" ItemId="41325" />		<!--勇士之证-->
+			<Material Amount="1" ItemId="41324" />	<!--小苍兰花束-->
+			<Material Amount="20" ItemId="41327" />	<!--幽灵之气息-->
+			<Succeed>
+				<ShowHtml HtmlId="altar3" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="altar8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="G" NpcId="80094">
+		<MakeItem>
+			<Item Amount="1" ItemId="41326" />		<!--勇士之证-->
+			<Material Amount="1" ItemId="41319" />	<!--菊花花束-->
+			<Material Amount="1" ItemId="41328" />	<!--哈蒙的气息-->
+			<Succeed>
+				<ShowHtml HtmlId="altar3" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="altar8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="H" NpcId="80094">
+		<MakeItem>
+			<Item Amount="1" ItemId="41326" />		<!--勇士之证-->
+			<Material Amount="1" ItemId="41320" />	<!--黛西花束-->
+			<Material Amount="1" ItemId="41328" />	<!--哈蒙的气息-->
+			<Succeed>
+				<ShowHtml HtmlId="altar3" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="altar8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="I" NpcId="80094">
+		<MakeItem>
+			<Item Amount="1" ItemId="41326" />		<!--勇士之证-->
+			<Material Amount="1" ItemId="41321" />	<!--玫瑰花束-->
+			<Material Amount="1" ItemId="41328" />	<!--哈蒙的气息-->
+			<Succeed>
+				<ShowHtml HtmlId="altar3" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="altar8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="J" NpcId="80094">
+		<MakeItem>
+			<Item Amount="1" ItemId="41326" />		<!--勇士之证-->
+			<Material Amount="1" ItemId="41322" />	<!--卡拉花束-->
+			<Material Amount="1" ItemId="41328" />	<!--哈蒙的气息-->
+			<Succeed>
+				<ShowHtml HtmlId="altar3" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="altar8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="K" NpcId="80094">
+		<MakeItem>
+			<Item Amount="1" ItemId="41326" />		<!--勇士之证-->
+			<Material Amount="1" ItemId="41323" />	<!--太阳花花束-->
+			<Material Amount="1" ItemId="41328" />	<!--哈蒙的气息-->
+			<Succeed>
+				<ShowHtml HtmlId="altar3" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="altar8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="L" NpcId="80094">
+		<MakeItem>
+			<Item Amount="1" ItemId="41326" />		<!--勇士之证-->
+			<Material Amount="1" ItemId="41324" />	<!--小苍兰花束-->
+			<Material Amount="1" ItemId="41328" />	<!--哈蒙的气息-->
+			<Succeed>
+				<ShowHtml HtmlId="altar3" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="altar8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="M" NpcId="80094">
+		<MakeItem>
+			<Item Amount="1" ItemId="274" />		<!--反王肯恩的权杖-->
+			<Item Amount="1" ItemId="49188" />		<!--索夏依卡灵魂之石-->
+			<Material Amount="1" ItemId="41319" />	<!--菊花花束-->
+			<Material Amount="1" ItemId="49187" />	<!--艾尔摩将军之心-->
+			<Succeed>
+				<ShowHtml HtmlId="altar3" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="altar8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="N" NpcId="80094">
+		<MakeItem>
+			<Item Amount="1" ItemId="49191" />		<!--艾尔摩部队日记-->
+			<Material Amount="1" ItemId="274" />		<!--反王肯恩的权杖-->
+			<Material Amount="1" ItemId="41322" />	<!--卡拉花束-->
+			<Material Amount="1" ItemId="49190" />	<!--封印的索夏依卡遗物-->
+			<Succeed>
+				<ShowHtml HtmlId="altar10" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="altar8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+
+<!--古鲁丁地监6楼-->
+	<!--火焰之影的分身-->
+	<Action Name="request enchanted staff of demon">
+		<MakeItem>
+			<Item Amount="1" ItemId="119" />		<!--恶魔镰刀-->
+			<Material Amount="1" ItemId="108" />		<!--失去魔力的恶魔镰刀-->
+			<Material Amount="1" ItemId="49014" />	<!--灵魂之球-->
+		</MakeItem>
+	</Action>
+	<Action Name="request enchanted staff of baphomet">
+		<MakeItem>
+			<Item Amount="1" ItemId="124" />		<!--巴风特魔杖-->
+			<Material Amount="1" ItemId="109" />		<!--失去魔力的巴风特魔杖-->
+			<Material Amount="1" ItemId="49014" />	<!--灵魂之球-->
+		</MakeItem>
+	</Action>
+	<Action Name="request enchanted staff of beleth">
+		<MakeItem>
+			<Item Amount="1" ItemId="123" />		<!--巴列斯魔杖-->
+			<Material Amount="1" ItemId="110" />		<!--失去魔力的巴列斯魔杖-->
+			<Material Amount="1" ItemId="49014" />	<!--灵魂之球-->
+		</MakeItem>
+	</Action>
+
+
+<!--骑士洞穴1楼-->
+	<!--雷德-->
+	<Action Name="request ring of summoning control">
+		<MakeItem>
+			<Item Amount="1" ItemId="20284" />		<!--召唤控制戒指-->
+			<Material Amount="100" ItemId="40318" />	<!--魔法宝石-->
+			<Material Amount="1" ItemId="40426" />	<!--黑暗栖林者戒指-->
+			<Material Amount="1" ItemId="40446" />	<!--黑法师戒指-->
+			<Material Amount="1" ItemId="40452" />	<!--唤兽师戒指-->
+			<Material Amount="1" ItemId="40454" />	<!--驯兽师戒指-->
+			<Material Amount="1" ItemId="40465" />	<!--精灵使戒指-->
+		</MakeItem>
+	</Action>
+
+<!--骑士洞穴4楼-->
+	<!--黑骑士副队长-->
+	<Action Name="request enchanted sword of chief">
+		<MakeItem>
+			<Item Amount="1" ItemId="54" />		<!--克特之剑-->
+			<Material Amount="1" ItemId="15" />		<!--失去魔力的克特之剑-->
+		</MakeItem>
+	</Action>
+
+
+<!--妖魔城-->
+	<!--诺曼阿吐巴-->
+	<Action Name="B" NpcId="71038">
+		<MakeItem>
+			<Item Amount="30000" ItemId="40308" />	<!--金币-->
+			<Material Amount="1" ItemId="41092" />	<!--阿吐巴图腾-->
+			<Fail>
+				<ShowHtml HtmlId="orcfnoname10" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="C" NpcId="71038">
+		<MakeItem>
+			<Item Amount="500" ItemId="40308" />		<!--金币-->
+			<Material Amount="1" ItemId="41091" />	<!--都达玛拉图腾-->
+			<Fail>
+				<ShowHtml HtmlId="orcfnoname10" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="D" NpcId="71038">
+		<MakeItem>
+			<Item Amount="500" ItemId="40308" />		<!--金币-->
+			<Material Amount="1" ItemId="41090" />	<!--那鲁加图腾-->
+			<Fail>
+				<ShowHtml HtmlId="orcfnoname10" />
+			</Fail>
+		</MakeItem>
+	</Action>
+
+<!--污浊之地-->
+	<!--诺亚阿吐巴-->
+	<Action Name="B" NpcId="71040">
+		<MakeItem>
+			<Item Amount="1" ItemId="41092" />		<!--阿吐巴图腾-->
+			<Material Amount="1" ItemId="41086" />	<!--树精的根-->
+		</MakeItem>
+	</Action>
+	<Action Name="C" NpcId="71040">
+		<MakeItem>
+			<Item Amount="1" ItemId="41092" />		<!--阿吐巴图腾-->
+			<Material Amount="1" ItemId="41087" />	<!--树精的树皮-->
+		</MakeItem>
+	</Action>
+	<Action Name="D" NpcId="71040">
+		<MakeItem>
+			<Item Amount="1" ItemId="41092" />		<!--阿吐巴图腾-->
+			<Material Amount="1" ItemId="41088" />	<!--树精的叶子-->
+		</MakeItem>
+	</Action>
+	<Action Name="E" NpcId="71040">
+		<MakeItem>
+			<Item Amount="1" ItemId="41092" />		<!--阿吐巴图腾-->
+			<Material Amount="1" ItemId="41089" />	<!--树精的树枝-->
+		</MakeItem>
+	</Action>
+
+	<!--弧邬牟那鲁加-->
+	<Action Name="B" NpcId="71041">
+		<MakeItem>
+			<Item Amount="1" ItemId="41090" />		<!--那鲁加图腾-->
+			<Material Amount="1" ItemId="41081" />	<!--妖魔尖牙-->
+		</MakeItem>
+	</Action>
+	<Action Name="C" NpcId="71041">
+		<MakeItem>
+			<Item Amount="1" ItemId="41090" />		<!--那鲁加图腾-->
+			<Material Amount="1" ItemId="41082" />	<!--妖魔尖牙项练-->
+		</MakeItem>
+	</Action>
+	<Action Name="D" NpcId="71041">
+		<MakeItem>
+			<Item Amount="1" ItemId="41090" />		<!--那鲁加图腾-->
+			<Material Amount="1" ItemId="41083" />	<!--咒术粉-->
+		</MakeItem>
+	</Action>
+	<Action Name="E" NpcId="71041">
+		<MakeItem>
+			<Item Amount="1" ItemId="41090" />		<!--那鲁加图腾-->
+			<Material Amount="1" ItemId="41084" />	<!--幻觉之粉-->
+		</MakeItem>
+	</Action>
+	<Action Name="F" NpcId="71041">
+		<MakeItem>
+			<Item Amount="1" ItemId="41090" />		<!--那鲁加图腾-->
+			<Material Amount="1" ItemId="41085" />	<!--预言家珍珠-->
+		</MakeItem>
+	</Action>
+
+	<!--巴库摩那鲁加-->
+	<Action Name="B" NpcId="71042">
+		<MakeItem>
+			<Item Amount="1" ItemId="41090" />		<!--那鲁加图腾-->
+			<Material Amount="1" ItemId="41071" />	<!--银盘-->
+		</MakeItem>
+	</Action>
+	<Action Name="C" NpcId="71042">
+		<MakeItem>
+			<Item Amount="1" ItemId="41090" />		<!--那鲁加图腾-->
+			<Material Amount="1" ItemId="41072" />	<!--银烛台-->
+		</MakeItem>
+	</Action>
+	<Action Name="D" NpcId="71042">
+		<MakeItem>
+			<Item Amount="1" ItemId="41090" />		<!--那鲁加图腾-->
+			<Material Amount="1" ItemId="41073" />	<!--强盗钥匙-->
+		</MakeItem>
+	</Action>
+	<Action Name="E" NpcId="71042">
+		<MakeItem>
+			<Item Amount="1" ItemId="41090" />		<!--那鲁加图腾-->
+			<Material Amount="1" ItemId="41074" />	<!--强盗的袋子-->
+		</MakeItem>
+	</Action>
+	<Action Name="F" NpcId="71042">
+		<MakeItem>
+			<Item Amount="1" ItemId="41090" />		<!--那鲁加图腾-->
+			<Material Amount="1" ItemId="41075" />	<!--污浊的头发-->
+		</MakeItem>
+	</Action>
+
+	<!--可普都达玛拉-->
+	<Action Name="B" NpcId="71043">
+		<MakeItem>
+			<Item Amount="1" ItemId="41091" />		<!--都达玛拉图腾-->
+			<Material Amount="1" ItemId="41078" />	<!--火核晶-->
+		</MakeItem>
+	</Action>
+	<Action Name="C" NpcId="71043">
+		<MakeItem>
+			<Item Amount="1" ItemId="41091" />		<!--都达玛拉图腾-->
+			<Material Amount="1" ItemId="41077" />	<!--水核晶-->
+		</MakeItem>
+	</Action>
+	<Action Name="D" NpcId="71043">
+		<MakeItem>
+			<Item Amount="1" ItemId="41091" />		<!--都达玛拉图腾-->
+			<Material Amount="1" ItemId="41076" />	<!--土核晶-->
+		</MakeItem>
+	</Action>
+	<Action Name="E" NpcId="71043">
+		<MakeItem>
+			<Item Amount="1" ItemId="41091" />		<!--都达玛拉图腾-->
+			<Material Amount="1" ItemId="41079" />	<!--风核晶-->
+		</MakeItem>
+	</Action>
+	<Action Name="F" NpcId="71043">
+		<MakeItem>
+			<Item Amount="1" ItemId="41091" />		<!--都达玛拉图腾-->
+			<Material Amount="1" ItemId="41080" />	<!--精灵核晶-->
+		</MakeItem>
+	</Action>
+
+	<!--卡麦都达玛拉-->
+	<Action Name="B" NpcId="71044">
+		<MakeItem>
+			<Item Amount="1" ItemId="41091" />		<!--都达玛拉图腾-->
+			<Material Amount="1" ItemId="41066" />	<!--污浊的根-->
+		</MakeItem>
+	</Action>
+	<Action Name="C" NpcId="71044">
+		<MakeItem>
+			<Item Amount="1" ItemId="41091" />		<!--都达玛拉图腾-->
+			<Material Amount="1" ItemId="41067" />	<!--污浊的树枝-->
+		</MakeItem>
+	</Action>
+	<Action Name="D" NpcId="71044">
+		<MakeItem>
+			<Item Amount="1" ItemId="41091" />		<!--都达玛拉图腾-->
+			<Material Amount="1" ItemId="41068" />	<!--污浊的皮-->
+		</MakeItem>
+	</Action>
+	<Action Name="E" NpcId="71044">
+		<MakeItem>
+			<Item Amount="1" ItemId="41091" />		<!--都达玛拉图腾-->
+			<Material Amount="1" ItemId="41069" />	<!--污浊的鬃毛-->
+		</MakeItem>
+	</Action>
+	<Action Name="F" NpcId="71044">
+		<MakeItem>
+			<Item Amount="1" ItemId="41091" />		<!--都达玛拉图腾-->
+			<Material Amount="1" ItemId="41070" />	<!--污浊的精灵羽翼-->
+		</MakeItem>
+	</Action>
+
+<!--奇岩村庄-->
+	<!--莫丽雅-->
+	<Action Name="request magician dress">
+		<MakeItem>
+			<Item Amount="1" ItemId="20111" />		<!--法师长袍-->
+			<Material Amount="1" ItemId="40054" />	<!--高品质蓝宝石-->
+			<Material Amount="25" ItemId="40318" />	<!--魔法宝石-->
+			<Material Amount="4" ItemId="40455" />	<!--蓝色布料-->
+			<Material Amount="2" ItemId="40457" />	<!--白色布料-->
+		</MakeItem>
+	</Action>
+	<Action Name="request magician cap">
+		<MakeItem>
+			<Item Amount="1" ItemId="20012" />		<!--法师之帽-->
+			<Material Amount="2" ItemId="40051" />	<!--品质绿宝石-->
+			<Material Amount="20" ItemId="40318" />	<!--魔法宝石-->
+			<Material Amount="1" ItemId="40455" />	<!--蓝色布料-->
+			<Material Amount="1" ItemId="40456" />	<!--红色布料-->
+			<Material Amount="1" ItemId="40457" />	<!--白色布料-->
+		</MakeItem>
+	</Action>
+	<Action Name="request swap potion">
+		<MakeItem>
+			<Item Amount="1" ItemId="49015" />		<!--黑色米索莉溶液-->
+			<Material Amount="100" ItemId="40016" />	<!--慎重药水-->
+			<Material Amount="1000" ItemId="40397" />	<!--奇美拉之皮(龙)-->
+			<Material Amount="1000" ItemId="40398" />	<!--奇美拉之皮(山羊)-->
+			<Material Amount="1000" ItemId="40399" />	<!--奇美拉之皮(狮子)-->
+			<Material Amount="1000" ItemId="40400" />	<!--奇美拉之皮(蛇)-->
+			<Material Amount="5" ItemId="40443" />	<!--黑色米索莉-->
+		</MakeItem>
+	</Action>
+
+	<!--安东-->
+	<Action Name="request ancient plate mail2">
+		<MakeItem>
+			<Item Amount="1" ItemId="20133" />		<!--黑暗执行者金属盔甲-->
+			<Material Amount="1" ItemId="20095" />	<!--古老的金属盔甲-->
+			<Material Amount="1" ItemId="49015" />	<!--黑色米索莉溶液-->
+		</MakeItem>
+	</Action>
+
+	<!--哈巴特-->
+	<Action Name="request t-shirt">
+		<MakeItem>
+			<Item Amount="1" ItemId="20085" />		<!--T恤-->
+			<Material Amount="30000" ItemId="40308" />	<!--金币-->
+			<Material Amount="2" ItemId="40455" />	<!--蓝色布料-->
+			<Material Amount="3" ItemId="40456" />	<!--红色布料-->
+			<Material Amount="10" ItemId="40457" />	<!--白色布料-->
+		</MakeItem>
+	</Action>
+	<Action Name="request cloak of magic resistance">
+		<MakeItem>
+			<Item Amount="1" ItemId="20056" />		<!--抗魔法斗篷-->
+			<Material Amount="1000" ItemId="40308" />	<!--金币-->
+			<Material Amount="2" ItemId="40455" />	<!--蓝色布料-->
+			<Material Amount="10" ItemId="40456" />	<!--红色布料-->
+			<Material Amount="1" ItemId="40457" />	<!--白色布料-->
+		</MakeItem>
+	</Action>
+	<Action Name="request cloak of protection">
+		<MakeItem>
+			<Item Amount="1" ItemId="20063" />		<!--保护者斗篷-->
+			<Material Amount="20000" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40455" />	<!--蓝色布料-->
+			<Material Amount="5" ItemId="40456" />	<!--红色布料-->
+			<Material Amount="10" ItemId="40457" />	<!--白色布料-->
+		</MakeItem>
+	</Action>
+
+	<!--海克特-->
+	<Action Name="request slim plate">
+		<MakeItem>
+			<Item Amount="1" ItemId="40526" />		<!--薄金属板-->
+			<Material Amount="500" ItemId="40308" />	<!--金币-->
+			<Material Amount="10" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request iron gloves">
+		<MakeItem>
+			<Item Amount="1" ItemId="20163" />		<!--钢铁手套-->
+			<Material Amount="1" ItemId="20182" />	<!--手套-->
+			<Material Amount="25000" ItemId="40308" />	<!--金币-->
+			<Material Amount="150" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request iron visor">
+		<MakeItem>
+			<Item Amount="1" ItemId="20003" />		<!--钢铁头盔-->
+			<Material Amount="1" ItemId="20006" />	<!--骑士面甲-->
+			<Material Amount="16500" ItemId="40308" />	<!--金币-->
+			<Material Amount="120" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request iron shield">
+		<MakeItem>
+			<Item Amount="1" ItemId="20220" />		<!--钢铁盾牌-->
+			<Material Amount="1" ItemId="20231" />	<!--塔盾-->
+			<Material Amount="16000" ItemId="40308" />	<!--金币-->
+			<Material Amount="200" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request iron boots">
+		<MakeItem>
+			<Item Amount="1" ItemId="20194" />		<!--钢铁长靴-->
+			<Material Amount="1" ItemId="20205" />	<!--长靴-->
+			<Material Amount="8000" ItemId="40308" />	<!--金币-->
+			<Material Amount="160" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request iron plate mail">
+		<MakeItem>
+			<Item Amount="1" ItemId="20091" />		<!--钢铁金属盔甲-->
+			<Material Amount="1" ItemId="20154" />	<!--金属盔甲-->
+			<Material Amount="30000" ItemId="40308" />	<!--金币-->
+			<Material Amount="450" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+
+	<!--沙勒霞-->
+	<Action Name="request enchanted wand of ice queen">
+		<MakeItem>
+			<Item Amount="1" ItemId="121" />		<!--冰之女王魔杖-->
+			<Material Amount="1" ItemId="111" />		<!--失去魔力的冰之女王魔杖-->
+			<Material Amount="2" ItemId="40090" />	<!--空的魔法卷轴(等级1)-->
+			<Material Amount="2" ItemId="40091" />	<!--空的魔法卷轴(等级2)-->
+			<Material Amount="2" ItemId="40092" />	<!--空的魔法卷轴(等级3)-->
+			<Material Amount="2" ItemId="40093" />	<!--空的魔法卷轴(等级4)-->
+			<Material Amount="2" ItemId="40094" />	<!--空的魔法卷轴(等级5)-->
+			<Material Amount="100" ItemId="40318" />	<!--魔法宝石-->
+		</MakeItem>
+	</Action>
+
+	<!--杰夫-->
+	<Action Name="A" NpcId="71180">
+		<MakeItem>
+			<Item Amount="1" ItemId="41093" />		<!--梦幻的熊娃娃-->
+			<Material Amount="1000" ItemId="49026" />	<!--古老的金币-->
+			<Succeed>
+				<ShowHtml HtmlId="jp6" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="jp5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="B" NpcId="71180">
+		<MakeItem>
+			<Item Amount="1" ItemId="41094" />		<!--诱惑的香水-->
+			<Material Amount="5000" ItemId="49026" />	<!--古老的金币-->
+			<Succeed>
+				<ShowHtml HtmlId="jp6" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="jp5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="C" NpcId="71180">
+		<MakeItem>
+			<Item Amount="1" ItemId="41095" />		<!--漂亮的洋装-->
+			<Material Amount="10000" ItemId="49026" />	<!--古老的金币-->
+			<Succeed>
+				<ShowHtml HtmlId="jp6" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="jp5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="D" NpcId="71180">
+		<MakeItem>
+			<Item Amount="1" ItemId="41096" />		<!--华丽的戒指-->
+			<Material Amount="100000" ItemId="49026" />	<!--古老的金币-->
+			<Succeed>
+				<ShowHtml HtmlId="jp6" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="jp5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="E" NpcId="71180">
+		<MakeItem>
+			<Item Amount="1" ItemId="41098" />		<!--英雄传记-->
+			<Material Amount="1000" ItemId="49026" />	<!--古老的金币-->
+			<Succeed>
+				<ShowHtml HtmlId="jp8" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="jp5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="F" NpcId="71180">
+		<MakeItem>
+			<Item Amount="1" ItemId="41099" />		<!--时髦的帽子-->
+			<Material Amount="5000" ItemId="49026" />	<!--古老的金币-->
+			<Succeed>
+				<ShowHtml HtmlId="jp8" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="jp5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="G" NpcId="71180">
+		<MakeItem>
+			<Item Amount="1" ItemId="41100" />		<!--高级红酒-->
+			<Material Amount="10000" ItemId="49026" />	<!--古老的金币-->
+			<Succeed>
+				<ShowHtml HtmlId="jp8" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="jp5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="H" NpcId="71180">
+		<MakeItem>
+			<Item Amount="1" ItemId="41101" />		<!--神秘的钥匙-->
+			<Material Amount="100000" ItemId="49026" />	<!--古老的金币-->
+			<Succeed>
+				<ShowHtml HtmlId="jp8" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="jp5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+
+	<!--爱玛伊-->
+	<Action Name="A" NpcId="71181">
+		<MakeItem>
+			<Item Amount="1" ItemId="49271" />		<!--爱玛伊的心-->
+			<Material Amount="1" ItemId="41093" />	<!--梦幻的熊娃娃-->
+			<Succeed>
+				<ShowHtml HtmlId="my5" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="my4" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="B" NpcId="71181">
+		<MakeItem>
+			<Item Amount="1" ItemId="49272" />		<!--爱玛伊的心-->
+			<Material Amount="1" ItemId="41094" />	<!--诱惑的香水-->
+			<Succeed>
+				<ShowHtml HtmlId="my6" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="my4" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="C" NpcId="71181">
+		<MakeItem>
+			<Item Amount="1" ItemId="49273" />		<!--爱玛伊的心-->
+			<Material Amount="1" ItemId="41095" />	<!--漂亮的洋装-->
+			<Succeed>
+				<ShowHtml HtmlId="my7" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="my4" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="D" NpcId="71181">
+		<MakeItem>
+			<Item Amount="1" ItemId="41097" />		<!--爱玛伊的心-->
+			<Material Amount="1" ItemId="41096" />	<!--华丽的戒指-->
+			<Succeed>
+				<ShowHtml HtmlId="my8" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="my4" />
+			</Fail>
+		</MakeItem>
+	</Action>
+
+	<!--伊森-->
+	<Action Name="A" NpcId="71182">
+		<MakeItem>
+			<Item Amount="1" ItemId="49274" />		<!--伊森之心-->
+			<Material Amount="1" ItemId="41098" />	<!--英雄传记-->
+			<Succeed>
+				<ShowHtml HtmlId="sm5" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="sm4" />
+			</Fail>
+		</MakeItem>
+	</Action>
+
+	<Action Name="B" NpcId="71182">
+		<MakeItem>
+			<Item Amount="1" ItemId="49275" />		<!--伊森之心-->
+			<Material Amount="1" ItemId="41099" />	<!--时髦的帽子-->
+			<Succeed>
+				<ShowHtml HtmlId="sm6" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="sm4" />
+			</Fail>
+		</MakeItem>
+	</Action>
+
+	<Action Name="C" NpcId="71182">
+		<MakeItem>
+			<Item Amount="1" ItemId="49276" />		<!--伊森之心-->
+			<Material Amount="1" ItemId="41100" />	<!--高级红酒-->
+			<Succeed>
+				<ShowHtml HtmlId="sm7" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="sm4" />
+			</Fail>
+		</MakeItem>
+	</Action>
+
+	<Action Name="D" NpcId="71182">
+		<MakeItem>
+			<Item Amount="1" ItemId="41102" />		<!--伊森之心-->
+			<Material Amount="1" ItemId="41101" />	<!--神秘的钥匙-->
+			<Succeed>
+				<ShowHtml HtmlId="sm8" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="sm4" />
+			</Fail>
+		</MakeItem>
+	</Action>
+
+	<!--路武基-->
+	<Action Name="A" NpcId="71178"> 		
+		<MakeItem> 			
+			<Item Amount="500" ItemId="40308" />		<!--金币-->
+			<Material Amount="1" ItemId="41139" />	<!--不起眼的古老项练-->
+			<Succeed> 				
+				<ShowHtml HtmlId="ru8" /> 			
+			</Succeed> 			
+			<Fail> 				
+				<ShowHtml HtmlId="ru4" /> 			
+			</Fail> 		
+		</MakeItem> 	
+	</Action> 
+	<Action Name="B" NpcId="71178"> 		
+		<MakeItem> 			
+			<Item Amount="100" ItemId="40308" />		<!--金币-->
+			<Material Amount="1" ItemId="49028" />	<!--塔洛斯的红宝石-->
+			<Succeed> 				
+				<ShowHtml HtmlId="ru6" /> 			
+			</Succeed> 			
+			<Fail> 				
+				<ShowHtml HtmlId="ru4" /> 			
+			</Fail> 		
+		</MakeItem> 	
+	</Action> 
+	<Action Name="C" NpcId="71178"> 		
+		<MakeItem> 			
+			<Item Amount="100" ItemId="40308" />		<!--金币-->
+			<Material Amount="1" ItemId="49030" />	<!--塔洛斯的绿宝石-->
+			<Succeed> 				
+				<ShowHtml HtmlId="ru6" /> 			
+			</Succeed> 			
+			<Fail> 				
+				<ShowHtml HtmlId="ru4" /> 			
+			</Fail> 		
+		</MakeItem> 	
+	</Action> 
+	<Action Name="D" NpcId="71178"> 		
+		<MakeItem> 			
+			<Item Amount="100" ItemId="40308" />		<!--金币-->
+			<Material Amount="1" ItemId="49029" />	<!--塔洛斯的蓝宝石-->
+			<Succeed> 				
+				<ShowHtml HtmlId="ru6" /> 			
+			</Succeed> 			
+			<Fail> 				
+				<ShowHtml HtmlId="ru4" /> 			
+			</Fail> 		
+		</MakeItem> 	
+	</Action>
+ 	<Action Name="E" NpcId="71178"> 		
+		<MakeItem> 			
+			<Item Amount="10000" ItemId="40308" />	<!--金币-->
+			<Material Amount="1" ItemId="41140" />	<!--复原的古老项练-->
+			<Succeed> 				
+				<ShowHtml HtmlId="ru9" /> 			
+			</Succeed> 			
+			<Fail> 				
+				<ShowHtml HtmlId="ru4" /> 			
+			</Fail> 		
+		</MakeItem> 	
+	</Action> 
+
+	<!--迪艾司-->
+	<Action Name="A" NpcId="71179">
+		<MakeItem>
+			<Item Amount="1" ItemId="41140" />		<!--复原的古老项练-->
+			<Material Amount="1" ItemId="41139" />	<!--不起眼的古老项练-->
+			<Material Amount="1" ItemId="49028" />	<!--塔洛斯的红宝石-->
+			<Material Amount="1" ItemId="49029" />	<!--塔洛斯的蓝宝石-->
+			<Material Amount="1" ItemId="49030" />	<!--塔洛斯的绿宝石-->
+		</MakeItem>
+	</Action>
+	<Action Name="B" NpcId="71179">
+		<MakeItem>
+			<Item Amount="1" ItemId="20422" />		<!--发光的古老项链-->
+			<Material Amount="1" ItemId="41140" />	<!--复原的古老项练-->
+			<Material Amount="1" ItemId="49027" />	<!--塔洛斯的钻石-->
+		</MakeItem>
+	</Action>
+
+<!--海音村庄-->
+	<!--安戴-->
+	<Action Name="request banana juice" NpcId="71197">
+		<MakeItem>
+			<Item Amount="1" ItemId="40026" />		<!--香蕉汁-->
+			<Material Amount="1" ItemId="40059" />	<!--蛋-->
+			<Material Amount="1" ItemId="40060" />	<!--胡萝卜-->
+			<Material Amount="1" ItemId="40061" />	<!--柠檬-->
+			<Material Amount="5" ItemId="40062" />	<!--香蕉-->
+		</MakeItem>
+	</Action>
+	<Action Name="request orange juice" NpcId="71197">
+		<MakeItem>
+			<Item Amount="1" ItemId="40027" />		<!--橘子汁-->
+			<Material Amount="1" ItemId="40059" />	<!--蛋-->
+			<Material Amount="1" ItemId="40060" />	<!--胡萝卜-->
+			<Material Amount="1" ItemId="40061" />	<!--柠檬-->
+			<Material Amount="5" ItemId="40069" />	<!--橘子-->
+		</MakeItem>
+	</Action>
+	<Action Name="request apple juice" NpcId="71197">
+		<MakeItem>
+			<Item Amount="1" ItemId="40028" />		<!--苹果汁-->
+			<Material Amount="1" ItemId="40059" />	<!--蛋-->
+			<Material Amount="1" ItemId="40060" />	<!--胡萝卜-->
+			<Material Amount="1" ItemId="40061" />	<!--柠檬-->
+			<Material Amount="5" ItemId="40064" />	<!--苹果-->
+		</MakeItem>
+	</Action>
+
+<!--伊娃神殿-->
+	<!--伊芙洛尔-->
+	<Action Name="request eveurol bag" NpcId="70872">
+		<MakeItem>
+			<Item Amount="1" ItemId="41336" />		<!--伊芙洛尔之袋-->
+			<Material Amount="1" ItemId="41343" />	<!--法利昂的血痕-->
+		</MakeItem>
+	</Action>
+	<Action Name="request bless of eva">
+		<MakeItem>
+			<Item Amount="1" ItemId="40032" />		<!--伊娃的祝福-->
+			<Material Amount="300" ItemId="40308" />	<!--金币-->
+		</MakeItem>
+	</Action>
+	<Action Name="request shield of eva">
+		<MakeItem>
+			<Item Amount="1" ItemId="20235" />		<!--伊娃之盾-->
+			<Material Amount="1" ItemId="20231" />	<!--塔盾-->
+			<Material Amount="100" ItemId="40041" />	<!--人鱼之鳞-->
+			<Material Amount="10" ItemId="40395" />	<!--水龙鳞-->
+		</MakeItem>
+	</Action>
+	<Action Name="request adena" NpcId="70872">
+		<MakeItem>
+			<Item Amount="200" ItemId="40308" />		<!--金币-->
+			<Material Amount="1" ItemId="40041" />	<!--人鱼之鳞-->
+		</MakeItem>
+	</Action>
+
+<!--象牙塔3楼-->
+	<!--塔拉斯-->
+	<Action Name="request bow of sayha">
+		<MakeItem>
+			<Item Amount="1" ItemId="190" />		<!--沙哈之弓-->
+			<Material Amount="1" ItemId="181" />		<!--尤米弓-->
+			<Material Amount="15" ItemId="40394" />	<!--风龙鳞-->
+			<Material Amount="30" ItemId="40491" />	<!--格利芬羽毛-->
+			<Material Amount="50" ItemId="40498" />	<!--风之泪-->
+		</MakeItem>
+	</Action>
+
+	<!--迪泰特-->
+	<Action Name="request ancient greatsword">
+		<MakeItem>
+			<Item Amount="1" ItemId="67" />		<!--古老的巨剑-->
+			<Material Amount="1" ItemId="17" />		<!--受封印被遗忘的巨剑-->
+			<Material Amount="1" ItemId="40076" />	<!--古代的卷轴-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ancient sword">
+		<MakeItem>
+			<Item Amount="1" ItemId="68" />		<!--古老的剑-->
+			<Material Amount="1" ItemId="18" />		<!--受封印被遗忘的剑-->
+			<Material Amount="1" ItemId="40076" />	<!--古代的卷轴-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ancient bowgun">
+		<MakeItem>
+			<Item Amount="1" ItemId="182" />		<!--古老的弩枪-->
+			<Material Amount="1" ItemId="167" />		<!--受封印被遗忘的弩枪-->
+			<Material Amount="1" ItemId="40076" />	<!--古代的卷轴-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ancient plate mail">
+		<MakeItem>
+			<Item Amount="1" ItemId="20095" />		<!--古老的金属盔甲-->
+			<Material Amount="1" ItemId="20143" />	<!--被遗忘的金属盔甲-->
+			<Material Amount="1" ItemId="40076" />	<!--古代的卷轴-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ancient leather armor">
+		<MakeItem>
+			<Item Amount="1" ItemId="20092" />		<!--古老的皮盔甲-->
+			<Material Amount="1" ItemId="20140" />	<!--被遗忘的皮盔甲-->
+			<Material Amount="1" ItemId="40076" />	<!--古代的卷轴-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ancient robe">
+		<MakeItem>
+			<Item Amount="1" ItemId="20093" />		<!--古老的长袍-->
+			<Material Amount="1" ItemId="20141" />	<!--被遗忘的长袍-->
+			<Material Amount="1" ItemId="40076" />	<!--古代的卷轴-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ancient scale mail">
+		<MakeItem>
+			<Item Amount="1" ItemId="20094" />		<!--古老的鳞甲-->
+			<Material Amount="1" ItemId="20142" />	<!--被遗忘的鳞甲-->
+			<Material Amount="1" ItemId="40076" />	<!--古代的卷轴-->
+		</MakeItem>
+	</Action>
+
+<!--威顿村庄-->
+	<!--卡立普-->
+	<Action Name="request karif bag1">
+		<MakeItem>
+			<Item Amount="1" ItemId="49005" />		<!--卡立普的袋子-->
+			<Material Amount="1" ItemId="40044" />	<!--钻石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request karif bag2">
+		<MakeItem>
+			<Item Amount="1" ItemId="49008" />		<!--卡立普的袋子-->
+			<Material Amount="1" ItemId="40047" />	<!--绿宝石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request karif bag3">
+		<MakeItem>
+			<Item Amount="1" ItemId="49006" />		<!--卡立普的袋子-->
+			<Material Amount="1" ItemId="40045" />	<!--红宝石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request karif bag4">
+		<MakeItem>
+			<Item Amount="1" ItemId="49007" />		<!--卡立普的袋子-->
+			<Material Amount="1" ItemId="40046" />	<!--蓝宝石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request karif bag5">
+		<MakeItem>
+			<Item Amount="1" ItemId="49009" />		<!--卡立普的高级袋子-->
+			<Material Amount="1" ItemId="40048" />	<!--品质钻石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request karif bag6">
+		<MakeItem>
+			<Item Amount="1" ItemId="49010" />		<!--卡立普的高级袋子-->
+			<Material Amount="1" ItemId="40051" />	<!--品质绿宝石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request karif bag7">
+		<MakeItem>
+			<Item Amount="1" ItemId="49011" />		<!--卡立普的高级袋子-->
+			<Material Amount="1" ItemId="40049" />	<!--品质红宝石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request karif bag8">
+		<MakeItem>
+			<Item Amount="1" ItemId="49012" />		<!--卡立普的高级袋子-->
+			<Material Amount="1" ItemId="40050" />	<!--品质蓝宝石-->
+		</MakeItem>
+	</Action>
+	<Action Name="quest 32 karif4">
+		<MakeItem>
+			<Item Amount="1" ItemId="84" />		<!--暗黑双刀-->
+			<Material Amount="1" ItemId="81" />		<!--幽暗双刀-->
+			<Material Amount="3" ItemId="40053" />	<!--高品质红宝石-->
+			<Material Amount="100000" ItemId="40308" />	<!--金币-->
+			<Material Amount="10" ItemId="40402" />	<!--诅咒的皮革(水)-->
+			<Material Amount="9" ItemId="40413" />	<!--冰之女王之心-->
+			<Material Amount="1" ItemId="40466" />	<!--龙之心-->
+			<Material Amount="3" ItemId="40525" />	<!--格兰肯之泪-->
+		</MakeItem>
+	</Action>
+	<Action Name="quest 32 karif5">
+		<MakeItem>
+			<Item Amount="1" ItemId="164" />		<!--暗黑钢爪-->
+			<Material Amount="1" ItemId="162" />		<!--幽暗钢爪-->
+			<Material Amount="3" ItemId="40055" />	<!--高品质绿宝石-->
+			<Material Amount="100000" ItemId="40308" />	<!--金币-->
+			<Material Amount="10" ItemId="40404" />	<!--诅咒的皮革(地)-->
+			<Material Amount="9" ItemId="40413" />	<!--冰之女王之心-->
+			<Material Amount="1" ItemId="40466" />	<!--龙之心-->
+			<Material Amount="3" ItemId="40525" />	<!--格兰肯之泪-->
+		</MakeItem>
+	</Action>
+	<Action Name="quest 32 karif6">
+		<MakeItem>
+			<Item Amount="1" ItemId="189" />		<!--暗黑十字弓-->
+			<Material Amount="1" ItemId="177" />		<!--幽暗十字弓-->
+			<Material Amount="3" ItemId="40054" />	<!--高品质蓝宝石-->
+			<Material Amount="100000" ItemId="40308" />	<!--金币-->
+			<Material Amount="10" ItemId="40403" />	<!--诅咒的皮革(风)-->
+			<Material Amount="9" ItemId="40413" />	<!--冰之女王之心-->
+			<Material Amount="1" ItemId="40466" />	<!--龙之心-->
+			<Material Amount="3" ItemId="40525" />	<!--格兰肯之泪-->
+		</MakeItem>
+	</Action>
+
+	<!--强韧的海斯-->
+	<Action Name="request elite valakas plate armor" NpcId="81282">
+		<MakeItem>
+			<Item Amount="1" ItemId="21127" />		<!--巴拉卡斯的力量 -->
+			<Material Amount="1" ItemId="20119" />	<!--古代火龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40053" />	<!--高品质红宝石 -->
+			<Material Amount="50" ItemId="40305" />	<!--帕格里奥之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40354" />	<!--巴拉卡斯之心 -->
+		</MakeItem>
+	</Action>
+	<Action Name="request elite fafurion plate armor" NpcId="81282">
+		<MakeItem>
+			<Item Amount="1" ItemId="21119" />		<!--法利昂的力量 -->
+			<Material Amount="1" ItemId="20153" />	<!--古代水龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40055" />	<!--高品质绿宝石 -->
+			<Material Amount="50" ItemId="40306" />	<!--伊娃之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40362" />	<!--法利昂之心 -->
+		</MakeItem>
+	</Action>
+	<Action Name="request elite lindvior plate armor" NpcId="81282">
+		<MakeItem>
+			<Item Amount="1" ItemId="21123" />		<!--林德拜尔的力量 -->
+			<Material Amount="1" ItemId="20108" />	<!--古代风龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40054" />	<!--高品质蓝宝石 -->
+			<Material Amount="50" ItemId="40307" />	<!--沙哈之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40370" />	<!--林德拜尔之心 -->
+		</MakeItem>
+	</Action>
+	<Action Name="request elite antharas plate armor" NpcId="81282">
+		<MakeItem>
+			<Item Amount="1" ItemId="21115" />		<!--安塔瑞斯的力量 -->
+			<Material Amount="1" ItemId="20130" />	<!--古代地龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40052" />	<!--高品质钻石 -->
+			<Material Amount="50" ItemId="40304" />	<!--马普勒之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40346" />	<!--安塔瑞斯之心 -->
+		</MakeItem>
+	</Action>
+
+	<!--细心的修乐-->
+	<Action Name="request elite valakas robe" NpcId="81283">
+		<MakeItem>
+			<Item Amount="1" ItemId="21128" />		<!--巴拉卡斯的魅惑 -->
+			<Material Amount="1" ItemId="20119" />	<!--古代火龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40053" />	<!--高品质红宝石 -->
+			<Material Amount="50" ItemId="40305" />	<!--帕格里奥之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40354" />	<!--巴拉卡斯之心 -->
+		</MakeItem>
+	</Action>
+	<Action Name="request elite fafurion robe" NpcId="81283">
+		<MakeItem>
+			<Item Amount="1" ItemId="21120" />		<!--法利昂的魅惑 -->
+			<Material Amount="1" ItemId="20153" />	<!--古代水龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40055" />	<!--高品质绿宝石 -->
+			<Material Amount="50" ItemId="40306" />	<!--伊娃之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40362" />	<!--法利昂之心 -->
+		</MakeItem>
+	</Action>
+	<Action Name="request elite lindvior robe" NpcId="81283">
+		<MakeItem>
+			<Item Amount="1" ItemId="21124" />		<!--林德拜尔的魅惑 -->
+			<Material Amount="1" ItemId="20108" />	<!--古代风龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40054" />	<!--高品质蓝宝石 -->
+			<Material Amount="50" ItemId="40307" />	<!--沙哈之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40370" />	<!--林德拜尔之心 -->
+		</MakeItem>
+	</Action>
+	<Action Name="request elite antharas robe" NpcId="81283">
+		<MakeItem>
+			<Item Amount="1" ItemId="21116" />		<!--安塔瑞斯的魅惑 -->
+			<Material Amount="1" ItemId="20130" />	<!--古代地龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40052" />	<!--高品质钻石 -->
+			<Material Amount="50" ItemId="40304" />	<!--马普勒之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40346" />	<!--安塔瑞斯之心 -->
+		</MakeItem>
+	</Action>
+
+	<!--顽强的欧浩-->
+	<Action Name="request elite valakas leather armor" NpcId="81284">
+		<MakeItem>
+			<Item Amount="1" ItemId="21129" />		<!--巴拉卡斯的泉源 -->
+			<Material Amount="1" ItemId="20119" />	<!--古代火龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40053" />	<!--高品质红宝石 -->
+			<Material Amount="50" ItemId="40305" />	<!--帕格里奥之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40354" />	<!--巴拉卡斯之心 -->
+		</MakeItem>
+	</Action>
+	<Action Name="request elite fafurion leather armor" NpcId="81284">
+		<MakeItem>
+			<Item Amount="1" ItemId="21121" />		<!--法利昂的泉源 -->
+			<Material Amount="1" ItemId="20153" />	<!--古代水龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40055" />	<!--高品质绿宝石 -->
+			<Material Amount="50" ItemId="40306" />	<!--伊娃之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40362" />	<!--法利昂之心 -->
+		</MakeItem>
+	</Action>
+	<Action Name="request elite lindvior leather armor" NpcId="81284">
+		<MakeItem>
+			<Item Amount="1" ItemId="21125" />		<!--林德拜尔的泉源 -->
+			<Material Amount="1" ItemId="20108" />	<!--古代风龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40054" />	<!--高品质蓝宝石 -->
+			<Material Amount="50" ItemId="40307" />	<!--沙哈之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40370" />	<!--林德拜尔之心 -->
+		</MakeItem>
+	</Action>
+	<Action Name="request elite antharas leather armor" NpcId="81284">
+		<MakeItem>
+			<Item Amount="1" ItemId="21117" />		<!--安塔瑞斯的泉源 -->
+			<Material Amount="1" ItemId="20130" />	<!--古代地龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40052" />	<!--高品质钻石 -->
+			<Material Amount="50" ItemId="40304" />	<!--马普勒之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40346" />	<!--安塔瑞斯之心 -->
+		</MakeItem>
+	</Action>
+
+	<!--灿烂的艾咪-->
+	<Action Name="request elite valakas scale armor" NpcId="81285">
+		<MakeItem>
+			<Item Amount="1" ItemId="21130" />		<!--巴拉卡斯的霸气 -->
+			<Material Amount="1" ItemId="20119" />	<!--古代火龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40053" />	<!--高品质红宝石 -->
+			<Material Amount="50" ItemId="40305" />	<!--帕格里奥之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40354" />	<!--巴拉卡斯之心 -->
+		</MakeItem>
+	</Action>
+
+	<Action Name="request elite fafurion scale armor" NpcId="81285">
+		<MakeItem>
+			<Item Amount="1" ItemId="21122" />		<!--法利昂的霸气 -->
+			<Material Amount="1" ItemId="20153" />	<!--古代水龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40055" />	<!--高品质绿宝石 -->
+			<Material Amount="50" ItemId="40306" />	<!--伊娃之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40362" />	<!--法利昂之心 -->
+		</MakeItem>
+	</Action>
+	<Action Name="request elite lindvior scale armor" NpcId="81285">
+		<MakeItem>
+			<Item Amount="1" ItemId="21126" />		<!--林德拜尔的霸气 -->
+			<Material Amount="1" ItemId="20108" />	<!--古代风龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40054" />	<!--高品质蓝宝石 -->
+			<Material Amount="50" ItemId="40307" />	<!--沙哈之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40370" />	<!--林德拜尔之心 -->
+		</MakeItem>
+	</Action>
+	<Action Name="request elite antharas scale armor" NpcId="81285">
+		<MakeItem>
+			<Item Amount="1" ItemId="21118" />		<!--安塔瑞斯的霸气 -->
+			<Material Amount="1" ItemId="20130" />	<!--古代地龙鳞盔甲 -->
+			<Material Amount="3" ItemId="40052" />	<!--高品质钻石 -->
+			<Material Amount="50" ItemId="40304" />	<!--马普勒之石 -->
+			<Material Amount="100000" ItemId="40308" />	<!--金币 -->
+			<Material Amount="2" ItemId="40346" />	<!--安塔瑞斯之心 -->
+		</MakeItem>
+	</Action>
+
+<!--侏儒城-->
+	<!--里佛宾-->
+	<Action Name="request tsurugi">
+		<MakeItem>
+			<Item Amount="1" ItemId="57" />		<!--瑟鲁基之剑-->
+			<Material Amount="5" ItemId="40052" />	<!--高品质钻石-->
+			<Material Amount="5" ItemId="40053" />	<!--高品质红宝石-->
+			<Material Amount="5" ItemId="40054" />	<!--高品质蓝宝石-->
+			<Material Amount="5" ItemId="40055" />	<!--高品质绿宝石-->
+			<Material Amount="30" ItemId="40460" />	<!--阿西塔基奥的灰烬-->
+			<Material Amount="500" ItemId="40508" />	<!--奥里哈鲁根-->
+		</MakeItem>
+	</Action>
+	<Action Name="request red dragon armor">
+		<MakeItem>
+			<Item Amount="1" ItemId="20159" />		<!--火龙鳞盔甲-->
+			<Material Amount="5" ItemId="40053" />	<!--高品质红宝石-->
+			<Material Amount="15" ItemId="40393" />	<!--火龙鳞-->
+			<Material Amount="10" ItemId="40460" />	<!--阿西塔基奥的灰烬-->
+			<Material Amount="500" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="1000" ItemId="40508" />	<!--奥里哈鲁根-->
+		</MakeItem>
+	</Action>
+	<Action Name="request blue dragon armor">
+		<MakeItem>
+			<Item Amount="1" ItemId="20127" />		<!--水龙鳞盔甲-->
+			<Material Amount="5" ItemId="40055" />	<!--高品质绿宝石-->
+			<Material Amount="15" ItemId="40395" />	<!--水龙鳞-->
+			<Material Amount="10" ItemId="40460" />	<!--阿西塔基奥的灰烬-->
+			<Material Amount="500" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="1000" ItemId="40508" />	<!--奥里哈鲁根-->
+		</MakeItem>
+	</Action>
+	<Action Name="request azure dragon armor">
+		<MakeItem>
+			<Item Amount="1" ItemId="20156" />		<!--风龙鳞盔甲-->
+			<Material Amount="5" ItemId="40054" />	<!--高品质蓝宝石-->
+			<Material Amount="15" ItemId="40394" />	<!--风龙鳞-->
+			<Material Amount="10" ItemId="40460" />	<!--阿西塔基奥的灰烬-->
+			<Material Amount="500" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="1000" ItemId="40508" />	<!--奥里哈鲁根-->
+		</MakeItem>
+	</Action>
+	<Action Name="request green dragon armor">
+		<MakeItem>
+			<Item Amount="1" ItemId="20146" />		<!--地龙鳞盔甲-->
+			<Material Amount="5" ItemId="40052" />	<!--高品质钻石-->
+			<Material Amount="15" ItemId="40396" />	<!--地龙鳞-->
+			<Material Amount="10" ItemId="40460" />	<!--阿西塔基奥的灰烬-->
+			<Material Amount="500" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="1000" ItemId="40508" />	<!--奥里哈鲁根-->
+		</MakeItem>
+	</Action>
+
+<!--火龙窟-->
+	<!--莱利的辅佐官-->
+	<Action Name="request druga family first generation treasure">
+		<MakeItem>
+			<Item Amount="1" ItemId="40623" />		<!--多鲁嘉1世传家之宝-->
+			<Material Amount="1" ItemId="40342" />	<!--安塔瑞斯之爪-->
+			<Material Amount="1" ItemId="40350" />	<!--巴拉卡斯之爪-->
+			<Material Amount="1" ItemId="40358" />	<!--法利昂之爪-->
+			<Material Amount="1" ItemId="40366" />	<!--林德拜尔之爪-->
+		</MakeItem>
+	</Action>
+	<Action Name="request druga family second generation treasure">
+		<MakeItem>
+			<Item Amount="1" ItemId="40624" />		<!--多鲁嘉2世传家之宝-->
+			<Material Amount="1" ItemId="40343" />	<!--安塔瑞斯之眼-->
+			<Material Amount="1" ItemId="40351" />	<!--巴拉卡斯之眼-->
+			<Material Amount="1" ItemId="40359" />	<!--法利昂之眼-->
+			<Material Amount="1" ItemId="40367" />	<!--林德拜尔之眼-->
+		</MakeItem>
+	</Action>
+	<Action Name="request druga family third generation treasure">
+		<MakeItem>
+			<Item Amount="1" ItemId="40625" />		<!--多鲁嘉3世传家之宝-->
+			<Material Amount="1" ItemId="40344" />	<!--安塔瑞斯之血-->
+			<Material Amount="1" ItemId="40352" />	<!--巴拉卡斯之血-->
+			<Material Amount="1" ItemId="40360" />	<!--法利昂之血-->
+			<Material Amount="1" ItemId="40368" />	<!--林德拜尔之血-->
+		</MakeItem>
+	</Action>
+	<Action Name="request druga family fourth generation treasure">
+		<MakeItem>
+			<Item Amount="1" ItemId="40626" />		<!--多鲁嘉4世传家之宝-->
+			<Material Amount="1" ItemId="40345" />	<!--安塔瑞斯之肉-->
+			<Material Amount="1" ItemId="40353" />	<!--巴拉卡斯之肉-->
+			<Material Amount="1" ItemId="40361" />	<!--法利昂之肉-->
+			<Material Amount="1" ItemId="40369" />	<!--林德拜尔之肉-->
+		</MakeItem>
+	</Action>
+	<Action Name="request druga family fifth generation treasure">
+		<MakeItem>
+			<Item Amount="1" ItemId="40627" />		<!--多鲁嘉5世传家之宝-->
+			<Material Amount="1" ItemId="40346" />	<!--安塔瑞斯之心-->
+			<Material Amount="1" ItemId="40354" />	<!--巴拉卡斯之心-->
+			<Material Amount="1" ItemId="40362" />	<!--法利昂之心-->
+			<Material Amount="1" ItemId="40370" />	<!--林德拜尔之心-->
+		</MakeItem>
+	</Action>
+	<Action Name="request druga family sixth generation treasure">
+		<MakeItem>
+			<Item Amount="1" ItemId="40628" />		<!--多鲁嘉6世传家之宝-->
+			<Material Amount="1" ItemId="40347" />	<!--安塔瑞斯之骨-->
+			<Material Amount="1" ItemId="40355" />	<!--巴拉卡斯之骨-->
+			<Material Amount="1" ItemId="40363" />	<!--法利昂之骨-->
+			<Material Amount="1" ItemId="40371" />	<!--林德拜尔之骨-->
+		</MakeItem>
+	</Action>
+	<Action Name="request druga family seventh generation treasure">
+		<MakeItem>
+			<Item Amount="1" ItemId="40629" />		<!--多鲁嘉7世传家之宝-->
+			<Material Amount="1" ItemId="40348" />	<!--安塔瑞斯之牙-->
+			<Material Amount="1" ItemId="40356" />	<!--巴拉卡斯之牙-->
+			<Material Amount="1" ItemId="40364" />	<!--法利昂之牙-->
+			<Material Amount="1" ItemId="40372" />	<!--林德拜尔之牙-->
+		</MakeItem>
+	</Action>
+
+<!--沉默洞穴-->
+	<!--皮尔斯-->
+	<Action Name="request silver sting knife">
+		<MakeItem>
+			<Item Amount="1000" ItemId="40738" />	<!--银飞刀-->
+			<Material Amount="1" ItemId="40321" />	<!--二级黑魔石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request heavy sting knife">
+		<MakeItem>
+			<Item Amount="2000" ItemId="40740" />	<!--重飞刀-->
+			<Material Amount="1" ItemId="40322" />	<!--三级黑魔石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request pears itembag">
+		<MakeItem>
+			<Item Amount="1" ItemId="40715" />		<!--皮尔斯的礼物-->
+			<Material Amount="1" ItemId="40323" />	<!--四级黑魔石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request jin gauntlet">
+		<MakeItem>
+			<Item Amount="1" ItemId="194" />		<!--真铁手甲-->
+			<Material Amount="1" ItemId="40324" />	<!--五级黑魔石-->
+		</MakeItem>
+	</Action>
+
+	<!--库普-->
+	<Action Name="request lump of steel">
+		<MakeItem>
+			<Item Amount="1" ItemId="40779" />		<!--钢铁块-->
+			<Material Amount="500" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40408" />	<!--金属块-->
+			<Material Amount="5" ItemId="40899" />	<!--钢铁原石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request black mithril">
+		<MakeItem>
+			<Item Amount="1" ItemId="40443" />		<!--黑色米索莉-->
+			<Material Amount="5000" ItemId="40308" />	<!--金币-->
+			<Material Amount="1" ItemId="40442" />	<!--布拉伯的胃液-->
+			<Material Amount="5" ItemId="40444" />	<!--黑色米索莉原石-->
+			<Material Amount="1" ItemId="40486" />	<!--火山灰-->
+			<Material Amount="1" ItemId="40490" />	<!--黑暗元素石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request silver bar">
+		<MakeItem>
+			<Item Amount="1" ItemId="40467" />		<!--银-->
+			<Material Amount="500" ItemId="40308" />	<!--金币-->
+			<Material Amount="10" ItemId="40468" />	<!--银原石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request gold bar">
+		<MakeItem>
+			<Item Amount="1" ItemId="40488" />		<!--黄金-->
+			<Material Amount="1000" ItemId="40308" />	<!--金币-->
+			<Material Amount="10" ItemId="40489" />	<!--黄金原石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request platinum bar">
+		<MakeItem>
+			<Item Amount="1" ItemId="40440" />		<!--白金-->
+			<Material Amount="5000" ItemId="40308" />	<!--金币-->
+			<Material Amount="10" ItemId="40441" />	<!--白金原石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request silver plate">
+		<MakeItem>
+			<Item Amount="1" ItemId="40469" />		<!--银金属板-->
+			<Material Amount="1000" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40467" />	<!--银-->
+			<Material Amount="3" ItemId="40779" />	<!--钢铁块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request gold plate">
+		<MakeItem>
+			<Item Amount="1" ItemId="40487" />		<!--黄金金属板-->
+			<Material Amount="3000" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40488" />	<!--黄金-->
+			<Material Amount="3" ItemId="40779" />	<!--钢铁块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request platinum plate">
+		<MakeItem>
+			<Item Amount="1" ItemId="40439" />		<!--白金金属板-->
+			<Material Amount="10000" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40440" />	<!--白金-->
+			<Material Amount="3" ItemId="40779" />	<!--钢铁块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request black mithril plate">
+		<MakeItem>
+			<Item Amount="1" ItemId="40445" />		<!--黑色米索莉金属板-->
+			<Material Amount="10000" ItemId="40308" />	<!--金币-->
+			<Material Amount="1" ItemId="40439" />	<!--白金金属板-->
+			<Material Amount="10" ItemId="40443" />	<!--黑色米索莉-->
+			<Material Amount="1" ItemId="40469" />	<!--银金属板-->
+			<Material Amount="1" ItemId="40487" />	<!--黄金金属板-->
+			<Material Amount="1" ItemId="40497" />	<!--米索莉金属板-->
+			<Material Amount="1" ItemId="40509" />	<!--奥里哈鲁根金属板-->
+		</MakeItem>
+	</Action>
+	<Action Name="request black mithril arrow">
+		<MakeItem>
+			<Item Amount="5000" ItemId="40747" />	<!--黑色米索莉箭-->
+			<Material Amount="1000" ItemId="40308" />	<!--金币-->
+			<Material Amount="1" ItemId="40440" />	<!--白金-->
+			<Material Amount="1" ItemId="40443" />	<!--黑色米索莉-->
+			<Material Amount="10" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+	<Action Name="request silver claw">
+		<MakeItem>
+			<Item Amount="1" ItemId="157" />		<!--银光钢爪-->
+			<Material Amount="1" ItemId="158" />		<!--黑暗钢爪-->
+			<Material Amount="1" ItemId="40044" />	<!--钻石-->
+			<Material Amount="40" ItemId="40321" />	<!--二级黑魔石-->
+			<Material Amount="1" ItemId="40323" />	<!--四级黑魔石-->
+			<Material Amount="10" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="10" ItemId="40408" />	<!--金属块-->
+			<Material Amount="30" ItemId="40467" />	<!--银-->
+		</MakeItem>
+	</Action>
+	<Action Name="request silver dualblade">
+		<MakeItem>
+			<Item Amount="1" ItemId="74" />		<!--银光双刀-->
+			<Material Amount="1" ItemId="75" />		<!--黑暗双刀-->
+			<Material Amount="1" ItemId="40044" />	<!--钻石-->
+			<Material Amount="50" ItemId="40321" />	<!--二级黑魔石-->
+			<Material Amount="1" ItemId="40323" />	<!--四级黑魔石-->
+			<Material Amount="20" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="10" ItemId="40408" />	<!--金属块-->
+			<Material Amount="20" ItemId="40467" />	<!--银-->
+		</MakeItem>
+	</Action>
+	<Action Name="request dark crossbow">
+		<MakeItem>
+			<Item Amount="1" ItemId="168" />		<!--黑暗十字弓-->
+			<Material Amount="100" ItemId="40321" />	<!--二级黑魔石-->
+			<Material Amount="10" ItemId="40322" />	<!--三级黑魔石-->
+			<Material Amount="30" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="10" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request dark claw">
+		<MakeItem>
+			<Item Amount="1" ItemId="158" />		<!--黑暗钢爪-->
+			<Material Amount="100" ItemId="40321" />	<!--二级黑魔石-->
+			<Material Amount="5" ItemId="40322" />	<!--三级黑魔石-->
+			<Material Amount="10" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="10" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request dark dualblade">
+		<MakeItem>
+			<Item Amount="1" ItemId="75" />		<!--黑暗双刀-->
+			<Material Amount="100" ItemId="40321" />	<!--二级黑魔石-->
+			<Material Amount="20" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="10" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request blind crossbow">
+		<MakeItem>
+			<Item Amount="1" ItemId="177" />		<!--幽暗十字弓-->
+			<Material Amount="1" ItemId="168" />		<!--黑暗十字弓-->
+			<Material Amount="100" ItemId="40322" />	<!--三级黑魔石-->
+			<Material Amount="20" ItemId="40323" />	<!--四级黑魔石-->
+			<Material Amount="30" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="10" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request blind claw">
+		<MakeItem>
+			<Item Amount="1" ItemId="162" />		<!--幽暗钢爪-->
+			<Material Amount="1" ItemId="158" />		<!--黑暗钢爪-->
+			<Material Amount="100" ItemId="40322" />	<!--三级黑魔石-->
+			<Material Amount="10" ItemId="40323" />	<!--四级黑魔石-->
+			<Material Amount="10" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="10" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request blind dualblade">
+		<MakeItem>
+			<Item Amount="1" ItemId="81" />		<!--幽暗双刀-->
+			<Material Amount="1" ItemId="75" />		<!--黑暗双刀-->
+			<Material Amount="100" ItemId="40322" />	<!--三级黑魔石-->
+			<Material Amount="5" ItemId="40323" />	<!--四级黑魔石-->
+			<Material Amount="20" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="10" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ancient blue dragon armor">
+		<MakeItem>
+			<Item Amount="1" ItemId="20153" />		<!--古代水龙鳞盔甲-->
+			<Material Amount="1" ItemId="20127" />	<!--水龙鳞盔甲-->
+			<Material Amount="30" ItemId="40051" />	<!--品质绿宝石-->
+			<Material Amount="50000" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40413" />	<!--冰之女王之心-->
+			<Material Amount="3" ItemId="40445" />	<!--黑色米索莉金属板-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ancient green dragon armor">
+		<MakeItem>
+			<Item Amount="1" ItemId="20130" />		<!--古代地龙鳞盔甲-->
+			<Material Amount="1" ItemId="20146" />	<!--地龙鳞盔甲-->
+			<Material Amount="30" ItemId="40048" />	<!--品质钻石-->
+			<Material Amount="5" ItemId="40162" />	<!--高仑之心-->
+			<Material Amount="50000" ItemId="40308" />	<!--金币-->
+			<Material Amount="3" ItemId="40445" />	<!--黑色米索莉金属板-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ancient red dragon armor">
+		<MakeItem>
+			<Item Amount="1" ItemId="20119" />		<!--古代火龙鳞盔甲-->
+			<Material Amount="1" ItemId="20159" />	<!--火龙鳞盔甲-->
+			<Material Amount="30" ItemId="40049" />	<!--品质红宝石-->
+			<Material Amount="50000" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40409" />	<!--不死鸟之心-->
+			<Material Amount="3" ItemId="40445" />	<!--黑色米索莉金属板-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ancient azure dragon armor">
+		<MakeItem>
+			<Item Amount="1" ItemId="20108" />		<!--古代风龙鳞盔甲-->
+			<Material Amount="1" ItemId="20156" />	<!--风龙鳞盔甲-->
+			<Material Amount="30" ItemId="40050" />	<!--品质蓝宝石-->
+			<Material Amount="50000" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40169" />	<!--飞龙之心-->
+			<Material Amount="3" ItemId="40445" />	<!--黑色米索莉金属板-->
+		</MakeItem>
+	</Action>
+
+<!--亚丁城镇-->
+	<!--王宫料理师-->
+	<Action Name="request cook spice" NpcId="80127">
+		<MakeItem>
+			<Item Amount="1" ItemId="41253" />		<!--王宫料理师的调味料-->
+			<Material Amount="1" ItemId="41285" />	<!--特别的漂浮之眼肉排-->
+			<Material Amount="1" ItemId="41286" />	<!--特别的烤熊肉-->
+			<Material Amount="1" ItemId="41287" />	<!--特别的煎饼-->
+			<Material Amount="1" ItemId="41288" />	<!--特别的烤蚂蚁腿起司-->
+			<Material Amount="1" ItemId="41289" />	<!--特别的水果沙拉-->
+			<Material Amount="1" ItemId="41290" />	<!--特别的水果糖醋肉-->
+			<Material Amount="1" ItemId="41291" />	<!--特别的烤山猪肉串-->
+			<Material Amount="1" ItemId="41292" />	<!--特别的蘑菇汤-->
+		</MakeItem>
+	</Action>
+
+	<!--陆米尔-->
+	<Action Name="request bright belt of body">
+		<MakeItem>
+			<Item Amount="1" ItemId="20309" />		<!--光明身体腰带-->
+			<Material Amount="1" ItemId="20306" />	<!--小型身体腰带-->
+			<Material Amount="30" ItemId="40049" />	<!--品质红宝石-->
+			<Material Amount="100000" ItemId="40308" />	<!--金币-->
+			<Material Amount="50" ItemId="40458" />	<!--光明的鳞片-->
+		</MakeItem>
+	</Action>
+	<Action Name="request bright belt of mind">
+		<MakeItem>
+			<Item Amount="1" ItemId="20311" />		<!--光明精神腰带-->
+			<Material Amount="1" ItemId="20308" />	<!--小型精神腰带-->
+			<Material Amount="30" ItemId="40050" />	<!--品质蓝宝石-->
+			<Material Amount="100000" ItemId="40308" />	<!--金币-->
+			<Material Amount="50" ItemId="40458" />	<!--光明的鳞片-->
+		</MakeItem>
+	</Action>
+	<Action Name="request bright belt of soul">
+		<MakeItem>
+			<Item Amount="1" ItemId="20310" />		<!--光明灵魂腰带-->
+			<Material Amount="1" ItemId="20307" />	<!--小型灵魂腰带-->
+			<Material Amount="20" ItemId="40049" />	<!--品质红宝石-->
+			<Material Amount="20" ItemId="40050" />	<!--品质蓝宝石-->
+			<Material Amount="100000" ItemId="40308" />	<!--金币-->
+			<Material Amount="50" ItemId="40458" />	<!--光明的鳞片-->
+		</MakeItem>
+	</Action>
+	<Action Name="request potion of greater haste self">
+		<MakeItem>
+			<Item Amount="1" ItemId="40018" />		<!--强化绿色药水-->
+			<Material Amount="6" ItemId="40013" />	<!--自我加速药水-->
+			<Material Amount="500" ItemId="40308" />	<!--金币-->
+		</MakeItem>
+	</Action>
+	<Action Name="request petfood" NpcId="70676">
+		<MakeItem>
+			<Item Amount="1" ItemId="40070" />		<!--进化果实-->
+			<Material Amount="1" ItemId="40466" />	<!--龙之心-->
+		</MakeItem>
+	</Action>
+	<Action Name="request tear of moon">
+		<MakeItem>
+			<Item Amount="1" ItemId="40428" />		<!--月光之泪-->
+			<Material Amount="1" ItemId="40047" />	<!--绿宝石-->
+			<Material Amount="1000" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40458" />	<!--光明的鳞片-->
+		</MakeItem>
+	</Action>
+	<Action Name="request earth gem">
+		<MakeItem>
+			<Item Amount="1" ItemId="40162" />		<!--高仑之心-->
+			<Material Amount="10" ItemId="40044" />	<!--钻石-->
+			<Material Amount="5" ItemId="40304" />	<!--马普勒之石-->
+			<Material Amount="5000" ItemId="40308" />	<!--金币-->
+		</MakeItem>
+	</Action>
+	<Action Name="request fire gem">
+		<MakeItem>
+			<Item Amount="1" ItemId="40409" />		<!--不死鸟之心-->
+			<Material Amount="10" ItemId="40045" />	<!--红宝石-->
+			<Material Amount="5" ItemId="40305" />	<!--帕格里奥之石-->
+			<Material Amount="5000" ItemId="40308" />	<!--金币-->
+		</MakeItem>
+	</Action>
+	<Action Name="request water gem">
+		<MakeItem>
+			<Item Amount="1" ItemId="40413" />		<!--冰之女王之心-->
+			<Material Amount="10" ItemId="40047" />	<!--绿宝石-->
+			<Material Amount="5" ItemId="40306" />	<!--伊娃之石-->
+			<Material Amount="5000" ItemId="40308" />	<!--金币-->
+		</MakeItem>
+	</Action>
+	<Action Name="request wind gem">
+		<MakeItem>
+			<Item Amount="1" ItemId="40169" />		<!--飞龙之心-->
+			<Material Amount="10" ItemId="40046" />	<!--蓝宝石-->
+			<Material Amount="5" ItemId="40307" />	<!--沙哈之石-->
+			<Material Amount="5000" ItemId="40308" />	<!--金币-->
+		</MakeItem>
+	</Action>
+
+	<!--巴姆特-->
+	<Action Name="request red skin of curse">
+		<MakeItem>
+			<Item Amount="1" ItemId="40401" />		<!--诅咒的皮革(火)-->
+			<Material Amount="500" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40399" />	<!--奇美拉之皮(狮子)-->
+		</MakeItem>
+	</Action>
+	<Action Name="request blue skin of curse">
+		<MakeItem>
+			<Item Amount="1" ItemId="40402" />		<!--诅咒的皮革(水)-->
+			<Material Amount="500" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40397" />	<!--奇美拉之皮(龙)-->
+		</MakeItem>
+	</Action>
+	<Action Name="request yellow skin of curse">
+		<MakeItem>
+			<Item Amount="1" ItemId="40403" />		<!--诅咒的皮革(风)-->
+			<Material Amount="500" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40398" />	<!--奇美拉之皮(山羊)-->
+		</MakeItem>
+	</Action>
+	<Action Name="request green skin of curse">
+		<MakeItem>
+			<Item Amount="1" ItemId="40404" />		<!--诅咒的皮革(地)-->
+			<Material Amount="500" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40400" />	<!--奇美拉之皮(蛇)-->
+		</MakeItem>
+	</Action>
+	<Action Name="request cloak of flame">
+		<MakeItem>
+			<Item Amount="1" ItemId="20071" />		<!--火属性斗篷-->
+			<Material Amount="30" ItemId="40045" />	<!--红宝石-->
+			<Material Amount="100000" ItemId="40308" />	<!--金币-->
+			<Material Amount="3" ItemId="40393" />	<!--火龙鳞-->
+			<Material Amount="100" ItemId="40401" />	<!--诅咒的皮革(火)-->
+			<Material Amount="50" ItemId="40495" />	<!--米索莉线-->
+		</MakeItem>
+	</Action>
+	<Action Name="request cloak of water">
+		<MakeItem>
+			<Item Amount="1" ItemId="20059" />		<!--水属性斗篷-->
+			<Material Amount="30" ItemId="40047" />	<!--绿宝石-->
+			<Material Amount="100000" ItemId="40308" />	<!--金币-->
+			<Material Amount="3" ItemId="40395" />	<!--水龙鳞-->
+			<Material Amount="100" ItemId="40402" />	<!--诅咒的皮革(水)-->
+			<Material Amount="50" ItemId="40495" />	<!--米索莉线-->
+		</MakeItem>
+	</Action>
+	<Action Name="request cloak of wind">
+		<MakeItem>
+			<Item Amount="1" ItemId="20061" />		<!--风属性斗篷-->
+			<Material Amount="30" ItemId="40046" />	<!--蓝宝石-->
+			<Material Amount="100000" ItemId="40308" />	<!--金币-->
+			<Material Amount="3" ItemId="40394" />	<!--风龙鳞-->
+			<Material Amount="100" ItemId="40403" />	<!--诅咒的皮革(风)-->
+			<Material Amount="50" ItemId="40495" />	<!--米索莉线-->
+		</MakeItem>
+	</Action>
+	<Action Name="request cloak of earth">
+		<MakeItem>
+			<Item Amount="1" ItemId="20054" />		<!--地属性斗篷-->
+			<Material Amount="30" ItemId="40044" />	<!--钻石-->
+			<Material Amount="100000" ItemId="40308" />	<!--金币-->
+			<Material Amount="3" ItemId="40396" />	<!--地龙鳞-->
+			<Material Amount="100" ItemId="40404" />	<!--诅咒的皮革(地)-->
+			<Material Amount="50" ItemId="40495" />	<!--米索莉线-->
+		</MakeItem>
+	</Action>
+
+	<!--诺斯-->
+	<Action Name="request skel petarmor">
+		<MakeItem>
+			<Item Amount="1" ItemId="40762" />		<!--宠物骷髅盔甲-->
+			<Material Amount="5000" ItemId="40308" />	<!--金币-->
+			<Material Amount="10" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="20" ItemId="40407" />	<!--骨头碎片-->
+			<Material Amount="1" ItemId="40761" />	<!--宠物皮盔甲-->
+		</MakeItem>
+	</Action>
+	<Action Name="request cross petarmor">
+		<MakeItem>
+			<Item Amount="1" ItemId="40765" />		<!--宠物十字盔甲-->
+			<Material Amount="10000" ItemId="40308" />	<!--金币-->
+			<Material Amount="50" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="1" ItemId="40763" />	<!--宠物钢铁盔甲-->
+			<Material Amount="20" ItemId="40779" />	<!--钢铁块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request mithril petarmor">
+		<MakeItem>
+			<Item Amount="1" ItemId="40764" />		<!--宠物米索莉盔甲-->
+			<Material Amount="1" ItemId="40169" />	<!--飞龙之心-->
+			<Material Amount="30000" ItemId="40308" />	<!--金币-->
+			<Material Amount="50" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="2" ItemId="40439" />	<!--白金金属板-->
+			<Material Amount="10" ItemId="40497" />	<!--米索莉金属板-->
+			<Material Amount="1" ItemId="40765" />	<!--宠物十字盔甲-->
+		</MakeItem>
+	</Action>
+	<Action Name="request chain petarmor">
+		<MakeItem>
+			<Item Amount="1" ItemId="40766" />		<!--宠物链甲-->
+			<Material Amount="10000" ItemId="40308" />	<!--金币-->
+			<Material Amount="50" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="1" ItemId="40763" />	<!--宠物钢铁盔甲-->
+			<Material Amount="100" ItemId="40779" />	<!--钢铁块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request pet dog tooth">
+		<MakeItem>
+			<Item Amount="1" ItemId="40749" />		<!--猎犬之牙-->
+			<Material Amount="3" ItemId="40048" />	<!--品质钻石-->
+			<Material Amount="10000" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40408" />	<!--金属块-->
+			<Material Amount="1" ItemId="40751" />	<!--斗犬之牙-->
+		</MakeItem>
+	</Action>
+	<Action Name="request pet victory tooth">
+		<MakeItem>
+			<Item Amount="1" ItemId="40758" />		<!--胜利之牙-->
+			<Material Amount="2" ItemId="40050" />	<!--品质蓝宝石-->
+			<Material Amount="10000" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40408" />	<!--金属块-->
+			<Material Amount="1" ItemId="40757" />	<!--钢铁之牙-->
+		</MakeItem>
+	</Action>
+	<Action Name="request pet gold tooth">
+		<MakeItem>
+			<Item Amount="1" ItemId="40752" />		<!--黄金之牙-->
+			<Material Amount="20000" ItemId="40308" />	<!--金币-->
+			<Material Amount="10" ItemId="40488" />	<!--黄金-->
+			<Material Amount="1" ItemId="40757" />	<!--钢铁之牙-->
+			<Material Amount="10" ItemId="40779" />	<!--钢铁块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request pet end tooth">
+		<MakeItem>
+			<Item Amount="1" ItemId="40750" />		<!--破灭之牙-->
+			<Material Amount="50000" ItemId="40308" />	<!--金币-->
+			<Material Amount="1" ItemId="40409" />	<!--不死鸟之心-->
+			<Material Amount="5" ItemId="40443" />	<!--黑色米索莉-->
+			<Material Amount="1" ItemId="40525" />	<!--格兰肯之泪-->
+			<Material Amount="1" ItemId="40749" />	<!--猎犬之牙-->
+		</MakeItem>
+	</Action>
+	<Action Name="request pet god tooth">
+		<MakeItem>
+			<Item Amount="1" ItemId="40756" />		<!--神之牙-->
+			<Material Amount="30000" ItemId="40308" />	<!--金币-->
+			<Material Amount="1" ItemId="40440" />	<!--白金-->
+			<Material Amount="1" ItemId="40443" />	<!--黑色米索莉-->
+			<Material Amount="5" ItemId="40467" />	<!--银-->
+			<Material Amount="10" ItemId="40508" />	<!--奥里哈鲁根-->
+			<Material Amount="1" ItemId="40752" />	<!--黄金之牙-->
+		</MakeItem>
+	</Action>
+
+<!--教堂-->
+	<!--指挥官．艾思提凡-->
+	<Action Name="f" NpcId="71175">
+		<MakeItem>
+			<Item Amount="1" ItemId="20451" />		<!--英雄戒指-->
+			<Material Amount="1" ItemId="40959" />	<!--冥法军王徽印-->
+			<Material Amount="1" ItemId="40960" />	<!--法令军王徽印-->
+			<Material Amount="1" ItemId="40961" />	<!--魔兽军王徽印-->
+			<Material Amount="1" ItemId="40962" />	<!--暗杀军王徽印-->
+			<Succeed>
+				<ShowHtml HtmlId="Ep5event11" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="Ep5event8" />
+			</Fail>
+		</MakeItem>
+	</Action>
+
+	<!--帕勒特-->
+	<Action Name="request banana juice">
+		<MakeItem>
+			<Item Amount="1" ItemId="40026" />		<!--香蕉汁-->
+			<Material Amount="1" ItemId="40059" />	<!--蛋-->
+			<Material Amount="1" ItemId="40060" />	<!--胡萝卜-->
+			<Material Amount="1" ItemId="40061" />	<!--柠檬-->
+			<Material Amount="5" ItemId="40062" />	<!--香蕉-->
+		</MakeItem>
+	</Action>
+	<Action Name="request orange juice">
+		<MakeItem>
+			<Item Amount="1" ItemId="40027" />		<!--橘子汁-->
+			<Material Amount="1" ItemId="40059" />	<!--蛋-->
+			<Material Amount="1" ItemId="40060" />	<!--胡萝卜-->
+			<Material Amount="1" ItemId="40061" />	<!--柠檬-->
+			<Material Amount="5" ItemId="40069" />	<!--橘子-->
+		</MakeItem>
+	</Action>
+	<Action Name="request apple juice">
+		<MakeItem>
+			<Item Amount="1" ItemId="40028" />		<!--苹果汁-->
+			<Material Amount="1" ItemId="40059" />	<!--蛋-->
+			<Material Amount="1" ItemId="40060" />	<!--胡萝卜-->
+			<Material Amount="1" ItemId="40061" />	<!--柠檬-->
+			<Material Amount="5" ItemId="40064" />	<!--苹果-->
+		</MakeItem>
+	</Action>
+
+<!--妖精森林-->
+	<!--娜鲁帕-->
+	<Action Name="request fairydust">
+		<MakeItem>
+			<Item Amount="20" ItemId="40520" />		<!--精灵粉末-->
+			<Material Amount="1" ItemId="40515" />	<!--元素石-->
+		</MakeItem>
+	</Action>
+	<Action Name="request bow">
+		<MakeItem>
+			<Item Amount="1" ItemId="172" />		<!--弓-->
+			<Material Amount="5" ItemId="40502" />	<!--线-->
+			<Material Amount="1" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+	<Action Name="request elven bow">
+		<MakeItem>
+			<Item Amount="1" ItemId="170" />		<!--精灵弓-->
+			<Material Amount="20" ItemId="40494" />	<!--纯粹的米索莉块-->
+			<Material Amount="2" ItemId="40502" />	<!--线-->
+			<Material Amount="2" ItemId="40504" />	<!--芮克妮的蜕皮-->
+			<Material Amount="10" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+	<Action Name="request crossbow">
+		<MakeItem>
+			<Item Amount="1" ItemId="180" />		<!--十字弓-->
+			<Material Amount="20" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="30" ItemId="40503" />	<!--芮克妮的网-->
+			<Material Amount="3" ItemId="40509" />	<!--奥里哈鲁根金属板-->
+			<Material Amount="8" ItemId="40521" />	<!--精灵羽翼-->
+		</MakeItem>
+	</Action>
+	<Action Name="request yumi">
+		<MakeItem>
+			<Item Amount="1" ItemId="181" />		<!--尤米弓-->
+			<Material Amount="1" ItemId="100" />		<!--覆上奥里哈鲁根的角-->
+			<Material Amount="1" ItemId="40048" />	<!--品质钻石-->
+			<Material Amount="2" ItemId="40051" />	<!--品质绿宝石-->
+			<Material Amount="40" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="5" ItemId="40504" />	<!--芮克妮的蜕皮-->
+			<Material Amount="6" ItemId="40509" />	<!--奥里哈鲁根金属板-->
+		</MakeItem>
+	</Action>
+	<Action Name="request arrow">
+		<MakeItem>
+			<Item Amount="100" ItemId="40743" />		<!--箭-->
+			<Material Amount="10" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+
+	<Action Name="request mithril arrow">
+		<MakeItem>
+			<Item Amount="2000" ItemId="40746" />	<!--米索莉箭-->
+			<Material Amount="100" ItemId="40494" />	<!--纯粹的米索莉块-->
+			<Material Amount="10" ItemId="40507" />	<!--安特之树枝-->
+			<Material Amount="1" ItemId="40779" />	<!--钢铁块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request oriharukon arrow">
+		<MakeItem>
+			<Item Amount="5000" ItemId="40748" />	<!--奥里哈鲁根箭-->
+			<Material Amount="10" ItemId="40507" />	<!--安特之树枝-->
+			<Material Amount="100" ItemId="40508" />	<!--奥里哈鲁根-->
+			<Material Amount="1" ItemId="40779" />	<!--钢铁块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request elven dagger">
+		<MakeItem>
+			<Item Amount="1" ItemId="5" />		<!--精灵匕首-->
+			<Material Amount="20" ItemId="40494" />	<!--纯粹的米索莉块-->
+			<Material Amount="5" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+	<Action Name="request mail breaker">
+		<MakeItem>
+			<Item Amount="1" ItemId="22" />		<!--锁子甲破坏者-->
+			<Material Amount="1" ItemId="3" />		<!--短剑的剑身-->
+			<Material Amount="1" ItemId="89" />		<!--覆上米索莉的角-->
+			<Material Amount="1" ItemId="40044" />	<!--钻石-->
+			<Material Amount="50" ItemId="40503" />	<!--芮克妮的网-->
+			<Material Amount="10" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+	<Action Name="request elven short sword">
+		<MakeItem>
+			<Item Amount="1" ItemId="28" />		<!--精灵短剑-->
+			<Material Amount="1" ItemId="19" />		<!--长剑的剑身-->
+			<Material Amount="150" ItemId="40494" />	<!--纯粹的米索莉块-->
+			<Material Amount="50" ItemId="40503" />	<!--芮克妮的网-->
+			<Material Amount="5" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+	<Action Name="request rapier">
+		<MakeItem>
+			<Item Amount="1" ItemId="42" />		<!--细剑-->
+			<Material Amount="1" ItemId="20" />		<!--奥里哈鲁根的剑身-->
+			<Material Amount="1" ItemId="40049" />	<!--品质红宝石-->
+			<Material Amount="25" ItemId="40503" />	<!--芮克妮的网-->
+			<Material Amount="50" ItemId="40508" />	<!--奥里哈鲁根-->
+			<Material Amount="2" ItemId="40521" />	<!--精灵羽翼-->
+		</MakeItem>
+	</Action>
+	<Action Name="request guisarme">
+		<MakeItem>
+			<Item Amount="1" ItemId="97" />		<!--吉萨-->
+			<Material Amount="1" ItemId="3" />		<!--短剑的剑身-->
+			<Material Amount="90" ItemId="40494" />	<!--纯粹的米索莉块-->
+			<Material Amount="10" ItemId="40503" />	<!--芮克妮的网-->
+			<Material Amount="10" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+	<Action Name="request elven spear">
+		<MakeItem>
+			<Item Amount="1" ItemId="99" />		<!--精灵之矛-->
+			<Material Amount="1" ItemId="89" />		<!--覆上米索莉的角-->
+			<Material Amount="30" ItemId="40503" />	<!--芮克妮的网-->
+			<Material Amount="10" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+	<Action Name="request fauchard">
+		<MakeItem>
+			<Item Amount="1" ItemId="104" />		<!--法丘-->
+			<Material Amount="1" ItemId="99" />		<!--精灵之矛-->
+			<Material Amount="1" ItemId="100" />		<!--覆上奥里哈鲁根的角-->
+			<Material Amount="1" ItemId="40049" />	<!--品质红宝石-->
+			<Material Amount="50" ItemId="40503" />	<!--芮克妮的网-->
+			<Material Amount="60" ItemId="40508" />	<!--奥里哈鲁根-->
+		</MakeItem>
+	</Action>
+	<Action Name="request club">
+		<MakeItem>
+			<Item Amount="1" ItemId="138" />		<!--木棒-->
+			<Material Amount="5" ItemId="40503" />	<!--芮克妮的网-->
+			<Material Amount="10" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+	<Action Name="request battle axe">
+		<MakeItem>
+			<Item Amount="1" ItemId="143" />		<!--战斧-->
+			<Material Amount="1" ItemId="3" />		<!--短剑的剑身-->
+			<Material Amount="60" ItemId="40494" />	<!--纯粹的米索莉块-->
+			<Material Amount="5" ItemId="40503" />	<!--芮克妮的网-->
+			<Material Amount="10" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+	<Action Name="request wooden armor">
+		<MakeItem>
+			<Item Amount="1" ItemId="20097" />		<!--木甲-->
+			<Material Amount="2" ItemId="40505" />	<!--安特之树皮-->
+			<Material Amount="5" ItemId="40519" />	<!--潘的鬃毛-->
+		</MakeItem>
+	</Action>
+	<Action Name="request elven breast plate">
+		<MakeItem>
+			<Item Amount="1" ItemId="20139" />		<!--精灵护胸金属板-->
+			<Material Amount="10" ItemId="40502" />	<!--线-->
+			<Material Amount="2" ItemId="40504" />	<!--芮克妮的蜕皮-->
+		</MakeItem>
+	</Action>
+	<Action Name="request elven chain mail">
+		<MakeItem>
+			<Item Amount="1" ItemId="20137" />		<!--精灵链甲-->
+			<Material Amount="80" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="4" ItemId="40497" />	<!--米索莉金属板-->
+		</MakeItem>
+	</Action>
+	<Action Name="request elven plate mail">
+		<MakeItem>
+			<Item Amount="1" ItemId="20138" />		<!--精灵金属盔甲-->
+			<Material Amount="1" ItemId="40052" />	<!--高品质钻石-->
+			<Material Amount="20" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="8" ItemId="40509" />	<!--奥里哈鲁根金属板-->
+		</MakeItem>
+	</Action>
+	<Action Name="request wooden shield">
+		<MakeItem>
+			<Item Amount="1" ItemId="20222" />		<!--木盾-->
+			<Material Amount="5" ItemId="40503" />	<!--芮克妮的网-->
+			<Material Amount="1" ItemId="40505" />	<!--安特之树皮-->
+			<Material Amount="5" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+	<Action Name="request elven shield">
+		<MakeItem>
+			<Item Amount="1" ItemId="20236" />		<!--精灵盾牌-->
+			<Material Amount="1" ItemId="20222" />	<!--木盾-->
+			<Material Amount="2" ItemId="40497" />	<!--米索莉金属板-->
+			<Material Amount="5" ItemId="40503" />	<!--芮克妮的网-->
+		</MakeItem>
+	</Action>
+	<Action Name="request elven leather helm">
+		<MakeItem>
+			<Item Amount="1" ItemId="20035" />		<!--精灵皮盔-->
+			<Material Amount="20" ItemId="40503" />	<!--芮克妮的网-->
+			<Material Amount="2" ItemId="40505" />	<!--安特之树皮-->
+			<Material Amount="10" ItemId="40519" />	<!--潘的鬃毛-->
+			<Material Amount="1" ItemId="40521" />	<!--精灵羽翼-->
+		</MakeItem>
+	</Action>
+	<Action Name="request bless of elm">
+		<MakeItem>
+			<Item Amount="1" ItemId="20033" />		<!--艾尔穆的祝福-->
+			<Material Amount="1" ItemId="20035" />	<!--精灵皮盔-->
+			<Material Amount="1" ItemId="40048" />	<!--品质钻石-->
+			<Material Amount="1" ItemId="40050" />	<!--品质蓝宝石-->
+			<Material Amount="1" ItemId="40051" />	<!--品质绿宝石-->
+			<Material Amount="5" ItemId="40318" />	<!--魔法宝石-->
+			<Material Amount="150" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="3" ItemId="40509" />	<!--奥里哈鲁根金属板-->
+		</MakeItem>
+	</Action>
+	<Action Name="request bracer">
+		<MakeItem>
+			<Item Amount="1" ItemId="20191" />		<!--腕甲-->
+			<Material Amount="20" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="3" ItemId="40505" />	<!--安特之树皮-->
+		</MakeItem>
+	</Action>
+	<Action Name="request power gloves">
+		<MakeItem>
+			<Item Amount="1" ItemId="20187" />		<!--力量手套-->
+			<Material Amount="1" ItemId="40048" />	<!--品质钻石-->
+			<Material Amount="20" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="5" ItemId="40504" />	<!--芮克妮的蜕皮-->
+			<Material Amount="1" ItemId="40513" />	<!--食人巨魔的血-->
+		</MakeItem>
+	</Action>
+	<Action Name="request elven cloak">
+		<MakeItem>
+			<Item Amount="1" ItemId="20073" />		<!--精灵斗篷-->
+			<Material Amount="2" ItemId="40318" />	<!--魔法宝石-->
+			<Material Amount="10" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="120" ItemId="40520" />	<!--精灵粉末-->
+		</MakeItem>
+	</Action>
+	<Action Name="request low boots">
+		<MakeItem>
+			<Item Amount="1" ItemId="20213" />		<!--短统靴-->
+			<Material Amount="4" ItemId="40502" />	<!--线-->
+			<Material Amount="2" ItemId="40505" />	<!--安特之树皮-->
+		</MakeItem>
+	</Action>
+	<Action Name="request boots">
+		<MakeItem>
+			<Item Amount="1" ItemId="20205" />		<!--长靴-->
+			<Material Amount="10" ItemId="40502" />	<!--线-->
+			<Material Amount="2" ItemId="40504" />	<!--芮克妮的蜕皮-->
+		</MakeItem>
+	</Action>
+	<Action Name="request twig of ent">
+		<MakeItem>
+			<Item Amount="1" ItemId="40507" />		<!--安特之树枝-->
+			<Material Amount="200" ItemId="40743" />	<!--箭-->
+		</MakeItem>
+	</Action>
+
+	<!--精灵(女皇)-->
+	<Action Name="request lump of pure mithril">
+		<MakeItem>
+			<Item Amount="20" ItemId="40494" />		<!--纯粹的米索莉块-->
+			<Material Amount="1" ItemId="40496" />	<!--粗糙的米索莉块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ala of fairy">
+		<MakeItem>
+			<Item Amount="1" ItemId="40521" />		<!--精灵羽翼-->
+			<Material Amount="5" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="40" ItemId="40520" />	<!--精灵粉末-->
+		</MakeItem>
+	</Action>
+
+	<!--精灵女皇-->
+	<Action Name="request oriharukon">
+		<MakeItem>
+			<Item Amount="1" ItemId="40508" />		<!--奥里哈鲁根-->
+			<Material Amount="10" ItemId="40494" />	<!--纯粹的米索莉块-->
+		</MakeItem>
+	</Action>
+
+	<!--潘-->
+	<Action Name="request mithril plate">
+		<MakeItem>
+			<Item Amount="1" ItemId="40497" />		<!--米索莉金属板-->
+			<Material Amount="50" ItemId="40494" />	<!--纯粹的米索莉块-->
+			<Material Amount="1" ItemId="40504" />	<!--芮克妮的蜕皮-->
+		</MakeItem>
+	</Action>
+	<Action Name="request oriharukon plate">
+		<MakeItem>
+			<Item Amount="1" ItemId="40509" />		<!--奥里哈鲁根金属板-->
+			<Material Amount="1" ItemId="40504" />	<!--芮克妮的蜕皮-->
+			<Material Amount="30" ItemId="40508" />	<!--奥里哈鲁根-->
+		</MakeItem>
+	</Action>
+
+	<!--芮克妮-->
+	<Action Name="request thread">
+		<MakeItem>
+			<Item Amount="1" ItemId="40502" />		<!--线-->
+			<Material Amount="1" ItemId="40519" />	<!--潘的鬃毛-->
+		</MakeItem>
+	</Action>
+	<Action Name="request mithril thread">
+		<MakeItem>
+			<Item Amount="1" ItemId="40495" />		<!--米索莉线-->
+			<Material Amount="5" ItemId="40494" />	<!--纯粹的米索莉块-->
+			<Material Amount="1" ItemId="40502" />	<!--线-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ecdysis of arachne">
+		<MakeItem>
+			<Item Amount="1" ItemId="40504" />		<!--芮克妮的蜕皮-->
+			<Material Amount="3" ItemId="40505" />	<!--安特之树皮-->
+		</MakeItem>
+	</Action>
+
+	<!--里迪-->
+	<Action Name="request elven wafer" NpcId="70841">
+		<MakeItem>
+			<Item Amount="1" ItemId="40068" />		<!--精灵饼干-->
+			<Material Amount="1" ItemId="40506" />	<!--安特的水果-->
+			<Material Amount="5" ItemId="40520" />	<!--精灵粉末-->
+		</MakeItem>
+	</Action>
+	<Action Name="request a fruit of ent">
+		<MakeItem>
+			<Item Amount="1" ItemId="40506" />		<!--安特的水果-->
+			<Material Amount="1" ItemId="40511" />	<!--污浊安特的水果-->
+			<Material Amount="1" ItemId="40514" />	<!--精灵之泪-->
+		</MakeItem>
+	</Action>
+
+	<!--那翰-->
+	<Action Name="request magic flute">
+		<MakeItem>
+			<Item Amount="1" ItemId="40493" />		<!--魔法笛子-->
+			<Material Amount="1" ItemId="40505" />	<!--安特之树皮-->
+			<Material Amount="10" ItemId="40508" />	<!--奥里哈鲁根-->
+		</MakeItem>
+	</Action>
+
+	<!--伊斯特-->
+	<Action Name="request elvenforest map" NpcId="70847">
+		<MakeItem>
+			<Item Amount="1" ItemId="40378" />		<!--地图:妖精森林-->
+			<Material Amount="1" ItemId="40507" />	<!--安特之树枝-->
+		</MakeItem>
+	</Action>
+
+	<!--阿拉斯-->
+	<Action Name="1" NpcId="71259">
+		<MakeItem>
+			<Item Amount="1" ItemId="40699" />		<!--远征队弓-->
+			<Material Amount="1" ItemId="40684" />	<!--污浊的弓-->
+			<Succeed>
+				<ShowHtml HtmlId="aras4" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="aras5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="2" NpcId="71259">
+		<MakeItem>
+			<Item Amount="1" ItemId="40698" />		<!--远征队头盔-->
+			<Material Amount="1" ItemId="40683" />	<!--污浊的头盔-->
+			<Succeed>
+				<ShowHtml HtmlId="aras4" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="aras5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="3" NpcId="71259">
+		<MakeItem>
+			<Item Amount="1" ItemId="40693" />		<!--远征队金甲-->
+			<Material Amount="1" ItemId="40679" />	<!--污浊的金甲-->
+			<Succeed>
+				<ShowHtml HtmlId="aras4" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="aras5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="4" NpcId="71259">
+		<MakeItem>
+			<Item Amount="1" ItemId="40697" />		<!--远征队腕甲-->
+			<Material Amount="1" ItemId="40682" />	<!--污浊的腕甲-->
+			<Succeed>
+				<ShowHtml HtmlId="aras4" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="aras5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="5" NpcId="71259">
+		<MakeItem>
+			<Item Amount="1" ItemId="40695" />		<!--远征队钢靴-->
+			<Material Amount="1" ItemId="40681" />	<!--污浊的钢靴-->
+			<Succeed>
+				<ShowHtml HtmlId="aras4" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="aras5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="6" NpcId="71259">
+		<MakeItem>
+			<Item Amount="1" ItemId="40694" />		<!--远征队斗篷-->
+			<Material Amount="1" ItemId="40680" />	<!--污浊斗篷-->
+			<Succeed>
+				<ShowHtml HtmlId="aras4" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="aras5" />
+			</Fail>
+		</MakeItem>
+	</Action>
+
+	<!--玛勒巴-->
+	<Action Name="1" NpcId="71258">
+		<MakeItem>
+			<Item Amount="1" ItemId="214" />		<!--ID．妖精弓-->
+			<Material Amount="10" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="5" ItemId="40512" />	<!--污浊安特的树枝-->
+			<Material Amount="3" ItemId="40516" />	<!--品质绿水晶-->
+			<Material Amount="3" ItemId="40517" />	<!--品质红水晶-->
+			<Material Amount="3" ItemId="40518" />	<!--品质蓝水晶-->
+			<Material Amount="1" ItemId="40699" />	<!--远征队弓-->
+			<Succeed>
+				<ShowHtml HtmlId="marba21" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="marba16" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="2" NpcId="71258">
+		<MakeItem>
+			<Item Amount="1" ItemId="20389" />		<!--ID．妖精头盔-->
+			<Material Amount="3" ItemId="40492" />	<!--绿水晶-->
+			<Material Amount="10" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="3" ItemId="40501" />	<!--红水晶-->
+			<Material Amount="5" ItemId="40510" />	<!--污浊安特的树皮-->
+			<Material Amount="3" ItemId="40523" />	<!--白水晶-->
+			<Material Amount="1" ItemId="40698" />	<!--远征队头盔-->
+			<Succeed>
+				<ShowHtml HtmlId="marba21" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="marba16" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="3" NpcId="71258">
+		<MakeItem>
+			<Item Amount="1" ItemId="20393" />		<!--ID．妖精金甲-->
+			<Material Amount="100" ItemId="40508" />	<!--奥里哈鲁根-->
+			<Material Amount="6" ItemId="40510" />	<!--污浊安特的树皮-->
+			<Material Amount="5" ItemId="40516" />	<!--品质绿水晶-->
+			<Material Amount="5" ItemId="40517" />	<!--品质红水晶-->
+			<Material Amount="5" ItemId="40518" />	<!--品质蓝水晶-->
+			<Material Amount="1" ItemId="40693" />	<!--远征队金甲-->
+			<Succeed>
+				<ShowHtml HtmlId="marba21" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="marba16" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="4" NpcId="71258">
+		<MakeItem>
+			<Item Amount="1" ItemId="20409" />		<!--ID．妖精腕甲-->
+			<Material Amount="10" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="5" ItemId="40500" />	<!--紫水晶-->
+			<Material Amount="3" ItemId="40510" />	<!--污浊安特的树皮-->
+			<Material Amount="5" ItemId="40522" />	<!--蓝水晶-->
+			<Material Amount="5" ItemId="40523" />	<!--白水晶-->
+			<Material Amount="1" ItemId="40697" />	<!--远征队腕甲-->
+			<Succeed>
+				<ShowHtml HtmlId="marba21" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="marba16" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="5" NpcId="71258">
+		<MakeItem>
+			<Item Amount="1" ItemId="20406" />		<!--ID．妖精钢靴-->
+			<Material Amount="5" ItemId="40500" />	<!--紫水晶-->
+			<Material Amount="50" ItemId="40508" />	<!--奥里哈鲁根-->
+			<Material Amount="3" ItemId="40510" />	<!--污浊安特的树皮-->
+			<Material Amount="5" ItemId="40522" />	<!--蓝水晶-->
+			<Material Amount="5" ItemId="40523" />	<!--白水晶-->
+			<Material Amount="1" ItemId="40695" />	<!--远征队钢靴-->
+			<Succeed>
+				<ShowHtml HtmlId="marba21" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="marba16" />
+			</Fail>
+		</MakeItem>
+	</Action>
+	<Action Name="6" NpcId="71258">
+		<MakeItem>
+			<Item Amount="1" ItemId="20401" />		<!--ID．妖精斗篷-->
+			<Material Amount="1" ItemId="40492" />	<!--绿水晶-->
+			<Material Amount="10" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="1" ItemId="40500" />	<!--紫水晶-->
+			<Material Amount="1" ItemId="40501" />	<!--红水晶-->
+			<Material Amount="35" ItemId="40520" />	<!--精灵粉末-->
+			<Material Amount="1" ItemId="40694" />	<!--远征队斗篷-->
+			<Succeed>
+				<ShowHtml HtmlId="marba21" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="marba16" />
+			</Fail>
+		</MakeItem>
+	</Action>
+
+<!--贝希摩斯村庄-->
+	<!--铁匠 皮尔-->
+	<Action Name="request chainsword destroyer" NpcId="80133">
+		<MakeItem>
+			<Item Amount="1" ItemId="273" />		<!--破灭者锁链剑-->
+			<Material Amount="1" ItemId="17" />		<!--受封印被遗忘的巨剑-->
+			<Material Amount="1000000" ItemId="40308" />	<!--金币-->
+			<Material Amount="1" ItemId="40393" />	<!--火龙鳞-->
+			<Material Amount="20" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="20" ItemId="40503" />	<!--芮克妮的网-->
+		</MakeItem>
+	</Action>
+	<Action Name="request guarder of ancient archer" NpcId="80133">
+		<MakeItem>
+			<Item Amount="1" ItemId="21105" />		<!--古代神射臂甲-->
+			<Material Amount="1" ItemId="20140" />	<!--被遗忘的皮盔甲-->
+			<Material Amount="1000000" ItemId="40308" />	<!--金币-->
+			<Material Amount="3" ItemId="40445" />	<!--黑色米索莉金属板-->
+			<Material Amount="50" ItemId="40495" />	<!--米索莉线-->
+			<Material Amount="20" ItemId="40504" />	<!--芮克妮的蜕皮-->
+			<Material Amount="50" ItemId="40505" />	<!--安特之树皮-->
+			<Material Amount="20" ItemId="40521" />	<!--精灵羽翼-->
+		</MakeItem>
+	</Action>
+	<Action Name="request guarder of ancient champion" NpcId="80133">
+		<MakeItem>
+			<Item Amount="1" ItemId="21106" />		<!--古代斗士臂甲-->
+			<Material Amount="1" ItemId="20143" />	<!--被遗忘的金属盔甲-->
+			<Material Amount="1000000" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40445" />	<!--黑色米索莉金属板-->
+		</MakeItem>
+	</Action>
+	<Action Name="request halpas symbol" NpcId="80133">
+		<MakeItem>
+			<Item Amount="1" ItemId="49223" />		<!--妖魔密使的徽印-->
+			<Material Amount="1" ItemId="49215" />	<!--普洛凯尔的矿物袋-->
+		</MakeItem>
+	</Action>
+
+<!--希培利亚村庄-->
+	<!--铁匠 巴特尔-->
+	<Action Name="request obsidian kiringku" NpcId="80142">
+		<MakeItem>
+			<Item Amount="1" ItemId="271" />		<!--黑曜石奇古兽-->
+			<Material Amount="10" ItemId="40052" />	<!--高品质钻石-->
+			<Material Amount="10" ItemId="40053" />	<!--高品质红宝石-->
+			<Material Amount="10" ItemId="40054" />	<!--高品质蓝宝石-->
+			<Material Amount="10" ItemId="40055" />	<!--高品质绿宝石-->
+			<Material Amount="1000000" ItemId="40308" />	<!--金币-->
+			<Material Amount="30" ItemId="40520" />	<!--精灵粉末-->
+			<Material Amount="2" ItemId="49092" />	<!--龟裂之核-->
+		</MakeItem>
+	</Action>
+
+<!--狄亚得要塞-->
+	<!--领事-->
+	<Action Name="request cavern teleport scroll">
+		<MakeItem>
+			<Item Amount="1" ItemId="40853" />		<!--大洞穴移动卷轴-->
+			<Material Amount="500" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40429" />	<!--大洞穴卷轴碎片-->
+		</MakeItem>
+	</Action>
+	<Action Name="request diad teleport scroll">
+		<MakeItem>
+			<Item Amount="1" ItemId="40084" />		<!--狄亚得移动卷轴-->
+			<Material Amount="500" ItemId="40308" />	<!--金币-->
+			<Material Amount="5" ItemId="40432" />	<!--狄亚得卷轴碎片-->
+		</MakeItem>
+	</Action>
+
+	<!--艾诺-->
+	<Action Name="request reward of aden one" NpcId="70707">
+		<MakeItem>
+			<Item Amount="1" ItemId="41001" />		<!--守护团奖金箱子-->
+			<Material Amount="1" ItemId="40999" />	<!--黑暗妖精士兵的徽章-->
+		</MakeItem>
+	</Action>
+	<Action Name="request reward of aden two" NpcId="70707">
+		<MakeItem>
+			<Item Amount="1" ItemId="41405" />		<!--守护团奖金箱子-->
+			<Material Amount="1" ItemId="41000" />	<!--黑暗妖精将军的徽章-->
+		</MakeItem>
+	</Action>
+
+	<!--福林-->
+	<Action Name="request black mithril" NpcId="71167">
+		<MakeItem>
+			<Item Amount="1" ItemId="40443" />		<!--黑色米索莉-->
+			<Material Amount="1" ItemId="40444" />	<!--黑色米索莉原石-->
+			<Material Amount="1" ItemId="40442" />	<!--布拉伯的胃液-->
+			<Material Amount="1" ItemId="40486" />	<!--火山灰-->
+			<Material Amount="1" ItemId="40490" />	<!--黑暗元素石-->
+		</MakeItem>
+	</Action>
+
+	<!--哈古丁-->
+	<Action Name="request sword of silence">
+		<MakeItem>
+			<Item Amount="1" ItemId="47" />		<!--沉默之剑-->
+			<Material Amount="20" ItemId="40408" />	<!--金属块-->
+			<Material Amount="50" ItemId="40425" />	<!--黑暗栖林者药水-->
+			<Material Amount="20" ItemId="40435" />	<!--深渊之花的花苞-->
+			<Material Amount="10" ItemId="40448" />	<!--黑虎的爪-->
+			<Material Amount="20" ItemId="40449" />	<!--黑虎的牙-->
+			<Material Amount="50" ItemId="40484" />	<!--金属蜈蚣的毒液-->
+			<Material Amount="40" ItemId="40525" />	<!--格兰肯之泪-->
+		</MakeItem>
+	</Action>
+	<Action Name="request diad fortress dualblade">
+		<MakeItem>
+			<Item Amount="1" ItemId="83" />		<!--狄亚得双刀-->
+			<Material Amount="10" ItemId="40408" />	<!--金属块-->
+			<Material Amount="2" ItemId="40425" />	<!--黑暗栖林者药水-->
+			<Material Amount="10" ItemId="40449" />	<!--黑虎的牙-->
+			<Material Amount="10" ItemId="40485" />	<!--金属蜈蚣的牙-->
+		</MakeItem>
+	</Action>
+	<Action Name="request diad fortress crossbow">
+		<MakeItem>
+			<Item Amount="1" ItemId="186" />		<!--狄亚得十字弓-->
+			<Material Amount="6" ItemId="40425" />	<!--黑暗栖林者药水-->
+			<Material Amount="2" ItemId="40434" />	<!--犰狳的尾巴-->
+			<Material Amount="10" ItemId="40436" />	<!--深渊之花的根-->
+			<Material Amount="10" ItemId="40453" />	<!--唤兽师长鞭-->
+		</MakeItem>
+	</Action>
+	<Action Name="request plate worm rind armor">
+		<MakeItem>
+			<Item Amount="1" ItemId="20157" />		<!--金属蜈蚣皮盔甲-->
+			<Material Amount="5" ItemId="40410" />	<!--黑暗安特的树皮-->
+			<Material Amount="5" ItemId="40425" />	<!--黑暗栖林者药水-->
+			<Material Amount="30" ItemId="40483" />	<!--金属蜈蚣的皮-->
+		</MakeItem>
+	</Action>
+	<Action Name="request cloak of tiger skin">
+		<MakeItem>
+			<Item Amount="1" ItemId="20066" />		<!--黑虎皮斗篷-->
+			<Material Amount="5" ItemId="40425" />	<!--黑暗栖林者药水-->
+			<Material Amount="1" ItemId="40431" />	<!--鼹鼠的皮-->
+			<Material Amount="20" ItemId="40447" />	<!--黑虎的皮-->
+		</MakeItem>
+	</Action>
+
+<!--大洞穴隐遁者村庄-->
+	<!--炼金术师-->
+	<Action Name="request recluse teleport scroll">
+		<MakeItem>
+			<Item Amount="1" ItemId="40118" />		<!--隐遁者村庄指定传送卷轴-->
+			<Material Amount="5" ItemId="40419" />	<!--巨大莫妮亚蜘蛛丝-->
+			<Material Amount="5" ItemId="40424" />	<!--狼皮-->
+			<Material Amount="5" ItemId="40437" />	<!--深渊花枝条-->
+			<Material Amount="10" ItemId="40438" />	<!--蝙蝠之牙-->
+			<Material Amount="1" ItemId="40459" />	<!--毒蝎之皮-->
+		</MakeItem>
+	</Action>
+	<Action Name="request potion of emotion：bravery">
+		<MakeItem>
+			<Item Amount="2" ItemId="40014" />		<!--勇敢药水-->
+			<Material Amount="3" ItemId="40419" />	<!--巨大莫妮亚蜘蛛丝-->
+			<Material Amount="10" ItemId="40430" />	<!--大洞穴水晶-->
+			<Material Amount="10" ItemId="40433" />	<!--犰狳之爪-->
+			<Material Amount="5" ItemId="40472" />	<!--地狱犬之皮-->
+		</MakeItem>
+	</Action>
+	<Action Name="request potion of emotion：prudence">
+		<MakeItem>
+			<Item Amount="2" ItemId="40016" />		<!--慎重药水-->
+			<Material Amount="3" ItemId="40419" />	<!--巨大莫妮亚蜘蛛丝-->
+			<Material Amount="20" ItemId="40438" />	<!--蝙蝠之牙-->
+			<Material Amount="5" ItemId="40470" />	<!--原石碎片-->
+			<Material Amount="5" ItemId="40472" />	<!--地狱犬之皮-->
+		</MakeItem>
+	</Action>
+	<Action Name="request elven wafer" NpcId="70520">
+		<MakeItem>
+			<Item Amount="2" ItemId="40068" />		<!--精灵饼干-->
+			<Material Amount="10" ItemId="40412" />	<!--黑暗安特的树枝-->
+			<Material Amount="3" ItemId="40419" />	<!--巨大莫妮亚蜘蛛丝-->
+			<Material Amount="10" ItemId="40437" />	<!--深渊花枝条-->
+			<Material Amount="5" ItemId="40472" />	<!--地狱犬之皮-->
+		</MakeItem>
+	</Action>
+
+<!--大洞穴抵抗军村庄-->
+	<!--炼金术师-->
+	<Action Name="request resist teleport scroll">
+		<MakeItem>
+			<Item Amount="1" ItemId="40120" />		<!--抵抗军村庄指定传送卷轴-->
+			<Material Amount="5" ItemId="40424" />	<!--狼皮-->
+			<Material Amount="1" ItemId="40427" />	<!--黑暗妖精袋子-->
+			<Material Amount="5" ItemId="40437" />	<!--深渊花枝条-->
+			<Material Amount="10" ItemId="40438" />	<!--蝙蝠之牙-->
+			<Material Amount="1" ItemId="40451" />	<!--黑暗妖精袋子-->
+		</MakeItem>
+	</Action>
+	<Action Name="request potion of healing">
+		<MakeItem>
+			<Item Amount="1" ItemId="40010" />		<!--治愈药水-->
+			<Material Amount="1" ItemId="40427" />	<!--黑暗妖精袋子-->
+			<Material Amount="10" ItemId="40438" />	<!--蝙蝠之牙-->
+			<Material Amount="3" ItemId="40451" />	<!--黑暗妖精袋子-->
+		</MakeItem>
+	</Action>
+	<Action Name="request potion of extra healing">
+		<MakeItem>
+			<Item Amount="1" ItemId="40011" />		<!--强力治愈药水-->
+			<Material Amount="5" ItemId="40424" />	<!--狼皮-->
+			<Material Amount="1" ItemId="40427" />	<!--黑暗妖精袋子-->
+			<Material Amount="5" ItemId="40451" />	<!--黑暗妖精袋子-->
+		</MakeItem>
+	</Action>
+	<Action Name="request potion of greater healing">
+		<MakeItem>
+			<Item Amount="1" ItemId="40012" />		<!--终极治愈药水-->
+			<Material Amount="1" ItemId="40427" />	<!--黑暗妖精袋子-->
+			<Material Amount="10" ItemId="40437" />	<!--深渊花枝条-->
+			<Material Amount="7" ItemId="40451" />	<!--黑暗妖精袋子-->
+		</MakeItem>
+	</Action>
+
+	<!--亚提利欧-->
+	<Action Name="request enforce sword of emperor">
+		<MakeItem>
+			<Item Amount="1" ItemId="61" />		<!--真．冥皇执行剑-->
+			<Material Amount="1" ItemId="62" />		<!--武官双手剑-->
+			<Material Amount="10" ItemId="40445" />	<!--黑色米索莉金属板-->
+			<Material Amount="10" ItemId="40525" />	<!--格兰肯之泪-->
+			<Material Amount="50" ItemId="40677" />	<!--黑暗矿石铸块-->
+			<Material Amount="50" ItemId="40964" />	<!--黑魔法粉-->
+			<Material Amount="1" ItemId="40965" />	<!--拉斯塔巴德制作武器秘笈-->
+			<Material Amount="100" ItemId="40967" />	<!--圣地遗物-->
+			<Material Amount="300" ItemId="40969" />	<!--黑暗妖精的灵魂水晶-->
+		</MakeItem>
+	</Action>
+	<Action Name="request sword of windblade">
+		<MakeItem>
+			<Item Amount="1" ItemId="12" />		<!--风刃短剑-->
+			<Material Amount="1" ItemId="49" />		<!--武官之刃-->
+			<Material Amount="10" ItemId="40445" />	<!--黑色米索莉金属板-->
+			<Material Amount="10" ItemId="40525" />	<!--格兰肯之泪-->
+			<Material Amount="50" ItemId="40677" />	<!--黑暗矿石铸块-->
+			<Material Amount="50" ItemId="40964" />	<!--黑魔法粉-->
+			<Material Amount="1" ItemId="40965" />	<!--拉斯塔巴德制作武器秘笈-->
+			<Material Amount="100" ItemId="40967" />	<!--圣地遗物-->
+			<Material Amount="300" ItemId="40969" />	<!--黑暗妖精的灵魂水晶-->
+		</MakeItem>
+	</Action>
+	<Action Name="request dualblade of red shadow">
+		<MakeItem>
+			<Item Amount="1" ItemId="86" />		<!--红影双刀-->
+			<Material Amount="1" ItemId="78" />		<!--暗杀军王之痕-->
+			<Material Amount="10" ItemId="40445" />	<!--黑色米索莉金属板-->
+			<Material Amount="10" ItemId="40525" />	<!--格兰肯之泪-->
+			<Material Amount="50" ItemId="40677" />	<!--黑暗矿石铸块-->
+			<Material Amount="50" ItemId="40964" />	<!--黑魔法粉-->
+			<Material Amount="1" ItemId="40965" />	<!--拉斯塔巴德制作武器秘笈-->
+			<Material Amount="100" ItemId="40967" />	<!--圣地遗物-->
+			<Material Amount="300" ItemId="40969" />	<!--黑暗妖精的灵魂水晶-->
+		</MakeItem>
+	</Action>
+	<Action Name="request claw of beast king">
+		<MakeItem>
+			<Item Amount="1" ItemId="160" />		<!--兽王钢爪-->
+			<Material Amount="1" ItemId="155" />		<!--魔兽军王之爪-->
+			<Material Amount="10" ItemId="40445" />	<!--黑色米索莉金属板-->
+			<Material Amount="10" ItemId="40525" />	<!--格兰肯之泪-->
+			<Material Amount="50" ItemId="40677" />	<!--黑暗矿石铸块-->
+			<Material Amount="50" ItemId="40964" />	<!--黑魔法粉-->
+			<Material Amount="1" ItemId="40965" />	<!--拉斯塔巴德制作武器秘笈-->
+			<Material Amount="100" ItemId="40967" />	<!--圣地遗物-->
+			<Material Amount="300" ItemId="40969" />	<!--黑暗妖精的灵魂水晶-->
+		</MakeItem>
+	</Action>
+	<Action Name="request staff of holyhedron">
+		<MakeItem>
+			<Item Amount="1" ItemId="134" />		<!--圣晶魔杖-->
+			<Material Amount="1" ItemId="132" />		<!--神官魔杖-->
+			<Material Amount="10" ItemId="40445" />	<!--黑色米索莉金属板-->
+			<Material Amount="10" ItemId="40525" />	<!--格兰肯之泪-->
+			<Material Amount="50" ItemId="40677" />	<!--黑暗矿石铸块-->
+			<Material Amount="50" ItemId="40964" />	<!--黑魔法粉-->
+			<Material Amount="1" ItemId="40965" />	<!--拉斯塔巴德制作武器秘笈-->
+			<Material Amount="100" ItemId="40967" />	<!--圣地遗物-->
+			<Material Amount="300" ItemId="40969" />	<!--黑暗妖精的灵魂水晶-->
+		</MakeItem>
+	</Action>
+	<Action Name="request helm of dantes">
+		<MakeItem>
+			<Item Amount="1" ItemId="20390" />		<!--真．冥皇面甲-->
+			<Material Amount="1" ItemId="20020" />	<!--武官头盔-->
+			<Material Amount="5" ItemId="40445" />	<!--黑色米索莉金属板-->
+			<Material Amount="30" ItemId="40525" />	<!--格兰肯之泪-->
+			<Material Amount="50" ItemId="40677" />	<!--黑暗矿石铸块-->
+			<Material Amount="30" ItemId="40964" />	<!--黑魔法粉-->
+			<Material Amount="1" ItemId="40966" />	<!--真．冥皇制作防具秘笈-->
+			<Material Amount="50" ItemId="40968" />	<!--修行者经典-->
+			<Material Amount="100" ItemId="40969" />	<!--黑暗妖精的灵魂水晶-->
+		</MakeItem>
+	</Action>
+	<Action Name="request armor of dantes">
+		<MakeItem>
+			<Item Amount="1" ItemId="20395" />		<!--真．冥皇铠甲-->
+			<Material Amount="1" ItemId="20113" />	<!--武官护铠-->
+			<Material Amount="10" ItemId="40445" />	<!--黑色米索莉金属板-->
+			<Material Amount="10" ItemId="40525" />	<!--格兰肯之泪-->
+			<Material Amount="50" ItemId="40677" />	<!--黑暗矿石铸块-->
+			<Material Amount="50" ItemId="40964" />	<!--黑魔法粉-->
+			<Material Amount="1" ItemId="40966" />	<!--真．冥皇制作防具秘笈-->
+			<Material Amount="100" ItemId="40968" />	<!--修行者经典-->
+			<Material Amount="300" ItemId="40969" />	<!--黑暗妖精的灵魂水晶-->
+		</MakeItem>
+	</Action>
+	<Action Name="request gloves of dantes">
+		<MakeItem>
+			<Item Amount="1" ItemId="20410" />		<!--真．冥皇护手-->
+			<Material Amount="1" ItemId="20168" />	<!--武官手套-->
+			<Material Amount="3" ItemId="40445" />	<!--黑色米索莉金属板-->
+			<Material Amount="3" ItemId="40525" />	<!--格兰肯之泪-->
+			<Material Amount="30" ItemId="40677" />	<!--黑暗矿石铸块-->
+			<Material Amount="30" ItemId="40964" />	<!--黑魔法粉-->
+			<Material Amount="1" ItemId="40966" />	<!--真．冥皇制作防具秘笈-->
+			<Material Amount="50" ItemId="40968" />	<!--修行者经典-->
+			<Material Amount="100" ItemId="40969" />	<!--黑暗妖精的灵魂水晶-->
+		</MakeItem>
+	</Action>
+	<Action Name="request cloak of dantes">
+		<MakeItem>
+			<Item Amount="1" ItemId="20402" />		<!--真．冥皇披风-->
+			<Material Amount="1" ItemId="20058" />	<!--武官斗篷-->
+			<Material Amount="3" ItemId="40445" />	<!--黑色米索莉金属板-->
+			<Material Amount="3" ItemId="40525" />	<!--格兰肯之泪-->
+			<Material Amount="20" ItemId="40652" />	<!--燃烧的皮-->
+			<Material Amount="50" ItemId="40677" />	<!--黑暗矿石铸块-->
+			<Material Amount="10" ItemId="40964" />	<!--黑魔法粉-->
+			<Material Amount="1" ItemId="40966" />	<!--真．冥皇制作防具秘笈-->
+			<Material Amount="30" ItemId="40968" />	<!--修行者经典-->
+			<Material Amount="100" ItemId="40969" />	<!--黑暗妖精的灵魂水晶-->
+		</MakeItem>
+	</Action>
+	<Action Name="request boots of dantes">
+		<MakeItem>
+			<Item Amount="1" ItemId="20408" />		<!--真．冥皇钢靴-->
+			<Material Amount="1" ItemId="20201" />	<!--武官长靴-->
+			<Material Amount="4" ItemId="40445" />	<!--黑色米索莉金属板-->
+			<Material Amount="3" ItemId="40525" />	<!--格兰肯之泪-->
+			<Material Amount="30" ItemId="40677" />	<!--黑暗矿石铸块-->
+			<Material Amount="30" ItemId="40964" />	<!--黑魔法粉-->
+			<Material Amount="1" ItemId="40966" />	<!--真．冥皇制作防具秘笈-->
+			<Material Amount="50" ItemId="40968" />	<!--修行者经典-->
+			<Material Amount="100" ItemId="40969" />	<!--黑暗妖精的灵魂水晶-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ingot of dark">
+		<MakeItem>
+			<Item Amount="1" ItemId="40677" />		<!--黑暗矿石铸块-->
+			<Material Amount="100" ItemId="40675" />	<!--黑暗矿石-->
+		</MakeItem>
+	</Action>
+
+<!--古代巨人之墓-->
+	<!--金侃的仆人-->
+	<Action Name="request stone of alchemist">
+		<MakeItem>
+			<Item Amount="1" ItemId="40414" />		<!--炼金术之石-->
+			<Material Amount="1" ItemId="40420" />	<!--古代人的咒术书1册-->
+			<Material Amount="1" ItemId="40421" />	<!--古代人的咒术书2册-->
+			<Material Amount="1" ItemId="40422" />	<!--古代人的咒术书3册-->
+			<Material Amount="1" ItemId="40423" />	<!--古代人的咒术书4册-->
+		</MakeItem>
+	</Action>
+
+<!--海贼岛地监4楼-->
+	<!--古代的精灵-->
+	<Action Name="request crystal of soul">
+		<MakeItem>
+			<Item Amount="1" ItemId="40417" />		<!--精灵结晶-->
+			<Material Amount="3" ItemId="40318" />	<!--魔法宝石-->
+			<Material Amount="20" ItemId="40471" />	<!--精灵碎片-->
+		</MakeItem>
+	</Action>
+
+<!--船舶之墓 海面-->
+	<!--航海士的灵魂-->
+	<Action Name="B" NpcId="80076">
+		<MakeItem>
+			<Item Amount="1" ItemId="41059" />		<!--航海士的袋子-->
+			<Material Amount="1" ItemId="41058" />	<!--完整的航海日志-->
+			<Succeed>
+				<ShowHtml HtmlId="voyager10" />
+			</Succeed>
+		</MakeItem>
+	</Action>
+
+	<!--微弱的灵魂-->
+	<Action Name="A" NpcId="80077">
+		<MakeItem>
+			<Item Amount="1" ItemId="41208" />		<!--微弱的灵魂-->
+			<Material Amount="1" ItemId="41207" />	<!--船员遗体-->
+			<Succeed>
+				<ShowHtml HtmlId="aldran5" />
+			</Succeed>
+			<Fail>
+				<ShowHtml HtmlId="aldran4" />
+			</Fail>
+		</MakeItem>
+	</Action>
+
+<!--炎魔谒见所-->
+	<!--小恶魔-->
+	<Action Name="request crossbow of evil">
+		<MakeItem>
+			<Item Amount="1" ItemId="185" />		<!--恶魔十字弓-->
+			<Material Amount="10" ItemId="40042" />	<!--精神药水-->
+			<Material Amount="10" ItemId="40461" />	<!--恶魔的黑色脚镣-->
+			<Material Amount="5" ItemId="40462" />	<!--恶魔的红色脚镣-->
+			<Material Amount="5" ItemId="40463" />	<!--恶魔的蓝色脚镣-->
+			<Material Amount="5" ItemId="40464" />	<!--恶魔的白色脚镣-->
+			<Material Amount="1" ItemId="40482" />	<!--堕落之舌-->
+		</MakeItem>
+	</Action>
+	<Action Name="request sword of evil">
+		<MakeItem>
+			<Item Amount="1" ItemId="63" />		<!--恶魔之剑-->
+			<Material Amount="10" ItemId="40042" />	<!--精神药水-->
+			<Material Amount="5" ItemId="40461" />	<!--恶魔的黑色脚镣-->
+			<Material Amount="10" ItemId="40462" />	<!--恶魔的红色脚镣-->
+			<Material Amount="5" ItemId="40463" />	<!--恶魔的蓝色脚镣-->
+			<Material Amount="5" ItemId="40464" />	<!--恶魔的白色脚镣-->
+			<Material Amount="1" ItemId="40474" />	<!--堕落之毒-->
+		</MakeItem>
+	</Action>
+	<Action Name="request dualblade of evil">
+		<MakeItem>
+			<Item Amount="1" ItemId="85" />		<!--恶魔双刀-->
+			<Material Amount="10" ItemId="40042" />	<!--精神药水-->
+			<Material Amount="5" ItemId="40461" />	<!--恶魔的黑色脚镣-->
+			<Material Amount="5" ItemId="40462" />	<!--恶魔的红色脚镣-->
+			<Material Amount="10" ItemId="40463" />	<!--恶魔的蓝色脚镣-->
+			<Material Amount="5" ItemId="40464" />	<!--恶魔的白色脚镣-->
+			<Material Amount="1" ItemId="40481" />	<!--堕落之牙-->
+		</MakeItem>
+	</Action>
+	<Action Name="request claw of evil">
+		<MakeItem>
+			<Item Amount="1" ItemId="165" />		<!--恶魔钢爪-->
+			<Material Amount="10" ItemId="40042" />	<!--精神药水-->
+			<Material Amount="5" ItemId="40461" />	<!--恶魔的黑色脚镣-->
+			<Material Amount="5" ItemId="40462" />	<!--恶魔的红色脚镣-->
+			<Material Amount="5" ItemId="40463" />	<!--恶魔的蓝色脚镣-->
+			<Material Amount="10" ItemId="40464" />	<!--恶魔的白色脚镣-->
+			<Material Amount="1" ItemId="40476" />	<!--堕落之手-->
+		</MakeItem>
+	</Action>
+
+	<!--炎魔的分身-->
+	<Action Name="request cursed blood">
+		<MakeItem>
+			<Item Amount="1" ItemId="40416" />		<!--诅咒之血-->
+			<Material Amount="1" ItemId="40477" />	<!--堕落的恶魔书1册-->
+			<Material Amount="1" ItemId="40478" />	<!--堕落的恶魔书2册-->
+			<Material Amount="1" ItemId="40479" />	<!--堕落的恶魔书3册-->
+			<Material Amount="1" ItemId="40480" />	<!--堕落的恶魔书4册-->
+		</MakeItem>
+	</Action>
+	<Action Name="request blood cloak of barlog">
+		<MakeItem>
+			<Item Amount="1" ItemId="20062" />		<!--炎魔的血光斗篷-->
+			<Material Amount="1" ItemId="40473" />	<!--堕落镰刀-->
+			<Material Amount="1" ItemId="40475" />	<!--堕落首级-->
+		</MakeItem>
+	</Action>
+
+	<!--炎魔间谍-->
+	<Action Name="request key2 tos">
+		<MakeItem>
+			<Item Amount="1" ItemId="40615" />		<!--暗影神殿2楼钥匙-->
+			<Material Amount="1000" ItemId="40678" />	<!--灵魂石碎片-->
+			<Material Amount="1" ItemId="40719" />	<!--混沌首级-->
+		</MakeItem>
+	</Action>
+	<Action Name="request key31 tos">
+		<MakeItem>
+			<Item Amount="1" ItemId="40616" />		<!--暗影神殿3楼钥匙-->
+			<Material Amount="1000" ItemId="40678" />	<!--灵魂石碎片-->
+			<Material Amount="1" ItemId="40707" />	<!--死亡首级-->
+		</MakeItem>
+	</Action>
+	<Action Name="request key32 tos">
+		<MakeItem>
+			<Item Amount="1" ItemId="40782" />		<!--暗影神殿3楼钥匙-->
+			<Material Amount="1000" ItemId="40678" />	<!--灵魂石碎片-->
+			<Material Amount="1" ItemId="40780" />	<!--死亡首级-->
+		</MakeItem>
+	</Action>
+	<Action Name="request key33 tos">
+		<MakeItem>
+			<Item Amount="1" ItemId="40783" />		<!--暗影神殿3楼钥匙-->
+			<Material Amount="1000" ItemId="40678" />	<!--灵魂石碎片-->
+			<Material Amount="1" ItemId="40781" />	<!--死亡首级-->
+		</MakeItem>
+	</Action>
+
+<!--火焰之影实验室-->
+	<!--火焰之影-->
+	<Action Name="request free pass" NpcId="80051">
+		<MakeItem>
+			<Item Amount="1" ItemId="40921" />		<!--元素之支配者-->
+			<Material Amount="1" ItemId="40917" />	<!--土之支配者-->
+			<Material Amount="1" ItemId="40918" />	<!--水之支配者-->
+			<Material Amount="1" ItemId="40919" />	<!--火之支配者-->
+			<Material Amount="1" ItemId="40920" />	<!--风之支配者-->
+		</MakeItem>
+	</Action>
+
+	<!--研究员-->
+	<Action Name="request flame of mushussu">
+		<MakeItem>
+			<Item Amount="1" ItemId="218" />		<!--安加斯的钉锤-->
+			<Material Amount="50" ItemId="40970" />	<!--安加斯的尾巴-->
+			<Material Amount="100" ItemId="40971" />	<!--安加斯之牙-->
+			<Material Amount="50" ItemId="40972" />	<!--巴萨斯的气息-->
+			<Material Amount="100" ItemId="40974" />	<!--狄高的血-->
+			<Material Amount="100" ItemId="40976" />	<!--沙-->
+		</MakeItem>
+	</Action>
+	<Action Name="request shield of guardian">
+		<MakeItem>
+			<Item Amount="1" ItemId="20396" />		<!--守护者之盾-->
+			<Material Amount="1" ItemId="40973" />	<!--巴萨斯的翅膀-->
+			<Material Amount="100" ItemId="40975" />	<!--狄高的鳍-->
+			<Material Amount="10" ItemId="40977" />	<!--染血的沙-->
+			<Material Amount="50" ItemId="40982" />	<!--土之守护者的皮-->
+			<Material Amount="50" ItemId="40983" />	<!--水之守护者的皮-->
+			<Material Amount="50" ItemId="40984" />	<!--火之守护者的皮-->
+			<Material Amount="50" ItemId="40985" />	<!--风之守护者的皮-->
+		</MakeItem>
+	</Action>
+	<Action Name="request spear of guardian">
+		<MakeItem>
+			<Item Amount="1" ItemId="210" />		<!--守护者之矛-->
+			<Material Amount="10" ItemId="40977" />	<!--染血的沙-->
+			<Material Amount="50" ItemId="40982" />	<!--土之守护者的皮-->
+			<Material Amount="50" ItemId="40983" />	<!--水之守护者的皮-->
+			<Material Amount="50" ItemId="40984" />	<!--火之守护者的皮-->
+			<Material Amount="50" ItemId="40985" />	<!--风之守护者的皮-->
+			<Material Amount="100" ItemId="40986" />	<!--守护者之牙-->
+		</MakeItem>
+	</Action>
+
+<!--多重地区-->
+	<!--徽章贩卖员-->
+	<Action Name="request new surprise bag" NpcId="80128">
+		<MakeItem>
+			<Item Amount="1" ItemId="41311" />		<!--惊喜箱-->
+			<Material Amount="50" ItemId="41402" />	<!--勇者的勋章-->
+		</MakeItem>
+	</Action>
+	<Action Name="request pet match coin">
+		<MakeItem>
+			<Material Amount="500" ItemId="41402" />	<!--勇者的勋章 -->
+			<Item Amount="1" ItemId="41254" />		<!--胜利的徽章-->
+		</MakeItem>
+	</Action>
+
+	<Action Name="request adena2">
+		<MakeItem>
+			<Item Amount="2" ItemId="40308" />		<!--金币-->
+			<Material Amount="1" ItemId="40405" />	<!--皮革-->
+		</MakeItem>
+	</Action>
+	<Action Name="request adena30">
+		<MakeItem>
+			<Item Amount="30" ItemId="40308" />		<!--金币-->
+			<Material Amount="1" ItemId="40406" />	<!--高级皮革-->
+		</MakeItem>
+	</Action>
+	<Action Name="request adena5">
+		<MakeItem>
+			<Item Amount="5" ItemId="40308" />		<!--金币-->
+			<Material Amount="1" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request adena10">
+		<MakeItem>
+			<Item Amount="10" ItemId="40308" />		<!--金币-->
+			<Material Amount="1" ItemId="40407" />	<!--骨头碎片-->
+		</MakeItem>
+	</Action>
+	<Action Name="request hard leather">
+		<MakeItem>
+			<Item Amount="1" ItemId="40406" />		<!--高级皮革-->
+			<Material Amount="20" ItemId="40405" />	<!--皮革-->
+		</MakeItem>
+	</Action>
+	<Action Name="request leather cap">
+		<MakeItem>
+			<Item Amount="1" ItemId="20001" />		<!--皮帽子-->
+			<Material Amount="5" ItemId="40405" />	<!--皮革-->
+			<Material Amount="1" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request leather sandal">
+		<MakeItem>
+			<Item Amount="1" ItemId="20193" />		<!--皮凉鞋-->
+			<Material Amount="6" ItemId="40405" />	<!--皮革-->
+			<Material Amount="2" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request leather vest">
+		<MakeItem>
+			<Item Amount="1" ItemId="20090" />		<!--皮背心-->
+			<Material Amount="10" ItemId="40405" />	<!--皮革-->
+		</MakeItem>
+	</Action>
+	<Action Name="request leather shield">
+		<MakeItem>
+			<Item Amount="1" ItemId="20219" />		<!--皮盾牌-->
+			<Material Amount="7" ItemId="40405" />	<!--皮革-->
+		</MakeItem>
+	</Action>
+	<Action Name="request leather boots">
+		<MakeItem>
+			<Item Amount="1" ItemId="20192" />		<!--皮长靴-->
+			<Material Amount="1" ItemId="20212" />	<!--银钉皮凉鞋-->
+			<Material Amount="300" ItemId="40308" />	<!--金币-->
+			<Material Amount="10" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="10" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request leather helmet">
+		<MakeItem>
+			<Item Amount="1" ItemId="20002" />		<!--皮头盔-->
+			<Material Amount="1" ItemId="20001" />	<!--皮帽子-->
+			<Material Amount="1" ItemId="20043" />	<!--钢盔-->
+			<Material Amount="5" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="5" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request hard leather vest">
+		<MakeItem>
+			<Item Amount="1" ItemId="20145" />		<!--硬皮背心-->
+			<Material Amount="1" ItemId="20148" />	<!--银钉皮背心-->
+			<Material Amount="15" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="15" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request leather vest with belt">
+		<MakeItem>
+			<Item Amount="1" ItemId="20120" />		<!--皮盔甲-->
+			<Material Amount="1" ItemId="20090" />	<!--皮背心-->
+			<Material Amount="1" ItemId="40778" />	<!--皮带-->
+		</MakeItem>
+	</Action>
+	<Action Name="request belt">
+		<MakeItem>
+			<Item Amount="1" ItemId="40778" />		<!--皮带-->
+			<Material Amount="5" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="2" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request studded leather cap">
+		<MakeItem>
+			<Item Amount="1" ItemId="20038" />		<!--银钉皮帽-->
+			<Material Amount="1" ItemId="20001" />	<!--皮帽子-->
+			<Material Amount="2" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="10" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request studded leather sandal">
+		<MakeItem>
+			<Item Amount="1" ItemId="20212" />		<!--银钉皮凉鞋-->
+			<Material Amount="1" ItemId="20193" />	<!--皮凉鞋-->
+			<Material Amount="3" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="12" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request studded leather vest">
+		<MakeItem>
+			<Item Amount="1" ItemId="20148" />		<!--银钉皮背心-->
+			<Material Amount="1" ItemId="20090" />	<!--皮背心-->
+			<Material Amount="2" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="10" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request studded leather shield">
+		<MakeItem>
+			<Item Amount="1" ItemId="20241" />		<!--银钉皮盾-->
+			<Material Amount="1" ItemId="20219" />	<!--皮盾牌-->
+			<Material Amount="5" ItemId="40406" />	<!--高级皮革-->
+			<Material Amount="20" ItemId="40408" />	<!--金属块-->
+		</MakeItem>
+	</Action>
+	<Action Name="request skull helmet">
+		<MakeItem>
+			<Item Amount="1" ItemId="20045" />		<!--骷髅头盔-->
+			<Material Amount="1" ItemId="20002" />	<!--皮头盔-->
+			<Material Amount="800" ItemId="40308" />	<!--金币-->
+			<Material Amount="10" ItemId="40407" />	<!--骨头碎片-->
+		</MakeItem>
+	</Action>
+	<Action Name="request bone armor">
+		<MakeItem>
+			<Item Amount="1" ItemId="20124" />		<!--骷髅盔甲-->
+			<Material Amount="1" ItemId="20145" />	<!--硬皮背心-->
+			<Material Amount="500" ItemId="40308" />	<!--金币-->
+			<Material Amount="20" ItemId="40407" />	<!--骨头碎片-->
+		</MakeItem>
+	</Action>
+	<Action Name="request bone shield">
+		<MakeItem>
+			<Item Amount="1" ItemId="20221" />		<!--骷髅盾牌-->
+			<Material Amount="1" ItemId="20241" />	<!--银钉皮盾-->
+			<Material Amount="800" ItemId="40308" />	<!--金币-->
+			<Material Amount="15" ItemId="40407" />	<!--骨头碎片-->
+		</MakeItem>
+	</Action>
+
+<!--活动-->
+	<Action Name="request pumpkin hat">
+		<MakeItem>
+			<Item Amount="1" ItemId="20046" />		<!--南瓜帽-->
+			<Material Amount="5000" ItemId="40308" />	<!--金币-->
+		</MakeItem>
+	</Action>
+	<Action Name="request candy for jack">
+		<MakeItem>
+			<Item Amount="1" ItemId="40725" />		<!--南瓜糖果-->
+			<Material Amount="5" ItemId="40308" />	<!--金币-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ei2202">
+		<MakeItem>
+			<Item Amount="1" ItemId="40721" />		<!--巨大南瓜种子-->
+			<Material Amount="25" ItemId="40726" />	<!--南瓜种子-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ei2205">
+		<MakeItem>
+			<Item Amount="1" ItemId="40724" />		<!--铜南瓜-->
+			<Material Amount="10" ItemId="40726" />	<!--南瓜种子-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ei2204">
+		<MakeItem>
+			<Item Amount="1" ItemId="40723" />		<!--银南瓜-->
+			<Material Amount="25" ItemId="40726" />	<!--南瓜种子-->
+		</MakeItem>
+	</Action>
+	<Action Name="request ei2203">
+		<MakeItem>
+			<Item Amount="1" ItemId="40722" />		<!--金南瓜-->
+			<Material Amount="3" ItemId="40721" />	<!--巨大南瓜种子-->
+		</MakeItem>
+	</Action>
+
+
+<!--L1J-JP-->
+	<Action Name="request adena" NpcId="71004">
+		<MakeItem>
+			<Item Amount="10" ItemId="40308" />		<!--金币-->
+			<Material Amount="1" ItemId="41223" />	<!--武器的碎片-->
+		</MakeItem>
+	</Action>
+	<Action Name="request orcish helm" NpcId="71004">
+		<MakeItem>
+			<Item Amount="1" ItemId="20034" />		<!--欧西斯头盔-->
+			<Material Amount="5" ItemId="41223" />	<!--武器的碎片-->
+		</MakeItem>
+	</Action>
+	<Action Name="request orcish ring mail" NpcId="71004">
+		<MakeItem>
+			<Item Amount="1" ItemId="20135" />		<!--欧西斯环甲-->
+			<Material Amount="10" ItemId="41223" />	<!--武器的碎片-->
+		</MakeItem>
+	</Action>
+	<Action Name="request uruk-hai shield" NpcId="71004">
+		<MakeItem>
+			<Item Amount="1" ItemId="20237" />		<!--阿克海盾牌-->
+			<Material Amount="7" ItemId="41223" />	<!--武器的碎片-->
+		</MakeItem>
+	</Action>
+	<Action Name="request orcish cloak" NpcId="71004">
+		<MakeItem>
+			<Item Amount="1" ItemId="20072" />		<!--欧西斯斗篷-->
+			<Material Amount="3" ItemId="41223" />	<!--武器的碎片-->
+		</MakeItem>
+	</Action>
+
+	<Action Name="request adena" NpcId="71031">
+		<MakeItem>
+			<Item Amount="30" ItemId="40308" />		<!--金币-->
+			<Material Amount="1" ItemId="41224" />	<!--徽章-->
+		</MakeItem>
+	</Action>
+
+	<Action Name="request oum adenabag1" NpcId="70674">
+		<MakeItem>
+			<Item Amount="1" ItemId="40632" />		<!--雷奥纳的袋子-->
+			<Material Amount="1" ItemId="40691" />	<!--半成品的雕像-->
+			<Succeed>
+				<ShowHtml HtmlId="reona6" />
+			</Succeed>
+		</MakeItem>
+	</Action>
+	<Action Name="request oum adenabag2" NpcId="70674">
+		<MakeItem>
+			<Item Amount="1" ItemId="41406" />		<!--雷奥纳的袋子-->
+			<Material Amount="1" ItemId="40689" />	<!--未精雕的雕像-->
+			<Succeed>
+				<ShowHtml HtmlId="reona7" />
+			</Succeed>
+		</MakeItem>
+	</Action>
+	<Action Name="request oum adenabag3" NpcId="70674">
+		<MakeItem>
+			<Item Amount="1" ItemId="41407" />		<!--雷奥纳的袋子-->
+			<Material Amount="1" ItemId="40690" />	<!--未修补的雕像-->
+			<Succeed>
+				<ShowHtml HtmlId="reona8" />
+			</Succeed>
+		</MakeItem>
+	</Action>
+	<Action Name="request oum adenabag4" NpcId="70674">
+		<MakeItem>
+			<Item Amount="1" ItemId="41408" />		<!--雷奥纳的袋子-->
+			<Material Amount="1" ItemId="40685" />	<!--未磨光的雕像-->
+			<Succeed>
+				<ShowHtml HtmlId="reona9" />
+			</Succeed>
+		</MakeItem>
+	</Action>
+	<Action Name="request oum adenabag5" NpcId="70674">
+		<MakeItem>
+			<Item Amount="1" ItemId="41409" />		<!--雷奥纳的袋子-->
+			<Material Amount="1" ItemId="40688" />	<!--未上漆的雕像-->
+			<Succeed>
+				<ShowHtml HtmlId="reona10" />
+			</Succeed>
+		</MakeItem>
+	</Action>
+	<Action Name="request oum adenabag6" NpcId="70674">
+		<MakeItem>
+			<Item Amount="1" ItemId="41410" />		<!--雷奥纳的袋子-->
+			<Material Amount="1" ItemId="40686" />	<!--完成品的雕像-->
+			<Succeed>
+				<ShowHtml HtmlId="reona10" />
+			</Succeed>
+		</MakeItem>
+	</Action>
+</NpcActionList>

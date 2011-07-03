@@ -1,0 +1,214 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x009d695a, pid=4960, tid=3536
+#
+# JRE version: 6.0_24-b07
+# Java VM: Java HotSpot(TM) Client VM (19.1-b02 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# J  java.lang.String.replace(CC)Ljava/lang/String;
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00316800):  JavaThread "main" [_thread_in_Java, id=3536, stack(0x008e0000,0x00930000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000096
+
+Registers:
+EAX=0x22b149b8, EBX=0x373d0998, ECX=0x00316800, EDX=0x0000002e
+ESP=0x0092cf90, EBP=0x0092d01c, ESI=0x00000000, EDI=0x22b149d0
+EIP=0x009d695a, EFLAGS=0x00010283
+
+Register to memory mapping:
+
+EAX=0x22b149b8
+
+[error occurred during error reporting (printing registers, top of stack, instructions near pc), id 0xc0000005]
+
+Stack: [0x008e0000,0x00930000],  sp=0x0092cf90,  free space=307k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+J  java.lang.String.replace(CC)Ljava/lang/String;
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xf0ab9]
+V  [jvm.dll+0x1837d1]
+V  [jvm.dll+0xf0b3d]
+V  [jvm.dll+0x1212df]
+C  [java.dll+0x1061]
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  sun.misc.Launcher$ExtClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+7
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+47
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+23
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+41
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+23
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xf0ab9]
+V  [jvm.dll+0x1837d1]
+V  [jvm.dll+0xf0c61]
+V  [jvm.dll+0xf0d25]
+V  [jvm.dll+0x1ca1c0]
+V  [jvm.dll+0x1ca826]
+V  [jvm.dll+0x1cabd5]
+V  [jvm.dll+0x1c8731]
+V  [jvm.dll+0x6e760]
+V  [jvm.dll+0x73c6b]
+V  [jvm.dll+0x1c922d]
+V  [jvm.dll+0x120919]
+V  [jvm.dll+0x120b45]
+C  [java.dll+0x15dd]
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;Z)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClassCond(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Z)Ljava/lang/Class;+32
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+9
+j  java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class;+27
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+369
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+4
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+44
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xf0ab9]
+V  [jvm.dll+0x1837d1]
+V  [jvm.dll+0xf0b3d]
+V  [jvm.dll+0x1212df]
+C  [java.dll+0x1061]
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+47
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xf0ab9]
+V  [jvm.dll+0x1837d1]
+V  [jvm.dll+0xf0c61]
+V  [jvm.dll+0xf0d25]
+V  [jvm.dll+0x1ca1c0]
+V  [jvm.dll+0x1ca826]
+V  [jvm.dll+0x1cabd5]
+V  [jvm.dll+0x1cac1b]
+V  [jvm.dll+0x118932]
+V  [jvm.dll+0x11a689]
+C  [verify.dll+0x15cc]
+C  [verify.dll+0x1d5e]
+C  [verify.dll+0x2c70]
+C  [verify.dll+0x497d]
+C  [verify.dll+0x4c28]
+C  [verify.dll+0x4f34]
+V  [jvm.dll+0x1f0cb1]
+V  [jvm.dll+0x1f5658]
+V  [jvm.dll+0xd9f72]
+V  [jvm.dll+0xdebf8]
+V  [jvm.dll+0xe1887]
+V  [jvm.dll+0xe1c46]
+V  [jvm.dll+0x155549]
+V  [jvm.dll+0x155caf]
+V  [jvm.dll+0x155e80]
+V  [jvm.dll+0xee65c]
+j  org.apache.tools.ant.util.LoaderUtils.<clinit>()V+0
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xf0ab9]
+V  [jvm.dll+0x1837d1]
+V  [jvm.dll+0xf0b3d]
+V  [jvm.dll+0xe15d7]
+V  [jvm.dll+0xe183e]
+V  [jvm.dll+0xe1b29]
+V  [jvm.dll+0xe1c46]
+V  [jvm.dll+0x155549]
+V  [jvm.dll+0x155caf]
+V  [jvm.dll+0x155e80]
+V  [jvm.dll+0xee65c]
+j  org.apache.tools.ant.ProjectHelperRepository.collectProjectHelpers()V+10
+j  org.apache.tools.ant.ProjectHelperRepository.<init>()V+16
+j  org.apache.tools.ant.ProjectHelperRepository.<clinit>()V+17
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xf0ab9]
+V  [jvm.dll+0x1837d1]
+V  [jvm.dll+0xf0b3d]
+V  [jvm.dll+0xe15d7]
+V  [jvm.dll+0xe183e]
+V  [jvm.dll+0xe1b29]
+V  [jvm.dll+0xe1c46]
+V  [jvm.dll+0x155549]
+V  [jvm.dll+0x155caf]
+V  [jvm.dll+0x155e80]
+V  [jvm.dll+0xee65c]
+...<more frames>...
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x02baa400 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=3728, stack(0x02e20000,0x02e70000)]
+  0x02ba2400 JavaThread "CompilerThread0" daemon [_thread_blocked, id=3168, stack(0x02dd0000,0x02e20000)]
+  0x02ba0c00 JavaThread "Attach Listener" daemon [_thread_blocked, id=2928, stack(0x02d80000,0x02dd0000)]
+  0x02bc2c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2184, stack(0x02d30000,0x02d80000)]
+  0x02b9b000 JavaThread "Finalizer" daemon [_thread_blocked, id=1496, stack(0x02ce0000,0x02d30000)]
+  0x02b96400 JavaThread "Reference Handler" daemon [_thread_blocked, id=3308, stack(0x02c90000,0x02ce0000)]
+=>0x00316800 JavaThread "main" [_thread_in_Java, id=3536, stack(0x008e0000,0x00930000)]
+
+Other Threads:
+  0x02b5a400 VMThread [stack: 0x02c40000,0x02c90000] [id=3420]
+  0x02bc0c00 WatcherThread [stack: 0x02e70000,0x02ec0000] [id=3096]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 1378K [0x229d0000, 0x22f20000, 0x27f20000)
+  eden space 4416K,  31% used [0x229d0000, 0x22b28aa0, 0x22e20000)
+  from space 512K,   0% used [0x22e20000, 0x22e20000, 0x22ea0000)
+  to   space 512K,   0% used [0x22ea0000, 0x22ea0000, 0x22f20000)
+ tenured generation   total 10944K, used 0K [0x27f20000, 0x289d0000, 0x329d0000)
+   the space 10944K,   0% used [0x27f20000, 0x27f20000, 0x27f20200, 0x289d0000)
+ compacting perm gen  total 12288K, used 590K [0x329d0000, 0x335d0000, 0x369d0000)
+   the space 12288K,   4% used [0x329d0000, 0x32a63b68, 0x32a63c00, 0x335d0000)
+    ro space 10240K,  54% used [0x369d0000, 0x36f4d9f8, 0x36f4da00, 0x373d0000)
+    rw space 12288K,  55% used [0x373d0000, 0x37a713f8, 0x37a71400, 0x37fd0000)
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Program Files\Java\jdk1.6.0_24\bin\java.exe
+0x7c920000 - 0x7c9b6000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c91e000 	C:\WINDOWS\system32\kernel32.dll
+0x77da0000 - 0x77e49000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e50000 - 0x77ee3000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77fc0000 - 0x77fd1000 	C:\WINDOWS\system32\Secur32.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\msvcr71.dll
+0x6d8a0000 - 0x6db46000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\client\jvm.dll
+0x77d10000 - 0x77da0000 	C:\WINDOWS\system32\USER32.dll
+0x77ef0000 - 0x77f39000 	C:\WINDOWS\system32\GDI32.dll
+0x76b10000 - 0x76b3a000 	C:\WINDOWS\system32\WINMM.dll
+0x76300000 - 0x7631d000 	C:\WINDOWS\system32\IMM32.DLL
+0x62c20000 - 0x62c29000 	C:\WINDOWS\system32\LPK.DLL
+0x73fa0000 - 0x7400b000 	C:\WINDOWS\system32\USP10.dll
+0x6d850000 - 0x6d85c000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\verify.dll
+0x6d3d0000 - 0x6d3ef000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\java.dll
+0x6d330000 - 0x6d338000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\hpi.dll
+0x76bc0000 - 0x76bcb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d890000 - 0x6d89f000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dant.home=F:\java\r254\build\ant\bin\.. 
+java_command: org.apache.tools.ant.launch.Launcher all
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files\Java\jdk1.6.0_24\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\TortoiseSVN\bin
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 22 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 3
+
+CPU:total 1 (1 cores per cpu, 1 threads per core) family 6 model 22 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2061488k(1268452k free), swap 4003460k(3074816k free)
+
+vm_info: Java HotSpot(TM) Client VM (19.1-b02) for windows-x86 JRE (1.6.0_24-b07), built on Feb  2 2011 17:44:41 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Fri Jun 03 10:28:38 2011
+elapsed time: 0 seconds
+

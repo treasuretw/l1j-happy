@@ -1,0 +1,12 @@
+###################################################
+# Bad name list.
+#
+# if name startswith, or endswith these words
+# charcreation will say its invalid name.
+# 
+# ALL LOWERCASE!!!!!
+###################################################
+gm
+GM
+游戏管理员
+龙之梦

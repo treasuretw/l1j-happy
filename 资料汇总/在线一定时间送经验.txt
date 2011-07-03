@@ -1,0 +1,123 @@
+﻿	在线一定时间送经验
+
+原帖地址：http://bbs2.99nets.com/thread-723410-1-1.html
+
+    作者：liumy1314
+
+
+【1】config.java
+
+ 搜寻
+	public static int GDROPITEM_TIME;
+
+ 下面加入
+
+	public static boolean fdjy; //TODO 是否开启给经验
+
+	public static int jy; //TODO 设定数量
+
+	public static int jytime; //TODO 设定时间
+
+ 搜寻
+
+	NPC_DELETION_TIME = Integer.parseInt(altSettings.getProperty("NpcDeletionTime", "10"));
+
+ 在下面加入
+
+	//TODO　在线一段时间给经验 add
+	fdjy = Boolean.parseBoolean(altSettings.getProperty(
+			"fdjy", "false"));
+	jy = Integer.parseInt(altSettings.getProperty(
+			"jy", "10"));
+	jytime = Integer.parseInt(altSettings.getProperty(
+			"jytime", "100"));
+	//TODO　在线一段时间给经验 end
+
+
+【2】l1j.server.server.clientpackets.C_LoginToServer.java
+
+ 搜寻
+	if ((pc.getLevel() >= 51) && (pc.getLevel() - 50 > pc.getBonusStats())) {
+
+ 在上边加入
+
+	//add 在线送经验 add
+	if (!pc.hasSkillEffect(7902)){
+		pc.setSkillEffect(7902, Config.jytime*1000);
+	}
+	//add 在线送经验 end
+
+
+【3】l1j.server.server.model.skill.l1skilltemer.java
+
+ 宣告
+	import l1j.server.Config;
+	import l1j.server.server.serverpackets.S_SystemMessage;
+
+ 搜寻
+
+	// ****** 料理関係
+
+	else if ((skillId == COOKING_1_0_N) || (skillId == COOKING_1_0_S)) {
+
+ 
+ 在上边加入
+
+		//add 在线送经验 add
+		else if (skillId == 7902) {
+			L1PcInstance pc = (L1PcInstance) cha;
+			// L1PcInstance l1character = null; //自动生成的
+			L1PcInstance l1pcinstance24 = (L1PcInstance)cha;
+			if ((cha instanceof L1PcInstance) && l1pcinstance24.getExp() <= 1823000470){ // 99级经验
+				l1pcinstance24.setExp(l1pcinstance24.getExp() + Config.jy);
+				l1pcinstance24.setSkillEffect(7902, Config.jytime*1000);//单位：秒
+				pc.sendPackets(new S_SystemMessage("获得神的祝福"));
+			}
+		}
+		//add 在线送经验 end
+
+
+【4】打开模拟器 CONFIG文件夹下altsettings.properties
+
+ 添加
+
+#────────────────── 
+
+# 在线一段时间给获得经验
+# 是否开启
+fdjy = true
+# 设定经验
+jy = 403080
+# 设定时间(单位:秒)
+jytime = 100
+
+#──────────────────
+
+
+需要指定的道具才给经验的方法，比如：需要一定数量的元宝.
+
+ 
+
+	//add 在线送经验 add
+	else if (skillId == 7902) {
+	    L1PcInstance pc = (L1PcInstance) cha;
+	    // L1PcInstance l1character = null; //自动生成的
+	    L1PcInstance l1pcinstance24 = (L1PcInstance)cha;
+	    if (pc.getMapId() == 350 //判断地图
+			&& pc.getInventory().checkItem(61019)) {//判断道具
+	    if ((cha instanceof L1PcInstance) && l1pcinstance24.getExp() <= 1823000470){ // 99级经验
+		l1pcinstance24.setExp(l1pcinstance24.getExp() + Config.jy);
+		l1pcinstance24.setSkillEffect(7902, Config.jytime*1000);//单位：秒
+			if (pc.getInventory().consumeItem(61019, 30))    //判断一次消耗的道具与数量
+		pc.sendPackets(new S_SystemMessage("获得神的祝福"));
+	    }
+	}
+	//add 在线送经验 end
+
+ 
+
+这种方法有个缺点，
+
+比如：需要元宝30个才给经验，把元宝丢地上再捡起来必须小退才会接着给经验
+
+就是 不会实时判断.

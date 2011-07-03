@@ -1,0 +1,12 @@
+﻿增加GM指令(线上搜寻物件)
+
+原帖： http://bbs2.99nets.com/thread-722171-1-2.html
+
+作者：impreza8837
+
+使用指令 .find [防具,武器,道具,变身,NPC] [物件名称]
+ 
+1.增加档案 src/l1j/server/server/command/executor/L1Search.java(ANSI as UTF-8)
+
+2.增加资料库数据
+commands:	find 200 L1Search

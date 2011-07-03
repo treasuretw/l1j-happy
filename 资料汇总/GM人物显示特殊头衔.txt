@@ -1,0 +1,22 @@
+﻿	GM人物显示特殊头衔
+
+	      by:丫杰
+
+l1j.server.server.serverpackets.S_OtherCharPacks.java
+
+搜寻
+	writeH(pc.getLawful());
+
+下面加入
+	//人物头衔 add
+	String title = "";
+	if (pc.getAccessLevel() == 200) {
+		title = "\\f=游戏管理员";
+	}
+	//人物头衔 end
+
+搜寻
+	writeS(pc.getName());
+
+修改
+	writeS(pc.getName() + title);//人物头衔

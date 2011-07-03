@@ -1,0 +1,50 @@
+﻿	等级排行查询Npc
+    这个作者与来源找不到了..
+
+【1】l1j.server.server.clientpackets.C_NPCAction.java
+
+ 找个地方加入
+	//等级排行NPC
+	else if (((L1NpcInstance) obj).getNpcTemplate().get_npcId() == 99003) {//npc编号
+		if (s.equalsIgnoreCase("Crown")) {  //显示王族等级排序前五名
+			htmldata = l1j.ABC.Place.Crown();
+			htmlid = "Crown";
+		}
+		if (s.equalsIgnoreCase("Elf")) {  //显示妖精等级排序前五名
+			htmldata = l1j.ABC.Place.Elf();
+			htmlid = "Elf";
+		}
+		if (s.equalsIgnoreCase("Wizard")) {  //显示法师等级排序前五名
+			htmldata = l1j.ABC.Place.Wizard();
+			htmlid = "Wizard";
+		}
+		if (s.equalsIgnoreCase("Knight")) {  //显示骑士等级排序前五名
+			htmldata = l1j.ABC.Place.Knight();
+			htmlid = "Knight";
+		}
+		if (s.equalsIgnoreCase("Darkelf")) {  //显示黑妖等级排序前五名
+			htmldata = l1j.ABC.Place.Darkelf();
+			htmlid = "Darkelf";
+		}
+		if (s.equalsIgnoreCase("Dragon")) {  //显示龙骑士等级排序前五名
+			htmldata = l1j.ABC.Place.Dragon();
+			htmlid = "Dragon";
+		}
+		if (s.equalsIgnoreCase("Illusionist")) {  //显示幻术师等级排序前五名
+			htmldata = l1j.ABC.Place.Illusionist();
+			htmlid = "Illusionist";
+		}
+	}
+
+
+【2】在包 l1j.ABC
+
+ 新增
+	Place.java 文件
+ 或者 随便放一个包里就行,路径填对即可.
+
+ 对话档也放上来了,DB里请自行添加.
+
+ 注意：繁体客户端是-c 简体客户端是-h
+        ^              ^
+ 比如：	abc-c.html     abc-h.html

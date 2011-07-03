@@ -1,0 +1,21 @@
+L1Attack.Java
+放在pcnpcDamage函式裡
+_pc.sendPackets(new S_SystemMessage(_targetNpc.getName()+" 的力量為 "+_targetNpc.getStr()));
+在遊戲中對怪物進行物理攻擊時，就會出現以上訊息
+
+L1Spawn.Java
+搜尋
+L1World.getInstance().storeObject(mob);
+在上面加入
+System.out.println(mob.getName()+" 即將生成 該怪物力量為 "+mob.getStr());
+怪物生成時，就會在黑盒子顯示以上訊息 
+
+另外怪物強化系統對spawn指令產出的怪物無效
+
+
+
+在L1Attack裡面的pcnpcDamege函式
+
+搜尋
+return (int) dmg;
+放在他的上面

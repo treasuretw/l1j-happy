@@ -1,0 +1,170 @@
+﻿		元宝商城系统
+
+原帖地址：http://bbs2.99nets.com/thread-747617-1-1.html
+	 http://bbs.99nets.com/thread-883080-1-2.html
+
+  原作者：liumy1314
+
+
+
+【1】首先打开Navicat for MySQL
+     找到SHOP表里新增一个栏位“yuanbao”，这个栏位是物品卖出的价钱，也就是元宝要卖的价钱.
+ 
+     名称: yuanbao
+     类型: int
+     长度: 10
+     十进位: 0
+     允许空: 不打勾
+      不锁
+      默认 -1
+ 
+【2】打开l1j\server\server\datatables\ShopTable.java
+
+     搜寻
+	private final Map<Integer, L1Shop> _allShops = Maps.newMap();
+
+     下面加入
+	private final Map<Integer, Integer> _allItemSells = Maps.newMap();// TODO 元宝商城
+
+     搜寻
+	packCount = packCount == 0 ? 1 : packCount;
+	if (0 <= sellingPrice) {
+		L1ShopItem item = new L1ShopItem(itemId, sellingPrice, packCount);
+		sellingList.add(item);
+	}
+	if (0 <= purchasingPrice) {
+		L1ShopItem item = new L1ShopItem(itemId, purchasingPrice, packCount);
+		purchasingList.add(item);
+	}
+
+     替换成
+			// TODO 元宝商城 add
+			int yuanbao = rs.getInt("yuanbao");//add liumy
+			switch(npcId) {
+			case 70068:case 70020:
+			case 70024:case 70032:
+			case 80075:
+				continue;
+			default:
+				break;
+			}
+			if(0 <= sellingPrice) {
+				if(_allItemSells.get(itemId)==null) {
+					_allItemSells.put(itemId, sellingPrice/2);
+				}
+				else if(_allItemSells.get(itemId)<sellingPrice/2) {
+					_allItemSells.put(itemId, sellingPrice/2);
+				}
+			}
+			else { //-1
+				if(0 <= purchasingPrice) {
+					if(_allItemSells.get(itemId)==null){
+						_allItemSells.put(itemId, purchasingPrice);
+					}
+					else if(_allItemSells.get(itemId)<purchasingPrice){
+						_allItemSells.put(itemId, purchasingPrice);
+					}
+				}
+			}
+
+			if (0 <= sellingPrice && 0 >= yuanbao) {
+				L1ShopItem item = new L1ShopItem(itemId, sellingPrice, packCount);
+				sellingList.add(item);
+			}
+			if (0 <= purchasingPrice && 0 >= yuanbao) {
+				L1ShopItem item = new L1ShopItem(itemId, purchasingPrice, packCount);
+				purchasingList.add(item);
+			}
+			if (0 < yuanbao ) { //add liumy
+				L1ShopItem item = new L1ShopItem(itemId, yuanbao, packCount);
+				sellingList.add(item);
+			}//add liumy end
+			// TODO 元宝商城 end
+
+【3】打开l1j\server\server\model\shop\L1Shop.java
+
+  宣告
+	import l1j.server.server.serverpackets.S_SystemMessage;// TODO 元宝商城
+
+  找到
+		// 購入できるかチェック
+		if (!pc.getInventory().checkItem(L1ItemId.ADENA, price)) {
+			System.out.println(price);
+			// \f1アデナが不足しています。
+			pc.sendPackets(new S_ServerMessage(189));
+			return false;
+		}
+  改成
+		// TODO 元宝商城 add
+		//add liumy
+		int bb;
+		if (_npcId >= 990000 && _npcId <= 995000) { //元宝商城专用NPC的ID
+			bb =61019; //元宝物品编号item_id
+		}
+		else {
+			bb =L1ItemId.ADENA;
+		}//add liumy
+		if (!pc.getInventory().checkItem(bb, price)) {
+			//l1j.eric.gui.J_Main.getInstance().addConsolPost(\"\"+price);
+			// \\f1アデナが不足しています.
+			if (L1ItemId.ADENA == bb){ //add liumy
+				pc.sendPackets(new S_ServerMessage(189));
+			}
+			else {
+				pc.sendPackets(new S_SystemMessage("元宝不足，无法购买。"));//addliumy
+				//pc.sendPackets(new S_ServerMessage(189));
+			}
+			return false;
+		}
+		// TODO 元宝商城 end
+
+  再找到
+	private void sellItems(L1PcInventory inv, L1ShopBuyOrderList orderList) {
+		if (!inv.consumeItem(L1ItemId.ADENA,
+				orderList.getTotalPriceTaxIncluded())) {
+			throw new IllegalStateException("購入に必要なアデナを消費できませんでした。");
+
+  改成
+
+	private void sellItems(L1PcInventory inv, L1ShopBuyOrderListorderList) {   
+
+		//add liumy 
+		int bb; 
+		if (_npcId >= 990000 && _npcId <= 995000) { 
+		bb =61019; //元宝物品编号item_id 
+		}else{ 
+		bb =L1ItemId.ADENA; 
+		} 
+		if (!inv.consumeItem(bb, orderList 
+		.getTotalPriceTaxIncluded())) { 
+		throw new IllegalStateException("购入に必要なアデナを消费できませんでした。"); 
+
+
+  大致上完成JAVA编修的工作，目前还不能使用，回到Navicat for MySQL上
+
+【4】再次打开npc表，新增加一笔资料，npcid填上990000(编号990000~995000都可以使用)
+     name、nameid就是NPC的名子 note是备注栏没意义，给自己看而已、impl填L1Merchant、gfxid是NPC图档编号(如果不知道填啥，就填98(潘朵拉))
+     剩下就没那么重要，自己就摸索看看吧.
+
+     990000	\fH奇怪的商人	\fH奇怪的商人	元宝商人	L1Merchant	6083	0	0	0	0	0	0	0	0	0	0	0	0	     small	0	0	0	0	0	0	0	0	0	0	0	0	0	0		0	-1	-1	0	0	0	     0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	-1	0	14	0	1	     0	0		
+
+
+【5】打开npcaction表，新增加一笔资料，npcid填990000、normal_action填cold1其余就不用理他
+
+【6】打开shop表，这里开始是贩卖道具清单的地方
+     npc_id填我们刚刚新增的990000、item_id填道具id(这里就是卖的东西的item_id)、order_id(这里是贩卖清单顺序,由0开始,顺序填错就没办法正常显示)
+     yuanbao(这个就是元宝数)
+
+【7】打开spawnlist_npc表为伺服器正式在地图上显示，id是这张表的编号，不能够重复，所以移到最后一页最后一笔id在加1就是新的id
+     count是数量，填1就好；npc_templateid是刚刚新加的NPC，这里填990000；locX和locY是座标(这个就请你用gm查座标)，
+     mapid是地图编号(也是用GM帐号查地图编号)，heading是npc面向哪方，共八个方位数值由(0~7)自己试试看吧.
+【8】打开etcitem表来新增一个叫元宝的道具，item_id填入61019(由前方源码得知所使用的编号)，后3格就是名称，剩下的就可以抄我的值没关系
+
+     61019	\fH元宝	\fH元宝	\fH元宝	gem	none	gemstone	0	3212	22	0	1	0	0	0	0	0	0	0	0	1	     0	0	0	0	1500	0	0	0
+
+
+     增加好了以后就已经完成元宝商NPC的新增.
+
+
+ 
+

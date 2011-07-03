@@ -1,0 +1,100 @@
+名称：
+              新怪物强化系统
+修改Java：
+              GameServer.Java
+              L1MonsterInstance.Java
+              L1Spawn.Java
+新增Java：
+              L1MonsterEnhanceInstance.Java
+              MonsterEnhance.Java
+新增资料表：
+              monster_enhance
+使用说明：
+              current_dc - 怪物的死亡次数(dc_enhance不等于0，才会累积喔!!)
+              dc_enhance - 怪物死亡几次强化一次
+              怪物强化公式 - (current_dc / dc_enhance) * 属性 + 原始属性 = 最后属性
+              属性 - monster_enhance里面的level、hp、mp、ac、str、dex、con、wis、int、mr
+              原始属性 - npc里面的level、hp、mp、ac、str、dex、con、wis、int、mr
+              最后属性 - 怪物重生后的level、hp、mp、ac、str、dex、con、wis、int、mr
+其他：
+              此次采用的方式与旧版的相差甚大
+              且修改方式也比旧版的轻松好改
+              若需要其他属性请自行增加
+
+若有任何疑问，请回覆说明
+----------------------------------------以下教学----------------------------------------
+L1MonsterInstance.Java
+搜寻第一次
+
+
+
+if (isDead()) {
+
+在下面贴上
+
+//怪物强化系统
+                                if (MonsterEnhanceTable.getInstance().getTemplate(getNpcId()) != null) {
+                                L1MonsterEnhanceInstance mei = MonsterEnhanceTable.getInstance().getTemplate(getNpcId());
+                                if (mei.getDcEnhance() != 0) {
+                                        mei.setCurrentDc(mei.getCurrentDc()+1);
+                                        MonsterEnhanceTable.getInstance().save(mei);
+                                        if ((mei.getCurrentDc()%mei.getDcEnhance()) == 0) {
+                                                L1World.getInstance().broadcastPacketToAll(new S_SystemMessage(getName()+" 因战败太多次，能力已获得升华。"));                                        
+                                        }
+                                }
+                                }
+                                //怪物强化系统
+
+
+L1Spawn.Java
+搜寻
+
+
+doCrystalCave(npcId);
+
+在下面贴上
+
+
+//怪物强化系统
+                        if (MonsterEnhanceTable.getInstance().getTemplate(mob.getNpcId()) != null) {
+                                L1MonsterEnhanceInstance mei = MonsterEnhanceTable.getInstance().getTemplate(mob.getNpcId());
+                                int divisor = mei.getCurrentDc() / mei.getDcEnhance();
+
+                                mob.setLevel(mob.getLevel()+(mei.getLevel()*divisor));
+                                mob.setMaxHp(mob.getMaxHp()+(mei.getHp()*divisor));
+                                mob.setMaxMp(mob.getMaxMp()+(mei.getLevel()*divisor));
+                                mob.setAc(mob.getAc()+(mei.getAc()*divisor));
+                                mob.setStr(mob.getStr()+(mei.getStr()*divisor));
+                                mob.setDex(mob.getDex()+(mei.getDex()*divisor));
+                                mob.setCon(mob.getCon()+(mei.getCon()*divisor));
+                                mob.setWis(mob.getWis()+(mei.getWis()*divisor));
+                                mob.setInt(mob.getInt()+(mei.getInt()*divisor));
+                                mob.setMr(mob.getMr()+(mei.getMr()*divisor));
+                        }
+                        //怪物强化系统
+
+
+
+GameServer.Java
+搜寻
+
+
+NpcTable.getInstance();
+
+
+在下面贴上
+
+//怪物强化系统
+                MonsterEnhanceTable.getInstance();
+                //怪物强化系统
+
+
+
+----------------------------------------以上教学----------------------------------------
+
+
+http://xun6.com/file/c49cc9102/me.rar.html
+此压缩档包含monster_enhance.sql / L1MonsterEnhanceInstance.Java / MonsterEnhance.Java
+
+http://www.xun6.com/file/8fb05b9 ... B%E7%B5%B1.doc.html
+此档案为旧版教学(doc档)
