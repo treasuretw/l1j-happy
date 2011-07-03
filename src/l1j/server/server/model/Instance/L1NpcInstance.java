@@ -626,13 +626,10 @@ public class L1NpcInstance extends L1Character {
 					}
 				}
 			}
-			// 须曼特殊条件 (测试)
+			// 须曼特殊条件 
 			if (_npcTemplate.get_npcId() == 99021) {
 				int item_Id = item.getItem().getItemId();
-				if ((item_Id == 40052) // 高品质钻石
-						|| (item_Id == 40053) // 高品质红宝石
-						|| (item_Id == 40054) // 高品质蓝宝石
-						|| (item_Id == 40055) // 高品质绿宝石
+				if ((item_Id == 40054) // 高品质蓝宝石
 						&& (item.getItem().getType() != 6 || item.getItem().getType() != 7)) {
 					if (getHiddenStatus() == HIDDEN_STATUS_FLY) {
 						L1Inventory groundInventory = L1World.getInstance()
@@ -647,7 +644,7 @@ public class L1NpcInstance extends L1Character {
 					}
 				}
 			}
-			// 须曼特殊条件 (测试)
+			// 须曼特殊条件 
 		}
 	}
 

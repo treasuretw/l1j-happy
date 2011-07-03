@@ -790,10 +790,10 @@ public class L1MonsterInstance extends L1NpcInstance {
 			}
 		}
 
-		// 须曼 (测试)
+		// 须曼 
 		else if (npcid == 99021) {
 			if (getMaxHp() / 3 > getCurrentHp()) { // 暂定剩余血量
-				if (1 > Random.nextInt(20)) { // 暂定闭壳治疗的机率
+				if (1 > Random.nextInt(60)) { // 暂定闭壳治疗的机率
 					allTargetClear();
 					setHiddenStatus(HIDDEN_STATUS_FLY);
 					broadcastPacket(new S_DoActionGFX(getId(),4));
