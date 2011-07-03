@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-7-3 ���� 12:55:04
+Navicat MySQL Data Transfer
+
+Source Server         : localhost
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : l1j-cn
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-03 19:05:16
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for william_etcitem
+-- Table structure for `william_etcitem`
 -- ----------------------------
+DROP TABLE IF EXISTS `william_etcitem`;
 CREATE TABLE `william_etcitem` (
   `item_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL DEFAULT '',
@@ -45,7 +52,7 @@ CREATE TABLE `william_etcitem` (
 ) ENGINE=MyISAM AUTO_INCREMENT=600008 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records 
+-- Records of william_etcitem
 -- ----------------------------
 INSERT INTO `william_etcitem` VALUES ('5000', '元宝', '$5967', '$5967', 'gem', 'none', 'gemstone', '0', '3212', '22', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '1500', '0', '0', '0');
 INSERT INTO `william_etcitem` VALUES ('5001', '10%武器攻击强化石', '$9698', '$9698', 'scroll', 'dai', 'paper', '0', '2291', '6936', '3270', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0');
@@ -124,3 +131,6 @@ INSERT INTO `william_etcitem` VALUES ('5074', '第三关钥匙', '第三关钥�
 INSERT INTO `william_etcitem` VALUES ('5072', '第一关钥匙', '第一关钥匙', '测试', 'scroll', 'normal', 'glass', '0', '1025', '22', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1');
 INSERT INTO `william_etcitem` VALUES ('5073', '第二关钥匙', '第二关钥匙', '测试', 'scroll', 'normal', 'glass', '0', '1025', '22', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1');
 INSERT INTO `william_etcitem` VALUES ('6000', '传送魔杖', '传送魔杖', '传送魔杖', 'wand', 'spell_long', 'wood', '7000', '116', '28', '20', '0', '15', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '6', '1000', '0', '0', '1');
+INSERT INTO `william_etcitem` VALUES ('5075', '殷海薩的祝福(增加25%)', '殷海薩的祝福(增加25%)', '', 'other', 'normal', 'gemstone', '0', '3725', '3963', '4168', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `william_etcitem` VALUES ('5076', '殷海薩的祝福(增加50%)', '殷海薩的祝福(增加50%)', '', 'other', 'normal', 'gemstone', '0', '3727', '3963', '4167', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `william_etcitem` VALUES ('5077', '殷海薩的祝福(增加100%)', '殷海薩的祝福(增加100%)', '', 'other', 'normal', 'gemstone', '0', '3721', '3963', '4166', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0');

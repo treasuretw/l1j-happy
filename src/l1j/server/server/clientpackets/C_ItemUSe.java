@@ -834,6 +834,37 @@ public class C_ItemUSe extends ClientBasePacket {
 			    		pc.sendPackets(new S_SystemMessage("这里已经没有BOSS的气味，好像晚了一步..."));
 			    	}
 			    }
+				// TODO 殷海萨祝福药水
+			    else if (itemId == 5075) {
+			    	if (pc.getAinPoint() <= 75) {
+			    		pc.setAinPoint(pc.getAinPoint() + 25); // 点数 + 1
+		                pc.getInventory().removeItem(l1iteminstance, 1);
+			            pc.save();
+			    		pc.sendPackets(new S_SystemMessage("殷海萨祝福点数增加25。"));
+			    		} else {
+			    		pc.sendPackets(new S_SystemMessage("无法使用。"));
+			    	}
+			    }
+			    else if (itemId == 5076) {
+			    	if (pc.getAinPoint() <= 50) {
+			    		pc.setAinPoint(pc.getAinPoint() + 50); // 点数 + 1
+		                pc.getInventory().removeItem(l1iteminstance, 1);
+			            pc.save();
+			    		pc.sendPackets(new S_SystemMessage("殷海萨祝福点数增加50。"));
+			    		} else {
+			    		pc.sendPackets(new S_SystemMessage("无法使用。"));
+			    	}
+			    }
+			    else if (itemId == 5077) {
+			    	if (pc.getAinPoint() <= 0) {
+			    		pc.setAinPoint(pc.getAinPoint() + 100); // 点数 + 1
+		                pc.getInventory().removeItem(l1iteminstance, 1);
+			            pc.save();
+			    		pc.sendPackets(new S_SystemMessage("殷海萨祝福点数增加100。"));
+			    		} else {
+			    		pc.sendPackets(new S_SystemMessage("无法使用。"));
+			    	}
+			    }
 				// TODO 新增 end //////////////////////////////////////
 
 				// 返生药水
