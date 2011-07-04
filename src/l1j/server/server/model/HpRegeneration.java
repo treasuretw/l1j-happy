@@ -21,7 +21,9 @@ import l1j.server.server.utils.Random;
 
 import l1j.server.server.model.Instance.L1EffectInstance;
 import l1j.server.server.model.Instance.L1PcInstance;
+import l1j.server.server.serverpackets.S_bonusstats;
 import l1j.server.server.types.Point;
+import l1j.william.L1WilliamSystemMessage;
 import static l1j.server.server.model.skill.L1SkillId.*;
 
 public class HpRegeneration extends TimerTask {
@@ -156,6 +158,21 @@ public class HpRegeneration extends TimerTask {
 				equipHpr = 0;
 			}
 		}
+
+		// 免登出可以把能力值点完         chinaabc
+		if (L1WilliamSystemMessage.ShowMessage(1002).equals("true")) { // 开关
+			if (_pc.getLevel() >= 51 && _pc.getLevel() - 50 > _pc.getBonusStats()) {
+				if ((_pc.getBaseStr()
+						+ _pc.getBaseDex()
+						+ _pc.getBaseCon()
+						+ _pc.getBaseInt()
+						+ _pc.getBaseWis()
+						+ _pc.getBaseCha()) < 150) {
+					_pc.sendPackets(new S_bonusstats(_pc.getId(), 1));
+				}
+			}
+		}
+		// END
 
 		int newHp = _pc.getCurrentHp();
 		newHp += bonus + equipHpr;
