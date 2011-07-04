@@ -21,6 +21,7 @@ import static l1j.server.server.model.skill.L1SkillId.CURSE_PARALYZE;
 import static l1j.server.server.model.skill.L1SkillId.SHOCK_STUN;
 import static l1j.server.server.model.skill.L1SkillId.EARTH_BIND;
 
+import static l1j.server.server.model.skill.L1SkillId.ABSOLUTE_BARRIER;
 import static l1j.server.server.model.skill.L1SkillId.COOKING_NOW;
 import static l1j.server.server.model.skill.L1SkillId.DECAY_POTION;
 import static l1j.server.server.model.skill.L1SkillId.SHAPE_CHANGE;
@@ -48,6 +49,7 @@ import l1j.server.server.Account;
 import l1j.server.server.ActionCodes;
 import l1j.server.server.ClientThread;
 import l1j.server.server.FishingTimeController;
+import l1j.william.GetNowTime;
 import l1j.server.server.IdFactory;
 import l1j.server.server.datatables.CharacterTable;
 import l1j.server.server.datatables.FurnitureSpawnTable;
@@ -863,6 +865,33 @@ public class C_ItemUSe extends ClientBasePacket {
 			    		pc.sendPackets(new S_SystemMessage("殷海萨祝福点数增加100。"));
 			    		} else {
 			    		pc.sendPackets(new S_SystemMessage("无法使用。"));
+			    	}
+			    }
+
+				// 活动卷轴 (限制活动开始时间为(24h) 0点 4点 8点 12点 16点 20点 每天共六次, 每次2小时) by mca 20090113
+			    else if (itemId == 5078) {
+			    	if(pc.isGm()
+			    			|| GetNowTime.GetNowHour() == 0 // 系统时间 (现实时间)
+			    			|| GetNowTime.GetNowHour() == 4
+			    			|| GetNowTime.GetNowHour() == 8
+			    			|| GetNowTime.GetNowHour() == 12
+			    			|| GetNowTime.GetNowHour() == 16
+			    			|| GetNowTime.GetNowHour() == 20) {
+			    		if (pc.getMap().isEscapable() || pc.isGm()) {
+			    			L1Teleport.teleport(pc, ((L1EtcItem) l1iteminstance
+			    					.getItem()).get_locx(),
+			    					((L1EtcItem) l1iteminstance.getItem())
+			    					.get_locy(),
+			    					((L1EtcItem) l1iteminstance.getItem())
+			    					.get_mapid(), 5, true);
+			    			pc.setSkillEffect(1800, 1); // 启动计时器
+			    			pc.getInventory().removeItem(l1iteminstance, 1);
+			    		} else {
+			    			pc.sendPackets(new S_ServerMessage(647)); // 这附近的能量影响到瞬间移动。在此地无法使用瞬间移动。
+			    		}
+			    		cancelAbsoluteBarrier(pc); // 解除绝对屏障状态
+			    	} else {
+			    		pc.sendPackets(new S_BlueMessage(166,"\\f3","现在不是活动时间,无法使用"));
 			    	}
 			    }
 				// TODO 新增 end //////////////////////////////////////
@@ -5433,6 +5462,14 @@ public class C_ItemUSe extends ClientBasePacket {
 		}
 	}
 
+	private void cancelAbsoluteBarrier(L1PcInstance pc) { // 解除绝对屏障状态
+		if (pc.hasSkillEffect(ABSOLUTE_BARRIER)) {
+			pc.killSkillEffectTimer(ABSOLUTE_BARRIER);
+			pc.startHpRegeneration();
+			pc.startMpRegeneration();
+			pc.startMpRegenerationByDoll();
+		}
+	}
 	private boolean createNewItem(L1PcInstance pc, int item_id, int count) {
 		L1ItemInstance item = ItemTable.getInstance().createItem(item_id);
 		if (item != null) {

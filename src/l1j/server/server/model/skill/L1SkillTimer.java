@@ -26,6 +26,7 @@ import l1j.server.server.datatables.SkillsTable;
 import l1j.server.server.model.L1Character;
 import l1j.server.server.model.L1EffectSpawn;
 import l1j.server.server.model.L1PolyMorph;
+import l1j.server.server.model.L1Teleport;
 import l1j.server.server.model.Instance.L1MonsterInstance;
 import l1j.server.server.model.Instance.L1NpcInstance;
 import l1j.server.server.model.Instance.L1PcInstance;
@@ -556,6 +557,24 @@ class L1SkillStop {
 
 		}
 
+		// 活动卷轴 (活动设定限制时间)
+		else if (skillId == 1800) {
+			L1PcInstance pc = (L1PcInstance)cha;
+			if((cha instanceof L1PcInstance)) {
+				pc.sendPackets(new S_SystemMessage("你已经进入活动地图。"));
+				pc.setSkillEffect(1801, 125 * 60000); // 倒计时120分钟 (2小时)
+			}
+		}
+
+		else if(skillId == 1801) {
+			if (cha instanceof L1PcInstance) {
+				L1PcInstance pc = (L1PcInstance) cha;
+					L1Teleport.teleport(pc, 33080, 33392, (short)4, 5, true);
+					pc.sendPackets(new S_SystemMessage("你参加活动的时间已到，传送至银骑士村。"));
+			}
+		}
+		// 活动卷轴 (活动设定限制时间)
+		
 		// TODO 猜数字 by aloha777
 		else if (skillId==7005) {
 			L1PcInstance pc = (L1PcInstance)cha;

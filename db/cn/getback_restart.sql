@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-6-25 ���� 12:53:08
+Navicat MySQL Data Transfer
+
+Source Server         : localhost
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : l1j-cn
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-05 01:53:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for getback_restart
+-- Table structure for `getback_restart`
 -- ----------------------------
+DROP TABLE IF EXISTS `getback_restart`;
 CREATE TABLE `getback_restart` (
   `area` int(10) NOT NULL DEFAULT '0',
   `note` varchar(50) DEFAULT NULL,
@@ -21,7 +28,7 @@ CREATE TABLE `getback_restart` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records 
+-- Records of getback_restart
 -- ----------------------------
 INSERT INTO `getback_restart` VALUES ('5', 'Talking Island Ship to Aden Mainland', '32631', '32983', '0');
 INSERT INTO `getback_restart` VALUES ('6', 'Aden Mainland Ship to Talking Island', '32543', '32728', '4');
@@ -238,3 +245,4 @@ INSERT INTO `getback_restart` VALUES ('5300', '釣魚池', '32608', '32772', '4'
 INSERT INTO `getback_restart` VALUES ('5301', '釣魚池', '32608', '32772', '4');
 INSERT INTO `getback_restart` VALUES ('5302', '釣魚池', '32608', '32772', '4');
 INSERT INTO `getback_restart` VALUES ('306', '黑暗妖精试炼地监', '32896', '32663', '4');
+INSERT INTO `getback_restart` VALUES ('5805', '隐藏之谷活动地图', '34047', '32283', '4');

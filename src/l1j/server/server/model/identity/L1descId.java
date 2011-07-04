@@ -4723,7 +4723,7 @@ public class L1descId {
 		/**黑市商人：想买到好东西就来找我！不过我不要天宝我只要金币。*/
 		public static final int $8886 = 8886;
 
-		/**  */
+		/** 隐藏之谷活动卷轴 */
 		public static final int $9568 = 9568;
 		/** 猎人项链 */
 		public static final int $9569 = 9569;
@@ -5074,6 +5074,12 @@ public class L1descId {
 		public static final int $9741 = 9741;
 		/** 超特制的耀武魔杖 */
 		public static final int $9742 = 9742;
+		/** 殷海薩的祝福(增加25%) */
+		public static final int $9743 = 9743;
+		/** 殷海薩的祝福(增加50%) */
+		public static final int $9744 = 9744;
+		/**殷海薩的祝福(增加100%) */
+		public static final int $9745 = 9745;
 
 
 }
