@@ -358,6 +358,13 @@ public class L1WeaponSkill {
 		} else if (weaponId == 260) { // レイジングウィンド
 			probability = 4;
 			attr = L1Skills.ATTR_WIND;
+			
+			// 施工线-start-属性强化卷的一般特效 by LovieAlice
+		} else { // 剩下的都100%机率、风属性,注意如您另设有范围攻击武器，请在上面加上weaponId及设定
+			probability = 100; // L1Attack 已有20%的设定，这边就不重复
+			attr = L1Skills.ATTR_WIND;
+			// 施工线-end-属性强化卷的一般特效 by LovieAlice
+			
 		}
 		if (probability >= chance) {
 			int sp = pc.getSp();
@@ -380,7 +387,19 @@ public class L1WeaponSkill {
 				effectTargetId = pc.getId();
 				effectId = 758;
 				areaBase = pc;
+
+				// 施工线-start-属性强化卷的一般特效 by LovieAlice
+			} else { // 剩下的,注意如您另设有范围攻击武器，请在上面加上weaponId及设定
+				L1ItemInstance weapon = null;
+				weapon = pc.getWeapon();
+				area = weapon.getAttrEnchantLevel(); // 强化等级
+				damageRate = 1.0D;
+				effectTargetId = cha.getId();
+				effectId = 5665;
+				areaBase = cha; // 以怪物为中心，开始算范围
 			}
+			// 施工线-end-属性强化卷的一般特效 by LovieAlice
+
 			double bsk = 0;
 			if (pc.hasSkillEffect(BERSERKERS)) {
 				bsk = 0.2;

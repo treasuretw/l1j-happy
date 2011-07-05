@@ -21,6 +21,7 @@ import l1j.server.server.ActionCodes;
 import l1j.server.server.WarTimeController;
 import l1j.server.server.datatables.SkillsTable;
 import l1j.server.server.model.Instance.L1ItemInstance;
+import l1j.server.server.model.Instance.L1MonsterInstance;
 import l1j.server.server.model.Instance.L1NpcInstance;
 import l1j.server.server.model.Instance.L1PcInstance;
 import l1j.server.server.model.Instance.L1PetInstance;
@@ -34,6 +35,7 @@ import l1j.server.server.serverpackets.S_AttackMissPacket;
 import l1j.server.server.serverpackets.S_AttackPacket;
 import l1j.server.server.serverpackets.S_DoActionGFX;
 import l1j.server.server.serverpackets.S_EffectLocation;
+import l1j.server.server.serverpackets.S_Paralysis;
 import l1j.server.server.serverpackets.S_ServerMessage;
 import l1j.server.server.serverpackets.S_SkillIconGFX;
 import l1j.server.server.serverpackets.S_SkillSound;
@@ -1028,6 +1030,66 @@ public class L1Attack {
 			dmg += L1WeaponSkill.getWeaponSkillDamage(_pc, _target, _weaponId);
 		}
 
+		// 施工线-start-属性强化卷的一般特效 by LovieAlice
+		if (_weaponAttrEnchantKind > 0) {
+			int i = _weaponAttrEnchantLevel; // 强化等级
+			int j = _weaponAttrEnchantKind; // 强化种类
+			int k = Random.nextInt(100); // 0~99,旧写法请用 int k = _random.nextInt(100); 
+			if (k < 20){ // 0~19，也就是10%机率发动
+				if (j==1) { // 地
+					switch(i) {
+					case 1:
+						_target.setSkillEffect(STATUS_FREEZE, 800); // 0.8秒
+						break;
+					case 2:
+						_target.setSkillEffect(STATUS_FREEZE, 1200); // 1.2秒
+						break;
+                    case 3:
+                    	_target.setSkillEffect(STATUS_FREEZE, 1600); // 1.6秒
+                    	break;
+					}
+					_target.sendPackets(new S_Paralysis(S_Paralysis.TYPE_BIND, true)); // pc 束缚用，npc要用另一种 
+					_pc.sendPackets(new S_SkillSound(_target.getId(), 4184)); // 图案编号
+					_pc.broadcastPacket(new S_SkillSound(_target.getId(), 4184));
+				} else if (j==2) { // 火
+					switch(i) {
+					case 1:
+						dmg *= 1.2;
+						break;
+					case 2:
+						dmg *= 1.4;
+						break;
+					case 3:
+						dmg *= 1.6;
+						break;
+					}
+					_pc.sendPackets(new S_SkillSound(_target.getId(), 4661)); // 图案编号
+					_pc.broadcastPacket(new S_SkillSound(_target.getId(), 4661));
+				} else if (j==4) { // 水,本写法为吸血
+					switch(i) {
+					case 1:
+						_drainHp = (short)(dmg*0.2); // 吸血量 = 伤害的20%
+						break;
+					case 2:
+						_drainHp = (short)(dmg*0.4); // 吸血量 = 伤害的40%
+						break;
+					case 3:
+						_drainHp = (short)(dmg*0.6); // 吸血量 = 伤害的60%
+						break;
+					}
+					_pc.sendPackets(new S_SkillSound(_target.getId(), 1609)); // 图案编号
+					_pc.broadcastPacket(new S_SkillSound(_target.getId(), 1609));
+					if( !(_target instanceof L1PcInstance)) { // 防止打(非玩家)吸血,这是Pc对Pc
+						_drainHp = 0;
+					}
+				} else if (j==8){ // 风,由L1WeaponSkil来做伤害范围
+					dmg += L1WeaponSkill.getAreaSkillWeaponDamage(_pc, _target, _weaponId);
+				}
+			} else
+				dmg +=1; // 剩余的80%机率 +1 攻击
+		}
+		// 施工线-end-属性强化卷的一般特效 by LovieAlice
+		
 		dmg -= _targetPc.getDamageReductionByArmor(); // 防具によるダメージ轻减
 
 		// 魔法娃娃效果 - 伤害减免
@@ -1191,6 +1253,66 @@ public class L1Attack {
 			dmg += L1WeaponSkill.getWeaponSkillDamage(_pc, _target, _weaponId);
 		}
 
+		// 施工线-start-属性强化卷的一般特效 by LovieAlice
+		if (_weaponAttrEnchantKind > 0) {
+			int i = _weaponAttrEnchantLevel; // 强化等级
+			int j = _weaponAttrEnchantKind; // 强化种类
+			int k = Random.nextInt(100); // 0~99,旧写法请用 int k = _random.nextInt(100); 
+			if (k < 20) { // 0~19，也就是20%机率发动
+				if (j == 1){ // 地
+					switch(i) {
+					case 1:
+						_target.setSkillEffect(STATUS_FREEZE, 800); // 0.8秒
+						break;
+					case 2:
+						_target.setSkillEffect(STATUS_FREEZE, 1200); // 1.2秒
+						break;
+					case 3:
+						_target.setSkillEffect(STATUS_FREEZE, 1600); // 1.6秒
+						break;
+					}
+					_target.setParalyzed(true); // npc 束缚用，pc要用另一种
+					_pc.sendPackets(new S_SkillSound(_target.getId(), 4184)); // 图案编号
+					_pc.broadcastPacket(new S_SkillSound(_target.getId(), 4184));
+				} else if (j == 2) { // 火
+					switch(i) {
+					case 1:
+						dmg *= 1.2;
+						break;
+					case 2:
+						dmg *= 1.4;
+						break;
+					case 3:
+						dmg *= 1.6;
+						break;
+					}
+					_pc.sendPackets(new S_SkillSound(_target.getId(), 4661)); // 图案编号
+					_pc.broadcastPacket(new S_SkillSound(_target.getId(), 4661));
+				} else if (j == 4){ // 水,本写法为吸血
+					switch(i) {
+					case 1:
+						_drainHp = (short)(dmg*0.2); // 吸血量 = 伤害的20%
+						break;
+					case 2:
+						_drainHp = (short)(dmg*0.4); // 吸血量 = 伤害的40%
+						break;
+					case 3:
+						_drainHp = (short)(dmg*0.6); // 吸血量 = 伤害的60%
+						break;
+					}
+					_pc.sendPackets(new S_SkillSound(_target.getId(), 1609)); // 图案编号
+					_pc.broadcastPacket(new S_SkillSound(_target.getId(), 1609));
+					if( !(_target instanceof L1MonsterInstance)) { // 防止打(非怪物)吸血,这是Pc对Npc
+						_drainHp = 0;
+					}
+				} else if (j == 8){ // 风,由L1WeaponSkil来做伤害范围
+					dmg += L1WeaponSkill.getAreaSkillWeaponDamage(_pc, _target, _weaponId);
+				}
+			} else
+				dmg +=1; // 剩余的80%机率 +1 攻击
+		}
+		// 施工线-end-属性强化卷的一般特效 by LovieAlice
+		
 		dmg -= calcNpcDamageReduction();
 
 		// 使用暴击增加15点伤害，而奇古兽固定15点伤害

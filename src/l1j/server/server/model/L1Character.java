@@ -27,6 +27,7 @@ import static l1j.server.server.model.skill.L1SkillId.STATUS_HOLY_WATER_OF_EVA;
 import java.util.List;
 import java.util.Map;
 
+import l1j.server.server.PacketOutput;
 import l1j.server.server.model.Instance.L1DollInstance;
 import l1j.server.server.model.Instance.L1FollowerInstance;
 import l1j.server.server.model.Instance.L1ItemInstance;
@@ -1808,4 +1809,22 @@ public class L1Character extends L1Object {
 		return _isSPELL_NODIRDelay;
 	}
 	// 加入防加速系统 end
+
+	// 施工线-start-属性强化卷的一般特效 by LovieAlice
+	private PacketOutput _out;
+
+	public void setPacketOutput(PacketOutput out) {
+		_out = out;
+    }
+
+    public void sendPackets(ServerBasePacket serverbasepacket) {
+    	if (_out == null) {
+    		return;
+    	}
+    	try {
+    		_out.sendPacket(serverbasepacket);
+    	} catch (Exception e) {
+    	}
+    }
+	// 施工线-end-属性强化卷的一般特效 by LovieAlice
 }
