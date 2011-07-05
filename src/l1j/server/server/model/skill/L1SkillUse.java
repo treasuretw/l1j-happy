@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import l1j.server.Config;
 import l1j.server.server.ActionCodes;
 import l1j.server.server.datatables.PolyTable;
 import l1j.server.server.datatables.SkillsTable;
@@ -2058,9 +2059,12 @@ public class L1SkillUse {
 						//int stun = Random.nextInt(10) + 5;
 						//drainMana = stun + (_user.getInt() / 2);
 						int[] stunTimeArray =
-						{ 500, 1000, 1500, 2000, 2500, 3000 };
+						//	{ 500, 1000, 1500, 2000, 2500, 3000 };
+						{ 1000, 1050, 1100, 1150, 1200, 1250,
+								1300, 1350, 1400, 1450, 1500, 1550, 1600, 1650,
+								1700, 1750, 1800, 1850, 1900, 1950, 2000 }; // 冲晕秒数设置
 						int rnd = Random.nextInt(stunTimeArray.length);
-						_shockStunDuration = stunTimeArray[rnd];
+						_shockStunDuration = stunTimeArray[rnd] * Config.SHOCK_STUN_TIMER; // 冲晕秒数设置
 						if ((cha instanceof L1PcInstance) && cha.hasSkillEffect(SHOCK_STUN)) {
 							_shockStunDuration += cha.getSkillEffectTimeSec(SHOCK_STUN) * 1000;
 						}

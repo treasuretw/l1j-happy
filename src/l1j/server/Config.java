@@ -563,6 +563,8 @@ public final class Config {
 	public static int WeaponOverSafeBoard;		// 武器 (多少以上才广播)
 	public static int ArmorOverSafeBoard;		// 防具 (多少以上才广播)
 
+	public static int SHOCK_STUN_TIMER; // 冲晕秒数设置
+	
 	/** 伺服器设定档 */
 	public static final String SERVER_CONFIG_FILE = "./config/server.properties";
 
@@ -1114,6 +1116,11 @@ public final class Config {
 					"WeaponOverSafeBoard", "1"));
 			ArmorOverSafeBoard = Integer.parseInt(ABCSettings.getProperty(	// 防具 (多少以上才广播)
 					"ArmorOverSafeBoard", "1"));
+			
+			// 冲晕秒数设置
+			SHOCK_STUN_TIMER =Integer.parseInt(ABCSettings.getProperty(
+					"SHOCKSTUNTIMER"));
+
 
 		}
 		catch (Exception e) {
