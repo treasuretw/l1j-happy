@@ -628,6 +628,7 @@ public class L1SkillId {
 	/** 毒伤害 */
 	public static final int STATUS_POISON = 1006;
 
+	/** 卡司特毒 */
 	public static final int STATUS_POISON_SILENCE = 1007;
 
 	public static final int STATUS_POISON_PARALYZING = 1008;
@@ -649,9 +650,10 @@ public class L1SkillId {
 	/** 伊娃圣水状态 */
 	public static final int STATUS_HOLY_WATER_OF_EVA = 1015;
 
-	/**勇水状态*/
+	/** 勇水状态 */
 	public static final int STATUS_ELFBRAVE = 1016;
 
+	/** 生命之树果实 */
 	public static final int STATUS_RIBRAVE = 1017;
 
 	/** 立方：燃烧(友方) */
@@ -672,6 +674,7 @@ public class L1SkillId {
 	/** 立方：冲击(敌方) */
 	public static final int STATUS_CUBE_SHOCK_TO_ENEMY = 1023;
 
+	/** 立方：冲击的 MR 减少 */
 	public static final int STATUS_MR_REDUCTION_BY_CUBE_SHOCK = 1024;
 
 	/** 立方：和谐 */
@@ -863,6 +866,7 @@ public class L1SkillId {
 	/** 束缚术 */
 	public static final int STATUS_FREEZE = 10071;
 
+	/** 石化持续时间 */
 	public static final int CURSE_PARALYZE2 = 10101;
 
 	// 编号待修正 (可攻击炎魔、火焰之影状态)
@@ -876,6 +880,7 @@ public class L1SkillId {
 	/** 三段加速 */
 	public static final int EFFECT_THIRD_SPEED = 4000;
 
+	/** 道具辅助类状态开头 */
 	public static final int EFFECT_BEGIN = 4001;
 
 	/** 神力药水150% */
@@ -1013,33 +1018,35 @@ public class L1SkillId {
 	/** 莎尔的祝福 */
 	public static final int EFFECT_BLESS_OF_SAELL = 4057;
 
+	/** 道具辅助类状态结尾 */
 	public static final int EFFECT_END = 4057;
 
 
-	// 特殊状态
+	/** 特殊状态开头 */
 	public static final int SPECIAL_EFFECT_BEGIN = 5001;
 
-	/** 锁链剑 (弱点曝光 LV1) **/
+	/** 锁链剑 (弱点曝光 LV1) */
 	public static final int SPECIAL_EFFECT_WEAKNESS_LV1 = 5001;
 
-	/** 锁链剑 (弱点曝光 LV2) **/
+	/** 锁链剑 (弱点曝光 LV2) */
 	public static final int SPECIAL_EFFECT_WEAKNESS_LV2 = 5002;
 
-	/** 锁链剑 (弱点曝光 LV3) **/
+	/** 锁链剑 (弱点曝光 LV3) */
 	public static final int SPECIAL_EFFECT_WEAKNESS_LV3 = 5003;
 
-	/** 骷髅毁坏 (发动) **/
+	/** 骷髅毁坏 (发动) */
 	public static final int BONE_BREAK_START = 5004;
 
-	/** 骷髅毁坏 (结束) **/
+	/** 骷髅毁坏 (结束) */
 	public static final int BONE_BREAK_END = 5005;
 
-	/** 混乱 (发动中)*/
+	/** 混乱 (发动中) */
 	public static final int CONFUSION_ING = 5006;
 
-	/** 夺命之雷 (发动)*/
+	/** 夺命之雷 (发动) */
 	public static final int THUNDER_GRAB_START = 5007;
 
+	/** 特殊状态结尾 */
 	public static final int SPECIAL_EFFECT_END = 5007;
 
 
@@ -1047,73 +1054,75 @@ public class L1SkillId {
 	/** 新手保护(遭遇的守护) **/
 	public static final int STATUS_NOVICE = 8000;
 
+	/** 附魔石 */
 	public static final int MAGIC_STONE = 6001;
 
+	/** 附魔石结束 */
 	public static final int MAGIC_STONE_END = 6036;
 
 
 	// 怪物增加
-	/**巴拉卡斯  火牢*/
+	/** 巴拉卡斯  火牢 */
     public static final int BLKS_FIRE_WALL = 12132;
 
-	/**安塔瑞斯  毒雾*/
+	/** 安塔瑞斯  毒雾 */
 	public static final int ATRS_FIRE_WALL = 12127;
 
-	/** 亚力安冰矛围篱 **/
+	/** 亚力安冰矛围篱 */
 	public static final int ICE_LANCE_COCKATRICE = 15003;
 
-	/** 邪恶蜥蜴冰矛围篱 **/
+	/** 邪恶蜥蜴冰矛围篱 */
 	public static final int ICE_LANCE_BASILISK = 15004;
 
 
 	//其他
-	/**双倍经验药水A*/
+	/** 双倍经验药水A */
 	public static final int EXP_UP_A = 41463;
 
-	/**双倍经验药水B*/
+	/** 双倍经验药水B */
 	public static final int EXP_UP_B = 41464;
 
-	/**双倍经验药水C*/
+	/** 双倍经验药水C */
 	public static final int EXP_UP_C = 41465;
 	public static final int EXP_UP_D = 41615;
 	public static final int BUFF_A = 41518;
 	public static final int BUFF_B = 41519;
 	public static final int BUFF_C = 41520;
 
-	/**生命升华药水*/
+	/** 生命升华药水 */
 	public static final int BUFF_D = 41521;
 
-	/**魔法升华药水*/
+	/** 魔法升华药水 */
 	public static final int BUFF_E = 41522;
 
-	/**魔法抵抗药水*/
+	/** 魔法抵抗药水 */
 	public static final int BUFF_F = 41523;
 
-	/**力量药水*/
+	/** 力量药水 */
 	public static final int BUFF_G = 41525;
 
-	/**坚韧药水*/
+	/** 坚韧药水 */
 	public static final int BUFF_H = 41526;
 
-	/**暴怒药水*/
+	/** 暴怒药水 */
 	public static final int BUFF_I = 41527;
 
-	/**智力药水*/
+	/** 智力药水 */
 	public static final int BUFF_J = 41528;
 
-	/**活化药水*/
+	/** 活化药水 */
 	public static final int BUFF_K = 41529;
 
-	/**巫师药水*/
+	/** 巫师药水 */
 	public static final int BUFF_L = 41530;
 
-	/**突袭药水*/
+	/** 突袭药水 */
 	public static final int BUFF_M = 41531;
 
-	/**强力恢复药水*/
+	/** 强力恢复药水 */
 	public static final int BUFF_N = 41532;
 
-	/**疯狂力量药水*/
+	/** 疯狂力量药水 */
 	public static final int BUFF_O = 41533;
 	public static final int BUFF_P = 41468;
 	public static final int BUFF_Q = 41469;
@@ -1122,21 +1131,20 @@ public class L1SkillId {
 	public static final int BUFF_T = 41619;
 	public static final int BUFF_U = 41620;
 	public static final int BUFF_V = 41621;
-	//public static final int STATUS_FREEZE = 10071;
+
 	public static final int FLA_WATER_WALL = 12130;
-	//public static final int CURSE_PARALYZE2 = 10101;
+
 
 	/** 殷海萨的祝福 */
 	public static final int EXP_POTION = 7013;
 
+	// 不确定
 //	/** 修正施法过快造成玩家座标错误 */
-//	public static final int STATUS_YOUAREACCLERATOR = 1026;
+
 	public static final int ChinSword1 = 4321;
 	public static final int ChinSword2 = 4322;
 	public static final int ChinSword3 = 4323;
-	//public static final int STATUS_BRAVE2 = 20001; // 宠物竞速
-	//**新增三段加速**/
-	//public static final int STATUS_THIRD_SPEED = 90002;
+
 	public static final int MOVE_BACK = 4011;
 
 }
