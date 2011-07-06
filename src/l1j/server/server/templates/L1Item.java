@@ -728,5 +728,17 @@ public abstract class L1Item implements Cloneable, Serializable {
 		return _POLYin;
 	}
 	// 装备武器变身 (变身编号) end
+	
+	// sosodemon add 声望控制 BY SosoDEmoN
+	private int _checkfamenameLevel;
+
+	public int getCheckFameLevel() {
+		return _checkfamenameLevel;
+    }
+
+	public void setCheckFameLevel(int i) {
+		_checkfamenameLevel = i;
+    }
+	// sosodemon end 声望控制 BY SosoDEmoN
 
 }

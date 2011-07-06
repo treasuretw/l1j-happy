@@ -266,6 +266,7 @@ public class ItemTable {
 				item.set_delayEffect(rs.getInt("delay_effect"));
 				item.setFoodVolume(rs.getInt("food_volume"));
 				item.setToBeSavedAtOnce((rs.getInt("save_at_once") == 1) ? true : false);
+				item.setCheckFameLevel(rs.getInt("CheckFameLV")); // sosodemon add 物品声望值控制
 
 				result.put(new Integer(item.getItemId()), item);
 			}
@@ -346,6 +347,7 @@ public class ItemTable {
 				weapon.setCantDelete(rs.getInt("cant_delete") == 1 ? true : false);
 				weapon.setHasteItem(rs.getInt("haste_item") == 0 ? false : true);
 				weapon.setMaxUseTime(rs.getInt("max_use_time"));
+				weapon.setCheckFameLevel(rs.getInt("CheckFameLV")); // sosodemon add 武器声望值控制
 
 				// 装备武器变身 (开关)
 				weapon.setpolySW(rs.getInt("polySW"));
@@ -444,6 +446,7 @@ public class ItemTable {
 				armor.set_regist_blind(rs.getInt("regist_blind"));
 				armor.setMaxUseTime(rs.getInt("max_use_time"));
 				armor.setGrade(rs.getInt("grade"));
+				armor.setCheckFameLevel(rs.getInt("CheckFameLV")); // sosodemon add 防具声望值控制
 
 				result.put(new Integer(armor.getItemId()), armor);
 			}
