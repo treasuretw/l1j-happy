@@ -26,6 +26,9 @@ import static l1j.server.server.model.skill.L1SkillId.EFFECT_POTION_OF_EXP_200;
 import static l1j.server.server.model.skill.L1SkillId.EFFECT_POTION_OF_EXP_225;
 import static l1j.server.server.model.skill.L1SkillId.EFFECT_POTION_OF_EXP_250;
 import static l1j.server.server.model.skill.L1SkillId.EFFECT_POTION_OF_BATTLE;
+import static l1j.server.server.model.skill.L1SkillId.EXP_UP_A;
+import static l1j.server.server.model.skill.L1SkillId.EXP_UP_B;
+import static l1j.server.server.model.skill.L1SkillId.EXP_UP_C;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -379,12 +382,11 @@ public class CalcExp {
 		pc.addLawful(add_lawful);
 
 		double exppenalty = ExpTable.getPenaltyRate(pc.getLevel());
-		double foodBonus = 1.0;
-		@SuppressWarnings("unused")
-		double LevelBonus = 1.0;
-		double expBonus = 1.0;
-		@SuppressWarnings("unused")
-		double ainBonus = 1.0; // TODO 殷海萨的祝福
+		double foodBonus = 1.0;		// 魔法料理经验加成
+		double foodPotions = 1.0;	// 经验药水
+		double LevelBonus = 1.0;	// 经验值回馈奖励系统
+		double expBonus = 1.0;		// 战斗药水、神力药水经验加成
+		double ainBonus = 1.0;		// TODO 殷海萨的祝福
 
 		// 魔法料理经验加成
 		if (pc.hasSkillEffect(COOKING_1_7_N) || pc.hasSkillEffect(COOKING_1_7_S)) {
@@ -397,6 +399,23 @@ public class CalcExp {
 			foodBonus = 1.03;
 		}
 
+		// 经验药水
+		if (pc.hasSkillEffect(EXP_UP_A)
+				&& !pc.hasSkillEffect(EXP_UP_B)
+				&& !pc.hasSkillEffect(EXP_UP_C)) {
+			foodPotions = 1.5;
+		}
+		if (pc.hasSkillEffect(EXP_UP_B)
+				&& !pc.hasSkillEffect(EXP_UP_A)
+				&& !pc.hasSkillEffect(EXP_UP_C)) {
+			foodPotions = 2;
+		}
+		if (pc.hasSkillEffect(EXP_UP_C)
+				&& !pc.hasSkillEffect(EXP_UP_A)
+				&& !pc.hasSkillEffect(EXP_UP_B)) {
+			foodPotions = 2.5;
+		}
+		
 		// TODO 经验值回馈奖励系统
 		if (pc.getLevel() == 49) {
 			LevelBonus = 1.15;
@@ -474,7 +493,12 @@ public class CalcExp {
 			}
 		}
 
-		int add_exp = (int) (exp * exppenalty * Config.RATE_XP * foodBonus * expBonus);
+		int add_exp = (int) (exp * exppenalty * Config.RATE_XP
+				* foodBonus		// 魔法料理经验加成
+				* foodPotions	// 经验药水
+				* LevelBonus	// 经验值回馈奖励系统
+				* ainBonus		// 殷海萨的祝福
+				* expBonus);	// 战斗药水、神力药水经验加成
 		pc.addExp(add_exp);
 	}
 
