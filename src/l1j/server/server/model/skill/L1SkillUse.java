@@ -750,6 +750,12 @@ public class L1SkillUse {
 			return false; // フリージングブレス中にアイスランス、フリージングブリザード、フリージングブレス
 		}
 */
+		// 修正冲晕累积效果 add
+		if (cha.hasSkillEffect(SHOCK_STUN) && (_skillId == SHOCK_STUN)) {
+			return false;
+		}
+		// 修正冲晕累积效果 end
+		
 		if (cha.hasSkillEffect(EARTH_BIND) && (_skillId == EARTH_BIND)) {
 			return false; // アース バインド中にアース バインド
 		}
