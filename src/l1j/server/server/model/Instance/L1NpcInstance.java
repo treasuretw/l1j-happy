@@ -78,26 +78,37 @@ import l1j.server.server.utils.collections.Maps;
 public class L1NpcInstance extends L1Character {
 	private static final long serialVersionUID = 1L;
 
+	/** 移动速度 */
 	public static final int MOVE_SPEED = 0;
 
+	/** 攻击速度 */
 	public static final int ATTACK_SPEED = 1;
 
+	/** 施法速度 */
 	public static final int MAGIC_SPEED = 2;
 
+	/** 隐藏状态 NONE */
 	public static final int HIDDEN_STATUS_NONE = 0;
 
+	/** 隐藏状态 SINK */
 	public static final int HIDDEN_STATUS_SINK = 1;
 
+	/** 隐藏状态 FLY */
 	public static final int HIDDEN_STATUS_FLY = 2;
 
+	/** 隐藏状态 ICE */
 	public static final int HIDDEN_STATUS_ICE = 3;
 
+	/** 怪物喊话设定？ */
 	public static final int CHAT_TIMING_APPEARANCE = 0;
 
+	/**  */
 	public static final int CHAT_TIMING_DEAD = 1;
 
+	/**  */
 	public static final int CHAT_TIMING_HIDE = 2;
 
+	/**  */
 	public static final int CHAT_TIMING_GAME_TIME = 3;
 
 	private static Logger _log = Logger
@@ -107,29 +118,33 @@ public class L1NpcInstance extends L1Character {
 
 	private L1Spawn _spawn;
 
-	private int _spawnNumber; // L1Spawnで管理されているナンバー
+	/** L1Spawn 管理 数字 */
+	private int _spawnNumber;
 
-	private int _petcost; // ペットになったときのコスト
+	/** 宠物的费用 */
+	private int _petcost;
 
 	public L1Inventory _inventory = new L1Inventory();
 
 	private L1MobSkillUse mobSkill;
 
-	// 对象を初めて発见したとき。（テレポート用）
+	/** 第一次发现对象。（用于传送）*/
 	private boolean firstFound = true;
 
-	// 经路探索范围（半径） ※上げすぎ注意！！
+	/** 经路探索范围（半径） ※上げすぎ注意！！*/
 	public static int courceRange = 15;
 
-	// 吸われたMP
+	/** 吸取 MP */
 	private int _drainedMana = 0;
 
-	// 休憩
+	/** 休息 */
 	private boolean _rest = false;
 
-	// ランダム移动时の距离と方向
+	// 随机距离和方向移动时
+	/** 随机移动距离 */
 	private int _randomMoveDistance = 0;
 
+	/** 随机移动方向 */
 	private int _randomMoveDirection = 0;
 
 	// ■■■■■■■■■■■■■ ＡＩ关连 ■■■■■■■■■■■
@@ -149,13 +164,13 @@ public class L1NpcInstance extends L1Character {
 	}
 
 	/**
-	 * マルチ(コア)プロセッサをサポートする为のタイマープール。 AIの实装タイプがタイマーの场合に使用される。
+ 	 * 多（核心）处理器，支持为计时器池。定时器用于场合的AI类型实装。
 	 */
 	private static final TimerPool _timerPool = new TimerPool(4);
 
 	class NpcAITimerImpl extends TimerTask implements NpcAI {
 		/**
-		 * 死亡处理の终了を待つタイマー
+		 * 处理死亡等待定时器
 		 */
 		private class DeathSyncTimer extends TimerTask {
 			private void schedule(int delay) {
@@ -360,7 +375,7 @@ public class L1NpcInstance extends L1Character {
 		}
 	}
 
-	// ヘイトの设定
+	// 复仇的设定
 	public void setHate(L1Character cha, int hate) {
 		if ((cha != null) && (cha.getId() != getId())) {
 			if (!isFirstAttack() && (hate != 0)) {
@@ -376,7 +391,7 @@ public class L1NpcInstance extends L1Character {
 		}
 	}
 
-	// リンクの设定
+	// 链接的设定
 	public void setLink(L1Character cha) {
 	}
 
@@ -537,7 +552,7 @@ public class L1NpcInstance extends L1Character {
 
 		if (target instanceof L1NpcInstance) {
 			L1NpcInstance npc = (L1NpcInstance) target;
-			if (npc.getHiddenStatus() != HIDDEN_STATUS_NONE) { // 地中に潜っているか、飞んでいる
+			if (npc.getHiddenStatus() != HIDDEN_STATUS_NONE) { // 已经潜入地下或飞到天上
 				allTargetClear();
 				return;
 			}
@@ -569,7 +584,7 @@ public class L1NpcInstance extends L1Character {
 		setSleepTime(calcSleepTime(getAtkspeed(), ATTACK_SPEED));
 	}
 
-	// ターゲットアイテムを探す
+	// 查找目标项
 	public void searchTargetItem() {
 		List<L1GroundInventory> gInventorys = Lists.newList();
 
@@ -1012,7 +1027,7 @@ public class L1NpcInstance extends L1Character {
 		}
 	}
 
-	// ■■■■■■■■■■■■ タイマー关连 ■■■■■■■■■■
+	// ■■■■■■■■■■■■ 计时器关连 ■■■■■■■■■■
 
 	// ＨＰ自然回复
 	private boolean _hprRunning = false;
@@ -1925,11 +1940,11 @@ public class L1NpcInstance extends L1Character {
 		}
 	}
 
-	// ■■■■■■■■■■■■ アイテム关连 ■■■■■■■■■■
+	// ■■■■■■■■■■■■ 项目关连  ■■■■■■■■■■
 
 	private void useHealPotion(int healHp, int effectId) {
 		broadcastPacket(new S_SkillSound(getId(), effectId));
-		if (hasSkillEffect(POLLUTE_WATER)) { // ポルートウォーター中は回复量1/2倍
+		if (hasSkillEffect(POLLUTE_WATER)) { // 污浊之水效果中治愈类回复量1/2倍
 			healHp /= 2;
 		}
 		if (this instanceof L1PetInstance) {
@@ -1948,9 +1963,11 @@ public class L1NpcInstance extends L1Character {
 		setSkillEffect(STATUS_HASTE, time * 1000);
 	}
 
-	// アイテムの使用判定及び使用
+	// 确定并使用该项目提供
+	/** 回复系:药水类 */
 	public static final int USEITEM_HEAL = 0;
 
+	/** 加速药水类 */
 	public static final int USEITEM_HASTE = 1;
 
 	public static int[] healPotions = { POTION_OF_GREATER_HEALING,
@@ -1969,7 +1986,7 @@ public class L1NpcInstance extends L1Character {
 			return; // 使用する可能性
 		}
 
-		if (type == USEITEM_HEAL) { // 回复系ポーション
+		if (type == USEITEM_HEAL) { // 回复系:药水类
 			// 回复量の大きい顺
 			if (getInventory().consumeItem(POTION_OF_GREATER_HEALING, 1)) {
 				useHealPotion(75, 197);
@@ -1978,16 +1995,16 @@ public class L1NpcInstance extends L1Character {
 			} else if (getInventory().consumeItem(POTION_OF_HEALING, 1)) {
 				useHealPotion(15, 189);
 			}
-		} else if (type == USEITEM_HASTE) { // ヘイスト系ポーション
+		} else if (type == USEITEM_HASTE) { // 加速药水类
 			if (hasSkillEffect(1001)) {
-				return; // ヘイスト状态チェック
+				return; // 检查加速状态
 			}
 
-			// 效果の长い顺
+			// 如果效果延长
 			if (getInventory().consumeItem(B_POTION_OF_GREATER_HASTE_SELF, 1)) {
 				useHastePotion(2100);
-			} else if (getInventory().consumeItem(POTION_OF_GREATER_HASTE_SELF,
-					1)) {
+			} else if (getInventory().consumeItem(POTION_OF_GREATER_HASTE_SELF,1)) {
+				
 				useHastePotion(1800);
 			} else if (getInventory().consumeItem(B_POTION_OF_HASTE_SELF, 1)) {
 				useHastePotion(350);
@@ -1997,7 +2014,7 @@ public class L1NpcInstance extends L1Character {
 		}
 	}
 
-	// ■■■■■■■■■■■■■ スキル关连(npcskillsテーブル实装されたら消すかも) ■■■■■■■■■■■
+	// ■■■■■■■■■■■■■ 关连的技能（可能擦除当实装npcskills表） ■■■■■■■■■■■
 
 	// 目标の邻へテレポート
 	public boolean nearTeleport(int nx, int ny) {
@@ -2055,7 +2072,8 @@ public class L1NpcInstance extends L1Character {
 	}
 
 	// ----------From L1Character-------------
-	private String _nameId; // ● ネームＩＤ
+	/** 名称ＩＤ */
+	private String _nameId;
 
 	public String getNameId() {
 		return _nameId;
@@ -2064,7 +2082,8 @@ public class L1NpcInstance extends L1Character {
 	public void setNameId(String s) {
 		_nameId = s;
 	}
-
+	
+	/** 活动 */
 	private boolean _Agro; // ● アクティブか
 
 	public boolean isAgro() {
@@ -2075,7 +2094,8 @@ public class L1NpcInstance extends L1Character {
 		_Agro = flag;
 	}
 
-	private boolean _Agrocoi; // ● インビジアクティブか
+	/** 隐形或主动 */
+	private boolean _Agrocoi;
 
 	public boolean isAgrocoi() {
 		return _Agrocoi;
@@ -2085,6 +2105,7 @@ public class L1NpcInstance extends L1Character {
 		_Agrocoi = flag;
 	}
 
+	/** 变身活动 */
 	private boolean _Agrososc; // ● 变身アクティブか
 
 	public boolean isAgrososc() {
@@ -2095,7 +2116,8 @@ public class L1NpcInstance extends L1Character {
 		_Agrososc = flag;
 	}
 
-	private int _homeX; // ● ホームポイントＸ（モンスターの戻る位置とかペットの警戒位置）
+	/** 起始Ｘ坐标（宠物,怪物,警卫的位置） */
+	private int _homeX;
 
 	public int getHomeX() {
 		return _homeX;
@@ -2105,7 +2127,8 @@ public class L1NpcInstance extends L1Character {
 		_homeX = i;
 	}
 
-	private int _homeY; // ● ホームポイントＹ（モンスターの戻る位置とかペットの警戒位置）
+	/** 起始Ｙ坐标（宠物,怪物,警卫的位置） */
+	private int _homeY;
 
 	public int getHomeY() {
 		return _homeY;
@@ -2115,7 +2138,8 @@ public class L1NpcInstance extends L1Character {
 		_homeY = i;
 	}
 
-	private boolean _reSpawn; // ● 再ポップするかどうか
+	/** 是否重新执行 */
+	private boolean _reSpawn;
 
 	public boolean isReSpawn() {
 		return _reSpawn;
@@ -2135,7 +2159,8 @@ public class L1NpcInstance extends L1Character {
 		_lightSize = i;
 	}
 
-	private boolean _weaponBreaked; // ● ウェポンブレイク中かどうか
+	/** 武器是否损坏 */
+	private boolean _weaponBreaked;
 
 	public boolean isWeaponBreaked() {
 		return _weaponBreaked;
@@ -2145,7 +2170,8 @@ public class L1NpcInstance extends L1Character {
 		_weaponBreaked = flag;
 	}
 
-	private int _hiddenStatus; // ● 地中に潜ったり、空を飞んでいる状态
+	/** 潜入地下,飞到天上的状态 */
+	private int _hiddenStatus;
 
 	public int getHiddenStatus() {
 		return _hiddenStatus;
@@ -2155,7 +2181,7 @@ public class L1NpcInstance extends L1Character {
 		_hiddenStatus = i;
 	}
 
-	// 行动距离
+	/** 行动距离 */
 	private int _movementDistance = 0;
 
 	public int getMovementDistance() {

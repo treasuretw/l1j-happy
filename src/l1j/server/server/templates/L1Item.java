@@ -47,7 +47,7 @@ public abstract class L1Item implements Cloneable, Serializable {
 		_type2 = type;
 	}
 
-	private int _itemId; // ● アイテムＩＤ
+	private int _itemId; // ● 项目ＩＤ
 
 	public int getItemId() {
 		return _itemId;
@@ -57,7 +57,7 @@ public abstract class L1Item implements Cloneable, Serializable {
 		_itemId = itemId;
 	}
 
-	private String _name; // ● アイテム名
+	private String _name; // ● 项目名称
 
 	public String getName() {
 		return _name;
@@ -87,7 +87,7 @@ public abstract class L1Item implements Cloneable, Serializable {
 		_identifiedNameId = identifiedNameId;
 	}
 
-	private int _type; // ● 详细なタイプ
+	private int _type; // ● 详细类型
 
 	/**
 	 * アイテムの种类を返す。<br>
@@ -110,6 +110,27 @@ public abstract class L1Item implements Cloneable, Serializable {
 	 *         1:helm, 2:armor, 3:T, 4:cloak, 5:glove, 6:boots, 7:shield,
 	 *         8:amulet, 9:ring, 10:belt, 11:ring2, 12:earring
 	 */
+	/**
+	 * 返回该项目的种类。<br>
+	 * 
+	 * @return <p>
+	 *         [道具]<br>
+	 *         0:箭头, 1:魔杖, 2:光线 (灯), 3:宝物 (金币), 4:图腾, 5:烟火,
+	 *         6:货币 (名誉货币), 7:肉, 8:卷轴, 9:任务物品, 10:魔法书,
+	 *         11:宠物装备, 12:其他, 13:材料, 14:活动物品, 15:飞刀
+	 *         </p>
+	 *         <p>
+	 *         [武器]<br>
+	 *         1:长剑, 2:短剑, 3:巨剑, 4:弓, 5:长矛, 6:斧,
+	 *         7:魔杖, 8:飞刀, 9:箭头, 10:铁手甲, 11:钢爪,
+	 *         12:双刀, 13:单手弓, 14:单手矛, 15:双手斧,
+	 *         16:双手魔杖, 17:奇古兽 18:锁链剑
+	 *         </p>
+	 *         <p>
+	 *         [装备]<br>
+	 *         1:头盔, 2:盔甲, 3:T恤, 4:斗篷, 5:手套, 6:长靴, 7:盾牌,
+	 *         8:项链, 9:戒指, 10:腰带, 11:戒指2, 12:耳环
+	 */
 	public int getType() {
 		return _type;
 	}
@@ -118,17 +139,28 @@ public abstract class L1Item implements Cloneable, Serializable {
 		_type = type;
 	}
 
-	private int _type1; // ● タイプ
+	private int _type1; // ● 类型
 
 	/**
-	 * アイテムの种类を返す。<br>
+	 * 返回该项目的种类。<br>
 	 * 
 	 * @return <p>
 	 *         [weapon]<br>
 	 *         sword:4, dagger:46, tohandsword:50, bow:20, blunt:11, spear:24,
-	 *         staff:40, throwingknife:2922, arrow:66, gauntlet:62, claw:58,
+	 *         staff:40, throwingknife:2922, arrow:66, gauntlet :62, claw:58,
 	 *         edoryu:54, singlebow:20, singlespear:24, tohandblunt:11,
 	 *         tohandstaff:40, kiringku:58, chainsword:24
+	 *         </p>
+	 */
+	/**
+	 * 返回该项目的种类。<br>
+	 * 
+	 * @return <p>
+	 *         [武器]<br>
+	 *         长剑:4, 短剑:46, 巨剑:50, 弓:20, 斧:11, 长矛:24,
+	 *         魔杖:40, 飞刀:2922, 箭头:66, 铁手甲 :62, 钢爪:58,
+	 *         双刀:54, 单手弓:20, 单手矛:24, 双手斧:11,
+	 *         双手魔杖:40, 奇古兽:58, 锁链剑:24
 	 *         </p>
 	 */
 	public int getType1() {
@@ -146,6 +178,13 @@ public abstract class L1Item implements Cloneable, Serializable {
 	 * 
 	 * @return 0:none 1:液体 2:web 3:植物性 4:动物性 5:纸 6:布 7:皮 8:木 9:骨 10:龙の鳞 11:铁
 	 *         12:钢铁 13:铜 14:银 15:金 16:プラチナ 17:ミスリル 18:ブラックミスリル 19:ガラス 20:宝石
+	 *         21:矿物 22:オリハルコン
+	 */
+	/**
+	 * 返回材料项目
+	 * 
+	 * @return 0:无 1:液体 2:蛛丝 3:植物性 4:动物性 5:纸 6:布 7:皮 8:木 9:骨 10:龙鳞 11:铁
+	 *         12:钢铁 13:铜 14:银 15:金 16:白金 17:米索莉 18:黑色米索莉 19:玻璃20:宝石
 	 *         21:矿物 22:オリハルコン
 	 */
 	public int getMaterial() {
@@ -166,7 +205,7 @@ public abstract class L1Item implements Cloneable, Serializable {
 		_weight = weight;
 	}
 
-	private int _gfxId; // ● インベントリ内のグラフィックＩＤ
+	private int _gfxId; // ● 图像ＩＤ
 
 	public int getGfxId() {
 		return _gfxId;
@@ -176,7 +215,7 @@ public abstract class L1Item implements Cloneable, Serializable {
 		_gfxId = gfxId;
 	}
 
-	private int _groundGfxId; // ● 地面に置いた时のグラフィックＩＤ
+	private int _groundGfxId; // ● 地面上的图像ＩＤ
 
 	public int getGroundGfxId() {
 		return _groundGfxId;
@@ -538,13 +577,13 @@ public abstract class L1Item implements Cloneable, Serializable {
 	 * ランプなどのアイテムに设定されている明るさを返す。
 	 */
 	public int getLightRange() {
-		if (_itemId == 40001) { // ランプ
+		if (_itemId == 40001) { // 灯
 			return 11;
-		} else if (_itemId == 40002) { // ランタン
+		} else if (_itemId == 40002) { // 灯笼
 			return 14;
-		} else if (_itemId == 40004) { // マジックランタン
+		} else if (_itemId == 40004) { // 魔法灯笼
 			return 14;
-		} else if (_itemId == 40005) { // キャンドル
+		} else if (_itemId == 40005) { // 蜡烛
 			return 8;
 		} else {
 			return 0;
@@ -555,15 +594,15 @@ public abstract class L1Item implements Cloneable, Serializable {
 	 * ランプなどの燃料の量を返す。
 	 */
 	public int getLightFuel() {
-		if (_itemId == 40001) { // ランプ
+		if (_itemId == 40001) { // 灯
 			return 6000;
-		} else if (_itemId == 40002) { // ランタン
+		} else if (_itemId == 40002) { // 灯笼
 			return 12000;
-		} else if (_itemId == 40003) { // ランタンオイル
+		} else if (_itemId == 40003) { // 灯油
 			return 12000;
-		} else if (_itemId == 40004) { // マジックランタン
+		} else if (_itemId == 40004) { // 魔法灯笼
 			return 0;
-		} else if (_itemId == 40005) { // キャンドル
+		} else if (_itemId == 40005) { // 蜡烛
 			return 600;
 		} else {
 			return 0;
@@ -728,7 +767,7 @@ public abstract class L1Item implements Cloneable, Serializable {
 		return _POLYin;
 	}
 	// 装备武器变身 (变身编号) end
-	
+
 	// sosodemon add 声望控制 BY SosoDEmoN
 	private int _checkfamenameLevel;
 
@@ -740,5 +779,4 @@ public abstract class L1Item implements Cloneable, Serializable {
 		_checkfamenameLevel = i;
     }
 	// sosodemon end 声望控制 BY SosoDEmoN
-
 }
