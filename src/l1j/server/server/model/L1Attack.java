@@ -14,8 +14,11 @@
  */
 package l1j.server.server.model;
 
+import java.util.Collection;
+
 import l1j.william.DragonGate;
 import l1j.william.DragonGate1;
+import l1j.william.L1WilliamSystemMessage;
 import l1j.server.Config;
 import l1j.server.server.ActionCodes;
 import l1j.server.server.WarTimeController;
@@ -1237,6 +1240,14 @@ public class L1Attack {
 			_drainHp = 0; // 伤害无しの场合は吸收による回复はしない
 		}
 
+		// add 玩家间ＰＫ获胜广播 by 夜小空
+		if (L1WilliamSystemMessage.ShowMessage(1003).equals("true")) { // 开关
+			if (dmg >= _targetPc.getCurrentHp()) {
+				BroadCastToAll((new StringBuilder()).append("※【 ").append(_pc.getName()).append(" 】把【 ").append(_targetPc.getName()).append(" 】打趴在地上!!※").toString());
+			}
+		}
+		// end 玩家间ＰＫ获胜广播 by 夜小空
+
 		return (int) dmg;
 	}
 
@@ -2392,4 +2403,13 @@ public class L1Attack {
 			}
 		}
 	}
+
+	// add 广播 BroadcastToAll()
+	private void BroadCastToAll( String string ) {
+		Collection <L1PcInstance> allpc = L1World.getInstance().getAllPlayers();
+		for ( L1PcInstance pc : allpc )
+			pc.sendPackets( new S_SystemMessage( string ) );
+	}
+	// end
+
 }

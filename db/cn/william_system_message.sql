@@ -4,7 +4,7 @@ Source Host: localhost
 Source Database: l1jdb_cn
 Target Host: localhost
 Target Database: l1jdb_cn
-Date: 2011-7-4 ���� 12:09:04
+Date: 2011-7-9 ���� 07:34:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,7 +23,7 @@ CREATE TABLE `william_system_message` (
 -- ----------------------------
 INSERT INTO `william_system_message` VALUES ('1001', 'true', '怪对怪放魔法 (单体攻击)(true)(false)');
 INSERT INTO `william_system_message` VALUES ('1002', 'true', '免登出可以把能力值点完(true)(false)');
-INSERT INTO `william_system_message` VALUES ('1003', '宠物使用后每次回魔量额外增加３滴，可持续６００秒。', '');
+INSERT INTO `william_system_message` VALUES ('1003', 'true', '玩家间ＰＫ获胜广播');
 INSERT INTO `william_system_message` VALUES ('1004', '携带时使用部分辅助魔法，无需吟唱，但是会消耗魔法徽章一枚。', '');
 INSERT INTO `william_system_message` VALUES ('1005', '【奇岩竞技场】５分钟后比赛将开始，想参赛者请赶快入场。', '无限大战广播信息');
 INSERT INTO `william_system_message` VALUES ('1006', '【威顿竞技场】５分钟后比赛将开始，想参赛者请赶快入场。', '无限大战广播信息');
