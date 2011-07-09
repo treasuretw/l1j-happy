@@ -500,7 +500,22 @@ public class CalcExp {
 				* ainBonus		// 殷海萨的祝福
 				* expBonus);	// 战斗药水、神力药水经验加成
 		pc.addExp(add_exp);
+		
+		// 殷海萨的祝福 (积累到一定经验扣除一点) by 9001183ex (追求)
+		if (pc.getAinPoint() > 0) {
+			pc.setAinExp(pc.getAinExp() - add_exp);
+			if (pc.getAinExp() < 0) {
+				pc.setAinExp(Config.RATE_EXP_PROPORTION * exppenalty * Config.RATE_XP);
+				pc.setAinPoint(pc.getAinPoint() - 1);
+				pc.sendPackets(new S_SkillIconExp(pc.getAinPoint()));
+				if (pc.getAinPoint() <= 0) {
+					pc.setAinPoint(0);
+				}
+			}
+		}
+		// 殷海萨的祝福 (积累到一定经验扣除一点) by 9001183ex (追求)
 	}
+
 
 	private static void AddExpPet(L1PetInstance pet, int exp) {
 		L1PcInstance pc = (L1PcInstance) pet.getMaster();

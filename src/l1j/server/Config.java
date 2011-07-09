@@ -554,9 +554,10 @@ public final class Config {
 
     public static boolean Lostdeleteditems;		// 物品丢地是否删除
 
-    public static int RATE_AIN_TIME;			// 殷海萨的祝福
-	public static int RATE_AIN_OUTTIME;			// 殷海萨的祝福
-	public static int RATE_MAX_CHARGE_PERCENT;	// 殷海萨的祝福
+    public static int RATE_AIN_TIME;			// 殷海萨的祝福  (登入多少时间取得1%)
+	public static int RATE_AIN_OUTTIME;			// 殷海萨的祝福  (登出多少时间取得1%)
+	public static int RATE_MAX_CHARGE_PERCENT;	// 殷海萨的祝福  (最高百分比)
+	public static int RATE_EXP_PROPORTION;		// 殷海萨的祝福 (积累到一定经验扣除一点) by 9001183ex (追求)
 
 	// 冲武防超过安定值多少广播 (最初冲武防广播原创 by 枫印铭心)
 	public static boolean SuccessBoard;			// 开关
@@ -1108,6 +1109,9 @@ public final class Config {
 			// 殷海萨的祝福
 			RATE_MAX_CHARGE_PERCENT = Integer.parseInt(ABCSettings.getProperty(
 					"RateMaxChargePercent", "200"));
+			// 殷海萨的祝福 (积累到一定经验扣除一点) by 9001183ex (追求)
+			RATE_EXP_PROPORTION = Integer.parseInt(ABCSettings.getProperty(
+					"RateExpProportion", "50000"));
 
 			// 冲武防超过安定值多少广播 (最初冲武防广播原创 by 枫印铭心)
 			SuccessBoard = Boolean.parseBoolean(ABCSettings.getProperty(	// 开关
@@ -1598,6 +1602,9 @@ public final class Config {
 		}
 		else if (pName.equalsIgnoreCase("RateMaxChargePercent")) {	// 殷海萨的祝福
 			RATE_MAX_CHARGE_PERCENT = Integer.parseInt(pValue);
+		}
+		else if (pName.equalsIgnoreCase("RateExpProportion")) {		// 殷海萨的祝福 (积累到一定经验扣除一点) by 9001183ex (追求)
+			RATE_EXP_PROPORTION = Integer.parseInt(pValue);
 		}
 
 		else {

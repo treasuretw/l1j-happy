@@ -5122,5 +5122,17 @@ public class L1PcInstance extends L1Character {
 		  }
 	  }
 	 // 防外挂自动喝水 end
+	  
+     // 殷海萨的祝福 (积累到一定经验扣除一点) by 9001183ex (追求)
+	  private double _ainExp = Config.RATE_EXP_PROPORTION;
+
+	  public void setAinExp(double i) {
+		  _ainExp = i;
+	  }
+
+	  public double getAinExp() {
+		  return _ainExp;
+	  }
+	// 殷海萨的祝福 (积累到一定经验扣除一点) by 9001183ex (追求)
 
 }
