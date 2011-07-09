@@ -33,24 +33,35 @@ import l1j.server.server.utils.Random;
 import static l1j.server.server.model.skill.L1SkillId.*;
 
 public class L1Magic {
+
+	/** 状态 (谁攻击谁) */
 	private int _calcType;
 
+	/** PC 对 PC */
 	private final int PC_PC = 1;
 
+	/** PC 对 NPC */
 	private final int PC_NPC = 2;
 
+	/** NPC 对 PC */
 	private final int NPC_PC = 3;
 
+	/** NPC 对 NPC */
 	private final int NPC_NPC = 4;
 
+	/** 目标 */
 	private L1Character _target = null;
 
+	/** 角色本身 */
 	private L1PcInstance _pc = null;
 
+	/** 目标为 PC */
 	private L1PcInstance _targetPc = null;
 
+	/** 怪物 */
 	private L1NpcInstance _npc = null;
 
+	/** 目标为 NPC */
 	private L1NpcInstance _targetNpc = null;
 
 	private int _leverage = 10; // 1/10倍で表现する。
@@ -137,7 +148,7 @@ public class L1Magic {
 	}
 
 	/* ■■■■■■■■■■■■■■ 成功判定 ■■■■■■■■■■■■■ */
-	// ●●●● 确率系魔法の成功判定 ●●●●
+	// ●●●● 确率系魔法的成功判定 ●●●●
 	// 计算方法
 	// 攻击侧ポイント：LV + ((MagicBonus * 3) * 魔法固有系数)
 	// 防御侧ポイント：((LV / 2) + (MR * 3)) / 2
@@ -146,7 +157,7 @@ public class L1Magic {
 		int probability = 0;
 		boolean isSuccess = false;
 
-		// 攻击者がGM权限の场合100%成功
+		// 攻击者为GM权限100%成功
 		if ((_pc != null) && _pc.isGm()) {
 			return true;
 		}
@@ -161,34 +172,35 @@ public class L1Magic {
 		if (!checkZone(skillId)) {
 			return false;
 		}
+		// 魔法相消术
 		if (skillId == CANCELLATION) {
 			if ((_calcType == PC_PC) && (_pc != null) && (_targetPc != null)) {
-				// 自分自身の场合は100%成功
+				// 自身100%成功
 				if (_pc.getId() == _targetPc.getId()) {
 					return true;
 				}
-				// 同じクランの场合は100%成功
+				// 同盟100%成功
 				if ((_pc.getClanid() > 0) && (_pc.getClanid() == _targetPc.getClanid())) {
 					return true;
 				}
-				// 同じパーティの场合は100%成功
+				// 同队100%成功
 				if (_pc.isInParty()) {
 					if (_pc.getParty().isMember(_targetPc)) {
 						return true;
 					}
 				}
-				// それ以外の场合、セーフティゾーン内では无效
+				// 以外的场合、安全区内无效
 				if ((_pc.getZoneType() == 1) || (_targetPc.getZoneType() == 1)) {
 					return false;
 				}
 			}
-			// 对象がNPC、使用者がNPCの场合は100%成功
+			// 对象为NPC、使用者为NPC的场合100%成功
 			if ((_calcType == PC_NPC) || (_calcType == NPC_PC) || (_calcType == NPC_NPC)) {
 				return true;
 			}
 		}
 
-		// アースバインド中はWB、キャンセレーション以外无效
+		// 在大地屏障状态中坏物术、魔法相消术以外无效
 		if ((_calcType == PC_PC) || (_calcType == NPC_PC)) {
 			if (_targetPc.hasSkillEffect(EARTH_BIND)) {
 				if ((skillId != WEAPON_BREAK) && (skillId != CANCELLATION)) {
@@ -208,7 +220,7 @@ public class L1Magic {
 
 		int rnd = Random.nextInt(100) + 1;
 		if (probability > 90) {
-			probability = 90; // 最高成功率を90%とする。
+			probability = 90; // 最高成功率90%。
 		}
 
 		if (probability >= rnd) {
@@ -223,7 +235,7 @@ public class L1Magic {
 				return false;
 			}
 		}
-		// 确率系魔法メッセージ
+		// 确率系魔法信息
 		if (!Config.ALT_ATKMSG) {
 			return isSuccess;
 		}
@@ -242,18 +254,18 @@ public class L1Magic {
 		String msg3 = "";
 		String msg4 = "";
 
-		if ((_calcType == PC_PC) || (_calcType == PC_NPC)) { // アタッカーがＰＣの场合
+		if ((_calcType == PC_PC) || (_calcType == PC_NPC)) { // 攻击者为ＰＣ的场合
 			msg0 = _pc.getName() + " 对";
 		}
-		else if (_calcType == NPC_PC) { // アタッカーがＮＰＣの场合
+		else if (_calcType == NPC_PC) { // 攻击者为ＮＰＣ的场合
 			msg0 = _npc.getName();
 		}
 
 		msg2 = "，几率：" + probability + "%";
-		if ((_calcType == NPC_PC) || (_calcType == PC_PC)) { // ターゲットがＰＣの场合
+		if ((_calcType == NPC_PC) || (_calcType == PC_PC)) { // 目标位ＰＣ的场合
 			msg4 = _targetPc.getName();
 		}
-		else if (_calcType == PC_NPC) { // ターゲットがＮＰＣの场合
+		else if (_calcType == PC_NPC) { // 目标位ＮＰＣ的场合
 			msg4 = _targetNpc.getName();
 		}
 		if (isSuccess == true) {
@@ -275,16 +287,35 @@ public class L1Magic {
 		return isSuccess;
 	}
 
+	// 在安全区内无效的负面魔法
 	private boolean checkZone(int skillId) {
 		if ((_pc != null) && (_targetPc != null)) {
-			if ((_pc.getZoneType() == 1) || (_targetPc.getZoneType() == 1)) { // セーフティーゾーン
-				if ((skillId == WEAPON_BREAK) || (skillId == SLOW) || (skillId == CURSE_PARALYZE) || (skillId == MANA_DRAIN) || (skillId == DARKNESS)
-						|| (skillId == WEAKNESS) || (skillId == DISEASE) || (skillId == DECAY_POTION) || (skillId == MASS_SLOW)
-						|| (skillId == ENTANGLE) || (skillId == ERASE_MAGIC) || (skillId == EARTH_BIND) || (skillId == AREA_OF_SILENCE)
-						|| (skillId == WIND_SHACKLE) || (skillId == STRIKER_GALE) || (skillId == SHOCK_STUN) || (skillId == FOG_OF_SLEEPING)
-						|| (skillId == ICE_LANCE) || (skillId == FREEZING_BLIZZARD) || (skillId == FREEZING_BREATH) || (skillId == POLLUTE_WATER)
-						|| (skillId == ELEMENTAL_FALL_DOWN) || (skillId == RETURN_TO_NATURE) 
-						|| (skillId == ICE_LANCE_COCKATRICE) || (skillId == ICE_LANCE_BASILISK)) {
+			if ((_pc.getZoneType() == 1) || (_targetPc.getZoneType() == 1)) { // 安全区
+				if ((skillId == WEAPON_BREAK)			// 坏物术
+						|| (skillId == SLOW)			// 缓速术
+						|| (skillId == CURSE_PARALYZE)	// 木乃伊的诅咒
+						|| (skillId == MANA_DRAIN)		// 魔力夺取
+						|| (skillId == DARKNESS)		// 黑暗之影
+						|| (skillId == WEAKNESS)		// 弱化术
+						|| (skillId == DISEASE)			// 疾病术
+						|| (skillId == DECAY_POTION)	// 药水霜化术
+						|| (skillId == MASS_SLOW)		// 集体缓速术
+						|| (skillId == ENTANGLE)		// 地面障碍
+						|| (skillId == ERASE_MAGIC)		// 魔法消除
+						|| (skillId == EARTH_BIND)		// 大地屏障
+						|| (skillId == AREA_OF_SILENCE) // 封印禁地
+						|| (skillId == WIND_SHACKLE)	// 风之枷锁
+						|| (skillId == STRIKER_GALE)	// 精准射击
+						|| (skillId == SHOCK_STUN)		// 冲击之晕
+						|| (skillId == FOG_OF_SLEEPING) // 沉睡之雾
+						|| (skillId == ICE_LANCE)		// 冰矛围篱
+						|| (skillId == FREEZING_BLIZZARD) // 冰雪飓风
+						|| (skillId == FREEZING_BREATH) // 寒冰喷吐
+						|| (skillId == POLLUTE_WATER)	// 污浊之水
+						|| (skillId == ELEMENTAL_FALL_DOWN) // 弱化属性
+						|| (skillId == RETURN_TO_NATURE) // 释放元素
+						|| (skillId == ICE_LANCE_COCKATRICE) // 亚力安冰矛围篱
+						|| (skillId == ICE_LANCE_BASILISK)) { // 邪恶蜥蜴冰矛围篱
 					return false;
 				}
 			}
@@ -292,6 +323,7 @@ public class L1Magic {
 		return true;
 	}
 
+	// 成功率
 	private int calcProbability(int skillId) {
 		L1Skills l1skills = SkillsTable.getInstance().getTemplate(skillId);
 		int attackLevel = 0;
@@ -310,7 +342,7 @@ public class L1Magic {
 		}
 		else {
 			defenseLevel = _targetNpc.getLevel();
-			if (skillId == RETURN_TO_NATURE) {
+			if (skillId == RETURN_TO_NATURE) { // 释放元素
 				if (_targetNpc instanceof L1SummonInstance) {
 					L1SummonInstance summon = (L1SummonInstance) _targetNpc;
 					defenseLevel = summon.getMaster().getLevel();
@@ -324,7 +356,7 @@ public class L1Magic {
 			// 成功确率は 魔法固有系数 × LV差 + 基本确率
 			probability = (int) (((l1skills.getProbabilityDice()) / 10D) * (attackLevel - defenseLevel)) + l1skills.getProbabilityValue();
 
-			// オリジナルINTによる魔法命中
+			// 原始 INT 的魔法命中
 			if ((_calcType == PC_PC) || (_calcType == PC_NPC)) {
 				probability += 2 * _pc.getOriginalMagicHit();
 			}
@@ -333,7 +365,7 @@ public class L1Magic {
 			// 成功确率は 基本确率 + LV差1每に+-2%
 			probability = l1skills.getProbabilityValue() + (attackLevel - defenseLevel) * 2;
 
-			// オリジナルINTによる魔法命中
+			// 原始 INT 的魔法命中
 			if ((_calcType == PC_PC) || (_calcType == PC_NPC)) {
 				probability += 2 * _pc.getOriginalMagicHit();
 			}
@@ -342,7 +374,7 @@ public class L1Magic {
 			// 成功确率は 基本确率 + LV差1每に+-1%
 			probability = l1skills.getProbabilityValue() + attackLevel - defenseLevel;
 
-			// オリジナルINTによる魔法命中
+			// 原始 INT 的魔法命中
 			if ((_calcType == PC_PC) || (_calcType == PC_NPC)) {
 				probability += 2 * _pc.getOriginalMagicHit();
 			}
@@ -363,7 +395,7 @@ public class L1Magic {
 
 			probability = probability * getLeverage() / 10;
 
-			// オリジナルINTによる魔法命中
+			// 原始 INT 的魔法命中
 			if ((_calcType == PC_PC) || (_calcType == PC_NPC)) {
 				probability += 2 * _pc.getOriginalMagicHit();
 			}
@@ -401,7 +433,7 @@ public class L1Magic {
 			}
 			probability = probability * getLeverage() / 10;
 
-			// オリジナルINTによる魔法命中
+			// 原始 INT 的魔法命中
 			if ((_calcType == PC_PC) || (_calcType == PC_NPC)) {
 				probability += 2 * _pc.getOriginalMagicHit();
 			}
@@ -424,22 +456,22 @@ public class L1Magic {
 		}
 
 		// 状态异常に对する耐性
-		if (skillId == EARTH_BIND) {
+		if (skillId == EARTH_BIND) { // 大地屏障
 			if ((_calcType == PC_PC) || (_calcType == NPC_PC)) {
 				probability -= _targetPc.getRegistSustain();
 			}
 		}
-		else if (skillId == SHOCK_STUN) {
+		else if (skillId == SHOCK_STUN) { // 冲击之晕
 			if ((_calcType == PC_PC) || (_calcType == NPC_PC)) {
 				probability -= 2 * _targetPc.getRegistStun();
 			}
 		}
-		else if (skillId == CURSE_PARALYZE) {
+		else if (skillId == CURSE_PARALYZE) { // 木乃伊的诅咒
 			if ((_calcType == PC_PC) || (_calcType == NPC_PC)) {
 				probability -= _targetPc.getRegistStone();
 			}
 		}
-		else if (skillId == FOG_OF_SLEEPING) {
+		else if (skillId == FOG_OF_SLEEPING) { // 沉睡之雾
 			if ((_calcType == PC_PC) || (_calcType == NPC_PC)) {
 				probability -= _targetPc.getRegistSleep();
 			}
@@ -457,7 +489,7 @@ public class L1Magic {
 				}
 			}
 		}
-		else if ((skillId == CURSE_BLIND) || (skillId == DARKNESS) || (skillId == DARK_BLIND)) {
+		else if ((skillId == CURSE_BLIND) || (skillId == DARKNESS) || (skillId == DARK_BLIND)) { // 暗盲咒术,黑暗之影,暗黑盲咒
 			if ((_calcType == PC_PC) || (_calcType == NPC_PC)) {
 				probability -= _targetPc.getRegistBlind();
 			}
@@ -468,10 +500,16 @@ public class L1Magic {
 
 	// 拥有这些状态的, 不会受到伤害(无敌)
 	private static final int[] INVINCIBLE = {
-		ABSOLUTE_BARRIER, ICE_LANCE, FREEZING_BLIZZARD, FREEZING_BREATH, EARTH_BIND, ICE_LANCE_COCKATRICE, ICE_LANCE_BASILISK
+		ABSOLUTE_BARRIER,		// 绝对屏障
+		ICE_LANCE,				// 冰矛围篱
+		FREEZING_BLIZZARD,		// 冰雪飓风
+		FREEZING_BREATH,		// 寒冰喷吐
+		EARTH_BIND,				// 大地屏障
+		ICE_LANCE_COCKATRICE,	// 亚力安冰矛围篱
+		ICE_LANCE_BASILISK		// 邪恶蜥蜴冰矛围篱
 	};
 
-	/* ■■■■■■■■■■■■■■ 魔法ダメージ算出 ■■■■■■■■■■■■■■ */
+	/* ■■■■■■■■■■■■■■ 魔法伤害算出 ■■■■■■■■■■■■■■ */
 
 	public int calcMagicDamage(int skillId) {
 		int damage = 0;
@@ -497,11 +535,11 @@ public class L1Magic {
 		return damage;
 	}
 
-	// ●●●● プレイヤー へのファイアーウォールの魔法ダメージ算出 ●●●●
+	// ●●●● 对 PC 的火牢伤害算出 ●●●●
 	public int calcPcFireWallDamage() {
 		int dmg = 0;
 		double attrDeffence = calcAttrResistance(L1Skills.ATTR_FIRE);
-		L1Skills l1skills = SkillsTable.getInstance().getTemplate(FIRE_WALL);
+		L1Skills l1skills = SkillsTable.getInstance().getTemplate(FIRE_WALL); // 火牢
 		dmg = (int) ((1.0 - attrDeffence) * l1skills.getDamageValue());
 
 		if (_targetPc.hasSkillEffect(ABSOLUTE_BARRIER)) {
@@ -533,7 +571,7 @@ public class L1Magic {
 		return dmg;
 	}
 
-	// ●●●● ＮＰＣ へのファイアーウォールの魔法ダメージ算出 ●●●●
+	// ●●●● 对ＮＰＣ 的火牢伤害算出 ●●●●
 	public int calcNpcFireWallDamage() {
 		int dmg = 0;
 		double attrDeffence = calcAttrResistance(L1Skills.ATTR_FIRE);
@@ -566,7 +604,7 @@ public class L1Magic {
 		return dmg;
 	}
 
-	// ●●●● プレイヤー・ＮＰＣ から プレイヤー への魔法ダメージ算出 ●●●●
+	// ●●●● 计算玩家的魔法伤害  ●●●●
 	private int calcPcMagicDamage(int skillId) {
 		int dmg = 0;
 		if (skillId == FINAL_BURN) {
@@ -592,12 +630,12 @@ public class L1Magic {
 			}
 		}
 
-		dmg -= _targetPc.getDamageReductionByArmor(); // 防具によるダメージ轻减
+		dmg -= _targetPc.getDamageReductionByArmor(); // 防具的伤害减免
 
 		// 魔法娃娃效果 - 伤害减免
 		dmg -= L1MagicDoll.getDamageReductionByDoll(_targetPc);
 
-		if (_targetPc.hasSkillEffect(COOKING_1_0_S) // 料理によるダメージ轻减
+		if (_targetPc.hasSkillEffect(COOKING_1_0_S) // 料理的伤害减免
 				|| _targetPc.hasSkillEffect(COOKING_1_1_S) || _targetPc.hasSkillEffect(COOKING_1_2_S)
 				|| _targetPc.hasSkillEffect(COOKING_1_3_S)
 				|| _targetPc.hasSkillEffect(COOKING_1_4_S) || _targetPc.hasSkillEffect(COOKING_1_5_S)
@@ -613,7 +651,7 @@ public class L1Magic {
 				|| _targetPc.hasSkillEffect(COOKING_3_5_S) || _targetPc.hasSkillEffect(COOKING_3_6_S)) {
 			dmg -= 5;
 		}
-		if (_targetPc.hasSkillEffect(COOKING_1_7_S) // デザートによるダメージ轻减
+		if (_targetPc.hasSkillEffect(COOKING_1_7_S) // 料理的伤害减免
 				|| _targetPc.hasSkillEffect(COOKING_2_7_S) || _targetPc.hasSkillEffect(COOKING_3_7_S)) {
 			dmg -= 5;
 		}
@@ -633,7 +671,7 @@ public class L1Magic {
 			dmg -= 2;
 		}
 
-		if (_calcType == NPC_PC) { // ペット、サモンからプレイヤーに攻击
+		if (_calcType == NPC_PC) { // 宠物、サモンからプレイヤーに攻击
 			boolean isNowWar = false;
 			int castleId = L1CastleLocation.getCastleIdByArea(_targetPc);
 			if (castleId > 0) {
@@ -729,7 +767,7 @@ public class L1Magic {
 		return dmg;
 	}
 
-	// ●●●● プレイヤー・ＮＰＣ から ＮＰＣ へのダメージ算出 ●●●●
+	// ●●●● 计算 NPC 的魔法伤害 ●●●●
 	private int calcNpcMagicDamage(int skillId) {
 		int dmg = 0;
 		if (skillId == FINAL_BURN) {
@@ -772,7 +810,7 @@ public class L1Magic {
 			}
 		}
 
-		if (_calcType == PC_NPC) { // プレイヤーからペット、サモンに攻击
+		if (_calcType == PC_NPC) { // 玩家宠物、サモンに攻击
 			boolean isNowWar = false;
 			int castleId = L1CastleLocation.getCastleIdByArea(_targetNpc);
 			if (castleId > 0) {
@@ -820,7 +858,7 @@ public class L1Magic {
 		return dmg;
 	}
 
-	// ●●●● damage_dice、damage_dice_count、damage_value、SPから魔法ダメージを算出 ●●●●
+	// ●●●● damage_dice、damage_dice_count、damage_value、SP 的魔法伤害算出 ●●●●
 	private int calcMagicDiceDamage(int skillId) {
 		L1Skills l1skills = SkillsTable.getInstance().getTemplate(skillId);
 		int dice = l1skills.getDamageDice();
@@ -833,7 +871,7 @@ public class L1Magic {
 			magicDamage += (Random.nextInt(dice) + 1);
 		}
 		magicDamage += value;
-		
+
 		// 装备项链获得特殊能力 add (PC NPC)
 		if ((_calcType == PC_PC) || (_calcType == PC_NPC)) {
 
@@ -929,7 +967,7 @@ public class L1Magic {
 		return magicDamage;
 	}
 
-	// ●●●● ＭＲによるダメージ轻减 ●●●●
+	// ●●●● ＭＲ的伤害减免 ●●●●
 	private int calcMrDefense(int dmg) {
 		int mr = getTargetMr();
 
@@ -960,7 +998,7 @@ public class L1Magic {
 		return dmg;
 	}
 
-	// ●●●● 属性によるダメージ轻减 ●●●●
+	// ●●●● 属性的伤害减免 ●●●●
 	// attr:0.无属性魔法,1.地魔法,2.火魔法,4.水魔法,8.风魔法(,16.光魔法)
 	private double calcAttrResistance(int attr) {
 		int resist = 0;
@@ -1003,7 +1041,7 @@ public class L1Magic {
 			commitNpc(damage, drainMana);
 		}
 
-		// ダメージ值及び命中率确认用メッセージ
+		// 伤害值和命中率的确认消息
 		if (!Config.ALT_ATKMSG) {
 			return;
 		}
@@ -1022,18 +1060,18 @@ public class L1Magic {
 		String msg3 = "";
 		String msg4 = "";
 
-		if ((_calcType == PC_PC) || (_calcType == PC_NPC)) {// アタッカーがＰＣの场合
+		if ((_calcType == PC_PC) || (_calcType == PC_NPC)) {// 攻击者为ＰＣ的场合
 			msg0 = "魔攻 对";
 		}
-		else if (_calcType == NPC_PC) { // アタッカーがＮＰＣの场合
+		else if (_calcType == NPC_PC) { // 攻击者为ＮＰＣ的场合
 			msg0 = _npc.getName() + "(魔攻)：";
 		}
 
-		if ((_calcType == NPC_PC) || (_calcType == PC_PC)) { // ターゲットがＰＣの场合
+		if ((_calcType == NPC_PC) || (_calcType == PC_PC)) { // 目标为ＰＣ的场合
 			msg4 = _targetPc.getName();
 			msg2 = "，剩余 " + _targetPc.getCurrentHp();
 		}
-		else if (_calcType == PC_NPC) { // ターゲットがＮＰＣの场合
+		else if (_calcType == PC_NPC) { // 目标为ＮＰＣ的场合
 			msg4 = _targetNpc.getName();
 			msg2 = "，剩余 " + _targetNpc.getCurrentHp();
 		}
@@ -1041,18 +1079,16 @@ public class L1Magic {
 		msg3 = damage  + " 伤害";
 
 		// 魔攻 对 目标 造成 X 伤害，剩余 Y。
-		if ((_calcType == PC_PC) || (_calcType == PC_NPC)) { // アタッカーがＰＣの场合
-			_pc.sendPackets(new S_ServerMessage(166, msg0, msg1, msg2, msg3, msg4)); // \f1%0が%4%1%3
-																						// %2
+		if ((_calcType == PC_PC) || (_calcType == PC_NPC)) { // 攻击者为ＰＣ的场合
+			_pc.sendPackets(new S_ServerMessage(166, msg0, msg1, msg2, msg3, msg4)); // \f1%0%s %4%1%3 %2。
 		}
 		// 攻击者(魔攻)： X伤害，剩余 Y。
-		else if ((_calcType == NPC_PC)) { // ターゲットがＰＣの场合
-			_targetPc.sendPackets(new S_ServerMessage(166, msg0, null, msg2, msg3, null)); // \f1%0が%4%1%3
-																							// %2
+		else if ((_calcType == NPC_PC)) { // 目标为ＰＣ的场合
+			_targetPc.sendPackets(new S_ServerMessage(166, msg0, null, msg2, msg3, null)); // \f1%0%s %4%1%3 %2。
 		}
 	}
 
-	// ●●●● プレイヤーに计算结果を反映 ●●●●
+	// ●●●● 玩家计算结果反映 ●●●●
 	private void commitPc(int damage, int drainMana) {
 		if (_calcType == PC_PC) {
 			if ((drainMana > 0) && (_targetPc.getCurrentMp() > 0)) {
@@ -1070,7 +1106,7 @@ public class L1Magic {
 		}
 	}
 
-	// ●●●● ＮＰＣに计算结果を反映 ●●●●
+	// ●●●● ＮＰＣ计算结果反映 ●●●●
 	private void commitNpc(int damage, int drainMana) {
 		if (_calcType == PC_NPC) {
 			if (drainMana > 0) {
