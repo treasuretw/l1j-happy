@@ -37,7 +37,7 @@ import l1j.server.server.templates.L1PetType;
 import l1j.server.server.utils.Random;
 
 /**
- * 處理收到由客戶端傳來給道具的封包
+ * 处理收到由客户端传来给道具的封包
  */
 public class C_GiveItem extends ClientBasePacket {
 	private static final String C_GIVE_ITEM = "[C] C_GiveItem";
@@ -71,37 +71,37 @@ public class C_GiveItem extends ClientBasePacket {
 			return;
 		}
 		if (item.isEquipped()) {
-			pc.sendPackets(new S_ServerMessage(141)); // \f1你不能夠將轉移已經裝備的物品。
+			pc.sendPackets(new S_ServerMessage(141)); // \f1你不能够将转移已经装备的物品。
 			return;
 		}
 		if (!item.getItem().isTradable()) {
-			pc.sendPackets(new S_ServerMessage(210, item.getItem().getName())); // \f1%0%d是不可轉移的…
+			pc.sendPackets(new S_ServerMessage(210, item.getItem().getName())); // \f1%0%d是不可转移的…
 			return;
 		}
-		if (item.getBless() >= 128) { // 封印的裝備
-			// \f1%0%d是不可轉移的…
+		if (item.getBless() >= 128) { // 封印的装备
+			// \f1%0%d是不可转移的…
 			pc.sendPackets(new S_ServerMessage(210, item.getItem().getName()));
 			return;
 		}
-		// 使用中的寵物項鍊 - 無法給予
+		// 使用中的宠物项链 - 无法给予
 		for (L1NpcInstance petNpc : pc.getPetList().values()) {
 			if (petNpc instanceof L1PetInstance) {
 				L1PetInstance pet = (L1PetInstance) petNpc;
 				if (item.getId() == pet.getItemObjId()) {
-					pc.sendPackets(new S_ServerMessage(1187)); // 寵物項鍊正在使用中。
+					pc.sendPackets(new S_ServerMessage(1187)); // 宠物项链正在使用中。
 					return;
 				}
 			}
 		}
-		// 使用中的魔法娃娃 - 無法給予
+		// 使用中的魔法娃娃 - 无法给予
 		for (L1DollInstance doll : pc.getDollList().values()) {
 				if (doll.getItemObjId() == item.getId()) {
-					pc.sendPackets(new S_ServerMessage(1181)); // 這個魔法娃娃目前正在使用中。
+					pc.sendPackets(new S_ServerMessage(1181)); // 这个魔法娃娃目前正在使用中。
 					return;
 			}
 		}
 		if (targetInv.checkAddItem(item, count) != L1Inventory.OK) {
-			pc.sendPackets(new S_ServerMessage(942)); // 對方的負重太重，無法再給予。
+			pc.sendPackets(new S_ServerMessage(942)); // 对方的负重太重，无法再给予。
 			return;
 		}
 		item = inv.tradeItem(item, count, targetInv);
@@ -115,29 +115,30 @@ public class C_GiveItem extends ClientBasePacket {
 			return;
 		}
 
-		// 捕抓寵物
+		// 捕抓宠物
 		if (item.getItemId() == petType.getItemIdForTaming()) {
 			tamePet(pc, target);
 		}
-		// 進化寵物
+		// 进化宠物
 		else if (item.getItemId() == petType.getEvolvItemId()) {
 			evolvePet(pc, target, item.getItemId());
 		}
 
-		if (item.getItem().getType2() == 0) { // 道具類
-			// 食物類
+		if (item.getItem().getType2() == 0) { // 道具类
+			// 食物类
 			if (item.getItem().getType() == 7) {
 				eatFood(pc, target, item, count);
 			}
-			// 寵物裝備類
+			// 宠物装备类
 			else if ((item.getItem().getType() == 11)
-					&& (petType.canUseEquipment())) { // 判斷是否可用寵物裝備
+					&& (petType.canUseEquipment())) { // 判断是否可用宠物装备
 				usePetWeaponArmor(target, item);
 			}
 		}
 
 	}
 
+	// 吃的食物
 	private void eatFood(L1PcInstance pc, L1NpcInstance target,
 			L1ItemInstance item, int count) {
 		if (!(target instanceof L1PetInstance)) {
@@ -149,12 +150,12 @@ public class C_GiveItem extends ClientBasePacket {
 		int foodCount = 0;
 		boolean isFull = false;
 
-		if (pet.get_food() == 100) { // 非常飽
+		if (pet.get_food() == 100) { // 非常饱
 			return;
 		}
-		// 食物營養度判斷
+		// 食物营养度判断
 		if (item.getItem().getFoodVolume() != 0) {
-			// 吃掉食物的數量判斷
+			// 吃掉食物的数量判断
 			for (int i = 0; i < count; i++) {
 				food = item.getItem().getFoodVolume() / 10;
 				food += pet.get_food();
@@ -173,13 +174,14 @@ public class C_GiveItem extends ClientBasePacket {
 			}
 			if (foodCount != 0) {
 				pet.getInventory().consumeItem(item.getItemId(), foodCount); // 吃掉食物
-				// 紀錄寵物飽食度
+				// 纪录宠物饱食度
 				_l1pet.set_food(pet.get_food());
 				PetTable.getInstance().storePetFood(_l1pet);
 			}
 		}
 	}
 
+	// 宠物用 武器,装备
 	private void usePetWeaponArmor(L1NpcInstance target, L1ItemInstance item) {
 		if (!(target instanceof L1PetInstance)) {
 			return;
@@ -187,7 +189,7 @@ public class C_GiveItem extends ClientBasePacket {
 		L1PetInstance pet = (L1PetInstance) target;
 		L1PetItem petItem = PetItemTable.getInstance().getTemplate(
 				item.getItemId());
-		if (petItem.getUseType() == 1) { // 牙齒
+		if (petItem.getUseType() == 1) { // 牙齿
 			pet.usePetWeapon(pet, item);
 		} else if (petItem.getUseType() == 0) { // 盔甲
 			pet.usePetArmor(pet, item);
@@ -196,9 +198,9 @@ public class C_GiveItem extends ClientBasePacket {
 
 	private final static String receivableImpls[] = new String[] { "L1Npc", // NPC
 			"L1Monster", // 怪物
-			"L1Guardian", // 妖精森林的守護者
-			"L1Teleporter", // 傳送師
-			"L1Guard" }; // 警衛
+			"L1Guardian", // 妖精森林的守护者
+			"L1Teleporter", // 传送师
+			"L1Guard" }; // 警卫
 
 	private boolean isNpcItemReceivable(L1Npc npc) {
 		for (String impl : receivableImpls) {
@@ -209,6 +211,7 @@ public class C_GiveItem extends ClientBasePacket {
 		return false;
 	}
 
+	// 驯服宠物
 	private void tamePet(L1PcInstance pc, L1NpcInstance target) {
 		if ((target instanceof L1PetInstance)
 				|| (target instanceof L1SummonInstance)) {
@@ -224,13 +227,13 @@ public class C_GiveItem extends ClientBasePacket {
 			charisma += 6;
 		} else if (pc.isElf()) { // 妖精
 			charisma += 12;
-		} else if (pc.isWizard()) { // 法師
+		} else if (pc.isWizard()) { // 法师
 			charisma += 6;
 		} else if (pc.isDarkelf()) { // 黑暗妖精
 			charisma += 6;
-		} else if (pc.isDragonKnight()) { // 龍騎士
+		} else if (pc.isDragonKnight()) { // 龙骑士
 			charisma += 6;
-		} else if (pc.isIllusionist()) { // 幻術師
+		} else if (pc.isIllusionist()) { // 幻术师
 			charisma += 6;
 		}
 		charisma -= petcost;
@@ -244,11 +247,12 @@ public class C_GiveItem extends ClientBasePacket {
 					pc.sendPackets(new S_ItemName(petamu));
 				}
 			} else {
-				pc.sendPackets(new S_ServerMessage(324)); // 馴養失敗。
+				pc.sendPackets(new S_ServerMessage(324)); // 驯养失败。
 			}
 		}
 	}
 
+	// 进化宠物
 	private void evolvePet(L1PcInstance pc, L1NpcInstance target, int itemId) {
 		if (!(target instanceof L1PetInstance)) {
 			return;
@@ -256,12 +260,12 @@ public class C_GiveItem extends ClientBasePacket {
 		L1PcInventory inv = pc.getInventory();
 		L1PetInstance pet = (L1PetInstance) target;
 		L1ItemInstance petamu = inv.getItem(pet.getItemObjId());
-		if (((pet.getLevel() >= 30) || (itemId == 41310)) && // Lv30以上或是使用勝利果實
-				(pc == pet.getMaster()) && // 自分のペット
+		if (((pet.getLevel() >= 30) || (itemId == 41310)) && // Lv30以上或是使用胜利果实
+				(pc == pet.getMaster()) && // 自己的宠物
 				(petamu != null)) {
 			L1ItemInstance highpetamu = inv.storeItem(40316, 1);
 			if (highpetamu != null) {
-				pet.evolvePet( // 寵物進化
+				pet.evolvePet( // 宠物进化
 				highpetamu.getId());
 				pc.sendPackets(new S_ItemName(highpetamu));
 				inv.removeItem(petamu, 1);
@@ -269,11 +273,12 @@ public class C_GiveItem extends ClientBasePacket {
 		}
 	}
 
+	// 在驯服宠物
 	private boolean isTamePet(L1NpcInstance npc) {
 		boolean isSuccess = false;
 		int npcId = npc.getNpcTemplate().get_npcId();
-		if (npcId == 45313) { // タイガー
-			if ((npc.getMaxHp() / 3 > npc.getCurrentHp() // HPが1/3未満で1/16の確率
+		if (npcId == 45313) { // 老虎
+			if ((npc.getMaxHp() / 3 > npc.getCurrentHp() // HPが1/3未满で1/16の确率
 					)
 					&& (Random.nextInt(16) == 15)) {
 				isSuccess = true;
@@ -284,8 +289,8 @@ public class C_GiveItem extends ClientBasePacket {
 			}
 		}
 
-		if ((npcId == 45313) || (npcId == 45044) || (npcId == 45711)) { // タイガー、ラクーン、紀州犬の子犬
-			if (npc.isResurrect()) { // RES後はテイム不可
+		if ((npcId == 45313) || (npcId == 45044) || (npcId == 45711)) { // 老虎、浣熊、高丽幼犬
+			if (npc.isResurrect()) { // RES后はテイム不可
 				isSuccess = false;
 			}
 		}

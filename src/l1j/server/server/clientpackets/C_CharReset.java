@@ -32,7 +32,7 @@ import l1j.server.server.utils.CalcStat;
 // ClientBasePacket
 
 /**
- * 處理收到客戶端傳來角色升級/出生的封包
+ * 处理收到客户端传来角色升级/出生的封包
  */
 public class C_CharReset extends ClientBasePacket {
 
@@ -41,17 +41,18 @@ public class C_CharReset extends ClientBasePacket {
 	private static Logger _log = Logger.getLogger(C_CharReset.class.getName());
 
 	/**
-	 * //配置完初期點數 按確定 127.0.0.1 Request Work ID : 120 0000: 78 01 0d 0a 0b 0a 12
+	 * //配置完初期点数 按确定 127.0.0.1 Request Work ID : 120 0000: 78 01 0d 0a 0b 0a 12
 	 * 0d
 	 * 
 	 * //提升10及 127.0.0.1 Request Work ID : 120 0000: 78 02 07 00 //提升1及
 	 * 127.0.0.1 Request Work ID : 120 0000: 78 02 00 04
 	 * 
-	 * //提升完等級 127.0.0.1 Request Work ID : 120 0000: 78 02 08 00 x...
+	 * //提升完等级 127.0.0.1 Request Work ID : 120 0000: 78 02 08 00 x...
 	 * 
-	 * //萬能藥 127.0.0.1 Request Work ID : 120 0000: 78 03 23 0a 0b 17 12 0d
+	 * //万能药 127.0.0.1 Request Work ID : 120 0000: 78 03 23 0a 0b 17 12 0d
 	 */
 
+	// 重置
 	public C_CharReset(byte abyte0[], ClientThread clientthread) {
 		super(abyte0);
 		L1PcInstance pc = clientthread.getActiveChar();
@@ -71,7 +72,7 @@ public class C_CharReset extends ClientBasePacket {
 			CharacterTable.getInstance();
 			CharacterTable.saveCharStatus(pc);
 		}
-		else if (stage == 0x02) { // 0x02:ステータス再分配
+		else if (stage == 0x02) { // 0x02:再分配状态
 			int type2 = readC();
 			if (type2 == 0x00) { // 0x00:Lv1UP
 				setLevelUp(pc, 1);
@@ -145,6 +146,7 @@ public class C_CharReset extends ClientBasePacket {
 		}
 	}
 
+	// 保存新的状态
 	private void saveNewCharStatus(L1PcInstance pc) {
 		pc.setInCharReset(false);
 		if (pc.getOriginalAc() > 0) {
@@ -167,11 +169,11 @@ public class C_CharReset extends ClientBasePacket {
 			pc.setBonusStats(0);
 		}
 		pc.sendPackets(new S_OwnCharStatus(pc));
-		L1ItemInstance item = pc.getInventory().findItemId(49142); // 希望のロウソク
+		L1ItemInstance item = pc.getInventory().findItemId(49142); // 回忆蜡烛
 		if (item != null) {
 			try {
 				pc.getInventory().removeItem(item, 1);
-				pc.save(); // 儲存玩家的資料到資料庫中
+				pc.save(); // 储存玩家的资料到资料库中
 			}
 			catch (Exception e) {
 				_log.log(Level.SEVERE, e.getLocalizedMessage(), e);
@@ -180,6 +182,7 @@ public class C_CharReset extends ClientBasePacket {
 		L1Teleport.teleport(pc, 32628, 32772, (short) 4, 4, false);
 	}
 
+	// 初始化
 	private void initCharStatus(L1PcInstance pc, int hp, int mp, int str, int intel, int wis, int dex, int con, int cha) {
 		pc.addBaseMaxHp((short) (hp - pc.getBaseMaxHp()));
 		pc.addBaseMaxMp((short) (mp - pc.getBaseMaxMp()));
@@ -191,6 +194,7 @@ public class C_CharReset extends ClientBasePacket {
 		pc.addBaseCha((byte) (cha - pc.getBaseCha()));
 	}
 
+	// 提升等级
 	private void setLevelUp(L1PcInstance pc, int addLv) {
 		pc.setTempLevel(pc.getTempLevel() + addLv);
 		for (int i = 0; i < addLv; i++) {
