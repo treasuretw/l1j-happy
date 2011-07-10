@@ -483,11 +483,9 @@ public class CalcExp {
 
 		// 殷海萨的祝福计算公式仍需验证
 		if (pc.getAinPoint() > 0) {
-			if (!(_npc instanceof L1PetInstance
-					//TODO 木人宠物召唤不计算加成
-					|| _npc instanceof L1SummonInstance || _npc instanceof L1ScarecrowInstance)) {
-				    //TODO 木人宠物召唤不计算加成
-				pc.setAinPoint(pc.getAinPoint() - 1);
+			if (!(_npc instanceof L1PetInstance //TODO 木人宠物召唤不计算加成
+					|| _npc instanceof L1SummonInstance 
+					|| _npc instanceof L1ScarecrowInstance)) {
 				pc.sendPackets(new S_SkillIconExp(pc.getAinPoint()));
 				ainBonus = 1.77; // 额外的经验 77%
 			}
