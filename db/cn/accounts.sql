@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-6-25 ÏÂÎç 12:44:15
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : l1j-cn
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-12 23:32:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for accounts
+-- Table structure for `accounts`
 -- ----------------------------
+DROP TABLE IF EXISTS `accounts`;
 CREATE TABLE `accounts` (
   `login` varchar(50) NOT NULL DEFAULT '',
   `password` varchar(50) DEFAULT NULL,
@@ -26,11 +33,5 @@ CREATE TABLE `accounts` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records 
+-- Records of accounts
 -- ----------------------------
-INSERT INTO `accounts` VALUES ('1230123', 'LFBJfo4Ky3xpTvTNfqhYSeGPP0s=', '2011-06-25 02:45:12', '100', '127.0.0.1', '127.0.0.1', '0', '0', '0', '0');
-INSERT INTO `accounts` VALUES ('123123', 'YB8YiWZ++uuzO4wSVyg12j8Cf3g=', '2011-06-09 13:45:22', '0', '127.0.0.1', '127.0.0.1', '0', '0', '0', '0');
-INSERT INTO `accounts` VALUES ('asda', 'jlReHDH5H3d8iUs70sLn1wRMyd0=', '2011-06-03 19:10:18', '0', '113.243.31.155', '113.243.63.177', '0', '0', '0', '0');
-INSERT INTO `accounts` VALUES ('1231023', 'LFBJfo4Ky3xpTvTNfqhYSeGPP0s=', '2011-06-01 16:41:25', '0', '127.0.0.1', '127.0.0.1', '0', '0', '0', '0');
-INSERT INTO `accounts` VALUES ('favl', '3S7bh+qet6Mv1AVydtOh+rhhwdU=', '2011-06-03 19:10:09', '0', '113.243.31.155', '113.243.31.155', '0', '0', '0', '0');
-INSERT INTO `accounts` VALUES ('123456', 'fEqNCco3Yq9h5ZUglD3CZJT4lBs=', '2011-06-15 22:38:39', '0', '127.0.0.1', '127.0.0.1', '0', '0', '0', '0');

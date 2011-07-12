@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-6-25 ÏÂÎç 12:51:23
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : l1j-cn
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-12 23:33:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for character_warehouse
+-- Table structure for `character_warehouse`
 -- ----------------------------
+DROP TABLE IF EXISTS `character_warehouse`;
 CREATE TABLE `character_warehouse` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `account_name` varchar(13) DEFAULT NULL,
@@ -42,5 +49,5 @@ CREATE TABLE `character_warehouse` (
 ) ENGINE=MyISAM AUTO_INCREMENT=271237027 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records 
+-- Records of character_warehouse
 -- ----------------------------

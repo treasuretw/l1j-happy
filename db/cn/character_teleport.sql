@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-6-25 ÏÂÎç 12:51:16
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : l1j-cn
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-12 23:33:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for character_teleport
+-- Table structure for `character_teleport`
 -- ----------------------------
+DROP TABLE IF EXISTS `character_teleport`;
 CREATE TABLE `character_teleport` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `char_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -23,6 +30,5 @@ CREATE TABLE `character_teleport` (
 ) ENGINE=MyISAM AUTO_INCREMENT=271649192 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records 
+-- Records of character_teleport
 -- ----------------------------
-INSERT INTO `character_teleport` VALUES ('271649191', '268471291', 'è±¡ç‰™å¡”', '34041', '32163', '4');

@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-6-25 ÏÂÎç 12:50:37
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : l1j-cn
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-12 23:32:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for character_buff
+-- Table structure for `character_buff`
 -- ----------------------------
+DROP TABLE IF EXISTS `character_buff`;
 CREATE TABLE `character_buff` (
   `char_obj_id` int(10) NOT NULL DEFAULT '0',
   `skill_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -20,8 +27,5 @@ CREATE TABLE `character_buff` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records 
+-- Records of character_buff
 -- ----------------------------
-INSERT INTO `character_buff` VALUES ('268471291', '1001', '2499', '0');
-INSERT INTO `character_buff` VALUES ('268471291', '67', '5355', '240');
-INSERT INTO `character_buff` VALUES ('268471291', '1000', '2499', '0');
