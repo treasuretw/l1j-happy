@@ -1111,7 +1111,7 @@ public final class Config {
 					"RateMaxChargePercent", "200"));
 			// 殷海萨的祝福 (积累到一定经验扣除一点) by 9001183ex (追求)
 			RATE_EXP_PROPORTION = Integer.parseInt(ABCSettings.getProperty(
-					"RateExpProportion", "50000"));
+					"RateExpProportion", "30000"));
 
 			// 冲武防超过安定值多少广播 (最初冲武防广播原创 by 枫印铭心)
 			SuccessBoard = Boolean.parseBoolean(ABCSettings.getProperty(	// 开关
