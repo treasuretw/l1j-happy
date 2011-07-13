@@ -445,7 +445,7 @@ public final class Config {
 	public static boolean CompressGzip;
 
 	// TODO 新增
-	/** ABC Settings */
+	/** OtherSettings control */
 	public static boolean SCHECKUSE = true;
 
 	public static int REST_TIME;		// 伺服器重启 by 丫杰
@@ -554,9 +554,9 @@ public final class Config {
 
     public static boolean Lostdeleteditems;		// 物品丢地是否删除
 
-    public static int RATE_AIN_TIME;			// 殷海萨的祝福  (登入多少时间取得1%)
-	public static int RATE_AIN_OUTTIME;			// 殷海萨的祝福  (登出多少时间取得1%)
-	public static int RATE_MAX_CHARGE_PERCENT;	// 殷海萨的祝福  (最高百分比)
+    public static int RATE_AIN_TIME;			// 殷海萨的祝福 (登入多少时间取得1%)
+	public static int RATE_AIN_OUTTIME;			// 殷海萨的祝福 (登出多少时间取得1%)
+	public static int RATE_MAX_CHARGE_PERCENT;	// 殷海萨的祝福 (最高百分比)
 	public static int RATE_EXP_PROPORTION;		// 殷海萨的祝福 (积累到一定经验扣除一点) by 9001183ex (追求)
 
 	// 冲武防超过安定值多少广播 (最初冲武防广播原创 by 枫印铭心)
@@ -565,7 +565,12 @@ public final class Config {
 	public static int ArmorOverSafeBoard;		// 防具 (多少以上才广播)
 
 	public static int SHOCK_STUN_TIMER; // 冲晕秒数设置
-	
+
+	public static boolean HACK1;		// 穿人外挂开关
+
+	public static boolean NEW_CREATE_SET_GM;	// 设定创新角色是否设定为 GM
+
+
 	/** 伺服器设定档 */
 	public static final String SERVER_CONFIG_FILE = "./config/server.properties";
 
@@ -582,8 +587,8 @@ public final class Config {
 
 	public static final String RECORD_SETTINGS_CONFIG_FILE = "./config/record.properties";
 
-	/** 新增设定档*/
-	public static final String ABC_CONFIG_FILE = "./config/ABC.properties";
+	/** 新增设定档 */
+	public static final String OTHER_SETTINGS_CONFIG_FILE = "./config/othersettings.properties";
 
 
 	/** 其他设定 */
@@ -893,243 +898,245 @@ public final class Config {
 		}
 
 		// TODO 新增/////////////////////////////////////////////////////////////////
-		// ABC.properties
+		// othersettings.properties
 		try {
-			Properties ABCSettings = new Properties();
-			InputStream is = new FileInputStream(new File(ABC_CONFIG_FILE));
-			ABCSettings.load(is);
+			Properties otherSettings = new Properties();
+			InputStream is = new FileInputStream(new File(OTHER_SETTINGS_CONFIG_FILE));
+			otherSettings.load(is);
 			is.close();
 
 			// 伺服器重启 by 丫杰
-			REST_TIME = Integer.parseInt(ABCSettings.getProperty(
+			REST_TIME = Integer.parseInt(otherSettings.getProperty(
 					"RestartTime","60"));
 
 			// 管理者介面 by eric1300460
-			GUI = Boolean.parseBoolean(ABCSettings.getProperty(
+			GUI = Boolean.parseBoolean(otherSettings.getProperty(
 					"GUI", "true"));
 
 			// 在线送经验
-			fdjy = Boolean.parseBoolean(ABCSettings.getProperty(
+			fdjy = Boolean.parseBoolean(otherSettings.getProperty(
 					"fdjy", "false"));
-			jy = Integer.parseInt(ABCSettings.getProperty(
+			jy = Integer.parseInt(otherSettings.getProperty(
 					"jy", "10"));
-			jytime = Integer.parseInt(ABCSettings.getProperty(
+			jytime = Integer.parseInt(otherSettings.getProperty(
 					"jytime", "100"));
-			itemid = Integer.parseInt(ABCSettings.getProperty(
+			itemid = Integer.parseInt(otherSettings.getProperty(
 					"itemid","false"));
-			count = Integer.parseInt(ABCSettings.getProperty(
+			count = Integer.parseInt(otherSettings.getProperty(
 					"count","false"));
-			x1 = Integer.parseInt(ABCSettings.getProperty(
+			x1 = Integer.parseInt(otherSettings.getProperty(
 					"x1","false"));
-			x2 = Integer.parseInt(ABCSettings.getProperty(
+			x2 = Integer.parseInt(otherSettings.getProperty(
 					"x2","false"));
-			y1 = Integer.parseInt(ABCSettings.getProperty(
+			y1 = Integer.parseInt(otherSettings.getProperty(
 					"y1","false"));
-			y2 = Integer.parseInt(ABCSettings.getProperty(
+			y2 = Integer.parseInt(otherSettings.getProperty(
 					"y2","false"));
-			map = Integer.parseInt(ABCSettings.getProperty(
+			map = Integer.parseInt(otherSettings.getProperty(
 					"map","false"));
 
 			// 怪打怪 A 与  B
-			A0 = Integer.parseInt(ABCSettings.getProperty(
+			A0 = Integer.parseInt(otherSettings.getProperty(
 					"A0","false"));
-			A1 = Integer.parseInt(ABCSettings.getProperty(
+			A1 = Integer.parseInt(otherSettings.getProperty(
 					"A1","false"));
-			A2 = Integer.parseInt(ABCSettings.getProperty(
+			A2 = Integer.parseInt(otherSettings.getProperty(
 					"A2","false"));
-			A3 = Integer.parseInt(ABCSettings.getProperty(
+			A3 = Integer.parseInt(otherSettings.getProperty(
 					"A3","false"));
-			A4 = Integer.parseInt(ABCSettings.getProperty(
+			A4 = Integer.parseInt(otherSettings.getProperty(
 					"A4","false"));
-			A5 = Integer.parseInt(ABCSettings.getProperty(
+			A5 = Integer.parseInt(otherSettings.getProperty(
 					"A5","false"));
-			A6 = Integer.parseInt(ABCSettings.getProperty(
+			A6 = Integer.parseInt(otherSettings.getProperty(
 					"A6","false"));
-			A7 = Integer.parseInt(ABCSettings.getProperty(
+			A7 = Integer.parseInt(otherSettings.getProperty(
 					"A7","false"));
-			A8 = Integer.parseInt(ABCSettings.getProperty(
+			A8 = Integer.parseInt(otherSettings.getProperty(
 					"A8","false"));
-			A9 = Integer.parseInt(ABCSettings.getProperty(
+			A9 = Integer.parseInt(otherSettings.getProperty(
 					"A9","false"));
-			B0 = Integer.parseInt(ABCSettings.getProperty(
+			B0 = Integer.parseInt(otherSettings.getProperty(
 					"B0","false"));
-			B1 = Integer.parseInt(ABCSettings.getProperty(
+			B1 = Integer.parseInt(otherSettings.getProperty(
 					"B1","false"));
-			B2 = Integer.parseInt(ABCSettings.getProperty(
+			B2 = Integer.parseInt(otherSettings.getProperty(
 					"B2","false"));
-			B3 = Integer.parseInt(ABCSettings.getProperty(
+			B3 = Integer.parseInt(otherSettings.getProperty(
 					"B3","false"));
-			B4 = Integer.parseInt(ABCSettings.getProperty(
+			B4 = Integer.parseInt(otherSettings.getProperty(
 					"B4","false"));
-			B5 = Integer.parseInt(ABCSettings.getProperty(
+			B5 = Integer.parseInt(otherSettings.getProperty(
 					"B5","false"));
-			B6 = Integer.parseInt(ABCSettings.getProperty(
+			B6 = Integer.parseInt(otherSettings.getProperty(
 					"B6","false"));
-			B7 = Integer.parseInt(ABCSettings.getProperty(
+			B7 = Integer.parseInt(otherSettings.getProperty(
 					"B7","false"));
-			B8 = Integer.parseInt(ABCSettings.getProperty(
+			B8 = Integer.parseInt(otherSettings.getProperty(
 					"B8","false"));
-			B9 = Integer.parseInt(ABCSettings.getProperty(
+			B9 = Integer.parseInt(otherSettings.getProperty(
 					"B9","false"));
 
 			// 显示怪物血条
-			SHOW_HP_BAR = Boolean.parseBoolean(ABCSettings.getProperty(
+			SHOW_HP_BAR = Boolean.parseBoolean(otherSettings.getProperty(
 					"ShowHPBar", "false"));
 
 			// 时空裂痕
-			CrackStartTime = Short.parseShort(ABCSettings.getProperty(	// 时空裂痕开启时间(单位分钟)
+			CrackStartTime = Short.parseShort(otherSettings.getProperty(	// 时空裂痕开启时间(单位分钟)
                     "CrackStartTime", "4"));
-            CrackOpenTime = Short.parseShort(ABCSettings.getProperty(	// 时空裂痕开放多久(单位分钟)
+            CrackOpenTime = Short.parseShort(otherSettings.getProperty(	// 时空裂痕开放多久(单位分钟)
                     "CrackOpenTime", "60"));
 
             // BOSS馆
-            mapId = Integer.parseInt(ABCSettings.getProperty(	// 所在的地图编号
+            mapId = Integer.parseInt(otherSettings.getProperty(	// 所在的地图编号
 					"mapId", "5153"));
-            mapIdx = Integer.parseInt(ABCSettings.getProperty(	// BOSS馆地图X坐标
+            mapIdx = Integer.parseInt(otherSettings.getProperty(	// BOSS馆地图X坐标
 					"mapIdx", "32641"));
-            mapIdy = Integer.parseInt(ABCSettings.getProperty(	// BOSS馆地图Y坐标
+            mapIdy = Integer.parseInt(otherSettings.getProperty(	// BOSS馆地图Y坐标
 					"mapIdy", "32899"));
-            mapId1 = Integer.parseInt(ABCSettings.getProperty(	// 结束后传送玩家到指定地图
+            mapId1 = Integer.parseInt(otherSettings.getProperty(	// 结束后传送玩家到指定地图
 					"mapId1", "4"));
-            mapIdx1 = Integer.parseInt(ABCSettings.getProperty(	// 地图X1坐标
+            mapIdx1 = Integer.parseInt(otherSettings.getProperty(	// 地图X1坐标
 					"mapIdx1", "33442"));
-            mapIdy1 = Integer.parseInt(ABCSettings.getProperty(	// 地图Y1坐标
+            mapIdy1 = Integer.parseInt(otherSettings.getProperty(	// 地图Y1坐标
 					"mapIdy1", "32797"));
-            cleartime = Integer.parseInt(ABCSettings.getProperty(// 清洁时间(单位分钟)
+            cleartime = Integer.parseInt(otherSettings.getProperty(// 清洁时间(单位分钟)
 					"cleartime", "5"));
-            minPlayer = Integer.parseInt(ABCSettings.getProperty(// 最小玩家数量
+            minPlayer = Integer.parseInt(otherSettings.getProperty(// 最小玩家数量
 					"minPlayer", "1"));
-            maxPlayer = Integer.parseInt(ABCSettings.getProperty(// 最大玩家数量
+            maxPlayer = Integer.parseInt(otherSettings.getProperty(// 最大玩家数量
 					"maxPlayer", "20"));
-            itemId = Integer.parseInt(ABCSettings.getProperty(	// 进入需要的物品
+            itemId = Integer.parseInt(otherSettings.getProperty(	// 进入需要的物品
 					"itemId", "5000"));
-            Quantity = Integer.parseInt(ABCSettings.getProperty(// 物品数量
+            Quantity = Integer.parseInt(otherSettings.getProperty(// 物品数量
 					"Quantity", "50"));
-            bossId1 = Integer.parseInt(ABCSettings.getProperty(	// 怪物编号
+            bossId1 = Integer.parseInt(otherSettings.getProperty(	// 怪物编号
 					"bossId1", "45795"));
-            bossId2 = Integer.parseInt(ABCSettings.getProperty(
+            bossId2 = Integer.parseInt(otherSettings.getProperty(
 					"bossId2", "45795"));
-            bossId3 = Integer.parseInt(ABCSettings.getProperty(
+            bossId3 = Integer.parseInt(otherSettings.getProperty(
 					"bossId3", "45795"));
-            bossId4 = Integer.parseInt(ABCSettings.getProperty(
+            bossId4 = Integer.parseInt(otherSettings.getProperty(
 					"bossId4", "45795"));
-            bossId5 = Integer.parseInt(ABCSettings.getProperty(
+            bossId5 = Integer.parseInt(otherSettings.getProperty(
 					"bossId5", "45795"));
-            bossId6 = Integer.parseInt(ABCSettings.getProperty(
+            bossId6 = Integer.parseInt(otherSettings.getProperty(
 					"bossId6", "45795"));
-            bossId7 = Integer.parseInt(ABCSettings.getProperty(
+            bossId7 = Integer.parseInt(otherSettings.getProperty(
 					"bossId7", "45795"));
-            bossId8 = Integer.parseInt(ABCSettings.getProperty(
+            bossId8 = Integer.parseInt(otherSettings.getProperty(
 					"bossId8", "45795"));
-            bossId9 = Integer.parseInt(ABCSettings.getProperty(
+            bossId9 = Integer.parseInt(otherSettings.getProperty(
 					"bossId9", "45795"));
-            bossId10 = Integer.parseInt(ABCSettings.getProperty(
+            bossId10 = Integer.parseInt(otherSettings.getProperty(
 					"bossId10", "45795"));
 
             // 循环公告 by 雷公
-            Use_Show_Announcecycle = Boolean.parseBoolean(ABCSettings.getProperty(
+            Use_Show_Announcecycle = Boolean.parseBoolean(otherSettings.getProperty(
             		"UseShowAnnouncecycle", "false")); 
-            Show_Announcecycle_Time = Integer.parseInt(ABCSettings.getProperty(
+            Show_Announcecycle_Time = Integer.parseInt(otherSettings.getProperty(
             		"ShowAnnouncecycleTime", "30"));
 
             // 调整能力值上限 by 阿杰
-			BONUS_STATS1 = Integer.parseInt(ABCSettings.getProperty(
+			BONUS_STATS1 = Integer.parseInt(otherSettings.getProperty(
 					"BONUS_STATS1", "25"));
-			BONUS_STATS2 = Integer.parseInt(ABCSettings.getProperty(
+			BONUS_STATS2 = Integer.parseInt(otherSettings.getProperty(
 					"BONUS_STATS2", "5"));
-			BONUS_STATS3 = Integer.parseInt(ABCSettings.getProperty(
+			BONUS_STATS3 = Integer.parseInt(otherSettings.getProperty(
 					"BONUS_STATS3", "25"));
 
 			// 转生可设定血魔保留多少 by eric1300460
-			EVOLUTION_HP = Short.parseShort(ABCSettings.getProperty(
+			EVOLUTION_HP = Short.parseShort(otherSettings.getProperty(
 					"Evolution_Hp", "100"));
-			EVOLUTION_MP = Short.parseShort(ABCSettings.getProperty(
+			EVOLUTION_MP = Short.parseShort(otherSettings.getProperty(
 					"Evolution_Mp", "100"));
 
 			// 在线一段时间给物品
-			GITorF = Boolean.parseBoolean(ABCSettings.getProperty(
+			GITorF = Boolean.parseBoolean(otherSettings.getProperty(
 					"GITorF","false"));
-			GI = Integer.parseInt(ABCSettings.getProperty(
+			GI = Integer.parseInt(otherSettings.getProperty(
 					"GI", "41159"));
-			GIC = Integer.parseInt(ABCSettings.getProperty(
+			GIC = Integer.parseInt(otherSettings.getProperty(
 					"GIC", "1"));
-			GIT = Integer.parseInt(ABCSettings.getProperty(
+			GIT = Integer.parseInt(otherSettings.getProperty(
 					"GIT", "3"));
 
 			// 持续出现魔法特效 by 狼人香
-			Switch = Boolean.parseBoolean(ABCSettings.getProperty(	// 开关
+			Switch = Boolean.parseBoolean(otherSettings.getProperty(	// 开关
 					"Switch","false"));
-			time = Integer.parseInt(ABCSettings.getProperty(		// 多长时间出现  （单位:毫秒）
+			time = Integer.parseInt(otherSettings.getProperty(		// 多长时间出现  （单位:毫秒）
 					"time", "5"));
-			level = Integer.parseInt(ABCSettings.getProperty(		// 声望多少以上出现
+			level = Integer.parseInt(otherSettings.getProperty(		// 声望多少以上出现
 					"level", "100"));
-			Phase1 = Integer.parseInt(ABCSettings.getProperty(		// 各个阶段出现的特效编号
+			Phase1 = Integer.parseInt(otherSettings.getProperty(		// 各个阶段出现的特效编号
 					"Phase1", "4573"));
-			Phase2 = Integer.parseInt(ABCSettings.getProperty(		// 各个阶段出现的特效编号
+			Phase2 = Integer.parseInt(otherSettings.getProperty(		// 各个阶段出现的特效编号
 					"Phase2", "5201"));
-			Phase3 = Integer.parseInt(ABCSettings.getProperty(		// 各个阶段出现的特效编号
+			Phase3 = Integer.parseInt(otherSettings.getProperty(		// 各个阶段出现的特效编号
 					"Phase3", "4231"));
-			Phase4 = Integer.parseInt(ABCSettings.getProperty(		// 各个阶段出现的特效编号
+			Phase4 = Integer.parseInt(otherSettings.getProperty(		// 各个阶段出现的特效编号
 					"Phase4", "4627"));
-			Phase5 = Integer.parseInt(ABCSettings.getProperty(		// 各个阶段出现的特效编号
+			Phase5 = Integer.parseInt(otherSettings.getProperty(		// 各个阶段出现的特效编号
 					"Phase5", "3394"));
-			Phase6 = Integer.parseInt(ABCSettings.getProperty(		// 各个阶段出现的特效编号
+			Phase6 = Integer.parseInt(otherSettings.getProperty(		// 各个阶段出现的特效编号
 					"Phase6", "761"));
 
-			GateWaitTime = Short.parseShort(ABCSettings.getProperty(	// 副本维护时间(单位分钟)
+			GateWaitTime = Short.parseShort(otherSettings.getProperty(	// 副本维护时间(单位分钟)
                     "GateWaitTime", "1"));
-            CloseDragonTime = Short.parseShort(ABCSettings.getProperty( // 副本打开多久，强制关闭.(单位分钟)
+            CloseDragonTime = Short.parseShort(otherSettings.getProperty( // 副本打开多久，强制关闭.(单位分钟)
                     "CloseDragonTime", "4"));         
-            GateMaxPc = Short.parseShort(ABCSettings.getProperty(		// 副本进入的玩家上限
+            GateMaxPc = Short.parseShort(otherSettings.getProperty(		// 副本进入的玩家上限
                     "GateMaxPc", "32"));
 
             // 玩家被怪打死公告
-            PKM = Boolean.parseBoolean(ABCSettings.getProperty(			// 开关
+            PKM = Boolean.parseBoolean(otherSettings.getProperty(			// 开关
 					"PKM","false"));
 
             // 所有物品贩卖开关
-            AllSell = Boolean.parseBoolean(ABCSettings.getProperty("AllSell","true"));
+            AllSell = Boolean.parseBoolean(otherSettings.getProperty("AllSell","true"));
             // 检测是否买少卖多
-            AllSell1 = Boolean.parseBoolean(ABCSettings.getProperty("AllSell1","true"));
+            AllSell1 = Boolean.parseBoolean(otherSettings.getProperty("AllSell1","true"));
 
             // ＧＭ使用公频(&)显示方式 2/3
-			GMTalkShowName = Boolean.parseBoolean(ABCSettings.getProperty(
+			GMTalkShowName = Boolean.parseBoolean(otherSettings.getProperty(
 					"GMTalkShowName", "true"));
 
 			// 物品丢地是否删除
-			Lostdeleteditems = Boolean.parseBoolean(ABCSettings.getProperty(
+			Lostdeleteditems = Boolean.parseBoolean(otherSettings.getProperty(
 					"Lostdeleteditems", "true"));
 
-			// 殷海萨的祝福
-			RATE_AIN_TIME = Integer.parseInt(ABCSettings.getProperty(
+			// 殷海萨的祝福 (登入多少时间取得1%)
+			RATE_AIN_TIME = Integer.parseInt(otherSettings.getProperty(
 					"RateAinTime", "30"));
-			// 殷海萨的祝福
-			RATE_AIN_OUTTIME = Integer.parseInt(ABCSettings.getProperty(
+			// 殷海萨的祝福 (登出多少时间取得1%)
+			RATE_AIN_OUTTIME = Integer.parseInt(otherSettings.getProperty(
 					"RateAinOutTime", "30"));
-			// 殷海萨的祝福
-			RATE_MAX_CHARGE_PERCENT = Integer.parseInt(ABCSettings.getProperty(
+			// 殷海萨的祝福 (最高百分比)
+			RATE_MAX_CHARGE_PERCENT = Integer.parseInt(otherSettings.getProperty(
 					"RateMaxChargePercent", "200"));
 			// 殷海萨的祝福 (积累到一定经验扣除一点) by 9001183ex (追求)
-			RATE_EXP_PROPORTION = Integer.parseInt(ABCSettings.getProperty(
+			RATE_EXP_PROPORTION = Integer.parseInt(otherSettings.getProperty(
 					"RateExpProportion", "30000"));
 
 			// 冲武防超过安定值多少广播 (最初冲武防广播原创 by 枫印铭心)
-			SuccessBoard = Boolean.parseBoolean(ABCSettings.getProperty(	// 开关
+			SuccessBoard = Boolean.parseBoolean(otherSettings.getProperty(	// 开关
 					"SuccessBoard","false"));
-			WeaponOverSafeBoard = Integer.parseInt(ABCSettings.getProperty(	// 武器 (多少以上才广播)
+			WeaponOverSafeBoard = Integer.parseInt(otherSettings.getProperty(	// 武器 (多少以上才广播)
 					"WeaponOverSafeBoard", "1"));
-			ArmorOverSafeBoard = Integer.parseInt(ABCSettings.getProperty(	// 防具 (多少以上才广播)
+			ArmorOverSafeBoard = Integer.parseInt(otherSettings.getProperty(	// 防具 (多少以上才广播)
 					"ArmorOverSafeBoard", "1"));
-			
+
 			// 冲晕秒数设置
-			SHOCK_STUN_TIMER =Integer.parseInt(ABCSettings.getProperty(
+			SHOCK_STUN_TIMER =Integer.parseInt(otherSettings.getProperty(
 					"SHOCKSTUNTIMER"));
 
+			NEW_CREATE_SET_GM = Boolean.parseBoolean(otherSettings.getProperty(
+					"NewCreateSetGM", "false")); // 设定创新角色是否设定为 GM
 
 		}
 		catch (Exception e) {
 			_log.log(Level.SEVERE, e.getLocalizedMessage(), e);
-			throw new Error("Failed to Load: " + ABC_CONFIG_FILE);
+			throw new Error("Failed to Load: " + OTHER_SETTINGS_CONFIG_FILE);
 		}
 
 		validate();
@@ -1594,17 +1601,21 @@ public final class Config {
 			Lostdeleteditems = Boolean.valueOf(pValue);
 		}
 
-		else if (pName.equalsIgnoreCase("RateAinTime")) {			// 殷海萨的祝福
+		else if (pName.equalsIgnoreCase("RateAinTime")) {			// 殷海萨的祝福 (登入多少时间取得1%)
 			RATE_AIN_TIME = Integer.parseInt(pValue);
 		}
-		else if (pName.equalsIgnoreCase("RateAinOutTime")) {		// 殷海萨的祝福
+		else if (pName.equalsIgnoreCase("RateAinOutTime")) {		// 殷海萨的祝福 (登出多少时间取得1%)
 			RATE_AIN_OUTTIME = Integer.parseInt(pValue);
 		}
-		else if (pName.equalsIgnoreCase("RateMaxChargePercent")) {	// 殷海萨的祝福
+		else if (pName.equalsIgnoreCase("RateMaxChargePercent")) {	// 殷海萨的祝福 (最高百分比)
 			RATE_MAX_CHARGE_PERCENT = Integer.parseInt(pValue);
 		}
 		else if (pName.equalsIgnoreCase("RateExpProportion")) {		// 殷海萨的祝福 (积累到一定经验扣除一点) by 9001183ex (追求)
 			RATE_EXP_PROPORTION = Integer.parseInt(pValue);
+		}
+
+		else if (pName.equalsIgnoreCase("NewCreateSetGM")) {
+			NEW_CREATE_SET_GM = Boolean.valueOf(pValue);			// 设定创新角色是否设定为 GM
 		}
 
 		else {

@@ -232,8 +232,17 @@ public class C_CreateChar extends ClientBasePacket {
 
 		pc.setClanRank(0);
 		pc.set_food(40);
+
+		// 设定创新角色是否设定为 GM add
+		if (Config.NEW_CREATE_SET_GM) {
+			pc.setAccessLevel((short) 200); // 方便测试用
+			pc.setGm(true);
+		} else {
 		pc.setAccessLevel((short) 0);
 		pc.setGm(false);
+		}
+		// 设定创新角色是否设定为 GM end
+
 		pc.setMonitor(false);
 		pc.setGmInvis(false);
 		pc.setExp(0);
