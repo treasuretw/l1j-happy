@@ -238,9 +238,17 @@ public class L1MonsterInstance extends L1NpcInstance {
 				}
 			}
 
-			if (getNpcId() == 45600) { // カーツ
-				if (pc.isCrown() || pc.isDarkelf()
-						|| (pc.getTempCharGfx() != pc.getClassId())) { // 未变身の君主、DEにはアクティブ
+			if (getNpcId() == 45600) { // 克特
+				if (pc.isCrown()
+						|| pc.isDarkelf()
+						|| (pc.getTempCharGfx() != pc.getClassId())) { // 没变身的王族、黑暗妖精
+					targetPlayer = pc;
+					break;
+				}
+			}
+
+			if (getNpcId() == 45215) { // 长者 仅搜寻正义值负值玩家
+				if (pc.getLawful() <= -1) {
 					targetPlayer = pc;
 					break;
 				}
@@ -793,7 +801,8 @@ public class L1MonsterInstance extends L1NpcInstance {
 		// 须曼 
 		else if (npcid == 99021) {
 			if (getMaxHp() / 3 > getCurrentHp()) { // 暂定剩余血量
-				if (1 > Random.nextInt(60)) { // 暂定闭壳治疗的机率
+				int rnd = Random.nextInt(60);
+				if (1 > rnd) { // 暂定闭壳治疗的机率
 					allTargetClear();
 					setHiddenStatus(HIDDEN_STATUS_FLY);
 					broadcastPacket(new S_DoActionGFX(getId(),4));
@@ -815,11 +824,11 @@ public class L1MonsterInstance extends L1NpcInstance {
 					broadcastPacket(new S_CharVisualUpdate(this, getStatus()));
 				}
 			}
-		} else if ((npcid == 45067) // 弱化哈维
+		} else if ((npcid == 45067) // 弱化哈维  (新手村庄)
 				|| (npcid == 45264) // 哈维 (普通)
 				|| (npcid == 45452) // 哈维 (遗忘之岛)
-				|| (npcid == 45090) // 弱化格利芬
-				|| (npcid == 45321) // 格利芬 (ギラン)
+				|| (npcid == 45090) // 弱化格利芬   (新手村庄)
+				|| (npcid == 45321) // 格利芬  (普通)
 				|| (npcid == 45445)) { // 格利芬 (遗忘之岛)
 			if (getMaxHp() / 3 > getCurrentHp()) {
 				int rnd = Random.nextInt(10);
@@ -861,11 +870,11 @@ public class L1MonsterInstance extends L1NpcInstance {
 		// 潜るMOBは一定の确率で地中に潜った状态に、
 		// 飞ぶMOBは飞んだ状态にしておく
 		int npcid = getNpcTemplate().get_npcId();
-		if ((npcid == 45061 // 弱化史巴托
-				)
-				|| (npcid == 45161 // 弱化史巴托
-				) || (npcid == 45181 // 史巴托 (SC)
-				) || (npcid == 45455)) { // 残暴的史巴托
+		if ((npcid == 45061) // 弱化史巴托
+				|| (npcid == 45161) // 弱化史巴托
+				|| (npcid == 45181) // 史巴托 (SC)
+				|| (npcid == 45455)) { // 残暴的史巴托
+			
 			int rnd = Random.nextInt(3);
 			if (1 > rnd) {
 				setHiddenStatus(HIDDEN_STATUS_SINK);
@@ -880,18 +889,18 @@ public class L1MonsterInstance extends L1NpcInstance {
 				setHiddenStatus(HIDDEN_STATUS_SINK);
 				setStatus(4);
 			}
-		} else if ((npcid == 45067 // 弱化哈维
-				)
-				|| (npcid == 45264 // 哈维 (普通)
-				) || (npcid == 45452 // 哈维 (遗忘之岛)
-				) || (npcid == 45090 // 弱化格利芬
-				) || (npcid == 45321 // 格利芬 (ギラン)
-				) || (npcid == 45445)) { // 格利芬 (遗忘之岛)
+		} else if ((npcid == 45067) // 弱化哈维 (新手村庄)
+				|| (npcid == 45264) // 哈维 (普通)
+				|| (npcid == 45452) // 哈维 (遗忘之岛)
+				|| (npcid == 45090) // 弱化格利芬 (新手村庄)
+				|| (npcid == 45321) // 格利芬 (普通)
+				|| (npcid == 45445)) { // 格利芬 (遗忘之岛)
+			
 			setHiddenStatus(HIDDEN_STATUS_FLY);
 		} else if (npcid == 45681) { // 林德拜尔
 			setHiddenStatus(HIDDEN_STATUS_FLY);
-		} else if ((npcid == 46107 // 底比斯 曼陀罗草 (白)
-				)
+		} else if ((npcid == 46107) // 底比斯 曼陀罗草 (白)
+				
 				|| (npcid == 46108)) { // 底比斯 曼陀罗草 (黑)
 			int rnd = Random.nextInt(3);
 			if (1 > rnd) {
@@ -908,35 +917,35 @@ public class L1MonsterInstance extends L1NpcInstance {
 		// グループに属するモンスターの出现直后の隐れる动作（リーダーと同じ动作にする）
 		int npcid = getNpcTemplate().get_npcId();
 		if (leader.getHiddenStatus() == HIDDEN_STATUS_SINK) {
-			if ((npcid == 45061 // 弱化史巴托
-					)
-					|| (npcid == 45161 // 史巴托 (普通)
-					) || (npcid == 45181 // 史巴托 (SC)
-					) || (npcid == 45455)) { // 残暴的史巴托
+			if ((npcid == 45061) // 弱化史巴托
+					|| (npcid == 45161) // 史巴托 (普通)
+					|| (npcid == 45181) // 史巴托 (SC)
+					|| (npcid == 45455)) { // 残暴的史巴托
+				
 				setHiddenStatus(HIDDEN_STATUS_SINK);
 				setStatus(11);
-			} else if ((npcid == 45045 // 弱化石头高仑
-					)
-					|| (npcid == 45126 // 石头高仑 (普通)
-					) || (npcid == 45134 // 石头高仑 (SC)
-					) || (npcid == 45281)) { // 奇岩 石头高仑
+			} else if ((npcid == 45045) // 弱化石头高仑
+					|| (npcid == 45126) // 石头高仑 (普通)
+					|| (npcid == 45134) // 石头高仑 (SC)
+					|| (npcid == 45281)) { // 奇岩 石头高仑
+				
 				setHiddenStatus(HIDDEN_STATUS_SINK);
 				setStatus(4);
-			} else if ((npcid == 46107 // 底比斯 曼陀罗草 (白)
-					)
+			} else if ((npcid == 46107) // 底比斯 曼陀罗草 (白)
+					
 					|| (npcid == 46108)) { // 底比斯 曼陀罗草 (黑)
 				setHiddenStatus(HIDDEN_STATUS_SINK);
 				setStatus(11);
 			}
 		} else if (leader.getHiddenStatus() == HIDDEN_STATUS_FLY) {
-			if ((npcid == 45067 // 弱化哈维
-					)
-					|| (npcid == 45264 // 哈维 (普通)
-					) || (npcid == 45452 // 哈维 (遗忘之岛)
-					) || (npcid == 45090 // 弱化格利芬
-					) || (npcid == 45321 // 格利芬 (ギラン)
-					) || (npcid == 99021 // 须曼 (测试)
-					) || (npcid == 45445)) { // 格利芬 (遗忘之岛)
+			if ((npcid == 45067) // 弱化哈维 (新手村庄)
+					|| (npcid == 45264) // 哈维 (普通)
+					|| (npcid == 45452) // 哈维 (遗忘之岛)
+					|| (npcid == 45090) // 弱化格利芬 (新手村庄)
+					|| (npcid == 45321) // 格利芬 (普通)
+					|| (npcid == 99021) // 须曼 (测试)
+					|| (npcid == 45445)) { // 格利芬 (遗忘之岛)
+				
 				setHiddenStatus(HIDDEN_STATUS_FLY);
 				setStatus(4);
 			} else if (npcid == 45681) { // 林德拜尔
@@ -1066,7 +1075,7 @@ public class L1MonsterInstance extends L1NpcInstance {
 				L1World.getInstance().storeObject(npc);
 				L1World.getInstance().addVisibleObject(npc);
 				npc.turnOnOffLight();
-				npc.startChat(L1NpcInstance.CHAT_TIMING_APPEARANCE); // チャット开始
+				npc.startChat(L1NpcInstance.CHAT_TIMING_APPEARANCE); // 开始说话
 				setNextDragonStepRunning(false);
 			} catch (InterruptedException e) {
 			}

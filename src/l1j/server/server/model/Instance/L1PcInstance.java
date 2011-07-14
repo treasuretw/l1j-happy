@@ -62,7 +62,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import l1j.server.Config;
-import l1j.william.SkillSound;//TODO 持续出现魔法特效
+import l1j.william.SkillSound;
 import l1j.server.server.ActionCodes;
 import l1j.server.server.ClientThread;
 import l1j.server.server.GeneralThreadPool;
@@ -254,6 +254,7 @@ public class L1PcInstance extends L1Character {
 		return _originalMpr;
 	}
 
+	/** 开始玩家恢复自身体力 */
 	public void startHpRegeneration() {
 		final int INTERVAL = 1000;
 
@@ -264,6 +265,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 停止玩家恢复自身体力 */
 	public void stopHpRegeneration() {
 		if (_hpRegenActive) {
 			_hpRegen.cancel();
@@ -272,6 +274,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 开始玩家恢复自身魔力 */
 	public void startMpRegeneration() {
 		final int INTERVAL = 1000;
 
@@ -282,6 +285,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 停止玩家恢复自身魔力 */
 	public void stopMpRegeneration() {
 		if (_mpRegenActive) {
 			_mpRegen.cancel();
@@ -290,7 +294,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
-	// 获得道具
+	/** 获得道具开始 */
 	public void startItemMakeByDoll() {
 		final int INTERVAL_BY_DOLL = 240000;
 		boolean isExistItemMakeDoll = false;
@@ -305,7 +309,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
-	// 获得道具停止
+	/** 获得道具停止 */
 	public void stopItemMakeByDoll() {
 		if (_ItemMakeActiveByDoll) {
 			_itemMakeByDoll.cancel();
@@ -314,7 +318,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
-	// 回血开始
+	/** 开始娃娃恢复玩家体力 */
 	public void startHpRegenerationByDoll() {
 		final int INTERVAL_BY_DOLL = 64000;
 		boolean isExistHprDoll = false;
@@ -329,7 +333,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
-	// 回血停止
+	/** 停止娃娃恢复玩家体力 */
 	public void stopHpRegenerationByDoll() {
 		if (_hpRegenActiveByDoll) {
 			_hpRegenByDoll.cancel();
@@ -338,7 +342,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
-	// 回魔开始
+	/** 开始娃娃恢复玩家魔力 */
 	public void startMpRegenerationByDoll() {
 		final int INTERVAL_BY_DOLL = 64000;
 		boolean isExistMprDoll = false;
@@ -352,7 +356,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
-	// 回魔停止
+	/** 停止娃娃恢复玩家魔力 */
 	public void stopMpRegenerationByDoll() {
 		if (_mpRegenActiveByDoll) {
 			_mpRegenByDoll.cancel();
@@ -361,6 +365,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 开始觉醒恢复玩家魔力 */
 	public void startMpReductionByAwake() {
 		final int INTERVAL_BY_AWAKE = 4000;
 		if (!_mpReductionActiveByAwake) {
@@ -370,29 +375,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
-	//add Mr香 新增 持续出现魔法特效 by missu0524 
-	public void startSkillSound() {
-		final int INTERVAL = Config.time; // 间隔时间  （单位:毫秒）
-		if (!_SkillSoundActive) {
-			//SkillSound SkillSound;
-			_SkillSound = new SkillSound(this);
-			_regenTimer.scheduleAtFixedRate(_SkillSound,
-					INTERVAL, INTERVAL);
-			_SkillSoundActive = true;
-		}                                
-	}
-
-	public void stopSkillSound() {
-		if (_SkillSoundActive) {
-			@SuppressWarnings("unused")
-			SkillSound SkillSound;
-			_SkillSound.cancel();
-			_SkillSound = null;
-			_SkillSoundActive = false;
-		}
-	}
-	//end Mr香 新增 持续出现魔法特效 by missu0524
-
+	/** 停止觉醒恢复玩家魔力 */
 	public void stopMpReductionByAwake() {
 		if (_mpReductionActiveByAwake) {
 			_mpReductionByAwake.cancel();
@@ -401,14 +384,13 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 开始自动更新物件 */
 	public void startObjectAutoUpdate() {
 		removeAllKnownObjects();
 		_autoUpdateFuture = GeneralThreadPool.getInstance().pcScheduleAtFixedRate(new L1PcAutoUpdate(getId()), 0L, INTERVAL_AUTO_UPDATE);
 	}
 
-	/**
-	 * 各种监视任务的停止。
-	 */
+	/** 停止各种监控任务 */
 	public void stopEtcMonitor() {
 		if (_autoUpdateFuture != null) {
 			_autoUpdateFuture.cancel(true);
@@ -427,7 +409,6 @@ public class L1PcInstance extends L1Character {
 			_hellFuture.cancel(true);
 			_hellFuture = null;
 		}
-
 	}
 
 	private static final long INTERVAL_AUTO_UPDATE = 300;
@@ -538,7 +519,8 @@ public class L1PcInstance extends L1Character {
 					sendPackets(new S_HPMeter((L1Character) visible));
 				}
 				// TODO 显示怪物血条
-				else if (Config.SHOW_HP_BAR && L1HpBar.isHpBarTarget(visible)
+				else if (Config.SHOW_HP_BAR
+						&& L1HpBar.isHpBarTarget(visible)
 						&& visible instanceof L1MonsterInstance) {
 					sendPackets(new S_HPMeter((L1Character) visible));
 				}
@@ -620,24 +602,6 @@ public class L1PcInstance extends L1Character {
 	public void clearSkillMastery() {
 		skillList.clear();
 	}
-
-	// sosodemon add 称望系统 BY.SosoDEmoN Start 
-	private int _fameLevel = 0;public int getFameLevel() {
-		return _fameLevel;
-	}
-	public void setFameLevel(int i) {
-		_fameLevel = i;
-	}
-	// sosodemon add 称望系统 BY.SosoDEmoN End 
-
-	// 记录转生次数 add
-	private int _levelmet = 0;public int getLevelmet() {
-		return _levelmet;
-	}
-	public void setLevelmet(int i) {
-		_levelmet = i;
-	}
-	// 记录转生次数 end
 
 	// 宠物竞速
 	private int _lap = 1;
@@ -1441,7 +1405,7 @@ public class L1PcInstance extends L1Character {
 				setTempCharGfxAtDead(getClassId());
 			}
 
-			// キャンセレーションをエフェクトなしでかける
+			// 相消无法消除的状态
 			L1SkillUse l1skilluse = new L1SkillUse();
 			l1skilluse.handleCommands(L1PcInstance.this, CANCELLATION, getId(), getX(), getY(), null, 0, L1SkillUse.TYPE_LOGIN);
 
@@ -1781,20 +1745,20 @@ public class L1PcInstance extends L1Character {
 		int exp = 0;
 		if (oldLevel < 45) {
 			exp = (int) (needExp * 0.05);
-		}
-		else if (oldLevel == 45) {
+		} else if (oldLevel == 45) {
+			
 			exp = (int) (needExp * 0.045);
-		}
-		else if (oldLevel == 46) {
+		} else if (oldLevel == 46) {
+			
 			exp = (int) (needExp * 0.04);
-		}
-		else if (oldLevel == 47) {
+		} else if (oldLevel == 47) {
+			
 			exp = (int) (needExp * 0.035);
-		}
-		else if (oldLevel == 48) {
+		} else if (oldLevel == 48) {
+			
 			exp = (int) (needExp * 0.03);
-		}
-		else if (oldLevel >= 49) {
+		} else if (oldLevel >= 49) {
+			
 			exp = (int) (needExp * 0.025);
 		}
 
@@ -1804,29 +1768,30 @@ public class L1PcInstance extends L1Character {
 		addExp(exp);
 	}
 
+	/** 角色死亡处罚 */
 	public void deathPenalty() {
 		int oldLevel = getLevel();
 		int needExp = ExpTable.getNeedExpNextLevel(oldLevel);
 		int exp = 0;
 		if ((oldLevel >= 1) && (oldLevel < 11)) {
 			exp = 0;
-		}
-		else if ((oldLevel >= 11) && (oldLevel < 45)) {
+		} else if ((oldLevel >= 11) && (oldLevel < 45)) {
+			
 			exp = (int) (needExp * 0.1);
-		}
-		else if (oldLevel == 45) {
+		} else if (oldLevel == 45) {
+			
 			exp = (int) (needExp * 0.09);
-		}
-		else if (oldLevel == 46) {
+		} else if (oldLevel == 46) {
+			
 			exp = (int) (needExp * 0.08);
-		}
-		else if (oldLevel == 47) {
+		} else if (oldLevel == 47) {
+			
 			exp = (int) (needExp * 0.07);
-		}
-		else if (oldLevel == 48) {
+		} else if (oldLevel == 48) {
+			
 			exp = (int) (needExp * 0.06);
-		}
-		else if (oldLevel >= 49) {
+		} else if (oldLevel >= 49) {
+			
 			exp = (int) (needExp * 0.05);
 		}
 
@@ -1847,7 +1812,7 @@ public class L1PcInstance extends L1Character {
 		return _originalEr;
 	}
 
-	// 回避率变化
+	/** 回避率变化 */
 	public int getEr() {
 		if (hasSkillEffect(STRIKER_GALE)) { // 精准射击
 			return 0;
@@ -1991,17 +1956,17 @@ public class L1PcInstance extends L1Character {
 	private MpRegeneration _mpRegen;
 	private MpRegenerationByDoll _mpRegenByDoll;
 	private MpReductionByAwake _mpReductionByAwake;
-	private SkillSound _SkillSound;//add 修改持续出现魔法特效 by missu0524
+	private SkillSound _SkillSound; // 修改持续出现魔法特效 by missu0524
 	private HpRegeneration _hpRegen;
-	private HpRegenerationByDoll _hpRegenByDoll;
+	private HpRegenerationByDoll _hpRegenByDoll; // 魔法娃娃回血功能
 	private ItemMakeByDoll _itemMakeByDoll;
 	private static Timer _regenTimer = new Timer(true);
 	private boolean _mpRegenActive;
 	private boolean _mpRegenActiveByDoll;
 	private boolean _mpReductionActiveByAwake;
-	private boolean _SkillSoundActive;//add 修改持续出现魔法特效 by missu0524
+	private boolean _SkillSoundActive; // 修改持续出现魔法特效 by missu0524
 	private boolean _hpRegenActive;
-	private boolean _hpRegenActiveByDoll;
+	private boolean _hpRegenActiveByDoll; // 魔法娃娃回血功能
 	private boolean _ItemMakeActiveByDoll;
 	private L1EquipmentSlot _equipSlot;
 	private L1PcDeleteTimer _pcDeleteTimer;
@@ -2015,26 +1980,7 @@ public class L1PcInstance extends L1Character {
 		_accountName = s;
 	}
 
-	// add 转生可设定血魔保留多少 by eric1300460
-	public void setBaseMaxHp(short i) {
-		if (i >= 32767) {
-			i = 32767;
-		} else if (i < 1) {
-			i = 1;
-		}
-		_baseMaxHp=i;
-	}
-	public void setBaseMaxMp(short i) {
-		if (i >= 32767) {
-			i = 32767;
-		} else if (i < 1) {
-			i = 1;
-		}
-		_baseMaxMp=i;
-	}
-	//end 转生可设定血魔保留多少 by eric1300460
-
-	private short _baseMaxHp = 0; // ● ＭＡＸＨＰベース（1～32767）
+	private short _baseMaxHp = 0; // ● 基本 ＭＡＸＨＰ（1～32767）
 
 	public short getBaseMaxHp() {
 		return _baseMaxHp;
@@ -2052,7 +1998,7 @@ public class L1PcInstance extends L1Character {
 		_baseMaxHp = i;
 	}
 
-	private short _baseMaxMp = 0; // ● ＭＡＸＭＰベース（0～32767）
+	private short _baseMaxMp = 0; // ● 基本 ＭＡＸＭＰ（0～32767）
 
 	public short getBaseMaxMp() {
 		return _baseMaxMp;
@@ -2070,7 +2016,7 @@ public class L1PcInstance extends L1Character {
 		_baseMaxMp = i;
 	}
 
-	private int _baseAc = 0; // ● ＡＣベース（-128～127）
+	private int _baseAc = 0; // ● 基本 ＡＣ（-128～127）
 
 	public int getBaseAc() {
 		return _baseAc;
@@ -2083,7 +2029,7 @@ public class L1PcInstance extends L1Character {
 		return _originalAc;
 	}
 
-	private byte _baseStr = 0; // ● ＳＴＲベース（1～127）
+	private byte _baseStr = 0; // ● 基本 ＳＴＲ（1～127）
 
 	public byte getBaseStr() {
 		return _baseStr;
@@ -2101,7 +2047,7 @@ public class L1PcInstance extends L1Character {
 		_baseStr = i;
 	}
 
-	private byte _baseCon = 0; // ● ＣＯＮベース（1～127）
+	private byte _baseCon = 0; // ● 基本 ＣＯＮ（1～127）
 
 	public byte getBaseCon() {
 		return _baseCon;
@@ -2119,7 +2065,7 @@ public class L1PcInstance extends L1Character {
 		_baseCon = i;
 	}
 
-	private byte _baseDex = 0; // ● ＤＥＸベース（1～127）
+	private byte _baseDex = 0; // ● 基本 ＤＥＸ（1～127）
 
 	public byte getBaseDex() {
 		return _baseDex;
@@ -2137,7 +2083,7 @@ public class L1PcInstance extends L1Character {
 		_baseDex = i;
 	}
 
-	private byte _baseCha = 0; // ● ＣＨＡベース（1～127）
+	private byte _baseCha = 0; // ● 基本 ＣＨＡ（1～127）
 
 	public byte getBaseCha() {
 		return _baseCha;
@@ -2155,7 +2101,7 @@ public class L1PcInstance extends L1Character {
 		_baseCha = i;
 	}
 
-	private byte _baseInt = 0; // ● ＩＮＴベース（1～127）
+	private byte _baseInt = 0; // ● 基本ＩＮＴ（1～127）
 
 	public byte getBaseInt() {
 		return _baseInt;
@@ -2173,7 +2119,7 @@ public class L1PcInstance extends L1Character {
 		_baseInt = i;
 	}
 
-	private byte _baseWis = 0; // ● ＷＩＳベース（1～127）
+	private byte _baseWis = 0; // ● 基本 ＷＩＳ（1～127）
 
 	public byte getBaseWis() {
 		return _baseWis;
@@ -2328,31 +2274,31 @@ public class L1PcInstance extends L1Character {
 		return _originalMpup;
 	}
 
-	private int _baseDmgup = 0; // ● ダメージ补正ベース（-128～127）
+	private int _baseDmgup = 0; // ● 基本伤害补正（-128～127）
 
 	public int getBaseDmgup() {
 		return _baseDmgup;
 	}
 
-	private int _baseBowDmgup = 0; // ● 弓ダメージ补正ベース（-128～127）
+	private int _baseBowDmgup = 0; // ● 弓的基本伤害补正（-128～127）
 
 	public int getBaseBowDmgup() {
 		return _baseBowDmgup;
 	}
 
-	private int _baseHitup = 0; // ● 命中补正ベース（-128～127）
+	private int _baseHitup = 0; // ● 基本命中补正（-128～127）
 
 	public int getBaseHitup() {
 		return _baseHitup;
 	}
 
-	private int _baseBowHitup = 0; // ● 弓命中补正ベース（-128～127）
+	private int _baseBowHitup = 0; // ● 弓的基本命中补正（-128～127）
 
 	public int getBaseBowHitup() {
 		return _baseBowHitup;
 	}
 
-	private int _baseMr = 0; // ● 魔法防御ベース（0～）
+	private int _baseMr = 0; // ● 基本魔法防御（0～）
 
 	public int getBaseMr() {
 		return _baseMr;
@@ -2378,7 +2324,7 @@ public class L1PcInstance extends L1Character {
 		_advenMp = i;
 	}
 
-	private int _highLevel; // ● 过去最高レベル
+	private int _highLevel; // ● 过去最高等级
 
 	public int getHighLevel() {
 		return _highLevel;
@@ -2408,7 +2354,7 @@ public class L1PcInstance extends L1Character {
 		_elixirStats = i;
 	}
 
-	private int _elfAttr; // ● エルフの属性
+	private int _elfAttr; // ● 精灵属性
 
 	public int getElfAttr() {
 		return _elfAttr;
@@ -2428,7 +2374,7 @@ public class L1PcInstance extends L1Character {
 		_elfAttr2 = i;
 	}
 
-	private int _expRes; // ● EXP复旧
+	private int _expRes; // ● 经验值购买
 
 	public int getExpRes() {
 		return _expRes;
@@ -2438,7 +2384,7 @@ public class L1PcInstance extends L1Character {
 		_expRes = i;
 	}
 
-	private int _partnerId; // ● 结婚相手
+	private int _partnerId; // ● 结婚对象
 
 	public int getPartnerId() {
 		return _partnerId;
@@ -2448,7 +2394,7 @@ public class L1PcInstance extends L1Character {
 		_partnerId = i;
 	}
 
-	private int _onlineStatus; // ● オンライン状态
+	private int _onlineStatus; // ● 角色上线状态
 
 	public int getOnlineStatus() {
 		return _onlineStatus;
@@ -2510,6 +2456,16 @@ public class L1PcInstance extends L1Character {
 		_banned = flag;
 	}
 
+	private int _food; // ● 饱食度
+
+	public int get_food() {
+		return _food;
+	}
+
+	public void set_food(int i) {
+		_food = i;
+	}
+
 	public L1EquipmentSlot getEquipSlot() {
 		return _equipSlot;
 	}
@@ -2541,6 +2497,7 @@ public class L1PcInstance extends L1Character {
 		CharacterTable.getInstance().storeCharacter(this);
 	}
 
+	// TODO 新增 add //////////////////////////////////////////////////
 	// 殷海萨的祝福 add
 	private Timestamp _lastActive;
 
@@ -2575,8 +2532,144 @@ public class L1PcInstance extends L1Character {
 	public int getAinPoint() {
 		return _ainPoint;
 	}
+
+	// 殷海萨的祝福 (积累到一定经验扣除一点) by 9001183ex (追求)
+	private double _ainExp = Config.RATE_EXP_PROPORTION;
+
+	public void setAinExp(double i) {
+		_ainExp = i;
+	}
+
+	public double getAinExp() {
+		return _ainExp;
+	}
 	// 殷海萨的祝福 end
 	
+	// add 转生可设定血魔保留多少 by eric1300460
+	public void setBaseMaxHp(short i) {
+		if (i >= 32767) {
+			i = 32767;
+		} else if (i < 1) {
+			i = 1;
+		}
+		_baseMaxHp=i;
+	}
+	public void setBaseMaxMp(short i) {
+		if (i >= 32767) {
+			i = 32767;
+		} else if (i < 1) {
+			i = 1;
+		}
+		_baseMaxMp=i;
+	}
+	// end 转生可设定血魔保留多少 by eric1300460
+
+	// sosodemon add 称望系统 BY.SosoDEmoN
+	private int _fameLevel = 0;
+
+	public int getFameLevel() {
+		return _fameLevel;
+	}
+
+	public void setFameLevel(int i) {
+		_fameLevel = i;
+	}
+	// sosodemon end 称望系统 BY.SosoDEmoN
+
+	// 记录转生次数 add
+	private int _levelmet = 0;
+
+	public int getLevelmet() {
+		return _levelmet;
+	}
+
+	public void setLevelmet(int i) {
+		_levelmet = i;
+	}
+	// 记录转生次数 end
+
+	// add Mr 香 新增 持续出现魔法特效 by missu0524
+	public void startSkillSound() {
+		final int INTERVAL = Config.time; // 间隔时间  （单位:毫秒）
+		if (!_SkillSoundActive) {
+			//SkillSound SkillSound;
+			_SkillSound = new SkillSound(this);
+			_regenTimer.scheduleAtFixedRate(_SkillSound, INTERVAL, INTERVAL);
+			_SkillSoundActive = true;
+		}                                
+	}
+
+	public void stopSkillSound() {
+		if (_SkillSoundActive) {
+			//SkillSound SkillSound;
+			_SkillSound.cancel();
+			_SkillSound = null;
+			_SkillSoundActive = false;
+		}
+	}
+	// end Mr 香 新增 持续出现魔法特效 by missu0524
+
+	// 猜数字 by aloha777 add
+	private int _Guessmath;
+
+	public int getGuessmath() {
+		return _Guessmath;
+	}
+	public void setGuessmath(int i) {
+		_Guessmath = i;
+	}
+	// 猜数字 by aloha777 end
+
+	// 防外挂自动喝水 add
+	private byte _UseItemCount = 0;
+
+	private long _oldUseItemTimeInMillis = 0L;
+
+	public void checkUseItemInterval() {
+
+		long nowUseItemTimeInMillis = System.currentTimeMillis();
+
+		if (_UseItemCount == 0) {
+			_UseItemCount++;
+			_oldUseItemTimeInMillis = nowUseItemTimeInMillis;
+			return;
+		}
+
+		long UseItemInterval = nowUseItemTimeInMillis - _oldUseItemTimeInMillis;
+
+		if (UseItemInterval > 2000) {
+			_UseItemCount = 0;
+	        _oldUseItemTimeInMillis = 0;
+		} else {
+			if (_UseItemCount >= 3) { // 连续喝三次以上
+				usePlugin("IP"
+						+ "(" + getNetConnection().getIp() + ")"
+						+"玩家"
+						+ ":【" + getName() + "】 "
+						+ "使用喝水外挂。"
+						+ "时间:" + "(" + new Timestamp(System.currentTimeMillis()) + ")。");
+				sendPackets(new S_Disconnect());
+				_UseItemCount = 0;
+				_oldUseItemTimeInMillis = 0;
+				return;
+			}
+			_UseItemCount++;
+		}
+	}
+
+	// 记录文件档
+	private static void usePlugin(String info) {
+		try {
+			BufferedWriter out = new BufferedWriter(new FileWriter("usePlugin.txt", true));
+			out.write(info + "\r\n");
+			out.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	// 防外挂自动喝水 end
+	// TODO 新增 end //////////////////////////////////////////////////
+
 	/**
 	 * このプレイヤーのインベントリアイテムの状态をストレージへ书き迂む。
 	 */
@@ -2598,6 +2691,7 @@ public class L1PcInstance extends L1Character {
 		_hpRegen.setState(state);
 	}
 
+	/** 负重 */
 	public double getMaxWeight() {
 		int str = getStr();
 		int con = getCon();
@@ -2625,7 +2719,7 @@ public class L1PcInstance extends L1Character {
 
 		maxWeight += weightReductionByMagic;
 
-		maxWeight *= Config.RATE_WEIGHT_LIMIT; // ウェイトレートを挂ける
+		maxWeight *= Config.RATE_WEIGHT_LIMIT; // 最大负重倍率
 
 		return maxWeight;
 	}
@@ -2681,7 +2775,7 @@ public class L1PcInstance extends L1Character {
 	private void levelUp(int gap) {
 		resetLevel();
 
-		// 复活のポーション
+		// 返生药水
 		if ((getLevel() == 99) && Config.ALT_REVIVAL_POTION) {
 			try {
 				L1Item l1item = ItemTable.getInstance().getTemplate(43000);
@@ -2731,7 +2825,7 @@ public class L1PcInstance extends L1Character {
 		}
 		sendPackets(new S_OwnCharStatus(this));
 
-		l1j.william.Reward.getItem(this); // TODO　升级奖励道具 by 阿杰
+		l1j.william.Reward.getItem(this); // 升级奖励道具 by 阿杰
 
 		// 根据等级判断地图限制
 		if ((getMapId() == 2005 || getMapId() == 86)) { // 新手村
@@ -2741,7 +2835,7 @@ public class L1PcInstance extends L1Character {
 				}
 				L1Teleport.teleport(this, 33084, 33391, (short) 4, 5, true);// 银骑士村
 			}
-		} else if (getLevel() >= 52) { // 指定レベル
+		} else if (getLevel() >= 52) { // 指定等级
 			if (getMapId() == 777) { // 见舍てられた者たちの地(影の神殿)
 				L1Teleport.teleport(this, 34043, 32184, (short) 4, 5, true); // 象牙の塔前
 			} else if ((getMapId() == 778) || (getMapId() == 779)) { // 见舍てられた者たちの地(欲望の洞窟)
@@ -2766,6 +2860,7 @@ public class L1PcInstance extends L1Character {
 			// レベルダウン时はランダム值をそのままマイナスする为に、base值に0を设定
 			short randomHp = CalcStat.calcStatHp(getType(), 0, getBaseCon(), getOriginalHpup());
 			short randomMp = CalcStat.calcStatMp(getType(), 0, getBaseWis(), getOriginalMpup());
+			
 			addBaseMaxHp((short) -randomHp);
 			addBaseMaxMp((short) -randomMp);
 		}
@@ -3083,6 +3178,7 @@ public class L1PcInstance extends L1Character {
 		_hasteItemEquipped += i;
 	}
 
+	/** 删除重复的魔法状态 */
 	public void removeHasteSkillEffect() {
 		if (hasSkillEffect(SLOW)) {
 			removeSkillEffect(SLOW);
@@ -3306,7 +3402,7 @@ public class L1PcInstance extends L1Character {
 		else if (isIllusionist()) { // 幻术师
 			newMr = 20;
 		}
-		newMr += CalcStat.calcStatMr(getWis()); // WIS分のMRボーナス
+		newMr += CalcStat.calcStatMr(getWis()); // 精神对魔防的加成
 		newMr += getLevel() / 2; // LVの半分だけ追加
 		addMr(newMr - _baseMr);
 		_baseMr = newMr;
@@ -3326,6 +3422,7 @@ public class L1PcInstance extends L1Character {
 	/**
 	 * 设定时的初始点数和计算现在再次从初始状态，重新分配时调用
 	 */
+	/** 重置原始的最大 HP */
 	public void resetOriginalHpup() {
 		int originalCon = getOriginalCon();
 		if (isCrown()) { // 王族
@@ -3410,6 +3507,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 重置原始的最大 MP */
 	public void resetOriginalMpup() {
 		int originalWis = getOriginalWis();
 		{
@@ -3479,6 +3577,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 重置原始的 STR 负重减轻 */
 	public void resetOriginalStrWeightReduction() {
 		int originalStr = getOriginalStr();
 		if (isCrown()) { // 王族
@@ -3543,6 +3642,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 重置原始的最大伤害 */
 	public void resetOriginalDmgup() {
 		int originalStr = getOriginalStr();
 		if (isCrown()) { // 
@@ -3624,6 +3724,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 重置原始的 CON 负重减轻 */
 	public void resetOriginalConWeightReduction() {
 		int originalCon = getOriginalCon();
 		if (isCrown()) { // 
@@ -3685,6 +3786,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 重置原始的弓的最大伤害 */
 	public void resetOriginalBowDmgup() {
 		int originalDex = getOriginalDex();
 		if (isCrown()) { // 
@@ -3728,6 +3830,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 重置原始的最大命中率 */
 	public void resetOriginalHitup() {
 		int originalStr = getOriginalStr();
 		if (isCrown()) { // 
@@ -3815,6 +3918,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 重置原始的弓的最大命中率 */
 	public void resetOriginalBowHitup() {
 		int originalDex = getOriginalDex();
 		if (isCrown()) { // 
@@ -3856,6 +3960,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 重置原始的魔防 */
 	public void resetOriginalMr() {
 		int originalWis = getOriginalWis();
 		if (isCrown()) { // 
@@ -3939,6 +4044,7 @@ public class L1PcInstance extends L1Character {
 		addMr(_originalMr);
 	}
 
+	/** 重置原始的魔法命中率 */
 	public void resetOriginalMagicHit() {
 		int originalInt = getOriginalInt();
 		if (isCrown()) { // 
@@ -4017,6 +4123,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/**  */
 	public void resetOriginalMagicCritical() {
 		int originalInt = getOriginalInt();
 		if (isCrown()) { // 
@@ -4064,6 +4171,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 重置原始的魔力减免 */
 	public void resetOriginalMagicConsumeReduction() {
 		int originalInt = getOriginalInt();
 		if (isCrown()) { // 
@@ -4121,6 +4229,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 重置原始的魔法伤害 */
 	public void resetOriginalMagicDamage() {
 		int originalInt = getOriginalInt();
 		if (isCrown()) { // 
@@ -4170,6 +4279,7 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
+	/** 重置原始的防御 */
 	public void resetOriginalAc() {
 		int originalDex = getOriginalDex();
 		if (isCrown()) { // 
@@ -4253,6 +4363,7 @@ public class L1PcInstance extends L1Character {
 		addAc(0 - _originalAc);
 	}
 
+	/** 重置原始的回避率 */
 	public void resetOriginalEr() {
 		int originalDex = getOriginalDex();
 		if (isCrown()) { // 
@@ -4981,16 +5092,6 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 
-	// 猜数字 by aloha777
-	private int _Guessmath;
-
-	public int getGuessmath() {
-		return _Guessmath;
-	}
-	public void setGuessmath(int i) {
-		_Guessmath = i;
-	}
-
 	public void receiveDamage(L1Character attacker, double damage/*, boolean isMagicDamage*/) { // 攻击でＨＰを减らすときはここを使用
 		if (getCurrentHp() > 0 && !isDead()) {
 			if (attacker != this) {
@@ -5051,8 +5152,8 @@ public class L1PcInstance extends L1Character {
 					}
 				}
 			}
-			if (getInventory().checkEquipped(145) // バーサーカーアックス
-					|| getInventory().checkEquipped(149)) { // ミノタウルスアックス
+			if (getInventory().checkEquipped(145) // 狂战士斧
+					|| getInventory().checkEquipped(149)) { // 牛人斧头
 				damage *= 1.5; // 被ダメ1.5倍
 			}
 			if (hasSkillEffect(ILLUSION_AVATAR)) {
@@ -5079,66 +5180,4 @@ public class L1PcInstance extends L1Character {
 			death(attacker);
 		}
 	}
-
-	  // 防外挂自动喝水 add
-	  private byte _UseItemCount = 0;
-
-	  private long _oldUseItemTimeInMillis = 0L;
-
-	  public void checkUseItemInterval() {
-
-		  long nowUseItemTimeInMillis = System.currentTimeMillis();
-
-	      if (_UseItemCount == 0) {
-	        _UseItemCount++;
-	        _oldUseItemTimeInMillis = nowUseItemTimeInMillis;
-	        return;
-	      }
-
-	      long UseItemInterval = nowUseItemTimeInMillis - _oldUseItemTimeInMillis;
-
-	      if (UseItemInterval > 2000) {
-	        _UseItemCount = 0;
-	        _oldUseItemTimeInMillis = 0;
-	      } else {
-	        if (_UseItemCount >= 3) { // 连续喝三次以上
-	            usePlugin("IP"
-	                  + "(" + getNetConnection().getIp() + ")"
-	                  +"玩家"
-	                  + ":【" + getName() + "】 "
-	                  + "使用喝水外挂。"
-	                  + "时间:" + "(" + new Timestamp(System.currentTimeMillis()) + ")。");
-	            sendPackets(new S_Disconnect());
-	            _UseItemCount = 0;
-	            _oldUseItemTimeInMillis = 0;
-	            return;
-	        }
-	        _UseItemCount++;
-	      }
-	  }
-
-	  // 记录文件档
-	  private static void usePlugin(String info) {
-		  try {
-			  BufferedWriter out = new BufferedWriter(new FileWriter("usePlugin.txt", true));
-			  out.write(info + "\r\n");
-			  out.close();
-		  } catch (IOException e) {
-			  e.printStackTrace();
-		  }
-	  }
-	 // 防外挂自动喝水 end
-	  
-     // 殷海萨的祝福 (积累到一定经验扣除一点) by 9001183ex (追求)
-	  private double _ainExp = Config.RATE_EXP_PROPORTION;
-
-	  public void setAinExp(double i) {
-		  _ainExp = i;
-	  }
-
-	  public double getAinExp() {
-		  return _ainExp;
-	  }
-	// 殷海萨的祝福 (积累到一定经验扣除一点) by 9001183ex (追求)
-
 }
