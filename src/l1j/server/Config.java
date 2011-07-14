@@ -569,6 +569,9 @@ public final class Config {
 	public static boolean NEW_CREATE_SET_GM;	// 设定创新角色是否设定为 GM
 	
 	public static boolean AUTO_ADD_SKILL;		// 设定是否开启自动学习技能
+	
+	public static byte PET_MAX_LV;				// 设定宠物最高等级
+	public static double RATE_XP_PET;			// 设定宠物经验值倍率
 
 
 	/** 伺服器设定档 */
@@ -1137,8 +1140,14 @@ public final class Config {
 			// 设定是否开启自动学习技能
 			AUTO_ADD_SKILL = Boolean.parseBoolean(otherSettings.getProperty(
 					"AutoAddSkill", "false"));
-
-
+			
+			// 设定宠物最高等级
+			PET_MAX_LV = Byte.parseByte(otherSettings.getProperty(
+					"PetMaxLV", "50"));
+			// 设定宠物经验值倍率
+			RATE_XP_PET = Double.parseDouble(otherSettings.getProperty(
+					"PetRateXp","1.0"));
+			
 		}
 		catch (Exception e) {
 			_log.log(Level.SEVERE, e.getLocalizedMessage(), e);
@@ -1533,7 +1542,7 @@ public final class Config {
 		}
 
 		// TODO 新增/////////////////////////////////////////////////////////
-		//ABC.properties
+		// othersettings.properties
 		// 伺服器重启 by 丫杰
 		else if (pName.equalsIgnoreCase("RestartTime")) {
 			REST_TIME = Integer.parseInt(pValue);

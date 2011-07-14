@@ -521,9 +521,9 @@ public class CalcExp {
 		int petItemObjId = pet.getItemObjId();
 
 		int levelBefore = pet.getLevel();
-		int totalExp = (int) (exp * Config.RATE_XP + pet.getExp());
-		if (totalExp >= ExpTable.getExpByLevel(51)) {
-			totalExp = ExpTable.getExpByLevel(51) - 1;
+		int totalExp = (int) (exp * Config.RATE_XP_PET + pet.getExp()); // 宠物经验倍率
+		if (totalExp >= ExpTable.getExpByLevel(Config.PET_MAX_LV + 1)) { // 宠物最高等级
+			totalExp = ExpTable.getExpByLevel(Config.PET_MAX_LV + 1) - 1; // 宠物最高等级
 		}
 		pet.setExp(totalExp);
 
