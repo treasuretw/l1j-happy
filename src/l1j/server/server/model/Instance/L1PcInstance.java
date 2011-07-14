@@ -2751,6 +2751,12 @@ public class L1PcInstance extends L1Character {
 
 		// 处理新手保护系统(遭遇的守护)状态资料的变动
 		checkNoviceType();
+
+		// 自动学习技能 add
+		if (Config.AUTO_ADD_SKILL) {
+			l1j.william.AutoLearnSkill.forAutoLearnSkill(this);
+		}
+		// 自动学习技能 end
 	}
 
 	private void levelDown(int gap) {

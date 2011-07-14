@@ -564,11 +564,11 @@ public final class Config {
 	public static int WeaponOverSafeBoard;		// 武器 (多少以上才广播)
 	public static int ArmorOverSafeBoard;		// 防具 (多少以上才广播)
 
-	public static int SHOCK_STUN_TIMER; // 冲晕秒数设置
-
-	public static boolean HACK1;		// 穿人外挂开关
+	public static int SHOCK_STUN_TIMER;         // 冲晕秒数设置
 
 	public static boolean NEW_CREATE_SET_GM;	// 设定创新角色是否设定为 GM
+	
+	public static boolean AUTO_ADD_SKILL;		// 设定是否开启自动学习技能
 
 
 	/** 伺服器设定档 */
@@ -1129,9 +1129,15 @@ public final class Config {
 			// 冲晕秒数设置
 			SHOCK_STUN_TIMER =Integer.parseInt(otherSettings.getProperty(
 					"SHOCKSTUNTIMER"));
-
+			
+			// 设定创新角色是否设定为 GM
 			NEW_CREATE_SET_GM = Boolean.parseBoolean(otherSettings.getProperty(
-					"NewCreateSetGM", "false")); // 设定创新角色是否设定为 GM
+					"NewCreateSetGM", "false"));
+			
+			// 设定是否开启自动学习技能
+			AUTO_ADD_SKILL = Boolean.parseBoolean(otherSettings.getProperty(
+					"AutoAddSkill", "false"));
+
 
 		}
 		catch (Exception e) {
@@ -1616,6 +1622,10 @@ public final class Config {
 
 		else if (pName.equalsIgnoreCase("NewCreateSetGM")) {
 			NEW_CREATE_SET_GM = Boolean.valueOf(pValue);			// 设定创新角色是否设定为 GM
+		}
+
+		else if (pName.equalsIgnoreCase("AutoAddSkill")) {
+			AUTO_ADD_SKILL = Boolean.valueOf(pValue);				// 设定是否开启自动学习技能
 		}
 
 		else {
