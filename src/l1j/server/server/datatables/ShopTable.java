@@ -18,6 +18,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
@@ -141,6 +142,9 @@ public class ShopTable {
 			int packCount = rs.getInt("pack_count");
 			packCount = packCount == 0 ? 1 : packCount;
 			int EnchantLevel = rs.getInt("EnchantLevel");//商店直接卖+几武器
+			int deleteDay = rs.getInt("delete_day"); // 道具天数删除系统(指定天数)
+			Timestamp deleteDate = rs.getTimestamp("delete_date"); // 道具天数删除系统(指定日期)
+
 			//元宝商城 add
 			int YB = rs.getInt("YB");
 			switch(npcId){
@@ -167,15 +171,21 @@ public class ShopTable {
 				}
 			}
 			if (0 <= sellingPrice && 0 >= YB ){
-				L1ShopItem item = new L1ShopItem(itemId, sellingPrice, packCount, EnchantLevel);//商店直接卖+几武器
+				L1ShopItem item = new L1ShopItem(itemId, sellingPrice, packCount,
+						EnchantLevel, // 商店直接卖+几武器
+						deleteDay, deleteDate); // 道具天数删除系统
 				sellingList.add(item);
 			}
 			if (0 <= purchasingPrice && 0 >= YB ) {
-				L1ShopItem item = new L1ShopItem(itemId, purchasingPrice, packCount, EnchantLevel);//商店直接卖+几武器
+				L1ShopItem item = new L1ShopItem(itemId, purchasingPrice, packCount,
+						EnchantLevel, // 商店直接卖+几武器
+						deleteDay, deleteDate); // 道具天数删除系统
 				purchasingList.add(item);
 			}
 			if (0 < YB ) {
-				L1ShopItem item = new L1ShopItem(itemId, YB,packCount, EnchantLevel);//商店直接卖+几武器
+				L1ShopItem item = new L1ShopItem(itemId, YB,packCount,
+						EnchantLevel, // 商店直接卖+几武器
+						deleteDay, deleteDate); // 道具天数删除系统
 				sellingList.add(item);
 			}//元宝商城 end
 		}

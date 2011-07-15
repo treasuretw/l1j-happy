@@ -20,6 +20,7 @@ import static l1j.server.server.model.skill.L1SkillId.HOLY_WEAPON;
 import static l1j.server.server.model.skill.L1SkillId.SHADOW_FANG;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -338,6 +339,8 @@ public class L1ItemInstance extends L1Object {
 		public int addsp;
 
 		public int m_def;
+		
+		public Timestamp DeleteDate; // 道具天数删除系统
 
 		public void updateAll() {
 			count = getCount();
@@ -362,6 +365,7 @@ public class L1ItemInstance extends L1Object {
 			hpr = getHpr();
 			mpr = getMpr();
 			m_def = getM_Def();
+			DeleteDate = getDeleteDate(); // 道具天数删除系统
 		}
 
 		public void updateCount() {
@@ -451,6 +455,12 @@ public class L1ItemInstance extends L1Object {
 		public void updateM_Def() {
 			m_def = getM_Def();
 		}
+
+		// 道具天数删除系统 add
+		public void updateDeleteDate() {
+			DeleteDate = getDeleteDate();
+		}
+		// 道具天数删除系统 end
 	}
 
 	public LastStatus getLastStatus() {
@@ -524,6 +534,13 @@ public class L1ItemInstance extends L1Object {
 		if (getM_Def() != _lastStatus.m_def) {
 			column += L1PcInventory.COL_M_DEF;
 		}
+
+		// 道具天数删除系统 add
+		if (getDeleteDate() != _lastStatus.DeleteDate) {
+			column += L1PcInventory.COL_DELETE_DATE;
+		}
+		// 道具天数删除系统 end
+
 		if (getEarthMr() != _lastStatus.earthmr) {
 			column += L1PcInventory.COL_EARTHMR;
 		}
@@ -583,6 +600,15 @@ public class L1ItemInstance extends L1Object {
 				name.append(" ($117)"); // 装备(Worn) (使用中)
 			}
 		}
+
+		// 道具天数删除系统 add
+		if (getDeleteDate() != null) {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+			String fm = sdf.format(getDeleteDate().getTime());
+			name.append(" 有效日期:[" + fm + "]");
+		}
+		// 道具天数删除系统 end
+
 		return name.toString();
 	}
 
@@ -1479,5 +1505,17 @@ public class L1ItemInstance extends L1Object {
 	public void setDueTime(Timestamp i) {
 		_dueTime = i;
 	}
+	
+	// 道具天数删除系统 add
+	private Timestamp _deleteDate;
+
+	public Timestamp getDeleteDate() {
+		return _deleteDate;
+	}
+
+	public void setDeleteDate(Timestamp time) {
+		_deleteDate = time;
+	}
+	// 道具天数删除系统 end
 
 }

@@ -298,11 +298,11 @@ public class L1BugBearRace {
 				L1Shop shop2 = ShopTable.getInstance().get(70041);
 				L1Shop shop3 = ShopTable.getInstance().get(70042);
 				for (int i = 0; i < 5; i++) {
-					L1ShopItem shopItem1 = new L1ShopItem(40309, 500, 1 ,0);
+					L1ShopItem shopItem1 = new L1ShopItem(40309, 500, 1, 0, 0, null); // 道具天数删除系统
 					shopItem1.setName(i);
-					L1ShopItem shopItem2 = new L1ShopItem(40309, 500, 1 ,0);
+					L1ShopItem shopItem2 = new L1ShopItem(40309, 500, 1, 0, 0, null); // 道具天数删除系统
 					shopItem2.setName(i);
-					L1ShopItem shopItem3 = new L1ShopItem(40309, 500, 1 ,0);
+					L1ShopItem shopItem3 = new L1ShopItem(40309, 500, 1, 0, 0, null); // 道具天数删除系统
 					shopItem3.setName(i);
 					shop1.getSellingItems().add(shopItem1);
 					shop2.getSellingItems().add(shopItem2);

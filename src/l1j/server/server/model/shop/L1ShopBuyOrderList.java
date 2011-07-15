@@ -14,6 +14,7 @@
  */
 package l1j.server.server.model.shop;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import l1j.server.Config;
@@ -26,9 +27,15 @@ class L1ShopBuyOrder {
 
 	private final int _count;
 
-	public L1ShopBuyOrder(L1ShopItem item, int count) {
+	private final int _deleteDay; // 道具天数删除系统(指定天数)
+
+	private final Timestamp _deleteDate; // 道具天数删除系统(指定日期)
+
+	public L1ShopBuyOrder(L1ShopItem item, int count, int deleteDay, Timestamp deleteDate) { // 道具天数删除系统
 		_item = item;
 		_count = count;
+		_deleteDay = deleteDay; // 道具天数删除系统(指定天数)
+		_deleteDate = deleteDate; // 道具天数删除系统(指定日期)
 	}
 
 	public L1ShopItem getItem() {
@@ -37,6 +44,16 @@ class L1ShopBuyOrder {
 
 	public int getCount() {
 		return _count;
+	}
+
+	// 道具天数删除系统(指定天数)
+	public int getDeleteDay() {
+		return _deleteDay;
+	}
+
+	// 道具天数删除系统(指定日期)
+	public Timestamp getDeleteDate() {
+		return _deleteDate;
 	}
 }
 
@@ -65,6 +82,10 @@ public class L1ShopBuyOrderList {
 		L1ShopItem shopItem = _shop.getSellingItems().get(orderNumber);
 
 		int price = (int) (shopItem.getPrice() * Config.RATE_SHOP_SELLING_PRICE);
+
+		int deleteDay =  shopItem.getDeleteDay(); // 道具天数删除系统(指定天数)
+		Timestamp deleteDate =  shopItem.getDeleteDate(); // 道具天数删除系统(指定日期)
+
 		// オーバーフローチェック
 		for (int j = 0; j < count; j++) {
 			if (price * j < 0) {
@@ -79,12 +100,12 @@ public class L1ShopBuyOrderList {
 		_totalWeight += shopItem.getItem().getWeight() * count * shopItem.getPackCount();
 
 		if (shopItem.getItem().isStackable()) {
-			_list.add(new L1ShopBuyOrder(shopItem, count * shopItem.getPackCount()));
+			_list.add(new L1ShopBuyOrder(shopItem, count * shopItem.getPackCount(), deleteDay, deleteDate)); // 道具天数删除系统
 			return;
 		}
 
 		for (int i = 0; i < (count * shopItem.getPackCount()); i++) {
-			_list.add(new L1ShopBuyOrder(shopItem, 1));
+			_list.add(new L1ShopBuyOrder(shopItem, 1, deleteDay, deleteDate)); // 道具天数删除系统
 		}
 	}
 

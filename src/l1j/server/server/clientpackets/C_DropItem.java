@@ -115,6 +115,13 @@ public class C_DropItem extends ClientBasePacket {
 				return;
 			}
 
+			// 道具天数删除系统(不可丢弃) add
+			if (item.getDeleteDate() != null) {
+				pc.sendPackets(new S_ServerMessage(210, item.getItem().getName()));
+				return;
+			}
+			// 道具天数删除系统(不可丢弃) end
+
 			// 物品丟地上系统会自动删除 by bill00148
 			if (Config.Lostdeleteditems) {
 				if (!pc.isGm()) {

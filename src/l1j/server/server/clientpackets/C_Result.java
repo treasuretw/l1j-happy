@@ -168,6 +168,14 @@ public class C_Result extends ClientBasePacket {
 						break;
 					}
 				}
+
+				// 道具天数删除系统(不可存仓) add
+				if (item.getDeleteDate() != null) {
+					pc.sendPackets(new S_ServerMessage(210, item.getItem().getName()));
+					tradable = false;
+				}
+				// 道具天数删除系统(不可存仓) end
+
 				if (pc.getDwarfInventory().checkAddItemToWarehouse(item, count,
 						L1Inventory.WAREHOUSE_TYPE_PERSONAL) == L1Inventory.SIZE_OVER) {
 					pc.sendPackets(new S_ServerMessage(75)); // \f1これ以上ものを置く场所がありません。
@@ -271,6 +279,14 @@ public class C_Result extends ClientBasePacket {
 
 							}
 						}
+
+						// 道具天数删除系统(不可存盟仓) add
+						if (item.getDeleteDate() != null) {
+							pc.sendPackets(new S_ServerMessage(210, item.getItem().getName()));
+							tradable = false;
+						}
+						// 道具天数删除系统(不可存盟仓) end
+
 						if (clan.getDwarfForClanInventory()
 								.checkAddItemToWarehouse(item, count,
 										L1Inventory.WAREHOUSE_TYPE_CLAN) == L1Inventory.SIZE_OVER) {
@@ -368,6 +384,14 @@ public class C_Result extends ClientBasePacket {
 						break;
 					}
 				}
+
+				// 道具天数删除系统(不可存仓) add
+				if (item.getDeleteDate() != null) {
+					pc.sendPackets(new S_ServerMessage(210, item.getItem().getName()));
+					tradable = false;
+				}
+				// 道具天数删除系统(不可存仓) end
+
 				if (pc.getDwarfForElfInventory().checkAddItemToWarehouse(item,
 						count, L1Inventory.WAREHOUSE_TYPE_PERSONAL) == L1Inventory.SIZE_OVER) {
 					pc.sendPackets(new S_ServerMessage(75)); // \f1これ以上ものを置く场所がありません。
@@ -550,6 +574,13 @@ public class C_Result extends ClientBasePacket {
 					// pc.sendPackets(new S_ServerMessage(210, item.getItem().getName())); // \f1%0%d是不可转移的…
 					continue;
 				}
+
+				// 道具天数删除系统(无法放商店) add
+				if (item.getDeleteDate() != null) {
+					pc.sendPackets(new S_ServerMessage(166, item.getName(), " 无法交易"));
+					continue;
+				}
+				// 道具天数删除系统(无法放商店) end
 
 				if (targetPc.getInventory().checkAddItem(item, count) == L1Inventory.OK) { // 容量重量确认及びメッセージ送信
 					for (int j = 0; j < count; j++) { // オーバーフローをチェック

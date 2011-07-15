@@ -14,6 +14,7 @@
  */
 package l1j.server.server.model.shop;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -317,7 +318,7 @@ public class L1Shop {
 	 * 販売取引
 	 */
 	// 元宝商城 add
-	private void sellItems(L1PcInventory inv, L1ShopBuyOrderList orderList) {
+	private void sellItems(L1PcInstance pc, L1PcInventory inv, L1ShopBuyOrderList orderList) { // 增加 L1PcInstance pc,
 		int YB;
 		if (_npcId >= 99000 && _npcId <= 99010) { // 商城NPC编号
 			YB = L1ItemId.YB;		// 元宝
@@ -335,6 +336,24 @@ public class L1Shop {
 			//（让购买的物品直接+几）
 			int EnchantLevel= order.getItem().getEnchantLevel();
 			L1ItemInstance item = ItemTable.getInstance().createItem(itemId);
+
+			// 道具天数删除系统
+			int deleteDay = order.getDeleteDay(); // 道具天数删除系统(指定天数)
+			Timestamp deleteDate = order.getDeleteDate(); // 道具天数删除系统(指定日期)
+			// 道具天数删除系统
+			if (deleteDay > 0) { // ● 指定天数
+				Timestamp delDay = new Timestamp(
+						System.currentTimeMillis()
+								+ (86400000 * deleteDay));
+				item.setDeleteDate(delDay);
+			} else if (deleteDate != null) { // ● 指定日期
+				item.setDeleteDate(deleteDate);
+			}
+			if (item.getDeleteDate() != null) {
+				pc.sendPackets(new S_ServerMessage(166, item.getName() + " (" + amount + ") 使用期限:" + item.getDeleteDate()));
+			}
+			// end
+
 			if (item.getItemId() == 40309) {// Race Tickets
 				item.setItem(order.getItem().getItem());
 				L1BugBearRace.getInstance().setAllBet(
@@ -395,7 +414,7 @@ public class L1Shop {
 			return;
 		}
 
-		sellItems(pc.getInventory(), orderList);
+		sellItems(pc, pc.getInventory(), orderList); // 增加pc
 		payTax(orderList);
 	}
 

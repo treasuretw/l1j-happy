@@ -130,6 +130,14 @@ public class C_Shop extends ClientBasePacket {
 							.getName()));
 					return;
 				}
+
+				// 道具天数删除系统(无法放商店) add
+				if (checkItem.getDeleteDate() != null) {
+					pc.sendPackets(new S_ServerMessage(166, checkItem.getName(), " 无法交易"));
+					return;
+				}
+				// 道具天数删除系统(无法放商店) end
+
 				// 防止异常堆叠交易
 				if ((checkItem.getCount() > 1)
 						&& (!checkItem.getItem().isStackable())) {

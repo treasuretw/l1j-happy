@@ -81,6 +81,8 @@ public abstract class CharactersItemStorage {
 	public abstract void updateaddSp(L1ItemInstance item) throws Exception;
 
 	public abstract void updateM_Def(L1ItemInstance item) throws Exception;
+	
+	public abstract void updateDeleteDate(L1ItemInstance item) throws Exception; // 道具天数删除系统
 
 	public static CharactersItemStorage create() {
 		if (_instance == null) {

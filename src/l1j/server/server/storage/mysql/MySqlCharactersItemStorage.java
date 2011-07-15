@@ -19,6 +19,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -83,6 +84,20 @@ public class MySqlCharactersItemStorage extends CharactersItemStorage {
 				item.setHpr(rs.getInt("hpr"));
 				item.setMpr(rs.getInt("mpr"));
 				item.setM_Def(rs.getInt("m_def"));
+
+				// 道具天数删除系统 add
+				item.setDeleteDate(rs.getTimestamp("DeleteDate"));
+				Timestamp deleteDate = rs.getTimestamp("DeleteDate");
+				if (deleteDate != null) {
+					Calendar cal = Calendar.getInstance();
+					long checkDeleteDate = ((cal.getTimeInMillis() - deleteDate.getTime()) / 1000) / 3600;
+					if (checkDeleteDate >= 0) {
+						deleteItem(item);
+						System.out.println(item.getName() + "(追踪ID:" + item.getId() + ")的有效日期已到期，被系统删除了！");     
+					}
+				}
+				// 道具天数删除系统 end
+
 				item.getLastStatus().updateAll();
 				// 登入鑰匙紀錄
 				if (item.getItem().getItemId() == 40312) {
@@ -107,7 +122,7 @@ public class MySqlCharactersItemStorage extends CharactersItemStorage {
 		try {
 			con = L1DatabaseFactory.getInstance().getConnection();
 			pstm = con
-					.prepareStatement("INSERT INTO character_items SET id = ?, item_id = ?, char_id = ?, item_name = ?, count = ?, is_equipped = 0, enchantlvl = ?, is_id = ?, durability = ?, charge_count = ?, remaining_time = ?, last_used = ?, bless = ?, attr_enchant_kind = ?, attr_enchant_level = ?,firemr = ?,watermr = ?,earthmr = ?,windmr = ?,addsp = ?,addhp = ?,addmp = ?,hpr = ?,mpr = ?, m_def = ?");
+			.prepareStatement("INSERT INTO character_items SET id = ?, item_id = ?, char_id = ?, item_name = ?, count = ?, is_equipped = 0, enchantlvl = ?, is_id = ?, durability = ?, charge_count = ?, remaining_time = ?, last_used = ?, bless = ?, attr_enchant_kind = ?, attr_enchant_level = ?,firemr = ?,watermr = ?,earthmr = ?,windmr = ?,addsp = ?,addhp = ?,addmp = ?,hpr = ?,mpr = ?, m_def = ?, DeleteDate = ?");
 			pstm.setInt(1, item.getId());
 			pstm.setInt(2, item.getItem().getItemId());
 			pstm.setInt(3, objId);
@@ -132,6 +147,7 @@ public class MySqlCharactersItemStorage extends CharactersItemStorage {
 			pstm.setInt(22, item.getHpr());
 			pstm.setInt(23, item.getMpr());
 			pstm.setInt(24, item.getM_Def());
+			pstm.setTimestamp(25, item.getDeleteDate()); // 道具天数删除系统
 			pstm.execute();
 
 		} catch (SQLException e) {
@@ -340,6 +356,16 @@ public class MySqlCharactersItemStorage extends CharactersItemStorage {
 				item.getM_Def());
 		item.getLastStatus().updateM_Def();
 	}
+	
+	// 道具天数删除系统 add
+	@Override
+	public void updateDeleteDate(L1ItemInstance item) throws Exception {
+		executeUpdate(item.getId(),
+				"UPDATE character_items SET DeleteDate = ? WHERE id = ?",
+				item.getDeleteDate());
+		item.getLastStatus().updateDeleteDate();
+	}
+	// 道具天数删除系统 end
 
 	@Override
 	public int getItemCount(int objId) throws Exception {

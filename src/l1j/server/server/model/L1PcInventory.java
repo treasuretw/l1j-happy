@@ -14,8 +14,11 @@
  */
 package l1j.server.server.model;
 
+import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import l1j.server.server.utils.Random;
+
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -90,6 +93,56 @@ public class L1PcInventory extends L1Inventory {
 		}
 		return weight242;
 	}
+	/*
+	// 道具融合系统 by 狼人香 add
+	public int checkAddItem_LV(L1ItemInstance item, int count, int EnchantLevel) {
+		return checkAddItem_LV(item, count, EnchantLevel, true);
+	}
+
+	public int checkAddItem_LV(L1ItemInstance item, int count,
+			int EnchantLevel, boolean message) {
+		if (item == null) {
+			return -1;
+		}
+		if (getSize() > MAX_SIZE
+				|| (getSize() == MAX_SIZE && (!item.isStackable() || !checkItem(item
+						.getItem().getItemId())))) { // 容量确认
+			if (message) {
+				sendOverMessage(263); // \f1一人のキャラクターが持って步けるアイテムは最大180个までです。
+			}
+			return SIZE_OVER;
+		}
+
+		int weight = getWeight() + item.getItem().getWeight() * count / 1000
+				+ 1;
+		if (weight < 0 || (item.getItem().getWeight() * count / 1000) < 0) {
+			if (message) {
+				sendOverMessage(82); // 此物品太重了，所以你无法携带。
+			}
+			return WEIGHT_OVER;
+		}
+		if (calcWeight242(weight) >= 242) {
+			if (message) {
+				sendOverMessage(82); // 此物品太重了，所以你无法携带。
+			}
+			return WEIGHT_OVER;
+		}
+
+		L1ItemInstance itemExist = findItemId(item.getItemId());
+		if (itemExist != null && (itemExist.getCount() + count) > MAX_AMOUNT) {
+			if (message) {
+				getOwner()
+						.sendPackets(
+								new S_ServerMessage(166, "所持有的金币",
+										"超过了2,000,000,000上限")); // \f1%0が%4%1%3%2
+			}
+			return AMOUNT_OVER;
+		}
+
+		return OK;
+	}
+	// 道具融合系统 by 狼人香 end
+*/
 
 	@Override
 	public int checkAddItem(L1ItemInstance item, int count) {
@@ -198,6 +251,21 @@ public class L1PcInventory extends L1Inventory {
 						item.setItem(temp);
 					}
 				}
+
+				// 道具天数删除系统 add
+				Timestamp deleteDate = item.getDeleteDate();
+				if (deleteDate != null) {
+					Calendar cal = Calendar.getInstance();
+					long checkDeleteDate = ((cal.getTimeInMillis() - deleteDate
+							.getTime()) / 1000) / 3600;
+					if (checkDeleteDate >= 0) {
+						deleteItem(item);
+						_owner.sendPackets(new S_ServerMessage(166, "\\fY"
+								+ item.getName() + "的有效日期已到期，被系统删除了"));
+					}
+				}
+				// 道具天数删除系统 end
+
 				L1World.getInstance().storeObject(item);
 			}
 		} catch (Exception e) {
@@ -246,6 +314,8 @@ public class L1PcInventory extends L1Inventory {
 	public static final int COL_ATTR_ENCHANT_KIND = 1024;
 
 	public static final int COL_ATTR_ENCHANT_LEVEL = 2048;
+	
+	public static final int COL_DELETE_DATE = 4096; // 道具天数删除系统
 
 	public static final int COL_ADDHP = 1;
 
@@ -447,6 +517,14 @@ public class L1PcInventory extends L1Inventory {
 				storage.updateM_Def(item);
 				column -= COL_M_DEF;
 			}
+
+			// 道具天数删除系统 add
+			if (column >= COL_DELETE_DATE) {
+				storage.updateDeleteDate(item);
+				column -= COL_DELETE_DATE;
+			}
+			// 道具天数删除系统 end
+
 			if (column >= COL_ADDSP) {
 				storage.updateaddSp(item);
 				column -= COL_ADDSP;

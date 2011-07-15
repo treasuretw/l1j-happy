@@ -14,6 +14,7 @@
  */
 package l1j.server.server.model;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
@@ -233,6 +234,19 @@ public class L1Inventory extends L1Object {
 			item.setRemainingTime(item.getItem().getMaxUseTime());
 		}
 		item.setBless(item.getItem().getBless());
+
+		// 道具天数删除系统 add
+		if (item.getItem().getDelete_Day() > 0) { // ● 指定天数
+			int delday = item.getItem().getDelete_Day();
+			Timestamp deleteDay = new Timestamp(
+					System.currentTimeMillis()
+							+ (86400000 * delday));
+			item.setDeleteDate(deleteDay);
+		} else if (item.getItem().getDelete_Date() != null) { // ● 指定日期
+			item.setDeleteDate(item.getItem().getDelete_Date());
+		}
+		// 道具天数删除系统 end
+
 		// 登入鑰匙紀錄
 		if (item.getItem().getItemId() == 40312) {
 			if (!InnKeyTable.checkey(item)) {

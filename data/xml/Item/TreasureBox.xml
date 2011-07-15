@@ -1491,17 +1491,18 @@
 <!--新增-->
 	<!--新手大礼包-->
 	<TreasureBox Type="SPECIFIC" ItemId="5039">
-		<Item ItemId="10000" Count="1" />	<!--新手盾牌-->
-		<Item ItemId="10001" Count="1" />	<!--新手钢手-->
-		<Item ItemId="10002" Count="1" />	<!--新手钢靴-->
-		<Item ItemId="10003" Count="1" />	<!--新手斗篷-->
-		<Item ItemId="10004" Count="1" />	<!--新手盔甲-->
-		<Item ItemId="10005" Count="1" />	<!--新手内衣-->
-		<Item ItemId="10006" Count="1" />	<!--新手头盔-->
-		<Item ItemId="10007" Count="1" />	<!--新手耳环-->
-		<Item ItemId="10008" Count="2" />	<!--新手戒指-->
-		<Item ItemId="10009" Count="1" />	<!--新手项链-->
-		<Item ItemId="10010" Count="1" />	<!--新手腰带-->
+		<Item ItemId="10000" Count="1" Day="3" />	<!--新手盾牌-->
+		<Item ItemId="10001" Count="1" Day="3" />	<!--新手钢手-->
+		<Item ItemId="10002" Count="1" Day="3" />	<!--新手钢靴-->
+		<Item ItemId="10003" Count="1" Day="3" />	<!--新手斗篷-->
+		<Item ItemId="10004" Count="1" Day="3" />	<!--新手盔甲-->
+		<Item ItemId="10005" Count="1" Day="3" />	<!--新手内衣-->
+		<Item ItemId="10006" Count="1" Day="3" />	<!--新手头盔-->
+		<Item ItemId="10007" Count="1" Day="3" />	<!--新手耳环-->
+		<Item ItemId="10008" Count="1" Day="3" />	<!--新手戒指-->
+		<Item ItemId="10008" Count="1" Day="3" />	<!--新手戒指-->
+		<Item ItemId="10009" Count="1" Day="3" />	<!--新手项链-->
+		<Item ItemId="10010" Count="1" Day="3" />	<!--新手腰带-->
 	</TreasureBox>
 	<!-- 万能药水箱 -->
 	<TreasureBox Type="RANDOM" ItemId="5063">

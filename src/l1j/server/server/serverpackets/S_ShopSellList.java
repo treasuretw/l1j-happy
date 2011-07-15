@@ -15,6 +15,7 @@
 package l1j.server.server.serverpackets;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.List;
 
 import l1j.server.Config;
@@ -67,6 +68,19 @@ public class S_ShopSellList extends ServerBasePacket {
 			L1Item item = shopItem.getItem();
 			int price = calc
 					.layTax((int) (shopItem.getPrice() * Config.RATE_SHOP_SELLING_PRICE));
+
+			// 道具天数删除系统
+			int deleteDay = shopItem.getDeleteDay(); // 道具天数删除系统(指定天数)
+			Timestamp deleteDate = shopItem.getDeleteDate(); // 道具天数删除系统(指定日期)
+			String s1 = "";
+			String s2 = "";
+			if (deleteDay > 0) {
+				s1 = " [" + deleteDay + " 天]";
+			} else if (deleteDate != null) {
+				s2 = " 使用期限:[" + deleteDate + "]";
+			}
+			// end
+
 			writeD(i);
 			writeH(shopItem.getItem().getGfxId());
 			writeD(price);
@@ -87,7 +101,7 @@ public class S_ShopSellList extends ServerBasePacket {
 						if (shopItem.getEnchantLevel() < 1 && shopItem.getPackCount() > 1) {
 							writeS(item.getName() + " (" + shopItem.getPackCount() + ")");
 				} else {
-					writeS(item.getName());
+					writeS(item.getName() + s1 + s2);// 道具天数删除系统
 				}
 			}
 

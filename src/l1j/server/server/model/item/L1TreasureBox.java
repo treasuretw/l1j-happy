@@ -15,6 +15,7 @@
 package l1j.server.server.model.item;
 
 import java.io.File;
+import java.sql.Timestamp;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -75,6 +76,11 @@ public class L1TreasureBox {
 			_chance = (int) (chance * 10000);
 		}
 
+		// 道具天数删除系统 add
+		@XmlAttribute(name = "Day")
+		private int _day;
+		// 道具天数删除系统 end
+
 		public int getItemId() {
 			return _itemId;
 		}
@@ -93,6 +99,12 @@ public class L1TreasureBox {
 		public int getEnchant() {
 			return _enchant;
 		}
+
+		// 道具天数删除系统 add
+		public int getDay() {
+			return _day;
+		}
+		// 道具天数删除系统 end
 	}
 
 	private static enum TYPE {
@@ -194,6 +206,17 @@ public class L1TreasureBox {
 				item.setEnchantLevel(each.getEnchant()); // Enchant Feature for treasure_box
 				if (item != null) {
 					item.setCount(each.getCount());
+
+					// 道具天数删除系统 add
+					int delday = each.getDay();
+					if (delday > 0) {
+						Timestamp deleteDay = new Timestamp(
+								System.currentTimeMillis()
+										+ (86400000 * delday));
+						item.setDeleteDate(deleteDay);
+					}
+					// 道具天数删除系统 end
+
 					storeItem(pc, item);
 				}
 			}
@@ -212,6 +235,17 @@ public class L1TreasureBox {
 					item.setEnchantLevel(each.getEnchant()); // Enchant Feature for treasure_box
 					if (item != null) {
 						item.setCount(each.getCount());
+
+						// 道具天数删除系统 add
+						int delday = each.getDay();
+						if (delday > 0) {
+							Timestamp deleteDay = new Timestamp(
+									System.currentTimeMillis()
+											+ (86400000 * delday));
+							item.setDeleteDate(deleteDay);
+						}
+						// 道具天数删除系统 end
+
 						storeItem(pc, item);
 					}
 					break;

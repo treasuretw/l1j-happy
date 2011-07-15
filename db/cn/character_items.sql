@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost_3306
 Source Server Version : 50150
 Source Host           : localhost:3306
-Source Database       : l1j-cn
+Source Database       : weigai
 
 Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-12 23:32:47
+Date: 2011-07-15 18:43:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -44,6 +44,7 @@ CREATE TABLE `character_items` (
   `hpr` int(11) DEFAULT NULL,
   `mpr` int(11) DEFAULT NULL,
   `m_def` int(11) DEFAULT NULL,
+  `DeleteDate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `key_id` (`char_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

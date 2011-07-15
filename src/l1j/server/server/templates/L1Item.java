@@ -15,6 +15,7 @@
 package l1j.server.server.templates;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 public abstract class L1Item implements Cloneable, Serializable {
 
@@ -588,6 +589,29 @@ public abstract class L1Item implements Cloneable, Serializable {
 		} else {
 			return 0;
 		}
+	}
+	
+	/**
+	 * 道具天数删除系统
+	 */
+	private int _delete_day = 0; // ● 指定天数
+
+	public int getDelete_Day() {
+		return _delete_day;
+	}
+
+	public void setDelete_Day(int i) {
+		_delete_day = i;
+	}
+
+	private Timestamp _delete_date; // ● 指定日期
+
+	public Timestamp getDelete_Date() {
+		return _delete_date;
+	}
+
+	public void setDelete_Date(Timestamp time) {
+		_delete_date = time;
 	}
 
 	/**

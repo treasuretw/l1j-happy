@@ -267,6 +267,8 @@ public class ItemTable {
 				item.setFoodVolume(rs.getInt("food_volume"));
 				item.setToBeSavedAtOnce((rs.getInt("save_at_once") == 1) ? true : false);
 				item.setCheckFameLevel(rs.getInt("CheckFameLV")); // sosodemon add 物品声望值控制
+				item.setDelete_Day(rs.getInt("delete_day")); // 道具天数删除系统(指定天数)
+				item.setDelete_Date(rs.getTimestamp("delete_date")); // 道具天数删除系统(指定日期)
 
 				result.put(new Integer(item.getItemId()), item);
 			}
@@ -353,6 +355,9 @@ public class ItemTable {
 				weapon.setpolySW(rs.getInt("polySW"));
 				// 装备武器变身 (变身编号)
 				weapon.setPOLYin(rs.getInt("POLYin"));
+
+				weapon.setDelete_Day(rs.getInt("delete_day")); // 道具天数删除系统(指定天数)
+				weapon.setDelete_Date(rs.getTimestamp("delete_date")); // 道具天数删除系统(指定日期)
 
 				result.put(new Integer(weapon.getItemId()), weapon);
 			}
@@ -447,6 +452,8 @@ public class ItemTable {
 				armor.setMaxUseTime(rs.getInt("max_use_time"));
 				armor.setGrade(rs.getInt("grade"));
 				armor.setCheckFameLevel(rs.getInt("CheckFameLV")); // sosodemon add 防具声望值控制
+				armor.setDelete_Day(rs.getInt("delete_day")); // 道具天数删除系统(指定天数)
+				armor.setDelete_Date(rs.getTimestamp("delete_date")); // 道具天数删除系统(指定日期)
 
 				result.put(new Integer(armor.getItemId()), armor);
 			}

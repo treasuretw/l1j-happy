@@ -18,6 +18,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -78,7 +79,7 @@ public class Beginner {
 				PreparedStatement pstm2 = null;
 				try {
 					pstm2 = con
-							.prepareStatement("INSERT INTO character_items SET id=?, item_id=?, char_id=?, item_name=?, count=?, is_equipped=?, enchantlvl=?, is_id=?, durability=?, charge_count=?, remaining_time=?, last_used=?, bless=?");
+					.prepareStatement("INSERT INTO character_items SET id=?, item_id=?, char_id=?, item_name=?, count=?, is_equipped=?, enchantlvl=?, is_id=?, durability=?, charge_count=?, remaining_time=?, last_used=?, bless=?, DeleteDate=?");
 					pstm2.setInt(1, IdFactory.getInstance().nextId());
 					pstm2.setInt(2, rs.getInt("item_id"));
 					pstm2.setInt(3, pc.getId());
@@ -92,6 +93,19 @@ public class Beginner {
 					pstm2.setInt(11, 0);
 					pstm2.setTimestamp(12, null);
 					pstm2.setInt(13, 1);
+
+					// 道具天数删除系统 add
+					int delday = rs.getInt("DeleteDay");
+					if (delday != 0) {
+						Timestamp deleteDay = new Timestamp(
+								System.currentTimeMillis()
+										+ (86400000 * delday));
+						pstm2.setTimestamp(14, deleteDay);
+					} else {
+						pstm2.setTimestamp(14, null);
+					}
+					// 道具天数删除系统 end
+
 					pstm2.execute();
 				} catch (SQLException e2) {
 					_log.log(Level.SEVERE, e2.getLocalizedMessage(), e2);

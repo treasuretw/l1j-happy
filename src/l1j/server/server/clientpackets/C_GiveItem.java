@@ -83,6 +83,14 @@ public class C_GiveItem extends ClientBasePacket {
 			pc.sendPackets(new S_ServerMessage(210, item.getItem().getName()));
 			return;
 		}
+
+		// 道具天数删除系统(无法给予) add
+		if (item.getDeleteDate() != null) {
+			pc.sendPackets(new S_ServerMessage(210, item.getItem().getName()));
+			return;
+		}
+		// 道具天数删除系统(无法给予) end
+
 		// 使用中的宠物项链 - 无法给予
 		for (L1NpcInstance petNpc : pc.getPetList().values()) {
 			if (petNpc instanceof L1PetInstance) {
