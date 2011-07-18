@@ -167,6 +167,7 @@ public class ClientThread implements Runnable, PacketOutput {
 					- _lastSavedTime) {
 				_activeChar.save();
 				_lastSavedTime = System.currentTimeMillis();
+				_log.info("-----自动储存角色资料-----");
 			}
 
 			// 自动储存身上道具资料
@@ -174,6 +175,7 @@ public class ClientThread implements Runnable, PacketOutput {
 					.currentTimeMillis() - _lastSavedTime_inventory) {
 				_activeChar.saveInventory();
 				_lastSavedTime_inventory = System.currentTimeMillis();
+				_log.info("-----自动储存身上道具资料-----");
 			}
 		} catch (Exception e) {
 			_log.warning("Client autosave failure.");
