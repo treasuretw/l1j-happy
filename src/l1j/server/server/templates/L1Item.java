@@ -803,4 +803,20 @@ public abstract class L1Item implements Cloneable, Serializable {
 		_checkfamenameLevel = i;
     }
 	// sosodemon end 声望控制 BY SosoDEmoN
+
+	// 打到特定物品广播 (DB化) add
+	private int _DropBoard;
+
+	public int DropBoard() {
+		return _DropBoard;
+	}
+
+	public void setDropBoard(int i) {
+		_DropBoard = i;
+	}
+
+	public int getDropBoard() {
+		return _DropBoard;
+	}
+	// 打到特定物品广播 (DB化) end
 }

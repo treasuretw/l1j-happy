@@ -14,7 +14,6 @@
  */
 package l1j.server.server.datatables;
 
-import java.util.Collection;//打到特定物品伺服器广播
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -103,14 +102,6 @@ public class DropTable {
 		}
 		return droplistMap;
 	}
-
-	// TODO 打到特定物品伺服器广播显示 add
-	private void BroadCastToAll( String string ) {
-		Collection <L1PcInstance> AllPc = L1World.getInstance().getAllPlayers();
-		for ( L1PcInstance pc : AllPc )
-			pc.sendPackets( new S_SystemMessage(string) );
-	}
-	//打到特定物品伺服器广播显示  end
 
 	// インベントリにドロップを設定
 	public void setDrop(L1NpcInstance npc, L1Inventory inventory) {
@@ -257,20 +248,7 @@ public class DropTable {
 									isGround = true;
 									player.sendPackets(new S_ServerMessage(166, "所持有的金币", "超过 2,000,000,000。")); // \f1%0が%4%1%3%2
 								}
-								else {
-									//打到物品广播 add
-									switch(item.getItem().getItemId()) {
-									case 10011: case 10012: case 10013: case 10014: case 10015:
-									case 10016: case 10017: case 10018: case 10019: case 10020:
-									case 10021: case 10022: case 10023: case 10024: case 10025:
-									case 10026: case 10027: case 10028: case 10029: case 10030:
-									case 10031: case 10032: case 10033: case 10034: case 10035:
-									case 10036: case 10037: case 10038: case 10039: case 10040:
-										BroadCastToAll((new StringBuilder()).append("牛人: ").append(player.getName())
-												.append(" 杀死 ").append(npc.getName())
-												.append(" 后取得了 ").append(item.getLogName()).append("。").toString());
-									}
-									//打到物品广播 end
+								else {									
 									if (player.isInParty()) { // パーティの場合
 										partyMember = player.getParty().getMembers();
 										for (L1PcInstance element : partyMember) {
@@ -281,6 +259,12 @@ public class DropTable {
 										// ソロの場合
 										player.sendPackets(new S_ServerMessage(143, npc.getName(), item.getLogName())); // \f1%0が%1をくれました。
 									}
+									// 打到特定物品广播 (DB化) add
+									if (item.getItem().getDropBoard() == 1) {// 物品掉落公告
+										L1World.getInstance().broadcastPacketToAll(new S_SystemMessage(
+												"恭喜玩家【" + player.getName() + "】杀死【" + npc.getName() + "】获得【" + item.getName() + "】。"));
+									}
+									// 打到特定物品广播 (DB化) end
 								}
 							}
 						}

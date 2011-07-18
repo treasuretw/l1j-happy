@@ -271,6 +271,7 @@ public class ItemTable {
 				item.setCheckFameLevel(rs.getInt("CheckFameLV")); // sosodemon add 物品声望值控制
 				item.setDelete_Day(rs.getInt("delete_day")); // 道具天数删除系统(指定天数)
 				item.setDelete_Date(rs.getTimestamp("delete_date")); // 道具天数删除系统(指定日期)
+				item.setDropBoard(rs.getInt("DropBoard")); // 打到特定物品广播 (DB化)
 
 				result.put(new Integer(item.getItemId()), item);
 			}
@@ -360,6 +361,7 @@ public class ItemTable {
 
 				weapon.setDelete_Day(rs.getInt("delete_day")); // 道具天数删除系统(指定天数)
 				weapon.setDelete_Date(rs.getTimestamp("delete_date")); // 道具天数删除系统(指定日期)
+				weapon.setDropBoard(rs.getInt("DropBoard")); // 打到特定物品广播 (DB化)
 
 				result.put(new Integer(weapon.getItemId()), weapon);
 			}
@@ -456,6 +458,7 @@ public class ItemTable {
 				armor.setCheckFameLevel(rs.getInt("CheckFameLV")); // sosodemon add 防具声望值控制
 				armor.setDelete_Day(rs.getInt("delete_day")); // 道具天数删除系统(指定天数)
 				armor.setDelete_Date(rs.getTimestamp("delete_date")); // 道具天数删除系统(指定日期)
+				armor.setDropBoard(rs.getInt("DropBoard")); // 打到特定物品广播 (DB化)
 
 				result.put(new Integer(armor.getItemId()), armor);
 			}
