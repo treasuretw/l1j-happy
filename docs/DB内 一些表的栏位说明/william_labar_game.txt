@@ -1,0 +1,7 @@
+npcid		NPC 编号
+action		对话 action "" (不是对话档名)
+GiveItem	给予的物品 (多个用 , 隔开)
+GiveItemCount	给予的物品数量 (多个用 , 隔开)
+GiveItemEnchantlvl 给予的物品等级 (最少填1,道具不会增加等级)
+checkMoney	检查身上金币 (可自定)
+checkMoneyCount	检查身上金币数量 (可自定)

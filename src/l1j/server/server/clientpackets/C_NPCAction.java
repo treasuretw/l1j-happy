@@ -127,6 +127,7 @@ import l1j.server.server.utils.Random;
 //import l1j.ABC.Place;
 
 import l1j.william.BossRoom;// TODO boss馆
+import l1j.william.LaBarGame;
 //import l1j.ABC.DragonGate;
 import l1j.william.DragonGate;
 
@@ -1347,6 +1348,13 @@ public class C_NPCAction extends ClientBasePacket {
 				}
 			}
 		}
+		
+		// 拉霸
+		 if (LaBarGame.forLaBarGame(s, pc, (L1NpcInstance)obj, ((L1NpcInstance)obj).getNpcTemplate().get_npcId(), objid)) {
+		       htmlid = "";
+		       return;
+		}
+
 		// TODO 副本传送(测试)
 		else if(((L1NpcInstance)obj).getNpcTemplate().get_npcId() == 99007){//NPC ID
 			if(s.equalsIgnoreCase("a")) {

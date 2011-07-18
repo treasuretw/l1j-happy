@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-7-3 ÏÂÎç 12:55:38
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : happy-weixiugai
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-18 22:23:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for william_npcaction
+-- Table structure for `william_npcaction`
 -- ----------------------------
+DROP TABLE IF EXISTS `william_npcaction`;
 CREATE TABLE `william_npcaction` (
   `npcid` int(10) unsigned NOT NULL DEFAULT '0',
   `normal_action` varchar(45) NOT NULL DEFAULT '',
@@ -21,7 +28,7 @@ CREATE TABLE `william_npcaction` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
--- Records 
+-- Records of william_npcaction
 -- ----------------------------
 INSERT INTO `william_npcaction` VALUES ('99000', 'cold1', 'cold1', '', '');
 INSERT INTO `william_npcaction` VALUES ('99001', 'cold1', 'cold1', '', '');
@@ -42,3 +49,4 @@ INSERT INTO `william_npcaction` VALUES ('99016', 'cold1', 'cold1', '', '');
 INSERT INTO `william_npcaction` VALUES ('99017', 'cold1', 'cold1', '', '');
 INSERT INTO `william_npcaction` VALUES ('99018', 'cold1', 'cold1', '', '');
 INSERT INTO `william_npcaction` VALUES ('99019', 'cold1', 'cold1', '', '');
+INSERT INTO `william_npcaction` VALUES ('99022', 'labar', 'labar', '', '');
