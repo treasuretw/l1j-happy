@@ -4723,6 +4723,8 @@ public class L1descId {
 		/**黑市商人：想买到好东西就来找我！不过我不要天宝我只要金币。*/
 		public static final int $8886 = 8886;
 
+		/** 武器合成石 */
+		public static final int $9564 = 9564;
 		/** 隐藏之谷活动卷轴 */
 		public static final int $9568 = 9568;
 		/** 猎人项链 */

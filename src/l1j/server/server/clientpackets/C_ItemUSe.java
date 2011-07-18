@@ -42,6 +42,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import l1j.william.DragonGate;		// 副本  (测试)
+import l1j.william.L1Blend;
 import l1j.william.L1CheckPcItem;	// 防止复制道具
 import l1j.server.Config;
 import l1j.server.L1DatabaseFactory;
@@ -424,6 +425,15 @@ public class C_ItemUSe extends ClientBasePacket {
 				else if (l1iteminstance.getItem().getType() == 17) { // 魔法娃娃类
 					MagicDoll.useMagicDoll(pc, itemId, itemObjid);
 				}
+
+				else if (l1iteminstance.getItem().getType() == 18) { // 道具融合系统类
+					if (L1Blend.checkItemId(itemId) != 0) {
+						L1Blend.getItemBlend(pc, l1iteminstance, itemId);
+					} else {
+						pc.sendPackets(new S_ServerMessage(79)); // \f1没有任何事情发生。
+					}
+				}
+
 				else if (itemId == 47103) { // 新鲜的饵
 					pc.sendPackets(new S_ServerMessage(452, l1iteminstance.getLogName())); // %0%s 被选择了。
 				}

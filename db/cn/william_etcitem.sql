@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost_3306
 Source Server Version : 50150
 Source Host           : localhost:3306
-Source Database       : weigai
+Source Database       : l1j-cn
 
 Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-15 18:56:24
+Date: 2011-07-18 20:10:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -137,3 +137,4 @@ INSERT INTO `william_etcitem` VALUES ('5075', '殷海薩的祝福(增加25%)', '
 INSERT INTO `william_etcitem` VALUES ('5076', '殷海薩的祝福(增加50%)', '$9744', '$9744', 'other', 'normal', 'gemstone', '0', '3727', '3963', '4167', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null);
 INSERT INTO `william_etcitem` VALUES ('5077', '殷海薩的祝福(增加100%)', '$9745', '$9745', 'other', 'normal', 'gemstone', '0', '3721', '3963', '4166', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null);
 INSERT INTO `william_etcitem` VALUES ('5078', '隐藏之谷活动卷轴', '$9568', '$9568', 'scroll', 'normal', 'paper', '630', '551', '2878', '0', '1', '0', '0', '0', '0', '0', '32685', '32868', '5805', '1', '0', '0', '0', '4', '1500', '0', '0', '0', '0', '0', null);
+INSERT INTO `william_etcitem` VALUES ('5079', '武器合成石', '$9564', '$9564', 'ItemBlend', 'normal', 'glass', '0', '3279', '3963', '2772', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', null);

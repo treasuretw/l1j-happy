@@ -93,7 +93,7 @@ public class L1PcInventory extends L1Inventory {
 		}
 		return weight242;
 	}
-	/*
+
 	// 道具融合系统 by 狼人香 add
 	public int checkAddItem_LV(L1ItemInstance item, int count, int EnchantLevel) {
 		return checkAddItem_LV(item, count, EnchantLevel, true);
@@ -142,7 +142,6 @@ public class L1PcInventory extends L1Inventory {
 		return OK;
 	}
 	// 道具融合系统 by 狼人香 end
-*/
 
 	@Override
 	public int checkAddItem(L1ItemInstance item, int count) {
