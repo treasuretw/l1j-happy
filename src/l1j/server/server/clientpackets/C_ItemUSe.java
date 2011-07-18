@@ -44,6 +44,7 @@ import java.util.logging.Logger;
 import l1j.william.DragonGate;		// 副本  (测试)
 import l1j.william.L1Blend;
 import l1j.william.L1CheckPcItem;	// 防止复制道具
+import l1j.william.L1WilliamTeleportScroll;
 import l1j.server.Config;
 import l1j.server.L1DatabaseFactory;
 import l1j.server.server.Account;
@@ -429,6 +430,14 @@ public class C_ItemUSe extends ClientBasePacket {
 				else if (l1iteminstance.getItem().getType() == 18) { // 道具融合系统类
 					if (L1Blend.checkItemId(itemId) != 0) {
 						L1Blend.getItemBlend(pc, l1iteminstance, itemId);
+					} else {
+						pc.sendPackets(new S_ServerMessage(79)); // \f1没有任何事情发生。
+					}
+				}
+
+				else if (l1iteminstance.getItem().getType() == 19) { // 传送卷轴类 (DB化) by 丫杰
+					if (L1WilliamTeleportScroll.checkItemId(itemId) != 0) {
+						L1WilliamTeleportScroll.getTeleportScroll(pc,l1iteminstance, itemId);
 					} else {
 						pc.sendPackets(new S_ServerMessage(79)); // \f1没有任何事情发生。
 					}

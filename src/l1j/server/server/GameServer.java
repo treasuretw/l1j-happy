@@ -23,6 +23,7 @@ import java.util.logging.Logger;
 
 import l1j.william.Announcecycle;
 import l1j.william.L1GameReStart;
+import l1j.william.TeleportScroll;
 import l1j.server.AinTimeController;
 import l1j.server.Config;
 import l1j.server.L1Message;
@@ -314,7 +315,8 @@ public class GameServer extends Thread {
 		NpcChatTable.getInstance();
 		MailTable.getInstance();
 
-		CrackTime.getStart();// TODO 时空裂痕 时间控制
+		CrackTime.getStart(); // TODO 时空裂痕 时间控制
+		TeleportScroll.getInstance(); // 传送卷轴 (DB化) by 丫杰
 
 		RaceTicketTable.getInstance();
 		L1BugBearRace.getInstance();
