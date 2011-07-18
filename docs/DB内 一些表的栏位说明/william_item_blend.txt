@@ -1,0 +1,20 @@
+﻿item_id		物品编号(点两下用的道具 item_type请设定 ItemBlend，use_type请设定 normal)
+name		道具名称
+checkClass	判定职业 (0 = 不判断、1 = 王族、2 = 骑士、3 = 法师、4 = 妖精、5 = 黑妖、6 = 龙骑士、7 = 幻术士)
+checkLevel	判定等级
+rnd		合成机率
+checkItem	触发融合的道具
+hpConsume	判断扣损血量
+mpConsume	判断扣损魔力
+material	合成需要媒介
+material_count	合成需要媒介数量
+material_2	合成需要媒介2
+material_2_count 合成需要媒介数量2
+material_3	合成需要媒介3
+material_3_count 合成需要媒介数量3
+new_item	合成成功给予的道具
+new_item_counts 合成成功给予的道具数量(如果是不能叠加的物品，请设定1，不然会出错)
+new_Enchantlvl_SW 合成成功给予的道具(武器或防具)强化值是否随机的开关 随机:1 固定:0
+new_item_Enchantlvl 合成成功给予的道具的强化值
+removeItem	判断是否删除物品 是:1 否:0
+message		设定显示对话输入

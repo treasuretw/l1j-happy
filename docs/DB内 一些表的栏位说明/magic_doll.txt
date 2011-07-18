@@ -1,0 +1,24 @@
+﻿item_id			魔法娃娃道具编号 对应 etcitem
+doll_id			魔法娃娃编号 对应 npc
+ac			防御
+hpr			体力回覆量
+hpr_time		体力回覆判断 0:增加自身体力回覆量、1:固定时间回覆一次 (希尔黛斯)
+mpr			魔力回覆量
+mpr_time		魔力回覆判断 0:增加自身体力回覆量 (蛇女、幼龙)、1:固定时间回覆一次 (小思克巴、长老)
+hit			增加物理命中率
+dmg			增加物理攻击力
+dmg_chance		机率性增加物理攻击力
+bow_hit			增加弓的命中率
+bow_dmg			增加弓的攻击力
+dmg_reduction		伤害减免
+dmg_reduction_chance	机率性伤害减免
+dmg_evasion_chance	机率性回避伤害
+weight_reduction	增加负重
+regist_stun		增加昏迷耐性
+regist_stone		增加石化耐性
+regist_sleep		增加会棉耐性
+regist_freeze		增加寒冰耐性
+regist_sustain		增加支撑耐性
+regist_blind		增加闇黑耐性
+make_itemid		获得道具
+effect			效果 1:中毒
