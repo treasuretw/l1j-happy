@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
+Source Server         : localhost_3306
 Source Server Version : 50150
 Source Host           : localhost:3306
 Source Database       : l1j-cn
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-04 02:05:53
+Date: 2011-07-19 10:49:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -2323,3 +2323,14 @@ INSERT INTO `spawnlist_npc` VALUES ('50041', '商店村传送师', '1', '50050',
 INSERT INTO `spawnlist_npc` VALUES ('50042', '商店村传送师', '1', '50050', '34062', '32273', '0', '0', '4', '0', '4', '100');
 INSERT INTO `spawnlist_npc` VALUES ('50043', '商店村传送师', '1', '50034', '33438', '32809', '0', '0', '5', '0', '4', '100');
 INSERT INTO `spawnlist_npc` VALUES ('50044', '商店村传送师', '1', '50034', '33510', '32766', '0', '0', '4', '0', '4', '100');
+INSERT INTO `spawnlist_npc` VALUES ('88044', '旅人谘询员', '1', '81257', '32581', '32922', '0', '0', '4', '0', '0', '0');
+INSERT INTO `spawnlist_npc` VALUES ('88045', '旅人谘询员', '1', '81257', '33709', '32501', '0', '0', '6', '0', '4', '0');
+INSERT INTO `spawnlist_npc` VALUES ('88094', '旅人谘询员', '1', '81257', '34064', '32280', '0', '0', '5', '0', '4', '0');
+INSERT INTO `spawnlist_npc` VALUES ('88095', '旅人谘询员', '1', '81257', '33435', '32795', '0', '0', '4', '0', '4', '0');
+INSERT INTO `spawnlist_npc` VALUES ('88096', '旅人谘询员', '1', '81257', '33611', '33257', '0', '0', '4', '0', '4', '0');
+INSERT INTO `spawnlist_npc` VALUES ('88097', '旅人谘询员', '1', '81257', '33082', '33385', '0', '0', '4', '0', '4', '0');
+INSERT INTO `spawnlist_npc` VALUES ('88098', '旅人谘询员', '1', '81257', '32640', '33202', '0', '0', '5', '0', '4', '0');
+INSERT INTO `spawnlist_npc` VALUES ('88099', '旅人谘询员', '1', '81257', '33050', '32781', '0', '0', '5', '0', '4', '0');
+INSERT INTO `spawnlist_npc` VALUES ('88100', '旅人谘询员', '1', '81257', '32610', '32730', '0', '0', '5', '0', '4', '0');
+INSERT INTO `spawnlist_npc` VALUES ('88101', '旅人谘询员', '1', '81257', '33966', '33252', '0', '0', '5', '0', '4', '0');
+INSERT INTO `spawnlist_npc` VALUES ('89856', '旅人谘询员-亞丁', '1', '81257', '33934', '33353', '0', '0', '6', '0', '4', '0');
