@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-6-25 ���� 12:52:35
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : l1j-cn
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-19 11:08:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for dungeon
+-- Table structure for `dungeon`
 -- ----------------------------
+DROP TABLE IF EXISTS `dungeon`;
 CREATE TABLE `dungeon` (
   `src_x` int(10) NOT NULL DEFAULT '0',
   `src_y` int(10) NOT NULL DEFAULT '0',
@@ -24,7 +31,7 @@ CREATE TABLE `dungeon` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records 
+-- Records of dungeon
 -- ----------------------------
 INSERT INTO `dungeon` VALUES ('32600', '32931', '0', '32745', '32803', '16384', '6', '说话之岛旅馆 -> 旅馆房间');
 INSERT INTO `dungeon` VALUES ('32746', '32803', '16384', '32599', '32931', '0', '6', '旅馆房间 -> 说话之岛旅馆');
@@ -1708,4 +1715,3 @@ INSERT INTO `dungeon` VALUES ('32928', '32658', '1016', '32953', '32596', '1016'
 INSERT INTO `dungeon` VALUES ('33002', '32731', '1016', '32928', '32659', '1016', '6', '新水龙直接挑战入口传点1 → 栖息地商人区楼梯口到达点1');
 INSERT INTO `dungeon` VALUES ('33002', '32732', '1016', '32928', '32659', '1016', '6', '新水龙直接挑战入口传点2 → 栖息地商人区楼梯口到达点1');
 INSERT INTO `dungeon` VALUES ('32565', '32880', '306', '32545', '32927', '306', '6', '黑暗妖精试炼地监魔法阵 → 死亡的司祭房间');
-INSERT INTO `dungeon` VALUES ('33452', '32812', '4', '32773', '32874', '613', '6', '任务村传送魔法阵');
