@@ -113,24 +113,24 @@ public class C_NPCTalk extends ClientBasePacket {
 					}
 					int time = 3600; // 1小时
 					if(((L1NpcInstance)obj).getMapId()==350) { // 大陆NPC要收费
-						L1ItemInstance adena = ItemTable.getInstance().createItem(5000);
-						adena.setCount(pc.getInventory().countItems(5000));
-						if(adena.getCount()<350){ //指定数量
-							pc.sendPackets(new S_SystemMessage("元宝(350) 不足。"));
+						L1ItemInstance adena = ItemTable.getInstance().createItem(40308);
+						adena.setCount(pc.getInventory().countItems(40308));
+						if(adena.getCount()<100000){ //指定数量
+							pc.sendPackets(new S_SystemMessage("您的金币不足10万,我无法为您增加祝福!"));
 							return;
 						}else {
-							pc.getInventory().consumeItem(5000, 350);
+							pc.getInventory().consumeItem(40308, 100000);
 							time = 900; // 15分钟
 						}
 					}
 					if(((L1NpcInstance)obj).getMapId()==4) { // 大陆NPC要收费
-						L1ItemInstance adena = ItemTable.getInstance().createItem(5000);
-						adena.setCount(pc.getInventory().countItems(5000));
-						if(adena.getCount()<350){ // 指定数量
-							pc.sendPackets(new S_SystemMessage("元宝(350) 不足。"));
+						L1ItemInstance adena = ItemTable.getInstance().createItem(40308);
+						adena.setCount(pc.getInventory().countItems(40308));
+						if(adena.getCount()<100000){ // 指定数量
+							pc.sendPackets(new S_SystemMessage("您的金币不足10万,我无法为您增加祝福!"));
 							return;
 						}else {
-							pc.getInventory().consumeItem(5000, 350);
+							pc.getInventory().consumeItem(40308, 100000);
 							time = 900; // 15分钟
 						}
 					}
@@ -255,9 +255,7 @@ public class C_NPCTalk extends ClientBasePacket {
 					new L1SkillUse().handleCommands(pc, BRAVE_AURA, pc.getId(), pc.getX(), pc.getY(), null, time, Base.SKILL_TYPE[4]);
 					// 法师魔法 (灵魂升华)
 					new L1SkillUse().handleCommands(pc, 79, pc.getId(), pc.getX(), pc.getY(), null, time, Base.SKILL_TYPE[4]);
-					pc.sendPackets(new S_SystemMessage("你的身体不断聚集伊娃的能量。"));
-					pc.setCurrentHp(pc.getMaxHp()); // 补血
-					pc.setCurrentMp(pc.getMaxMp()); // 补魔
+					pc.sendPackets(new S_SystemMessage("恭喜你消耗10万成功的增加了天神祝福!"));
 					return;
 				}
 
@@ -398,8 +396,6 @@ public class C_NPCTalk extends ClientBasePacket {
 						// 法师魔法  (灵魂升华)
 						new L1SkillUse().handleCommands(pc, 79, pc.getId(), pc.getX(), pc.getY(), null, time, Base.SKILL_TYPE[4]);
 						pc.sendPackets(new S_SystemMessage("恭喜你消耗20万成功的增加了天神祝福!"));
-						pc.setCurrentHp(pc.getMaxHp()); // 补血
-						pc.setCurrentMp(pc.getMaxMp()); // 补魔
 						return;
 					}
 				}
