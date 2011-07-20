@@ -16,7 +16,16 @@ package l1j.server.server.clientpackets;
 
 import static l1j.server.server.model.Instance.L1PcInstance.REGENSTATE_ATTACK;
 import static l1j.server.server.model.skill.L1SkillId.ABSOLUTE_BARRIER;
+import static l1j.server.server.model.skill.L1SkillId.CURSE_PARALYZE;
+import static l1j.server.server.model.skill.L1SkillId.EARTH_BIND;
+import static l1j.server.server.model.skill.L1SkillId.FREEZING_BLIZZARD;
+import static l1j.server.server.model.skill.L1SkillId.FREEZING_BREATH;
+import static l1j.server.server.model.skill.L1SkillId.ICE_LANCE;
+import static l1j.server.server.model.skill.L1SkillId.ICE_LANCE_BASILISK;
+import static l1j.server.server.model.skill.L1SkillId.ICE_LANCE_COCKATRICE;
 import static l1j.server.server.model.skill.L1SkillId.MEDITATION;
+//import static l1j.server.server.model.skill.L1SkillId.IMMUNE_TO_HARM;
+import static l1j.server.server.model.skill.L1SkillId.SHOCK_STUN;
 import l1j.server.Config;
 import l1j.server.server.ClientThread;
 import l1j.server.server.model.AcceleratorChecker;
@@ -55,6 +64,20 @@ public class C_Attack extends ClientBasePacket {
 			pc.sendPackets(new S_ServerMessage(110)); // \f1アイテムが重すぎて战斗することができません。
 			return;
 		}
+
+		// 防止外挂非法攻击 add
+		if (pc.hasSkillEffect(ICE_LANCE)					// 冰矛围篱
+		//	    || pc.hasSkillEffect(IMMUNE_TO_HARM)		// 圣结界 (测试用)
+				|| pc.hasSkillEffect(FREEZING_BLIZZARD) 	// 冰雪飓风
+				|| pc.hasSkillEffect(FREEZING_BREATH)		// 寒冰喷吐
+				|| pc.hasSkillEffect(EARTH_BIND)			// 大地屏障
+				|| pc.hasSkillEffect(ICE_LANCE_COCKATRICE)	// 亚力安冰矛围篱
+				|| pc.hasSkillEffect(ICE_LANCE_BASILISK)	// 邪恶蜥蜴冰矛围篱
+				|| pc.hasSkillEffect(SHOCK_STUN)			// 冲击之晕
+				|| pc.hasSkillEffect(CURSE_PARALYZE)) {		// 木乃伊的诅咒
+			return;
+		}
+		// 防止外挂非法攻击 end
 
 		if (pc.isInvisble()) { // 是否隐形
 			return;
