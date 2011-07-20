@@ -976,11 +976,6 @@ public class L1ItemInstance extends L1Object {
 				os.writeC(32);
 				os.writeC(getItem().get_addmp() + getaddMp()+ getUpdateMp());//盔甲魔力卷轴
 			}
-			// MR
-			if (getMr() != 0) {
-				os.writeC(15);
-				os.writeH(getMr());
-			}
 			// SP(魔力)
 			if (getItem().get_addsp() != 0 || getaddSp() != 0) {
 				os.writeC(17);
@@ -1052,11 +1047,13 @@ public class L1ItemInstance extends L1Object {
 				os.writeC(33);
 				os.writeC(6);
 			}
+			/*
 			// MR
 			if (getMr() != 0) {
 				os.writeC(15);
 				os.writeH(getMr());
 			}
+			*/
 			// 体力回复率
 			if (getItem().get_addhpr() != 0 || getHpr() != 0) {
 				os.writeC(37);

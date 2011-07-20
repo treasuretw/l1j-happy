@@ -188,7 +188,7 @@ public class ClientThread implements Runnable, PacketOutput {
 	public void run() {
 		_log.info("(" + _hostname + ") 开始连线...。");
 		System.out.println("使用内存:  " + SystemUtil.getUsedMemoryMB() + "MB");
-		System.out.println("等待客户端连线中...");
+		System.out.println("当前在线人数："+L1World.getInstance().getAllPlayers().size());
 
 		/*
 		 * TODO: 翻译 クライアントからのパケットをある程度制限する。 理由：不正の误检出が多発する恐れがあるため
@@ -322,7 +322,7 @@ public class ClientThread implements Runnable, PacketOutput {
 			_log.info("帐号：(" + getAccountName() + ":" + _hostname + ")连线结束。");
 			System.out.println("使用内存" + SystemUtil.getUsedMemoryMB()
 					+ "MB");
-			System.out.println("等待客户端连线中...");
+			System.out.println("当前在线人数："+L1World.getInstance().getAllPlayers().size());
 			if (getAccount() != null) {
 				Account.online(getAccount(), false);
 			}
