@@ -81,14 +81,16 @@ public class C_MoveChar extends ClientBasePacket {
 		}
 		pc.getMap().setPassable(pc.getLocation(), true);
 
-		if (CLIENT_LANGUAGE == 3) { // Taiwan Only
-			heading ^= 0x49;
-			locx = pc.getX();
-			locy = pc.getY();
+		// 判断伺服器国家代码 (China Only)
+		if (CLIENT_LANGUAGE == 5) {
+			// heading ^= 0x49;	// 取得真实面向
+			// 取得真实座标
+			locx = pc.getX();	// X轴座标
+			locy = pc.getY();	// Y轴座标
 		}
 
-		locx += HEADING_TABLE_X[heading];
-		locy += HEADING_TABLE_Y[heading];
+		locx += HEADING_TABLE_X[heading]; // 4.26 Start
+		locy += HEADING_TABLE_Y[heading]; // 4.26 End
 
 		if (Dungeon.getInstance().dg(locx, locy, pc.getMap().getId(), pc)) { // 传点
 			return;
