@@ -565,6 +565,8 @@ public final class Config {
 	public static int ArmorOverSafeBoard;		// 防具 (多少以上才广播)
 
 	public static int SHOCK_STUN_TIMER;         // 冲晕秒数设置
+	
+	public static boolean PlugMove;				// 外挂非法移动侦测开关 (比如:地屏状态)
 
 	public static boolean NEW_CREATE_SET_GM;	// 设定创新角色是否设定为 GM
 	
@@ -1133,6 +1135,10 @@ public final class Config {
 			SHOCK_STUN_TIMER =Integer.parseInt(otherSettings.getProperty(
 					"SHOCKSTUNTIMER"));
 			
+			// 外挂非法移动侦测开关 (比如:地屏状态)
+			PlugMove = Boolean.parseBoolean(otherSettings.getProperty(
+					"PlugMove", "false"));
+			
 			// 设定创新角色是否设定为 GM
 			NEW_CREATE_SET_GM = Boolean.parseBoolean(otherSettings.getProperty(
 					"NewCreateSetGM", "false"));
@@ -1629,6 +1635,10 @@ public final class Config {
 			RATE_EXP_PROPORTION = Integer.parseInt(pValue);
 		}
 
+		else if (pName.equalsIgnoreCase("PlugMove")) {				// 外挂非法移动侦测开关 (比如:地屏状态)
+			PlugMove = Boolean.valueOf(pValue);
+		}
+		
 		else if (pName.equalsIgnoreCase("NewCreateSetGM")) {
 			NEW_CREATE_SET_GM = Boolean.valueOf(pValue);			// 设定创新角色是否设定为 GM
 		}
