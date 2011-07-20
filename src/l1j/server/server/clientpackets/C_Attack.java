@@ -32,7 +32,7 @@ import l1j.server.server.serverpackets.S_ServerMessage;
 // ClientBasePacket
 
 /**
- * 處理客戶端傳來攻擊的封包
+ * 处理客户端传来攻击的封包
  */
 public class C_Attack extends ClientBasePacket {
 
@@ -50,23 +50,23 @@ public class C_Attack extends ClientBasePacket {
 
 		L1Object target = L1World.getInstance().findObject(targetId);
 
-		// 確認是否可以攻擊
+		// 确认是否可以攻击
 		if (pc.getInventory().getWeight242() >= 197) { // 是否超重
-			pc.sendPackets(new S_ServerMessage(110)); // \f1アイテムが重すぎて戦闘することができません。
+			pc.sendPackets(new S_ServerMessage(110)); // \f1アイテムが重すぎて战斗することができません。
 			return;
 		}
 
-		if (pc.isInvisble()) { // 是否隱形
+		if (pc.isInvisble()) { // 是否隐形
 			return;
 		}
 
-		if (pc.isInvisDelay()) { // 是否在隱形解除的延遲中
+		if (pc.isInvisDelay()) { // 是否在隐形解除的延迟中
 			return;
 		}
 
 		if (target instanceof L1Character) {
 			if ((target.getMapId() != pc.getMapId())
-					|| (pc.getLocation().getLineDistance(target.getLocation()) > 20D)) { // 如果目標距離玩家太遠(外掛)
+					|| (pc.getLocation().getLineDistance(target.getLocation()) > 20D)) { // 如果目标距离玩家太远(外挂)
 				return;
 			}
 		}
@@ -74,12 +74,12 @@ public class C_Attack extends ClientBasePacket {
 		if (target instanceof L1NpcInstance) {
 			int hiddenStatus = ((L1NpcInstance) target).getHiddenStatus();
 			if ((hiddenStatus == L1NpcInstance.HIDDEN_STATUS_SINK)
-					|| (hiddenStatus == L1NpcInstance.HIDDEN_STATUS_FLY)) { // 如果目標躲到土裡面，或是飛起來了
+					|| (hiddenStatus == L1NpcInstance.HIDDEN_STATUS_FLY)) { // 如果目标躲到土里面，或是飞起来了
 				return;
 			}
 		}
 
-		// 是否要檢查攻擊的間隔
+		// 是否要检查攻击的间隔
 		if (Config.CHECK_ATTACK_INTERVAL) {
 			int result;
 			result = pc.getAcceleratorChecker().checkInterval(
@@ -89,21 +89,21 @@ public class C_Attack extends ClientBasePacket {
 			}
 		}
 
-		if (pc.hasSkillEffect(ABSOLUTE_BARRIER)) { // 取消絕對屏障
+		if (pc.hasSkillEffect(ABSOLUTE_BARRIER)) { // 取消绝对屏障
 			pc.removeSkillEffect(ABSOLUTE_BARRIER);
 		}
 		if (pc.hasSkillEffect(MEDITATION)) { // 取消冥想效果
 			pc.removeSkillEffect(MEDITATION);
 		}
 
-		pc.delInvis(); // 解除隱形狀態
+		pc.delInvis(); // 解除隐形状态
 
 		pc.setRegenState(REGENSTATE_ATTACK);
 
 		if ((target != null)
 				&& !((L1Character) target).isDead()) {
 			target.onAction(pc);
-		} else { // 目標為空或死亡
+		} else { // 目标为空或死亡
 			L1Character cha = new L1Character();
 			cha.setId(targetId);
 			cha.setX(x);

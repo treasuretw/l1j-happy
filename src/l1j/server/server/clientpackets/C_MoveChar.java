@@ -31,7 +31,7 @@ import l1j.server.server.serverpackets.S_SystemMessage;
 // ClientBasePacket
 
 /**
- * 處理收到由客戶端傳來移動角色的封包
+ * 处理收到由客户端传来移动角色的封包
  */
 public class C_MoveChar extends ClientBasePacket {
 
@@ -43,13 +43,13 @@ public class C_MoveChar extends ClientBasePacket {
 
 	private static final int CLIENT_LANGUAGE = Config.CLIENT_LANGUAGE;
 
-	// 地圖編號的研究
+	// 地图编号的研究
 	@SuppressWarnings("unused")
 	private void sendMapTileLog(L1PcInstance pc) {
 		pc.sendPackets(new S_SystemMessage(pc.getMap().toString(pc.getLocation())));
 	}
 
-	// 移動
+	// 移动
 	public C_MoveChar(byte decrypt[], ClientThread client) throws Exception {
 		super(decrypt);
 		int locx = readH();
@@ -58,11 +58,11 @@ public class C_MoveChar extends ClientBasePacket {
 
 		L1PcInstance pc = client.getActiveChar();
 
-		if (pc.isTeleport()) { // 傳送中
+		if (pc.isTeleport()) { // 传送中
 			return;
 		}
 
-		// 檢查移動的時間間隔
+		// 检查移动的时间间隔
 		if (Config.CHECK_MOVE_INTERVAL) {
 			int result;
 			result = pc.getAcceleratorChecker().checkInterval(AcceleratorChecker.ACT_TYPE.MOVE);
@@ -74,9 +74,9 @@ public class C_MoveChar extends ClientBasePacket {
 		if (pc.hasSkillEffect(MEDITATION)) { // 取消冥想效果
 			pc.removeSkillEffect(MEDITATION);
 		}
-		pc.setCallClanId(0); // コールクランを唱えた後に移動すると召喚無効
+		pc.setCallClanId(0); // コールクランを唱えた后に移动すると召唤无效
 
-		if (!pc.hasSkillEffect(ABSOLUTE_BARRIER)) { // 絕對屏障
+		if (!pc.hasSkillEffect(ABSOLUTE_BARRIER)) { // 绝对屏障
 			pc.setRegenState(REGENSTATE_MOVE);
 		}
 		pc.getMap().setPassable(pc.getLocation(), true);
@@ -90,10 +90,10 @@ public class C_MoveChar extends ClientBasePacket {
 		locx += HEADING_TABLE_X[heading];
 		locy += HEADING_TABLE_Y[heading];
 
-		if (Dungeon.getInstance().dg(locx, locy, pc.getMap().getId(), pc)) { // 傳點
+		if (Dungeon.getInstance().dg(locx, locy, pc.getMap().getId(), pc)) { // 传点
 			return;
 		}
-		if (DungeonRandom.getInstance().dg(locx, locy, pc.getMap().getId(), pc)) { // 取得隨機傳送地點
+		if (DungeonRandom.getInstance().dg(locx, locy, pc.getMap().getId(), pc)) { // 取得随机传送地点
 			return;
 		}
 
@@ -107,12 +107,12 @@ public class C_MoveChar extends ClientBasePacket {
 			pc.broadcastPacket(new S_MoveCharPacket(pc));
 		}
 
-		// sendMapTileLog(pc); //發送信息的目的地瓦（為調查地圖）
-		// 寵物競速-判斷圈數
+		// sendMapTileLog(pc); //发送信息的目的地瓦（为调查地图））
+		// 宠物竞速-判断圈数
 		l1j.server.server.model.game.L1PolyRace.getInstance().checkLapFinish(pc);
 		L1WorldTraps.getInstance().onPlayerMoved(pc);
 
 		pc.getMap().setPassable(pc.getLocation(), false);
-		// user.UpdateObject(); // 可視範囲内の全オブジェクト更新
+		// user.UpdateObject(); // 可视范围内の全オブジェクト更新
 	}
 }
