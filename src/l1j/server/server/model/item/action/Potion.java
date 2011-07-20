@@ -14,6 +14,7 @@
  */
 package l1j.server.server.model.item.action;
 
+import static l1j.server.server.model.skill.L1SkillId.ABSOLUTE_BARRIER;
 import static l1j.server.server.model.skill.L1SkillId.BUFF_B;
 import static l1j.server.server.model.skill.L1SkillId.BUFF_C;
 import static l1j.server.server.model.skill.L1SkillId.BUFF_D;
@@ -89,6 +90,7 @@ public class Potion {
 				time = 1200;
 			}
 			buff_brave(pc, STATUS_BRAVE, (byte) 1, time);					// 给予勇敢药水效果
+			cancelAbsoluteBarrier(pc); // 解除绝对屏障状态
 			pc.getInventory().removeItem(item, 1);
 
 			/** 精灵饼干 & 祝福的精灵饼干 */
@@ -103,6 +105,7 @@ public class Potion {
 				time = 1920;
 			}
 			buff_brave(pc, STATUS_ELFBRAVE, (byte) 3, time);				// 给予精灵饼干效果
+			cancelAbsoluteBarrier(pc); // 解除绝对屏障状态
 			pc.getInventory().removeItem(item, 1);
 
 			/** 生命之树果实 */
@@ -111,6 +114,7 @@ public class Potion {
 			pc.setSkillEffect(STATUS_RIBRAVE, time * 1000);
 			pc.sendPackets(new S_SkillSound(pc.getId(), 7110));
 			pc.broadcastPacket(new S_SkillSound(pc.getId(), 7110));
+			cancelAbsoluteBarrier(pc); // 解除绝对屏障状态
 			pc.getInventory().removeItem(item, 1);
 		}
 	}
@@ -167,6 +171,7 @@ public class Potion {
 		pc.sendPackets(new S_Liquor(pc.getId(), 8));		// 人物 * 1.15
 		pc.broadcastPacket(new S_Liquor(pc.getId(), 8));	// 人物 * 1.15
 		pc.sendPackets(new S_ServerMessage(1065));			// 将发生神秘的奇迹力量。
+		cancelAbsoluteBarrier(pc); // 解除绝对屏障状态
 		pc.getInventory().removeItem(item, 1);
 	}
 
@@ -189,6 +194,7 @@ public class Potion {
 			healHp /= 2;
 		}
 		pc.setCurrentHp(pc.getCurrentHp() + healHp);
+		cancelAbsoluteBarrier(pc); // 解除绝对屏障状态
 		pc.getInventory().removeItem(item, 1);
 	}
 
@@ -209,6 +215,7 @@ public class Potion {
 			newMp = mp;
 		}
 		pc.setCurrentMp(pc.getCurrentMp() + newMp);
+		cancelAbsoluteBarrier(pc); // 解除绝对屏障状态
 		pc.getInventory().removeItem(item, 1);
 	}
 
@@ -291,6 +298,7 @@ public class Potion {
 			pc.broadcastPacket(new S_SkillHaste(pc.getId(), 1, 0));
 			pc.setMoveSpeed(1);
 			pc.setSkillEffect(STATUS_HASTE, time * 1000);
+			cancelAbsoluteBarrier(pc); // 解除绝对屏障状态
 		}
 		pc.getInventory().removeItem(item, 1);
 	}
@@ -320,6 +328,7 @@ public class Potion {
 		pc.sendPackets(new S_ServerMessage(1007));			// 你感觉到魔力恢复速度加快。
 
 		pc.setSkillEffect(STATUS_BLUE_POTION, time * 1000);
+		cancelAbsoluteBarrier(pc); // 解除绝对屏障状态
 		pc.getInventory().removeItem(item, 1);
 	}
 
@@ -350,6 +359,7 @@ public class Potion {
 		pc.broadcastPacket(new S_SkillSound(pc.getId(), 750));
 
 		pc.setSkillEffect(STATUS_WISDOM_POTION, time * 1000);
+		cancelAbsoluteBarrier(pc); // 解除绝对屏障状态
 		pc.getInventory().removeItem(item, 1);
 	}
 
@@ -383,6 +393,7 @@ public class Potion {
 		pc.sendPackets(new S_SkillSound(pc.getId(), 190));
 		pc.broadcastPacket(new S_SkillSound(pc.getId(), 190));
 		pc.setSkillEffect(STATUS_UNDERWATER_BREATH, time * 1000);
+		cancelAbsoluteBarrier(pc); // 解除绝对屏障状态
 		pc.getInventory().removeItem(item, 1);
 	}
 
@@ -407,6 +418,7 @@ public class Potion {
 		}
 
 		pc.setSkillEffect(CURSE_BLIND, time * 1000);
+		cancelAbsoluteBarrier(pc); // 解除绝对屏障状态
 		pc.getInventory().removeItem(item, 1);
 	}
 
@@ -514,6 +526,7 @@ public class Potion {
 		if (pc.hasSkillEffect(buff)) {
 			pc.killSkillEffectTimer(buff);
 		}
+		cancelAbsoluteBarrier(pc); // 解除绝对屏障状态
 		pc.getInventory().removeItem(item, 1);
 		pc.sendPackets(new S_PacketBox(53, 23, 1800));
 		pc.sendPackets(new S_OwnCharStatus(pc));
@@ -563,6 +576,7 @@ public class Potion {
 			}
 			catch (Exception e) {
 			} finally {
+				cancelAbsoluteBarrier(pc); // 解除绝对屏障状态
 				pc.getInventory().removeItem(item, 1);
 				pc.sendPackets(new S_OwnCharStatus(pc));
 			}
@@ -1098,4 +1112,13 @@ public class Potion {
 		}
 	}
 
+	/** 解除绝对屏障状态 */
+	private static void cancelAbsoluteBarrier(L1PcInstance pc) {
+		if (pc.hasSkillEffect(ABSOLUTE_BARRIER)) {
+			pc.killSkillEffectTimer(ABSOLUTE_BARRIER);
+			pc.startHpRegeneration();
+			pc.startMpRegeneration();
+			pc.startMpRegenerationByDoll();
+		}
+	}
 }
