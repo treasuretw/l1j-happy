@@ -54,7 +54,7 @@ public class MobGroupTable {
 		ResultSet rs = null;
 		try {
 			con = L1DatabaseFactory.getInstance().getConnection();
-			pstm = con.prepareStatement("SELECT * FROM mobgroup union SELECT * FROM william_mobgroup");
+			pstm = con.prepareStatement("SELECT * FROM mobgroup union SELECT * FROM z_copy_mobgroup");
 			rs = pstm.executeQuery();
 			while (rs.next()) {
 				int mobGroupId = rs.getInt("id");

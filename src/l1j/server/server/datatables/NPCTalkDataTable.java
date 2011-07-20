@@ -52,7 +52,7 @@ public class NPCTalkDataTable {
 		try {
 
 			con = L1DatabaseFactory.getInstance().getConnection();
-			pstm = con.prepareStatement("SELECT * FROM npcaction union SELECT * FROM william_npcaction");
+			pstm = con.prepareStatement("SELECT * FROM npcaction union SELECT * FROM z_copy_npcaction");
 
 			rs = pstm.executeQuery();
 			while (rs.next()) {

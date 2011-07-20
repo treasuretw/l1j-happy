@@ -73,7 +73,7 @@ public class DropTable {
 		ResultSet rs = null;
 		try {
 			con = L1DatabaseFactory.getInstance().getConnection();
-			pstm = con.prepareStatement("select * from droplist union select * from william_droplist");
+			pstm = con.prepareStatement("select * from droplist union select * from z_copy_droplist");
 			rs = pstm.executeQuery();
 			while (rs.next()) {
 				int mobId = rs.getInt("mobId");

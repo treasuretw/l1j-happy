@@ -57,7 +57,7 @@ public class PetTypeTable {
 		ResultSet rs = null;
 		try {
 			con = L1DatabaseFactory.getInstance().getConnection();
-			pstm = con.prepareStatement("SELECT * FROM pettypes union SELECT * FROM william_pettypes");
+			pstm = con.prepareStatement("SELECT * FROM pettypes union SELECT * FROM z_copy_pettypes");
 
 			rs = pstm.executeQuery();
 

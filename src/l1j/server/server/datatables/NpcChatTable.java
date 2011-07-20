@@ -60,7 +60,7 @@ public class NpcChatTable {
 		try {
 
 			con = L1DatabaseFactory.getInstance().getConnection();
-			pstm = con.prepareStatement("SELECT * FROM npcchat union SELECT * FROM william_npcchat");
+			pstm = con.prepareStatement("SELECT * FROM npcchat union SELECT * FROM z_copy_npcchat");
 			rs = pstm.executeQuery();
 			while (rs.next()) {
 				L1NpcChat npcChat = new L1NpcChat();

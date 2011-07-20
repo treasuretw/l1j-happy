@@ -83,7 +83,7 @@ public class NpcTable {
 		ResultSet rs = null;
 		try {
 			con = L1DatabaseFactory.getInstance().getConnection();
-			pstm = con.prepareStatement("SELECT * FROM npc union SELECT * FROM william_npc");
+			pstm = con.prepareStatement("SELECT * FROM npc union SELECT * FROM z_copy_npc");
 			rs = pstm.executeQuery();
 			while (rs.next()) {
 				L1Npc npc = new L1Npc();

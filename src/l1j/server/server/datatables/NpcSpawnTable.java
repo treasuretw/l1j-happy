@@ -64,7 +64,7 @@ public class NpcSpawnTable {
 		try {
 
 			con = L1DatabaseFactory.getInstance().getConnection();
-			pstm = con.prepareStatement("SELECT * FROM spawnlist_npc union SELECT * FROM william_spawnlist_npc");
+			pstm = con.prepareStatement("SELECT * FROM spawnlist_npc union SELECT * FROM z_copy_spawnlist_npc");
 			rs = pstm.executeQuery();
 			while (rs.next()) {
 				if (Config.ALT_GMSHOP == false) {

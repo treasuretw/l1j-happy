@@ -65,7 +65,7 @@ public class SpawnTable {
 		try {
 
 			con = L1DatabaseFactory.getInstance().getConnection();
-			pstm = con.prepareStatement("SELECT * FROM spawnlist union SELECT * FROM william_spawnlist");
+			pstm = con.prepareStatement("SELECT * FROM spawnlist union SELECT * FROM z_copy_spawnlist");
 			rs = pstm.executeQuery();
 
 			L1Spawn spawnDat;
