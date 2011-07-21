@@ -172,7 +172,7 @@ public class L1Shop {
 		// 购入
 		// 元宝商城 add
 		int YB;
-		if (_npcId >= 99000 && _npcId <= 99010) { // 商城专用NPC的编号
+		if (_npcId >= 99000 && _npcId <= 99001) { // 商城专用NPC的编号
 			YB = L1ItemId.YB;		// 元宝
 		} else {
 			YB = L1ItemId.ADENA;	// 金币
@@ -320,7 +320,7 @@ public class L1Shop {
 	// 元宝商城 add
 	private void sellItems(L1PcInstance pc, L1PcInventory inv, L1ShopBuyOrderList orderList) { // 增加 L1PcInstance pc,
 		int YB;
-		if (_npcId >= 99000 && _npcId <= 99010) { // 商城NPC编号
+		if (_npcId >= 99000 && _npcId <= 99001) { // 商城NPC编号
 			YB = L1ItemId.YB;		// 元宝
 		} else {
 			YB = L1ItemId.ADENA;	// 金币
