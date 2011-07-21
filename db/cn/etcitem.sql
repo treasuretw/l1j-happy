@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost_3306
 Source Server Version : 50150
 Source Host           : localhost:3306
-Source Database       : happy-weixiugai
+Source Database       : l1j-cn
 
 Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-21 10:23:37
+Date: 2011-07-21 18:31:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1908,7 +1908,7 @@ INSERT INTO `etcitem` VALUES ('49203', '食腐兽之血', '$5643', '$5643', 'que
 INSERT INTO `etcitem` VALUES ('49204', '翼龙之血', '$5644', '$5644', 'questitem', 'none', 'liquid', '0', '2215', '5491', '3190', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `etcitem` VALUES ('49205', '特别的原石', '$5646', '$5646', 'questitem', 'normal', 'gemstone', '0', '3002', '6961', '3202', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `etcitem` VALUES ('49206', '塞维斯邪念碎片', '$5649', '$5649', 'questitem', 'normal', 'gemstone', '0', '3039', '6949', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
-INSERT INTO `etcitem` VALUES ('49207', '灵魂之火灰烬', '$6348', '$6348', 'questitem', 'normal', 'gemstone', '0', '3276', '7088', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
+INSERT INTO `etcitem` VALUES ('49207', '灵魂之火灰烬', '$6348', '$6348', 'questitem', 'normal', 'gemstone', '0', '591', '1988', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `etcitem` VALUES ('49208', '蓝色之火碎片', '$5648', '$5648', 'questitem', 'normal', 'gemstone', '0', '3276', '7088', '3189', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `etcitem` VALUES ('49209', '长老普洛凯尔的信件', '$5740', '$5740', 'questitem', 'normal', 'paper', '0', '2018', '5614', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `etcitem` VALUES ('49210', '普洛凯尔的第一次指令书', '$5672', '$5672', 'questitem', 'normal', 'paper', '0', '2018', '5614', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
