@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-18 21:31:20
+Date: 2011-07-21 19:13:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -66,7 +66,7 @@ CREATE TABLE `weapon` (
   `max_use_time` int(10) unsigned NOT NULL DEFAULT '0',
   `polySW` int(10) unsigned NOT NULL DEFAULT '0',
   `POLYin` int(10) unsigned NOT NULL DEFAULT '0',
-  `CheckFameLV` int(10) NOT NULL,
+  `CheckFameLV` int(10) NOT NULL DEFAULT '0',
   `delete_day` int(10) NOT NULL DEFAULT '0',
   `delete_date` datetime DEFAULT NULL,
   `DropBoard` int(2) NOT NULL DEFAULT '0',

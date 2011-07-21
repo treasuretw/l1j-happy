@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-20 20:24:08
+Date: 2011-07-21 19:14:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -48,7 +48,7 @@ CREATE TABLE `z_copy_etcitem` (
   `delay_effect` int(10) unsigned NOT NULL DEFAULT '0',
   `food_volume` int(10) unsigned NOT NULL DEFAULT '0',
   `save_at_once` tinyint(1) unsigned NOT NULL DEFAULT '1',
-  `CheckFameLV` int(10) NOT NULL,
+  `CheckFameLV` int(10) NOT NULL DEFAULT '0',
   `delete_day` int(10) NOT NULL DEFAULT '0',
   `delete_date` datetime DEFAULT NULL,
   `DropBoard` int(2) NOT NULL DEFAULT '0',

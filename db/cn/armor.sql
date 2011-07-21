@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-18 21:32:34
+Date: 2011-07-21 19:12:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -74,7 +74,7 @@ CREATE TABLE `armor` (
   `regist_sustain` int(2) NOT NULL DEFAULT '0',
   `regist_blind` int(2) NOT NULL DEFAULT '0',
   `grade` int(2) NOT NULL DEFAULT '-1',
-  `CheckFameLV` int(10) NOT NULL,
+  `CheckFameLV` int(10) NOT NULL DEFAULT '0',
   `delete_day` int(10) NOT NULL DEFAULT '0',
   `delete_date` datetime DEFAULT NULL,
   `DropBoard` int(2) NOT NULL DEFAULT '0',
