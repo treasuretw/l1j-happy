@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-7-19 ���� 08:57:36
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : happy-weixiugai
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-21 10:23:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for etcitem
+-- Table structure for `etcitem`
 -- ----------------------------
+DROP TABLE IF EXISTS `etcitem`;
 CREATE TABLE `etcitem` (
   `item_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL DEFAULT '',
@@ -49,7 +56,7 @@ CREATE TABLE `etcitem` (
 ) ENGINE=MyISAM AUTO_INCREMENT=240102 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records 
+-- Records of etcitem
 -- ----------------------------
 INSERT INTO `etcitem` VALUES ('40001', '灯', '$2', '$2', 'light', 'normal', 'copper', '20000', '3', '4', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `etcitem` VALUES ('40002', '灯笼', '$326', '$326', 'light', 'normal', 'copper', '30000', '140', '181', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
@@ -1895,8 +1902,8 @@ INSERT INTO `etcitem` VALUES ('49197', '第一次邪念碎片', '$5638', '$5638'
 INSERT INTO `etcitem` VALUES ('49198', '第二次邪念碎片', '$5773', '$5773', 'questitem', 'choice', 'gemstone', '0', '2095', '1561', '3284', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `etcitem` VALUES ('49199', '第三次邪念碎片', '$5774', '$5774', 'questitem', 'choice', 'gemstone', '0', '2095', '1561', '3285', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `etcitem` VALUES ('49200', '未完成的时间水晶球', '$5639', '$5639', 'questitem', 'none', 'glass', '0', '865', '3966', '3181', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
-INSERT INTO `etcitem` VALUES ('49201', '完成的时间水晶球', '$5640', '$5640', 'questitem', 'none', 'glass', '0', '938', '3966', '3182', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
-INSERT INTO `etcitem` VALUES ('49202', '时空裂痕邪念碎片', '$5641', '$5641', 'questitem', 'none', 'mineral', '0', '1206', '3177', '3183', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
+INSERT INTO `etcitem` VALUES ('49201', '完成的时间水晶球', '$5640', '$5640', 'questitem', 'normal', 'glass', '0', '938', '3966', '3182', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
+INSERT INTO `etcitem` VALUES ('49202', '时空裂痕邪念碎片', '$5641', '$5641', 'questitem', 'normal', 'mineral', '0', '1206', '3177', '3183', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `etcitem` VALUES ('49203', '食腐兽之血', '$5643', '$5643', 'questitem', 'none', 'liquid', '0', '2556', '6125', '3190', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `etcitem` VALUES ('49204', '翼龙之血', '$5644', '$5644', 'questitem', 'none', 'liquid', '0', '2215', '5491', '3190', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `etcitem` VALUES ('49205', '特别的原石', '$5646', '$5646', 'questitem', 'normal', 'gemstone', '0', '3002', '6961', '3202', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');

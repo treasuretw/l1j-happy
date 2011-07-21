@@ -2625,10 +2625,15 @@ public class L1MerchantInstance extends L1NpcInstance {
 				if (player.isDragonKnight()) { // ドラゴンナイト
 					int lv30_step = quest.get_step(L1Quest.QUEST_LEVEL30);
 					int lv45_step = quest.get_step(L1Quest.QUEST_LEVEL45);
+					int lv50_step = quest.get_step(L1Quest.QUEST_LEVEL50);
 					if ((player.getLevel() >= 30) && (lv30_step == 2)) {
 						htmlid = "talrion1";
 					} else if ((player.getLevel() >= 45) && (lv45_step == 5)) {
 						htmlid = "talrion9";
+					} else if ((player.getLevel() >= 50) && (lv50_step == 4)) {
+						htmlid = "talrion10";
+					} else {
+						htmlid = "talrion4";
 					}
 				}
 			} else if (npcid == 80135) { // 爱尔菈丝
@@ -2650,8 +2655,10 @@ public class L1MerchantInstance extends L1NpcInstance {
 							&& (lv45_step == L1Quest.QUEST_END)) {
 						if (lv50_step == 0) {
 							htmlid = "prokel21";
-						} else if (lv50_step == L1Quest.QUEST_END) { // クリア济み
+						} else if (lv50_step > 3) { // クリア济み
 							htmlid = "prokel32";
+						} else if (lv50_step > 1) {
+							htmlid = "prokel25";
 						} else {
 							htmlid = "prokel24";
 						}
@@ -2774,6 +2781,32 @@ public class L1MerchantInstance extends L1NpcInstance {
 						}
 					}
 				}
+			} else if (npcid == 81310) { // 红色灵魂之火
+				if (player.isDragonKnight()) { // 龙骑士 LV50 试炼任务
+					int lv45_step = quest.get_step(L1Quest.QUEST_LEVEL45);
+					int lv50_step = quest.get_step(L1Quest.QUEST_LEVEL50);
+					if (player.getLevel() > 49
+							&& lv45_step == L1Quest.QUEST_END) {
+						if (lv50_step == 3) {
+							htmlid = "redsoul_f2";
+						} else {
+							htmlid = "redsoul_f1";
+						}
+					}
+				}
+			} else if (npcid == 81311) { // 蓝色灵魂之火
+				if (player.isIllusionist()) { // 幻术士 LV50 试炼任务
+					int lv45_step = quest.get_step(L1Quest.QUEST_LEVEL45);
+					int lv50_step = quest.get_step(L1Quest.QUEST_LEVEL50);
+					if (player.getLevel() > 49
+							&& lv45_step == L1Quest.QUEST_END) {
+						if (lv50_step == 3) {
+							htmlid = "bluesoul_f2";
+						} else {
+							htmlid = "bluesoul_f1";
+						}
+					}
+				}
 			} else if (npcid == 80145) { // 长老 希莲恩
 				int lv15_step = quest.get_step(L1Quest.QUEST_LEVEL15);
 				int lv30_step = quest.get_step(L1Quest.QUEST_LEVEL30);
@@ -2794,20 +2827,46 @@ public class L1MerchantInstance extends L1NpcInstance {
 					if (player.getLevel() > 49
 							&& lv45_step == L1Quest.QUEST_END) {
 						if (lv50_step == 0) {
-							htmlid = "silrein26";// 正确 silrein27 未实装先控制不能接
-						} else if (lv50_step == L1Quest.QUEST_END) { // ?
-							htmlid = "silrein32";
+							htmlid = "silrein27";
+						} else if (lv50_step > 4) { 
+							htmlid = "silrein36";
+						} else if (lv50_step > 3) {
+							htmlid = "silrein35";
+						} else if (lv50_step > 2) {
+							if (player.getInventory().checkItem(49206)) {
+								htmlid = "silrein33";
+							}
+						} else if (lv50_step > 1) {
+							if (player.getInventory().checkItem(49178) && player.getInventory().checkItem(49202)) {
+								htmlid = "silrein32";
+							} else {
+							htmlid = "silrein34";
+							}
+						} else if (lv50_step > 0) {
+							htmlid = "silrein29";
 						} else {
-							htmlid = "silrein24";
+							htmlid = "silrein26";
 						}
 					} else if (player.getLevel() > 44
 							&& lv30_step == L1Quest.QUEST_END) {
 						if (lv45_step == 0) {
 							htmlid = "silrein18";
-						} else if (lv45_step > 4) { // 交出时空裂痕邪念碎片
-							htmlid = "silrein23";
-						} else if (lv45_step > 0) { // 交出记忆的碎片
-							htmlid = "silrein20";
+						} else if (lv45_step == L1Quest.QUEST_END) {
+							htmlid = "silrein26";
+						} else if (lv45_step > 4) {
+							if (player.getInventory().checkItem(49202)) {
+								htmlid = "silrein23";
+							} else {
+								htmlid = "silrein24";
+							}
+						} else if (lv45_step > 0) {
+							if (player.getInventory().checkItem(49194) 
+									&& player.getInventory().checkItem(49195) 
+									&& player.getInventory().checkItem(49196)) {
+								htmlid = "silrein20";
+							} else {
+								htmlid = "silrein21";
+							}
 						} else {
 							htmlid = "silrein19";
 						}
@@ -2815,6 +2874,8 @@ public class L1MerchantInstance extends L1NpcInstance {
 							&& lv15_step == L1Quest.QUEST_END) {
 						if (lv30_step == 0) {
 							htmlid = "silrein11";
+						} else if (lv30_step == L1Quest.QUEST_END) {
+							htmlid = "silrein15";
 						} else if (lv30_step > 0) { // ?
 							htmlid = "silrein14";
 						} else {
@@ -2823,12 +2884,12 @@ public class L1MerchantInstance extends L1NpcInstance {
 					} else if (player.getLevel() > 14) {
 						if (lv15_step == 0) {
 							htmlid = "silrein2";
-						} else if (lv15_step == L1Quest.QUEST_END) { // ?)
+						} else if (lv15_step == L1Quest.QUEST_END) {
 							htmlid = "silrein5";
 						} else {
 							htmlid = "silrein4";
 						}
-					} else { // Lv15?
+					} else { 
 						htmlid = "silrein1";
 					}
 				}

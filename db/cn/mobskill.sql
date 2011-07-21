@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-6-27 ���� 06:29:13
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : happy-weixiugai
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-21 09:32:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for mobskill
+-- Table structure for `mobskill`
 -- ----------------------------
+DROP TABLE IF EXISTS `mobskill`;
 CREATE TABLE `mobskill` (
   `mobid` int(10) unsigned NOT NULL DEFAULT '0',
   `actNo` int(10) unsigned NOT NULL DEFAULT '0',
@@ -39,7 +46,7 @@ CREATE TABLE `mobskill` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records 
+-- Records of mobskill
 -- ----------------------------
 INSERT INTO `mobskill` VALUES ('45039', '0', '猫-寒冷战栗', '2', '7', '100', '0', '0', '-3', '0', '0', '0', '0', '0', '0', '10', '0', '0', '30', '0', '0', '0', '0');
 INSERT INTO `mobskill` VALUES ('45044', '0', '浣熊-缓速术', '2', '15', '100', '0', '0', '-6', '0', '0', '0', '0', '0', '20', '29', '0', '0', '18', '0', '0', '0', '0');
@@ -789,7 +796,7 @@ INSERT INTO `mobskill` VALUES ('46063', '1', '受诅咒的黑暗妖精法师-光
 INSERT INTO `mobskill` VALUES ('46064', '0', '受诅咒的黑暗妖精骑士-地面震裂', '2', '0', '30', '0', '0', '-3', '0', '0', '3', '0', '0', '40', '20002', '2', '5722', '19', '0', '0', '0', '0');
 INSERT INTO `mobskill` VALUES ('46064', '1', '受诅咒的黑暗妖精骑士-黑暗地裂斩', '2', '0', '50', '0', '0', '-6', '0', '0', '6', '0', '0', '30', '20001', '0', '5631', '18', '0', '0', '0', '0');
 INSERT INTO `mobskill` VALUES ('46065', '0', '食腐兽-腐蚀毒液', '2', '0', '50', '0', '0', '-8', '0', '0', '8', '0', '0', '20', '20003', '0', '5445', '18', '0', '0', '0', '0');
-INSERT INTO `mobskill` VALUES ('46065', '1', '食腐兽-触手攻击', '1', '0', '100', '0', '0', '2', '0', '0', '2', '0', '0', '11', '0', '0', '0', '30', '0', '0', '0', '0');
+INSERT INTO `mobskill` VALUES ('46065', '1', '食腐兽-触手攻击', '1', '0', '100', '0', '0', '3', '0', '0', '2', '0', '0', '11', '0', '0', '0', '30', '0', '0', '0', '0');
 INSERT INTO `mobskill` VALUES ('46066', '0', '特提斯-震裂踏击', '2', '0', '50', '0', '0', '-2', '0', '0', '0', '0', '0', '0', '62', '2', '5261', '18', '0', '0', '0', '0');
 INSERT INTO `mobskill` VALUES ('46067', '0', '翼龙-龙卷风', '2', '0', '50', '0', '0', '-4', '0', '0', '0', '0', '0', '0', '53', '0', '0', '18', '0', '0', '0', '0');
 INSERT INTO `mobskill` VALUES ('46070', '0', '被抛弃的魔族-龙卷风', '2', '10', '50', '0', '0', '-4', '0', '0', '0', '0', '0', '0', '53', '0', '0', '18', '0', '0', '0', '0');

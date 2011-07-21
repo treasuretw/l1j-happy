@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-6-25 ���� 12:57:24
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : happy-weixiugai
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-21 10:35:36
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for spawnlist
+-- Table structure for `spawnlist`
 -- ----------------------------
+DROP TABLE IF EXISTS `spawnlist`;
 CREATE TABLE `spawnlist` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `location` varchar(45) NOT NULL DEFAULT '',
@@ -37,7 +44,7 @@ CREATE TABLE `spawnlist` (
 ) ENGINE=MyISAM AUTO_INCREMENT=801500529 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records 
+-- Records of spawnlist
 -- ----------------------------
 INSERT INTO `spawnlist` VALUES ('1', '青蛙', '1', '45005', '0', '33067', '33392', '0', '0', '0', '0', '0', '0', '7', '60', '120', '4', '0', '100', '0', '0');
 INSERT INTO `spawnlist` VALUES ('2', '青蛙', '0', '45005', '0', '33618', '33247', '0', '0', '0', '0', '0', '0', '7', '60', '120', '4', '0', '100', '0', '0');
@@ -11654,3 +11661,6 @@ INSERT INTO `spawnlist` VALUES ('400327', '侏儒族魔法师', '1', '97034', '0
 INSERT INTO `spawnlist` VALUES ('400328', '侏儒族将军', '1', '97033', '0', '0', '0', '0', '0', '32842', '32680', '32870', '32720', '2', '20', '30', '1002', '1', '0', '0', '0');
 INSERT INTO `spawnlist` VALUES ('400329', '侏儒族魔法师', '1', '97034', '0', '0', '0', '0', '0', '32842', '32680', '32870', '32720', '3', '20', '30', '1002', '1', '0', '0', '0');
 INSERT INTO `spawnlist` VALUES ('400330', '死亡的司祭', '1', '45507', '0', '32545', '32927', '0', '0', '32538', '32919', '32552', '32933', '4', '60', '120', '306', '1', '0', '0', '0');
+INSERT INTO `spawnlist` VALUES ('400331', '食腐兽', '5', '81314', '0', '0', '0', '0', '0', '32779', '32768', '32895', '32829', '0', '15', '30', '2004', '1', '0', '0', '0');
+INSERT INTO `spawnlist` VALUES ('400332', '翼龙', '5', '81315', '0', '0', '0', '0', '0', '32779', '32829', '32895', '32959', '0', '15', '30', '2004', '1', '0', '0', '0');
+INSERT INTO `spawnlist` VALUES ('400333', '时空裂痕', '5', '81253', '0', '0', '0', '0', '0', '32761', '32768', '32779', '32959', '0', '15', '30', '2004', '1', '0', '0', '0');

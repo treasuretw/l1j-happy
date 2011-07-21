@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-6-25 ÏÂÎç 12:55:10
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : happy-weixiugai
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-21 10:37:16
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for npcaction
+-- Table structure for `npcaction`
 -- ----------------------------
+DROP TABLE IF EXISTS `npcaction`;
 CREATE TABLE `npcaction` (
   `npcid` int(10) unsigned NOT NULL DEFAULT '0',
   `normal_action` varchar(45) NOT NULL DEFAULT '',
@@ -21,7 +28,7 @@ CREATE TABLE `npcaction` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
--- Records 
+-- Records of npcaction
 -- ----------------------------
 INSERT INTO `npcaction` VALUES ('782', 'fivelviin3', 'fivelviin3', '', '');
 INSERT INTO `npcaction` VALUES ('1621', 'fivelviin2', 'fivelviin2', '', '');
@@ -1100,3 +1107,5 @@ INSERT INTO `npcaction` VALUES ('81300', 'gr_mammon1', 'gr_mammon1', 'gr_mammon3
 INSERT INTO `npcaction` VALUES ('81307', 'newsboy', 'newsboy', '', '');
 INSERT INTO `npcaction` VALUES ('91002', 'dufo', 'dufo', '', '');
 INSERT INTO `npcaction` VALUES ('71095', 'csoulq2', 'csoulq2', '', '');
+INSERT INTO `npcaction` VALUES ('81310', 'redsoul_f4', 'redsoul_f4', '', '');
+INSERT INTO `npcaction` VALUES ('81311', 'bluesoul_f4', 'bluesoul_f4', '', '');

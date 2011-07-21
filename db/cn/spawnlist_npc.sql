@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost_3306
 Source Server Version : 50150
 Source Host           : localhost:3306
-Source Database       : l1j-cn
+Source Database       : happy-weixiugai
 
 Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-19 10:49:15
+Date: 2011-07-21 10:33:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -2334,3 +2334,5 @@ INSERT INTO `spawnlist_npc` VALUES ('88099', '旅人谘询员', '1', '81257', '3
 INSERT INTO `spawnlist_npc` VALUES ('88100', '旅人谘询员', '1', '81257', '32610', '32730', '0', '0', '5', '0', '4', '0');
 INSERT INTO `spawnlist_npc` VALUES ('88101', '旅人谘询员', '1', '81257', '33966', '33252', '0', '0', '5', '0', '4', '0');
 INSERT INTO `spawnlist_npc` VALUES ('89856', '旅人谘询员-亞丁', '1', '81257', '33934', '33353', '0', '0', '6', '0', '4', '0');
+INSERT INTO `spawnlist_npc` VALUES ('89930', '红色灵魂之火', '1', '81310', '32782', '32827', '0', '0', '6', '0', '2004', '0');
+INSERT INTO `spawnlist_npc` VALUES ('89931', '蓝色灵魂之火', '1', '81311', '32782', '32832', '0', '0', '6', '0', '2004', '0');

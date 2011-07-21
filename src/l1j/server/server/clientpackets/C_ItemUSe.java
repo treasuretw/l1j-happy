@@ -2311,6 +2311,36 @@ public class C_ItemUSe extends ClientBasePacket {
 						pc.sendPackets(new S_ServerMessage(79)); // \f1没有任何事情发生。
 					}
 				}
+				else if (itemId == 49202) { // 时空裂痕邪念碎片
+					if ((pc.getMapId() != 2004) && (pc.getQuest().get_step(L1Quest.QUEST_LEVEL50) > 1 )) {
+						short mapid = 2004;
+						L1Teleport.teleport(pc, 32723, 32834, mapid, 5, true);
+						pc.getInventory().removeItem(l1iteminstance, 1);
+					}
+					else {
+						pc.sendPackets(new S_ServerMessage(79)); // \f1没有任何事情发生。。
+					}
+				}			
+				else if (itemId == 49178) { // 希蓮恩的护身符
+					if ((pc.isIllusionist()) && (pc.getMapId() == 2004) && (pc.getQuest().get_step(L1Quest.QUEST_LEVEL50) > 1 )) {
+						short mapid = 1000;
+						L1Teleport.teleport(pc, 32772, 32812, mapid, 5, true);
+						pc.getInventory().removeItem(l1iteminstance, 1);
+					}
+					else {
+						pc.sendPackets(new S_ServerMessage(79)); // \f1没有任何事情发生。
+					}
+				}			
+				else if (itemId == 49216) { // 普洛凯尔的护身符
+					if ((pc.isDragonKnight()) && (pc.getMapId() == 2004) && (pc.getQuest().get_step(L1Quest.QUEST_LEVEL50) > 1 )) {
+						short mapid = 1001;
+						L1Teleport.teleport(pc, 32817, 32832, mapid, 5, true);
+						pc.getInventory().removeItem(l1iteminstance, 1);
+					}
+					else {
+						pc.sendPackets(new S_ServerMessage(79)); // \f1没有任何事情发生。
+					}
+				}		
 				else if (itemId == 40566) { // 神秘贝壳
 					if (pc.isElf()
 							&& ((pc.getX() >= 33971) && // 象牙の塔の村の南にある魔方阵の座标
@@ -2796,6 +2826,45 @@ public class C_ItemUSe extends ClientBasePacket {
 					else {
 						pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "tscrollp"));
 					}
+				}
+				else if (itemId == 49172) { // 希蓮恩的第一次信件
+					pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "silrein1lt"));
+				}
+				else if (itemId == 49173) { // 希蓮恩的第二次信件
+					pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "silrein2lt"));
+				}
+				else if (itemId == 49174) { // 希蓮恩的第三次信件
+					pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "silrein3lt"));
+				}
+				else if (itemId == 49175) { // 希蓮恩的第四次信件
+					pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "silrein4lt"));
+				}
+				else if (itemId == 49176) { // 希蓮恩的第五次信件
+					pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "silrein5lt"));
+				}
+				else if (itemId == 49177) { // 希蓮恩的第六次信件
+					pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "silrein6lt"));
+				}
+				else if (itemId == 49206) { // 塞維斯邪念碎片
+					pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "bluesoul_p"));
+				}
+				else if (itemId == 49210) { // 普洛凯尔的第一次指令书
+					pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "first_p"));
+				}
+				else if (itemId == 49211) { // 普洛凯尔的第二次指令书
+					pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "second_p"));
+				}
+				else if (itemId == 49212) { // 普洛凯尔的第三次指令书
+					pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "third_p"));
+				}
+				else if (itemId == 49287) { // 普洛凯尔的第四次指令书
+					pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "fourth_p"));
+				}
+				else if (itemId == 49288) { // 普洛凯尔的第五次指令书
+					pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "fifth_p"));
+				}
+				else if (itemId == 49231) { // 路西尔斯邪念碎片
+					pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "redsoul_p"));
 				}
 				else if (itemId == 40383) { // 地图:歌唱之岛
 					pc.sendPackets(new S_NPCTalkReturn(pc.getId(), "ei035"));
@@ -3400,7 +3469,6 @@ public class C_ItemUSe extends ClientBasePacket {
 						pc.getInventory().consumeItem(49222, 1);// 妖魔密使之笛子
 					}
 				}
-				// 幻术士试练 增加 start
 				else if (itemId == 49188) { // 索夏依卡灵魂之石
 					if (l1iteminstance1.getItem().getItemId() == 49186) {
 						L1ItemInstance item1 = ItemTable.getInstance().createItem(49189);
@@ -3461,9 +3529,77 @@ public class C_ItemUSe extends ClientBasePacket {
 						}
 						pc.getInventory().consumeItem(49201, 1);
 					}
-				// 幻术士试练 增加 end
-
-				} else if (itemId == 47010) { // 龙之钥匙
+				}
+				else if (itemId == 49208) { // 藍色之火碎片
+					if (pc.isIllusionist() && (pc.getMapId() == 2004)) { // 異界 奎斯特
+						boolean found = false;
+						for (L1Object obj : L1World.getInstance().getObject()) {
+							if (obj instanceof L1MonsterInstance) {
+								L1MonsterInstance mob = (L1MonsterInstance) obj;
+								if (mob != null) {
+									if (mob.getNpcTemplate().get_npcId() == 81313) {// 塞維斯
+										found = true;
+										break;
+									}
+								}
+							}
+						}
+						if (found) {
+							pc.sendPackets(new S_ServerMessage(79));
+						}
+						else {
+							L1SpawnUtil.spawn(pc, 81313, 0, 0);
+						}
+						pc.getInventory().consumeItem(49208, 1);
+					}
+				}
+				else if (itemId == 49208) { // 藍色之火碎片
+					if (pc.isIllusionist() && (pc.getMapId() == 2004)) { // 異界 奎斯特
+						boolean found = false;
+						for (L1Object obj : L1World.getInstance().getObject()) {
+							if (obj instanceof L1MonsterInstance) {
+								L1MonsterInstance mob = (L1MonsterInstance) obj;
+								if (mob != null) {
+									if (mob.getNpcTemplate().get_npcId() == 81313) {// 塞維斯
+										found = true;
+										break;
+									}
+								}
+							}
+						}
+						if (found) {
+							pc.sendPackets(new S_ServerMessage(79));
+						}
+						else {
+							L1SpawnUtil.spawn(pc, 81313, 0, 0);
+						}
+						pc.getInventory().consumeItem(49208, 1);
+					}
+				}
+				else if (itemId == 49227) { // 紅色之火碎片
+					if (pc.isDragonKnight() && (pc.getMapId() == 2004)) { // 異界 奎斯特
+						boolean found = false;
+						for (L1Object obj : L1World.getInstance().getObject()) {
+							if (obj instanceof L1MonsterInstance) {
+								L1MonsterInstance mob = (L1MonsterInstance) obj;
+								if (mob != null) {
+									if (mob.getNpcTemplate().get_npcId() == 81312) {// 路西爾斯
+										found = true;
+										break;
+									}
+								}
+							}
+						}
+						if (found) {
+							pc.sendPackets(new S_ServerMessage(79));
+						}
+						else {
+							L1SpawnUtil.spawn(pc, 81312, 0, 0);
+						}
+						pc.getInventory().consumeItem(49227, 1);
+					}
+				}
+				else if (itemId == 47010) { // 龙之钥匙
 					if (!L1CastleLocation.checkInAllWarArea(pc.getLocation())) { // 检查是否在城堡区域内
 						pc.sendPackets(new S_DragonGate(pc ,L1DragonSlayer.getInstance().checkDragonPortal()));
 					} else {
