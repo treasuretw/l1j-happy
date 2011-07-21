@@ -36,7 +36,7 @@ import l1j.server.server.model.Instance.L1PcInstance;
 import l1j.server.server.model.trap.L1WorldTraps;
 import l1j.server.server.serverpackets.S_MoveCharPacket;
 import l1j.server.server.serverpackets.S_SystemMessage;
-import l1j.server.server.utils.Random;
+import l1j.william.External_water;
 
 // Referenced classes of package l1j.server.server.clientpackets:
 // ClientBasePacket
@@ -85,7 +85,7 @@ public class C_MoveChar extends ClientBasePacket {
 		// 防止外挂在不能移动的状态下移动 add
 		if (Config.PlugMove) {
 			if (pc.hasSkillEffect(ICE_LANCE)					// 冰矛围篱
-		  //		|| pc.hasSkillEffect(IMMUNE_TO_HARM)		// 圣结界 (测试用)
+		     //		|| pc.hasSkillEffect(IMMUNE_TO_HARM)		// 圣结界 (测试用)
 					|| pc.hasSkillEffect(FREEZING_BLIZZARD) 	// 冰雪飓风
 					|| pc.hasSkillEffect(FREEZING_BREATH)		// 寒冰喷吐
 					|| pc.hasSkillEffect(EARTH_BIND)			// 大地屏障
@@ -93,25 +93,16 @@ public class C_MoveChar extends ClientBasePacket {
 					|| pc.hasSkillEffect(ICE_LANCE_BASILISK)	// 邪恶蜥蜴冰矛围篱
 					|| pc.hasSkillEffect(SHOCK_STUN)			// 冲击之晕
 					|| pc.hasSkillEffect(CURSE_PARALYZE)) {		// 木乃伊的诅咒
-				int Z = Random.nextInt(10);
-				switch(Z) {
-				case 9:
-					pc.sendPackets(new S_SystemMessage("怀疑您正在使用外挂,您被自动防挂系统踢下线!! "));
-					break;
-				}
-				if (Z == 9) {
-					Thread.sleep(1000);				// 暂停一秒
-					pc.getNetConnection().kick();	// 踢下线
-/*
-					pc.getMap().setPassable(pc.getLocation(), false);
-					L1Teleport.teleport(pc, pc.getLocation(), heading, true);
-*/
-					return;
-				} else {
-//					pc.sendPackets(new S_SystemMessage("!! "));
-				}
+				External_water.water(decrypt, client);
 			}
 		}
+/*
+					Thread.sleep(1000);				// 暂停一秒
+					pc.getNetConnection().kick();	// 踢下线
+					pc.getMap().setPassable(pc.getLocation(), false);
+					L1Teleport.teleport(pc, pc.getLocation(), heading, true);
+					return;
+*/
 		// 防止外挂在不能移动的状态下移动 end
 
 		if (pc.hasSkillEffect(MEDITATION)) { // 取消冥想效果
