@@ -31,6 +31,7 @@ import l1j.server.server.ClientThread;
 import l1j.server.server.model.AcceleratorChecker;
 import l1j.server.server.model.Dungeon;
 import l1j.server.server.model.DungeonRandom;
+import l1j.server.server.model.L1Location;
 import l1j.server.server.model.Instance.L1PcInstance;
 import l1j.server.server.model.trap.L1WorldTraps;
 import l1j.server.server.serverpackets.S_MoveCharPacket;
@@ -138,6 +139,15 @@ public class C_MoveChar extends ClientBasePacket {
 			return;
 		}
 		if (DungeonRandom.getInstance().dg(locx, locy, pc.getMap().getId(), pc)) { // 取得随机传送地点
+			return;
+		}
+
+		// Esc键的bug修复。
+		L1Location oldLoc = pc.getLocation();
+		if ((oldLoc.getX() + 10 < locx)
+				|| (oldLoc.getX() - 10 > locx)
+				|| (oldLoc.getY() + 10 < locy)
+				|| (oldLoc.getX() - 10 > locx)) {
 			return;
 		}
 
