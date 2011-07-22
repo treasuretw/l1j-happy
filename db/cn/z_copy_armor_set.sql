@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-21 22:11:46
+Date: 2011-07-22 15:08:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -45,7 +45,7 @@ CREATE TABLE `z_copy_armor_set` (
   `defense_fire` int(2) NOT NULL DEFAULT '0',
   `defense_earth` int(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=69 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of z_copy_armor_set
@@ -54,4 +54,5 @@ INSERT INTO `z_copy_armor_set` VALUES ('64', '守护团戒指', '20286', '1080',
 INSERT INTO `z_copy_armor_set` VALUES ('65', '新手套装', '10000,10001,10002,10003,10004,10005,10006,10007,10008,10009,10010', '240', '-40', '100', '50', '10', '10', '10', '1', '1', '1', '1', '1', '1', '0', '0', '0', '0', '1', '0', '0', '0', '0');
 INSERT INTO `z_copy_armor_set` VALUES ('66', '11周年白色套装', '10073,10074', '-1', '0', '0', '33', '0', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0');
 INSERT INTO `z_copy_armor_set` VALUES ('67', '11周年黑色套装', '10073,10075', '-1', '0', '55', '0', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `z_copy_armor_set` VALUES ('68', '11周年红色套装', '10073,10076', '-1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2', '2', '2', '2', '0', '0', '0', '0', '0');
+INSERT INTO `z_copy_armor_set` VALUES ('68', '11周年红色套装', '10073,10076', '-1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2', '2', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `z_copy_armor_set` VALUES ('69', '圣诞老人变身头巾', '10077', '7925', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
