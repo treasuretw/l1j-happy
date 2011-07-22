@@ -637,6 +637,7 @@ public class L1SkillId {
 
 	public static final int STATUS_CURSE_PARALYZING = 1010;
 
+	/** 木乃尹状态 */
 	public static final int STATUS_CURSE_PARALYZED = 1011;
 
 	public static final int STATUS_FLOATING_EYE = 1012;

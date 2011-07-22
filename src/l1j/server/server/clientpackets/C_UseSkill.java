@@ -16,9 +16,9 @@ package l1j.server.server.clientpackets;
 
 import static l1j.server.server.model.skill.L1SkillId.ABSOLUTE_BARRIER;
 import static l1j.server.server.model.skill.L1SkillId.CALL_CLAN;
-import static l1j.server.server.model.skill.L1SkillId.CURSE_PARALYZE;
 import static l1j.server.server.model.skill.L1SkillId.EARTH_BIND;
 import static l1j.server.server.model.skill.L1SkillId.FIRE_WALL;
+import static l1j.server.server.model.skill.L1SkillId.FOG_OF_SLEEPING;
 import static l1j.server.server.model.skill.L1SkillId.FREEZING_BLIZZARD;
 import static l1j.server.server.model.skill.L1SkillId.FREEZING_BREATH;
 import static l1j.server.server.model.skill.L1SkillId.ICE_LANCE;
@@ -28,6 +28,7 @@ import static l1j.server.server.model.skill.L1SkillId.LIFE_STREAM;
 import static l1j.server.server.model.skill.L1SkillId.MASS_TELEPORT;
 import static l1j.server.server.model.skill.L1SkillId.MEDITATION;
 import static l1j.server.server.model.skill.L1SkillId.RUN_CLAN;
+import static l1j.server.server.model.skill.L1SkillId.STATUS_CURSE_PARALYZED;
 import static l1j.server.server.model.skill.L1SkillId.TELEPORT;
 import static l1j.server.server.model.skill.L1SkillId.TRUE_TARGET;
 import static l1j.server.server.model.skill.L1SkillId.COUNTER_BARRIER;
@@ -157,7 +158,8 @@ public class C_UseSkill extends ClientBasePacket {
 				|| pc.hasSkillEffect(ICE_LANCE_COCKATRICE)	// 亚力安冰矛围篱
 				|| pc.hasSkillEffect(ICE_LANCE_BASILISK)	// 邪恶蜥蜴冰矛围篱
 				|| pc.hasSkillEffect(SHOCK_STUN)			// 冲击之晕
-				|| pc.hasSkillEffect(CURSE_PARALYZE)) {		// 木乃伊的诅咒
+				|| pc.hasSkillEffect(FOG_OF_SLEEPING)		// 沉睡之雾
+				|| pc.hasSkillEffect(STATUS_CURSE_PARALYZED)) {	// 木乃尹状态
 			return;
 		}
 		// 防止外挂非法魔法攻击 end
