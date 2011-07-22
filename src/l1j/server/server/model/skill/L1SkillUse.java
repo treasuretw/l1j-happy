@@ -1844,46 +1844,6 @@ public class L1SkillUse {
 					}
 				}
 
-				// ★★★ 圣洁之光 ★★★
-				else if (_skillId == REMOVE_CURSE) {
-					//防止玩家使用外挂在木乃尹,冰茅,冲晕,沉雾状态底下的施法补血跟圣光 by thettt999
-					if (cha.hasSkillEffect(STATUS_CURSE_PARALYZED)		//木乃尹状态
-						||cha.hasSkillEffect(SHOCK_STUN)				//冲晕
-						||cha.hasSkillEffect(FOG_OF_SLEEPING)			//沉睡之雾
-						||cha.hasSkillEffect(ICE_LANCE)){				//冰茅
-						_player.sendPackets(new S_ServerMessage(285));//285 : \f1在此状态下无法使用魔法。
-						return;
-					}
-					//~防止玩家使用外挂在木乃尹,冰茅,冲晕,沉雾状态底下的施法补血跟圣光 by thettt999
-					cha.curePoison();
-					if (cha.hasSkillEffect(STATUS_CURSE_PARALYZING)
-							|| cha.hasSkillEffect(STATUS_CURSE_PARALYZED)) {
-						cha.cureParalaysis();
-					}
-				}
-
-				// ★★★ 回复系魔法 ★★★
-				else if ((_skillId == HEAL || _skillId == EXTRA_HEAL
-						|| _skillId == GREATER_HEAL || _skillId == FULL_HEAL
-						|| _skillId == HEAL_ALL || _skillId == NATURES_TOUCH
-						|| _skillId == NATURES_BLESSING)
-						&& (_user instanceof L1PcInstance)) {
-						// 防止玩家使用外挂在木乃尹,冰茅,冲晕,沉雾状态底下的施法补血跟圣光 by thettt999
-					if (cha.hasSkillEffect(STATUS_CURSE_PARALYZED)		// 木乃尹状态
-							||cha.hasSkillEffect(SHOCK_STUN)			// 冲晕
-							||cha.hasSkillEffect(FOG_OF_SLEEPING)		// 沉睡之雾
-							||cha.hasSkillEffect(ICE_LANCE)){			// 冰茅
-
-						_player.sendPackets(new S_ServerMessage(285));//285 : \f1在此状态下无法使用魔法。
-						return;
-					}
-					else if (_user instanceof L1PcInstance) {
-						cha.removeSkillEffect(WATER_LIFE);
-					}
-						//cha.removeSkillEffect(WATER_LIFE);
-						//~防止玩家使用外挂在木乃尹,冰茅,冲晕,沉雾状态底下的施法补血跟圣光 by thettt999
-				}
-
 				// 显示团体魔法效果在队友或盟友
 				else if ((_skillId == FIRE_BLESS || _skillId == STORM_EYE // 烈炎气息、暴风之眼
 						|| _skillId == EARTH_BLESS // 大地的祝福
