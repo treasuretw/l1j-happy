@@ -2625,9 +2625,11 @@ public class L1PcInstance extends L1Character {
 
 	private long _oldUseItemTimeInMillis = 0L;
 
-	public void checkUseItemInterval() {
+	public void checkUseItemInterval(byte decrypt[], ClientThread client) throws InterruptedException {
 
 		long nowUseItemTimeInMillis = System.currentTimeMillis();
+
+		L1PcInstance pc = client.getActiveChar();
 
 		if (_UseItemCount == 0) {
 			_UseItemCount++;
@@ -2648,7 +2650,10 @@ public class L1PcInstance extends L1Character {
 						+ ":【" + getName() + "】 "
 						+ "使用喝水外挂。"
 						+ "时间:" + "(" + new Timestamp(System.currentTimeMillis()) + ")。");
-				sendPackets(new S_Disconnect());
+				//sendPackets(new S_Disconnect());
+				pc.sendPackets(new S_SystemMessage("怀疑您正在使用外挂,您被自动防挂系统踢下线!! "));
+				Thread.sleep(1000);				// 暂停一秒
+				pc.getNetConnection().kick();	// 踢下线
 				_UseItemCount = 0;
 				_oldUseItemTimeInMillis = 0;
 				return;
@@ -2660,7 +2665,7 @@ public class L1PcInstance extends L1Character {
 	// 记录文件档
 	private static void usePlugin(String info) {
 		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter("usePlugin.txt", true));
+			BufferedWriter out = new BufferedWriter(new FileWriter("log/外挂喝水记录.txt", true));
 			out.write(info + "\r\n");
 			out.close();
 		} catch (IOException e) {

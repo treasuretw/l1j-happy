@@ -17,19 +17,26 @@ package l1j.server.server.clientpackets;
 import static l1j.server.server.model.skill.L1SkillId.AWAKEN_ANTHARAS;
 import static l1j.server.server.model.skill.L1SkillId.AWAKEN_FAFURION;
 import static l1j.server.server.model.skill.L1SkillId.AWAKEN_VALAKAS;
-import static l1j.server.server.model.skill.L1SkillId.CURSE_PARALYZE;
 import static l1j.server.server.model.skill.L1SkillId.SHOCK_STUN;
 import static l1j.server.server.model.skill.L1SkillId.EARTH_BIND;
 
 import static l1j.server.server.model.skill.L1SkillId.ABSOLUTE_BARRIER;
 import static l1j.server.server.model.skill.L1SkillId.COOKING_NOW;
 import static l1j.server.server.model.skill.L1SkillId.DECAY_POTION;
+import static l1j.server.server.model.skill.L1SkillId.FOG_OF_SLEEPING;
+import static l1j.server.server.model.skill.L1SkillId.FREEZING_BLIZZARD;
+import static l1j.server.server.model.skill.L1SkillId.FREEZING_BREATH;
+import static l1j.server.server.model.skill.L1SkillId.ICE_LANCE;
+import static l1j.server.server.model.skill.L1SkillId.ICE_LANCE_BASILISK;
+import static l1j.server.server.model.skill.L1SkillId.ICE_LANCE_COCKATRICE;
 import static l1j.server.server.model.skill.L1SkillId.SHAPE_CHANGE;
 import static l1j.server.server.model.skill.L1SkillId.SOLID_CARRIAGE;
+import static l1j.server.server.model.skill.L1SkillId.STATUS_CURSE_PARALYZED;
 import static l1j.server.server.model.skill.L1SkillId.STATUS_FLOATING_EYE;
 import static l1j.server.server.model.skill.L1SkillId.STATUS_HOLY_MITHRIL_POWDER;
 import static l1j.server.server.model.skill.L1SkillId.STATUS_HOLY_WATER;
 import static l1j.server.server.model.skill.L1SkillId.STATUS_HOLY_WATER_OF_EVA;
+//import static l1j.server.server.model.skill.L1SkillId.IMMUNE_TO_HARM;
 
 import java.lang.reflect.Constructor;
 import java.sql.Connection;
@@ -159,13 +166,20 @@ public class C_ItemUSe extends ClientBasePacket {
 			return;
 		}
 
-		// 防外挂自动喝水
-		if (pc.hasSkillEffect(CURSE_PARALYZE)		//木乃伊
-				|| pc.hasSkillEffect(SHOCK_STUN)	//冲晕
-				|| pc.hasSkillEffect(EARTH_BIND)) {	//大地屏障
-			pc.checkUseItemInterval();
+		// 防外挂自动喝水 add
+		if (pc.hasSkillEffect(ICE_LANCE)					// 冰矛围篱
+				//		|| pc.hasSkillEffect(IMMUNE_TO_HARM)		// 圣结界 (测试用)
+						|| pc.hasSkillEffect(FREEZING_BLIZZARD) 	// 冰雪飓风
+						|| pc.hasSkillEffect(FREEZING_BREATH)		// 寒冰喷吐
+						|| pc.hasSkillEffect(EARTH_BIND)			// 大地屏障
+						|| pc.hasSkillEffect(ICE_LANCE_COCKATRICE)	// 亚力安冰矛围篱
+						|| pc.hasSkillEffect(ICE_LANCE_BASILISK)	// 邪恶蜥蜴冰矛围篱
+						|| pc.hasSkillEffect(SHOCK_STUN)			// 冲击之晕
+						|| pc.hasSkillEffect(FOG_OF_SLEEPING)		// 沉睡之雾
+						|| pc.hasSkillEffect(STATUS_CURSE_PARALYZED)) {	// 木乃尹状态
+			pc.checkUseItemInterval(abyte0, client);
 		}
-		//end
+		// 防外挂自动喝水 end
 
 		L1ItemInstance l1iteminstance = pc.getInventory().getItem(itemObjid);
 
