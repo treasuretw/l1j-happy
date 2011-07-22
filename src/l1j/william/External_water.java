@@ -1,8 +1,8 @@
 package l1j.william;
 
 import l1j.server.server.ClientThread;
-import l1j.server.server.model.L1World;
 import l1j.server.server.model.Instance.L1PcInstance;
+import l1j.server.server.serverpackets.S_SystemMessage;
 
 /**
  * 处理外挂非法移动
@@ -32,7 +32,7 @@ public class External_water {
 			_oldUseItemTimeInMillis = 0;
 		} else {
 			if (_UseItemCount >= 3) { // 连续走三步以上
-				L1World.getInstance().broadcastServerMessage("怀疑您正在使用外挂,您被自动防挂系统踢下线!! ");
+				pc.sendPackets(new S_SystemMessage("怀疑您正在使用外挂,您被自动防挂系统踢下线!! "));
 				Thread.sleep(1000);				// 暂停一秒
 				pc.getNetConnection().kick();	// 踢下线
 
