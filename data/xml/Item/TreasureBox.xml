@@ -1568,4 +1568,10 @@
        <TreasureBox Type="SPECIFIC" ItemId="5070">		<!--元宝箱子 * 1-->
 		<Item ItemId="5000" Count="50000" />		<!--元宝数量 * 50000-->
 	</TreasureBox>
+        <!--殷海薩的箱子-->
+	<TreasureBox Type="RANDOM" ItemId="5081">                <!--殷海薩的箱子-->
+		<Item ItemId="5075" Count="1" Chance="60" />     <!--殷海薩的祝福(增加25%)-->
+		<Item ItemId="5076" Count="1" Chance="30" />     <!--殷海薩的祝福(增加50%)-->
+		<Item ItemId="5077" Count="1" Chance="10" />     <!--殷海薩的祝福(增加100%)-->
+	</TreasureBox>
 </TreasureBoxList>

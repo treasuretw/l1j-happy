@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost_3306
 Source Server Version : 50150
 Source Host           : localhost:3306
-Source Database       : happy-weixiugai
+Source Database       : l1j-cn
 
 Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-21 19:14:07
+Date: 2011-07-23 18:16:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -53,7 +53,7 @@ CREATE TABLE `z_copy_etcitem` (
   `delete_date` datetime DEFAULT NULL,
   `DropBoard` int(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`item_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=600008 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=600009 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of z_copy_etcitem
@@ -134,9 +134,10 @@ INSERT INTO `z_copy_etcitem` VALUES ('5071', '副本钥匙', '$9646', '$9646', '
 INSERT INTO `z_copy_etcitem` VALUES ('5074', '第三关钥匙', '第三关钥匙', '第三关钥匙', 'scroll', 'normal', 'glass', '0', '1025', '22', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `z_copy_etcitem` VALUES ('5072', '第一关钥匙', '第一关钥匙', '第一关钥匙', 'scroll', 'normal', 'glass', '0', '1025', '22', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `z_copy_etcitem` VALUES ('5073', '第二关钥匙', '第二关钥匙', '第二关钥匙', 'scroll', 'normal', 'glass', '0', '1025', '22', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
-INSERT INTO `z_copy_etcitem` VALUES ('5075', '殷海薩的祝福(增加25%)', '$9743', '$9743', 'other', 'normal', 'gemstone', '0', '3725', '3963', '4168', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '0');
-INSERT INTO `z_copy_etcitem` VALUES ('5076', '殷海薩的祝福(增加50%)', '$9744', '$9744', 'other', 'normal', 'gemstone', '0', '3727', '3963', '4167', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '0');
-INSERT INTO `z_copy_etcitem` VALUES ('5077', '殷海薩的祝福(增加100%)', '$9745', '$9745', 'other', 'normal', 'gemstone', '0', '3721', '3963', '4166', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '0');
+INSERT INTO `z_copy_etcitem` VALUES ('5075', '殷海薩的祝福(增加25%)', '$9743', '$9743', 'other', 'normal', 'gemstone', '0', '3725', '3963', '4168', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '0');
+INSERT INTO `z_copy_etcitem` VALUES ('5076', '殷海薩的祝福(增加50%)', '$9744', '$9744', 'other', 'normal', 'gemstone', '0', '3727', '3963', '4167', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '0');
+INSERT INTO `z_copy_etcitem` VALUES ('5077', '殷海薩的祝福(增加100%)', '$9745', '$9745', 'other', 'normal', 'gemstone', '0', '3721', '3963', '4166', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '0');
 INSERT INTO `z_copy_etcitem` VALUES ('5078', '隐藏之谷活动卷轴', '$9568', '$9568', 'scroll', 'normal', 'paper', '630', '551', '2878', '0', '1', '0', '0', '0', '0', '0', '32685', '32868', '5805', '1', '0', '0', '0', '4', '1500', '0', '0', '0', '0', '0', null, '0');
 INSERT INTO `z_copy_etcitem` VALUES ('5079', '武器合成石', '$9564', '$9564', 'ItemBlend', 'normal', 'glass', '0', '3279', '3963', '2772', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `z_copy_etcitem` VALUES ('5080', '天空之城传送卷轴', '$9563', '$9563', 'TeleportScroll', 'normal', 'glass', '0', '3073', '3963', '2772', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
+INSERT INTO `z_copy_etcitem` VALUES ('5081', '殷海薩的箱子', '$9565', '$9565', 'treasure_box', 'normal', 'gold', '0', '3729', '7203', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '1000', '0', '0', '1', '0', '0', null, '0');
