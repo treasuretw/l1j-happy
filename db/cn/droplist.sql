@@ -1,23 +1,16 @@
 /*
-Navicat MySQL Data Transfer
-
-Source Server         : localhost_3306
-Source Server Version : 50150
-Source Host           : localhost:3306
-Source Database       : happy-weixiugai
-
-Target Server Type    : MYSQL
-Target Server Version : 50150
-File Encoding         : 65001
-
-Date: 2011-07-21 10:08:38
+MySQL Data Transfer
+Source Host: localhost
+Source Database: l1jdb_cn
+Target Host: localhost
+Target Database: l1jdb_cn
+Date: 2011-7-23 ÏÂÎç 05:53:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for `droplist`
+-- Table structure for droplist
 -- ----------------------------
-DROP TABLE IF EXISTS `droplist`;
 CREATE TABLE `droplist` (
   `mobId` int(6) unsigned NOT NULL DEFAULT '0',
   `itemId` int(6) unsigned NOT NULL DEFAULT '0',
@@ -28,7 +21,7 @@ CREATE TABLE `droplist` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of droplist
+-- Records 
 -- ----------------------------
 INSERT INTO `droplist` VALUES ('45005', '40056', '1', '1', '300000');
 INSERT INTO `droplist` VALUES ('45006', '40056', '1', '1', '100000');
@@ -9737,7 +9730,12 @@ INSERT INTO `droplist` VALUES ('81173', '40899', '1', '1', '100000');
 INSERT INTO `droplist` VALUES ('81173', '49262', '1', '1', '10000');
 INSERT INTO `droplist` VALUES ('81173', '140100', '1', '1', '100000');
 INSERT INTO `droplist` VALUES ('81043', '49225', '1', '1', '1000000');
+INSERT INTO `droplist` VALUES ('81253', '49229', '1', '1', '500000');
 INSERT INTO `droplist` VALUES ('81254', '49202', '1', '1', '1000000');
+INSERT INTO `droplist` VALUES ('81312', '49231', '1', '1', '1000000');
+INSERT INTO `droplist` VALUES ('81313', '49206', '1', '1', '1000000');
+INSERT INTO `droplist` VALUES ('81314', '49203', '1', '1', '500000');
+INSERT INTO `droplist` VALUES ('81315', '49204', '1', '1', '500000');
 INSERT INTO `droplist` VALUES ('95002', '40020', '1', '1', '10000');
 INSERT INTO `droplist` VALUES ('95002', '40306', '1', '1', '10000');
 INSERT INTO `droplist` VALUES ('95002', '49111', '1', '1', '10000');
@@ -9935,8 +9933,3 @@ INSERT INTO `droplist` VALUES ('97034', '47033', '1', '1', '30000');
 INSERT INTO `droplist` VALUES ('97034', '47034', '1', '1', '30000');
 INSERT INTO `droplist` VALUES ('97034', '47035', '1', '1', '30000');
 INSERT INTO `droplist` VALUES ('97034', '47036', '1', '1', '100000');
-INSERT INTO `droplist` VALUES ('81253', '49229', '1', '1', '500000');
-INSERT INTO `droplist` VALUES ('81312', '49231', '1', '1', '1000000');
-INSERT INTO `droplist` VALUES ('81313', '49206', '1', '1', '1000000');
-INSERT INTO `droplist` VALUES ('81314', '49203', '1', '1', '500000');
-INSERT INTO `droplist` VALUES ('81315', '49204', '1', '1', '500000');

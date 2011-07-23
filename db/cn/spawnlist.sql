@@ -1,23 +1,16 @@
 /*
-Navicat MySQL Data Transfer
-
-Source Server         : localhost_3306
-Source Server Version : 50150
-Source Host           : localhost:3306
-Source Database       : happy-weixiugai
-
-Target Server Type    : MYSQL
-Target Server Version : 50150
-File Encoding         : 65001
-
-Date: 2011-07-21 10:35:36
+MySQL Data Transfer
+Source Host: localhost
+Source Database: l1jdb_cn
+Target Host: localhost
+Target Database: l1jdb_cn
+Date: 2011-7-23 œ¬ŒÁ 05:54:33
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for `spawnlist`
+-- Table structure for spawnlist
 -- ----------------------------
-DROP TABLE IF EXISTS `spawnlist`;
 CREATE TABLE `spawnlist` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `location` varchar(45) NOT NULL DEFAULT '',
@@ -44,7 +37,7 @@ CREATE TABLE `spawnlist` (
 ) ENGINE=MyISAM AUTO_INCREMENT=801500529 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of spawnlist
+-- Records 
 -- ----------------------------
 INSERT INTO `spawnlist` VALUES ('1', 'ÈùíËõô', '1', '45005', '0', '33067', '33392', '0', '0', '0', '0', '0', '0', '7', '60', '120', '4', '0', '100', '0', '0');
 INSERT INTO `spawnlist` VALUES ('2', 'ÈùíËõô', '0', '45005', '0', '33618', '33247', '0', '0', '0', '0', '0', '0', '7', '60', '120', '4', '0', '100', '0', '0');
