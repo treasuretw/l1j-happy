@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost_3306
 Source Server Version : 50150
 Source Host           : localhost:3306
-Source Database       : happy-weixiugai
+Source Database       : l1j-cn
 
 Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-20 20:24:39
+Date: 2011-07-23 16:06:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -41,8 +41,9 @@ CREATE TABLE `z_copy_spawnlist_boss` (
   `spawn_type` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `percentage` tinyint(3) unsigned NOT NULL DEFAULT '100',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=128 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=400335 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of z_copy_spawnlist_boss
 -- ----------------------------
+INSERT INTO `z_copy_spawnlist_boss` VALUES ('128', '须曼', 'Oren', '1', '99021', '0', '32773', '32939', '12', '12', '32704', '32831', '32832', '33087', '5', '420', '1', '0', '0', '0', '100');
