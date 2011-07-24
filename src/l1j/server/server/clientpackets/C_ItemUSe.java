@@ -49,8 +49,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import l1j.william.DragonGate;		// 副本  (测试)
+import l1j.william.ItemMagic;
 import l1j.william.L1Blend;
 import l1j.william.L1CheckPcItem;	// 防止复制道具
+import l1j.william.L1WilliamItemMagic;
 import l1j.william.L1WilliamTeleportScroll;
 import l1j.server.Config;
 import l1j.server.L1DatabaseFactory;
@@ -456,6 +458,119 @@ public class C_ItemUSe extends ClientBasePacket {
 						pc.sendPackets(new S_ServerMessage(79)); // \f1没有任何事情发生。
 					}
 				}
+
+				// 魔法道具  add
+				else if (itemId == L1WilliamItemMagic.checkItemId(itemId)) {
+					L1WilliamItemMagic Item_Magic = ItemMagic.getInstance().getTemplate(itemId);
+
+					if (Item_Magic.getCheckClass() != 0) { // 职业判断
+						byte class_id = (byte) 0;
+						String msg = "";
+
+						if (pc.isCrown()) { // 王族
+							class_id = 1;
+						} else if (pc.isKnight()) { // 骑士
+							class_id = 2;
+						} else if (pc.isWizard()) { // 法师
+							class_id = 3;
+						} else if (pc.isElf()) { // 精灵
+							class_id = 4;
+						} else if (pc.isDarkelf()) { // 黑暗精灵
+							class_id = 5;
+						} else if (pc.isDragonKnight()) { // 龙骑士
+							class_id = 6;
+						} else if (pc.isIllusionist()) {  // 幻术师
+							class_id = 7;
+						}
+
+						switch(Item_Magic.getCheckClass()) {
+						case 1:
+							msg = "王族";
+							break;
+						case 2:
+							msg = "骑士";
+							break;
+						case 3:
+							msg = "法师";
+							break;
+						case 4:
+							msg = "精灵";
+							break;
+						case 5:
+							msg = "黑暗精灵";
+							break;
+						case 6:
+							msg = "龙骑士";
+							break;
+						case 7:
+							msg = "幻术师";
+							break;
+						}
+
+						if (Item_Magic.getCheckClass() != class_id) { // 职业不符
+							pc.sendPackets(new S_ServerMessage(166, "职业必须是" + msg + "才能使用此道具"));
+							return;
+						}
+					}
+
+					if (Item_Magic.getCheckItem() != 0) { // 携带物品判断
+						if (!pc.getInventory().checkItem(Item_Magic.getCheckItem())) {
+							L1Item temp = ItemTable.getInstance().getTemplate(Item_Magic.getCheckItem());
+							pc.sendPackets(new S_ServerMessage(166, "必须有" + " (" + temp.getName() + ") " + "才能使用此道具"));
+							return;
+						}
+					}
+
+					if (spellsc_objid == pc.getId() && l1iteminstance.getItem().getUseType() != 30) { // spell_buff
+						pc.sendPackets(new S_ServerMessage(281)); // \f1施咒取消。
+						return;
+					}
+					if (spellsc_objid == 0
+							&& l1iteminstance.getItem().getUseType() != 0
+							&& l1iteminstance.getItem().getUseType() != 26
+							&& l1iteminstance.getItem().getUseType() != 27) {
+						return;
+					}
+
+					cancelAbsoluteBarrier(pc);
+
+					L1SkillUse l1skilluse = new L1SkillUse();
+					if (Item_Magic.getRemoveItem() == 0) { // 删除道具判断
+						switch(Item_Magic.getSkillId())
+						{
+						case 12:
+						case 21:
+						case 107:
+							l1skilluse.handleCommands(client.getActiveChar(),
+									Item_Magic.getSkillId(), l, 0, 0,
+									null, 0, L1SkillUse.TYPE_NORMAL);
+							break;
+						default:
+							l1skilluse.handleCommands(client.getActiveChar()
+									, Item_Magic.getSkillId(), spellsc_objid, spellsc_x, spellsc_y
+									, null, 0, L1SkillUse.TYPE_NORMAL);
+							break;
+						}
+					} else {
+						switch(Item_Magic.getSkillId())
+						{
+						case 12:
+						case 21:
+						case 107:
+							l1skilluse.handleCommands(client.getActiveChar(),
+									Item_Magic.getSkillId(), l, 0, 0,
+									null, 0, L1SkillUse.TYPE_SPELLSC);
+							break;
+						default:
+							l1skilluse.handleCommands(client.getActiveChar()
+									, Item_Magic.getSkillId(), spellsc_objid, spellsc_x, spellsc_y
+									, null, 0, L1SkillUse.TYPE_SPELLSC);
+							break;
+						}
+						pc.getInventory().removeItem(l1iteminstance, 1);
+					}
+				}
+				// 魔法道具  end
 
 				else if (itemId == 47103) { // 新鲜的饵
 					pc.sendPackets(new S_ServerMessage(452, l1iteminstance.getLogName())); // %0%s 被选择了。

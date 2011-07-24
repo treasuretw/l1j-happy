@@ -1,0 +1,7 @@
+﻿魔法道具
+
+item_id         道具 ID (对应 etcitem)
+checkClass	检查可用职业 (0全职 1王族 2骑士 3法师 4精灵 5黑暗精灵 6龙骑士 7幻术师)
+checkItem	携带物品判断 (此道具不会删除) (0不需要道具即可施法)
+skill_id	魔法 ID (对应 skills)
+removeItem	是否删除道具 (0不删除 1删除)
