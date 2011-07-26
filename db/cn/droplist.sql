@@ -4,7 +4,7 @@ Source Host: localhost
 Source Database: l1jdb_cn
 Target Host: localhost
 Target Database: l1jdb_cn
-Date: 2011-7-23 ÏÂÎç 05:53:39
+Date: 2011-7-24 ÏÂÎç 02:09:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -84,7 +84,7 @@ INSERT INTO `droplist` VALUES ('45020', '40308', '5', '10', '650000');
 INSERT INTO `droplist` VALUES ('45020', '41222', '1', '1', '250000');
 INSERT INTO `droplist` VALUES ('45021', '40056', '1', '1', '300000');
 INSERT INTO `droplist` VALUES ('45023', '40056', '1', '1', '300000');
-INSERT INTO `droplist` VALUES ('45023', '40308', '15', '38', '0');
+INSERT INTO `droplist` VALUES ('45023', '40308', '15', '38', '1000000');
 INSERT INTO `droplist` VALUES ('45023', '40405', '1', '1', '300000');
 INSERT INTO `droplist` VALUES ('45023', '41276', '1', '1', '300000');
 INSERT INTO `droplist` VALUES ('45024', '31', '1', '1', '50000');
@@ -8321,7 +8321,7 @@ INSERT INTO `droplist` VALUES ('45937', '140100', '1', '1', '100000');
 INSERT INTO `droplist` VALUES ('45938', '40007', '1', '1', '50000');
 INSERT INTO `droplist` VALUES ('45938', '40179', '0', '0', '10000');
 INSERT INTO `droplist` VALUES ('45938', '40183', '1', '1', '10000');
-INSERT INTO `droplist` VALUES ('45938', '40196', '1', '0', '50000');
+INSERT INTO `droplist` VALUES ('45938', '40196', '1', '1', '50000');
 INSERT INTO `droplist` VALUES ('45938', '40210', '0', '0', '10000');
 INSERT INTO `droplist` VALUES ('45938', '40225', '0', '0', '5000');
 INSERT INTO `droplist` VALUES ('45938', '40250', '1', '1', '50000');

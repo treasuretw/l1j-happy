@@ -38,6 +38,7 @@ import l1j.server.server.model.identity.L1ItemId;
 import l1j.server.server.serverpackets.S_ServerMessage;
 import l1j.server.server.serverpackets.S_SystemMessage;
 import l1j.server.server.templates.L1Drop;
+import l1j.server.server.utils.PerformanceTimer;
 import l1j.server.server.utils.Random;
 import l1j.server.server.utils.SQLUtil;
 import l1j.server.server.utils.collections.Lists;
@@ -68,10 +69,15 @@ public class DropTable {
 	private Map<Integer, List<L1Drop>> allDropList() {
 		Map<Integer, List<L1Drop>> droplistMap = Maps.newMap();
 
+		PerformanceTimer timer = new PerformanceTimer();
 		Connection con = null;
 		PreparedStatement pstm = null;
 		ResultSet rs = null;
 		try {
+			if (Config.AllMonDrop) {
+				System.out.print("╠》正在侦测 怪物掉落 设定...");
+				System.out.println("完成!      耗时: " + timer.get() + "ms");
+			}
 			con = L1DatabaseFactory.getInstance().getConnection();
 			pstm = con.prepareStatement("select * from droplist union select * from z_copy_droplist");
 			rs = pstm.executeQuery();
@@ -81,6 +87,21 @@ public class DropTable {
 				int min = rs.getInt("min");
 				int max = rs.getInt("max");
 				int chance = rs.getInt("chance");
+
+				if (Config.AllMonDrop) {
+					if (NpcTable.getInstance().getTemplate(mobId) == null) {
+						System.out.println("→怪物编号：" + mobId + " 不存在。");
+					}
+					if (ItemTable.getInstance().getTemplate(itemId) == null) {
+						System.out.println("→道具编号：" + itemId + " 不存在。");
+					}
+					if (min > max) {
+						System.out.println("→怪物：" + mobId + " 道具：" + itemId + " 最小值与最大值设定错误。");
+					}
+					if ((chance <= 0) || (chance > 1000000)) {
+						System.out.println("→怪物：" + mobId + " 道具：" + itemId + " 机率设定错误。");
+					}
+				}
 
 				L1Drop drop = new L1Drop(mobId, itemId, min, max, chance);
 

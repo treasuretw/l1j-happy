@@ -580,7 +580,8 @@ public final class Config {
 	public static int FightminPlayer;			// 死斗竞技场两队最低参加人数
 	public static int FightItem;				// 死斗竞技场优胜物品编号
 	public static int FightCount;				// 死斗竞技场优胜物品数量
-
+	
+	public static boolean AllMonDrop;			// 侦测怪物掉落设定
 
 	/** 伺服器设定档 */
 	public static final String SERVER_CONFIG_FILE = "./config/server.properties";
@@ -1176,6 +1177,10 @@ public final class Config {
 			FightCount = Integer.parseInt(otherSettings.getProperty(
 					"FightCount", "1000000"));
 			
+			// 侦测怪物掉落设定
+			AllMonDrop = Boolean.parseBoolean(otherSettings.getProperty(
+					"AllMonDrop", "false"));
+
 		}
 		catch (Exception e) {
 			_log.log(Level.SEVERE, e.getLocalizedMessage(), e);

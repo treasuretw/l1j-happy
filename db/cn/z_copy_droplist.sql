@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost_3306
 Source Server Version : 50150
 Source Host           : localhost:3306
-Source Database       : happy-weixiugai
+Source Database       : l1j-cn
 
 Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-20 20:24:04
+Date: 2011-07-26 13:35:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,7 +30,7 @@ CREATE TABLE `z_copy_droplist` (
 -- ----------------------------
 -- Records of z_copy_droplist
 -- ----------------------------
-INSERT INTO `z_copy_droplist` VALUES ('99021', '40308', '30000', '12000', '1000000');
+INSERT INTO `z_copy_droplist` VALUES ('99021', '40308', '120000', '300000', '1000000');
 INSERT INTO `z_copy_droplist` VALUES ('99021', '40074', '1', '4', '30000');
 INSERT INTO `z_copy_droplist` VALUES ('99021', '40087', '1', '4', '30000');
 INSERT INTO `z_copy_droplist` VALUES ('99021', '140074', '1', '2', '20000');
