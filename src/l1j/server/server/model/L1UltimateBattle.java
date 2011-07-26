@@ -131,30 +131,25 @@ public class L1UltimateBattle {
 	 *            現在のラウンド
 	 */
 	private void spawnSupplies(int curRound) {
-		if (curRound == 1) {
-			spawnGroundItem(L1ItemId.YB, 10, 60);
-			spawnGroundItem(L1ItemId.POTION_OF_CURE_POISON, 3, 20);
-			spawnGroundItem(L1ItemId.POTION_OF_EXTRA_HEALING, 5, 20);
-			spawnGroundItem(L1ItemId.POTION_OF_GREATER_HEALING, 3, 20);
-			spawnGroundItem(40317, 1, 5); // 砥石
-			spawnGroundItem(40079, 1, 20); // 帰還スク
+		if (curRound == 1) {		// 一阶段
+			spawnGroundItem(L1ItemId.YB, 10, 60); // 道具, 数量, 堆数
+			spawnGroundItem(40044, 1, 10);	// 钻石
+			spawnGroundItem(40045, 1, 10);	// 红宝石
+			spawnGroundItem(40046, 1, 10);	// 蓝宝石
 		}
-		else if (curRound == 2) {
+		else if (curRound == 2) {	// 二阶段
 			spawnGroundItem(L1ItemId.YB, 50, 50);
-			spawnGroundItem(L1ItemId.POTION_OF_CURE_POISON, 5, 20);
-			spawnGroundItem(L1ItemId.POTION_OF_EXTRA_HEALING, 10, 20);
-			spawnGroundItem(L1ItemId.POTION_OF_GREATER_HEALING, 5, 20);
-			spawnGroundItem(40317, 1, 7); // 砥石
-			spawnGroundItem(40093, 1, 10); // ブランクスク(Lv4)
-			spawnGroundItem(40079, 1, 5); // 帰還スク
+			spawnGroundItem(40048, 1, 10);	// 品质钻石
+			spawnGroundItem(40049, 1, 10);	// 品质红宝石
+			spawnGroundItem(40050, 1, 10);	// 品质蓝宝石
+			spawnGroundItem(40093, 1, 10);	// 空的魔法卷轴 (Lv4)
 		}
-		else if (curRound == 3) {
+		else if (curRound == 3) {	// 三阶段
 			spawnGroundItem(L1ItemId.YB, 100, 30);
-			spawnGroundItem(L1ItemId.POTION_OF_CURE_POISON, 7, 20);
-			spawnGroundItem(L1ItemId.POTION_OF_EXTRA_HEALING, 20, 20);
-			spawnGroundItem(L1ItemId.POTION_OF_GREATER_HEALING, 10, 20);
-			spawnGroundItem(40317, 1, 10); // 砥石
-			spawnGroundItem(40094, 1, 10); // ブランクスク(Lv5)
+			spawnGroundItem(40052, 1, 5);	// 高品质钻石
+			spawnGroundItem(40053, 1, 5);	// 高品质红宝石
+			spawnGroundItem(40054, 1, 5);	// 高品质蓝宝石
+			spawnGroundItem(40094, 1, 10);	// 空的魔法卷轴 (Lv5)
 		}
 	}
 
