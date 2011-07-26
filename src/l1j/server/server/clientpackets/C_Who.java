@@ -21,6 +21,7 @@ import l1j.server.server.model.L1World;
 import l1j.server.server.model.Instance.L1PcInstance;
 import l1j.server.server.serverpackets.S_BlueMessage;
 import l1j.server.server.serverpackets.S_Message_YN;
+import l1j.server.server.serverpackets.S_PacketBox;
 import l1j.server.server.serverpackets.S_ServerMessage;
 import l1j.server.server.serverpackets.S_SkillSound;
 import l1j.server.server.serverpackets.S_SystemMessage;
@@ -114,7 +115,10 @@ public class C_Who extends ClientBasePacket {
 	                pc.sendPackets(s_whoamount);
 	                pc.sendPackets(new S_SystemMessage("在线查询服务已关闭。"));
 				}
-				// 対象が居ない場合はメッセージ表示する？わかる方修正お願いします。
+
+				if (pc.isGm()) { // GM点选玩家清单可瞬移到玩家身边
+					pc.sendPackets(new S_PacketBox(S_PacketBox.CALL_SOMETHING));
+				}
 			}
 		}
 
