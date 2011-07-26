@@ -1,16 +1,23 @@
 /*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: l1jdb_cn
-Target Host: localhost
-Target Database: l1jdb_cn
-Date: 2011-7-24 ÏÂÎç 02:09:20
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50150
+Source Host           : localhost:3306
+Source Database       : l1jdb_cn
+
+Target Server Type    : MYSQL
+Target Server Version : 50150
+File Encoding         : 65001
+
+Date: 2011-07-26 18:20:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
--- Table structure for droplist
+-- Table structure for `droplist`
 -- ----------------------------
+DROP TABLE IF EXISTS `droplist`;
 CREATE TABLE `droplist` (
   `mobId` int(6) unsigned NOT NULL DEFAULT '0',
   `itemId` int(6) unsigned NOT NULL DEFAULT '0',
@@ -21,7 +28,7 @@ CREATE TABLE `droplist` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records 
+-- Records of droplist
 -- ----------------------------
 INSERT INTO `droplist` VALUES ('45005', '40056', '1', '1', '300000');
 INSERT INTO `droplist` VALUES ('45006', '40056', '1', '1', '100000');
@@ -1509,6 +1516,7 @@ INSERT INTO `droplist` VALUES ('45248', '40074', '1', '1', '5000');
 INSERT INTO `droplist` VALUES ('45248', '40087', '1', '1', '5000');
 INSERT INTO `droplist` VALUES ('45248', '40164', '1', '1', '500');
 INSERT INTO `droplist` VALUES ('45248', '40165', '1', '1', '500');
+INSERT INTO `droplist` VALUES ('45248', '40166', '1', '1', '500');
 INSERT INTO `droplist` VALUES ('45248', '40308', '80', '350', '1000000');
 INSERT INTO `droplist` VALUES ('45249', '20188', '1', '1', '5000');
 INSERT INTO `droplist` VALUES ('45249', '20425', '1', '1', '1000');
@@ -2135,8 +2143,8 @@ INSERT INTO `droplist` VALUES ('45316', '40089', '1', '1', '300000');
 INSERT INTO `droplist` VALUES ('45316', '40093', '1', '1', '300000');
 INSERT INTO `droplist` VALUES ('45316', '40094', '1', '1', '300000');
 INSERT INTO `droplist` VALUES ('45316', '40100', '1', '1', '300000');
-INSERT INTO `droplist` VALUES ('45316', '40165', '1', '1', '50000');
-INSERT INTO `droplist` VALUES ('45316', '40166', '1', '1', '5000');
+INSERT INTO `droplist` VALUES ('46047', '40165', '1', '1', '500');
+INSERT INTO `droplist` VALUES ('45503', '40166', '1', '1', '10000');
 INSERT INTO `droplist` VALUES ('45316', '40175', '1', '1', '50000');
 INSERT INTO `droplist` VALUES ('45316', '40176', '1', '1', '50000');
 INSERT INTO `droplist` VALUES ('45316', '40184', '1', '1', '50000');
@@ -5302,7 +5310,7 @@ INSERT INTO `droplist` VALUES ('45574', '40013', '1', '1', '300000');
 INSERT INTO `droplist` VALUES ('45574', '40667', '1', '1', '10000');
 INSERT INTO `droplist` VALUES ('45574', '40668', '1', '1', '10000');
 INSERT INTO `droplist` VALUES ('45574', '40675', '1', '1', '10000');
-INSERT INTO `droplist` VALUES ('45574', '41147', '1', '1', '5000');
+INSERT INTO `droplist` VALUES ('45680', '40165', '1', '1', '50000');
 INSERT INTO `droplist` VALUES ('45575', '40014', '1', '1', '100000');
 INSERT INTO `droplist` VALUES ('45575', '40015', '1', '1', '100000');
 INSERT INTO `droplist` VALUES ('45575', '40443', '1', '1', '10000');
@@ -9442,7 +9450,6 @@ INSERT INTO `droplist` VALUES ('46142', '40048', '1', '1', '300000');
 INSERT INTO `droplist` VALUES ('46142', '40053', '1', '1', '300000');
 INSERT INTO `droplist` VALUES ('46142', '40089', '1', '1', '300000');
 INSERT INTO `droplist` VALUES ('46142', '40093', '1', '1', '300000');
-INSERT INTO `droplist` VALUES ('46142', '40164', '1', '1', '50000');
 INSERT INTO `droplist` VALUES ('46142', '40210', '1', '1', '50000');
 INSERT INTO `droplist` VALUES ('46142', '40215', '1', '1', '50000');
 INSERT INTO `droplist` VALUES ('46142', '40219', '1', '1', '1000');
@@ -9880,6 +9887,29 @@ INSERT INTO `droplist` VALUES ('97005', '40029', '1', '1', '300000');
 INSERT INTO `droplist` VALUES ('97005', '40030', '1', '1', '50000');
 INSERT INTO `droplist` VALUES ('97005', '40095', '1', '1', '100000');
 INSERT INTO `droplist` VALUES ('97005', '40308', '5', '15', '1000000');
+INSERT INTO `droplist` VALUES ('97008', '20146', '1', '1', '300000');
+INSERT INTO `droplist` VALUES ('97008', '40044', '1', '1', '1000000');
+INSERT INTO `droplist` VALUES ('97008', '40048', '1', '1', '1000000');
+INSERT INTO `droplist` VALUES ('97008', '40052', '1', '1', '1000000');
+INSERT INTO `droplist` VALUES ('97008', '40207', '1', '1', '300000');
+INSERT INTO `droplist` VALUES ('97008', '40222', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97008', '40249', '1', '1', '300000');
+INSERT INTO `droplist` VALUES ('97008', '40304', '1', '1', '1000000');
+INSERT INTO `droplist` VALUES ('97008', '40341', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97008', '40342', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97008', '40343', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97008', '40344', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97008', '40345', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97008', '40346', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97008', '40347', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97008', '40348', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97008', '41148', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97008', '47011', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97008', '47012', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97008', '47013', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97008', '100057', '1', '1', '300000');
+INSERT INTO `droplist` VALUES ('97008', '120054', '1', '1', '300000');
+INSERT INTO `droplist` VALUES ('97008', '120300', '1', '1', '300000');
 INSERT INTO `droplist` VALUES ('97014', '40013', '1', '1', '100000');
 INSERT INTO `droplist` VALUES ('97014', '40396', '1', '1', '500');
 INSERT INTO `droplist` VALUES ('97014', '47029', '1', '1', '30000');
@@ -9933,3 +9963,26 @@ INSERT INTO `droplist` VALUES ('97034', '47033', '1', '1', '30000');
 INSERT INTO `droplist` VALUES ('97034', '47034', '1', '1', '30000');
 INSERT INTO `droplist` VALUES ('97034', '47035', '1', '1', '30000');
 INSERT INTO `droplist` VALUES ('97034', '47036', '1', '1', '100000');
+INSERT INTO `droplist` VALUES ('97046', '20127', '1', '1', '300000');
+INSERT INTO `droplist` VALUES ('97046', '40047', '1', '1', '1000000');
+INSERT INTO `droplist` VALUES ('97046', '40051', '1', '1', '1000000');
+INSERT INTO `droplist` VALUES ('97046', '40055', '1', '1', '1000000');
+INSERT INTO `droplist` VALUES ('97046', '40204', '1', '1', '300000');
+INSERT INTO `droplist` VALUES ('97046', '40222', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97046', '40255', '1', '1', '300000');
+INSERT INTO `droplist` VALUES ('97046', '40306', '1', '1', '1000000');
+INSERT INTO `droplist` VALUES ('97046', '40357', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97046', '40358', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97046', '40359', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97046', '40360', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97046', '40361', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97046', '40362', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97046', '40363', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97046', '40364', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97046', '41148', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97046', '47011', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97046', '47012', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97046', '47014', '1', '1', '200000');
+INSERT INTO `droplist` VALUES ('97046', '100057', '1', '1', '300000');
+INSERT INTO `droplist` VALUES ('97046', '120059', '1', '1', '300000');
+INSERT INTO `droplist` VALUES ('97046', '120285', '1', '1', '300000');
