@@ -198,17 +198,17 @@
 <!--古魯丁村莊-->
 	<!--魔法娃娃的袋子-->
 	<TreasureBox Type="RANDOM" ItemId="41247">
-		<Item ItemId="49039" Count="1" Chance="17" />		<!--魔法娃娃：石頭高崙-->
-		<Item ItemId="41248" Count="1" Chance="16.6" />		<!--魔法娃娃：肥肥-->
-		<Item ItemId="41249" Count="1" Chance="16.6" />		<!--魔法娃娃：小思克巴-->
-		<Item ItemId="41250" Count="1" Chance="16.6" />		<!--魔法娃娃：野狼寶寶-->
-		<Item ItemId="49037" Count="1" Chance="16.6" />		<!--魔法娃娃：長老-->
-		<Item ItemId="49038" Count="1" Chance="16.6" />		<!--魔法娃娃：奎斯坦修-->
-		<Item ItemId="47105" Count="1" Chance="15.5" />		<!--魔法娃娃：希尔黛斯-->
-		<Item ItemId="47106" Count="1" Chance="15.5" />		<!--魔法娃娃：蛇女-->
-		<Item ItemId="47107" Count="1" Chance="15.5" />		<!--魔法娃娃：雪怪-->
-		<Item ItemId="47108" Count="1" Chance="15.5" />		<!--魔法娃娃：亚力安-->
-		<Item ItemId="47109" Count="1" Chance="15.5" />		<!--魔法娃娃：史巴托-->
+		<Item ItemId="49039" Count="1" Chance="11" />		<!--魔法娃娃：石頭高崙-->
+		<Item ItemId="41248" Count="1" Chance="10" />		<!--魔法娃娃：肥肥-->
+		<Item ItemId="41249" Count="1" Chance="9" />		<!--魔法娃娃：小思克巴-->
+		<Item ItemId="41250" Count="1" Chance="9" />		<!--魔法娃娃：野狼寶寶-->
+		<Item ItemId="49037" Count="1" Chance="9" />		<!--魔法娃娃：長老-->
+		<Item ItemId="49038" Count="1" Chance="10" />		<!--魔法娃娃：奎斯坦修-->
+		<Item ItemId="47105" Count="1" Chance="8" />		<!--魔法娃娃：希尔黛斯-->
+		<Item ItemId="47106" Count="1" Chance="8" />		<!--魔法娃娃：蛇女-->
+		<Item ItemId="47107" Count="1" Chance="10" />		<!--魔法娃娃：雪怪-->
+		<Item ItemId="47108" Count="1" Chance="8" />		<!--魔法娃娃：亚力安-->
+		<Item ItemId="47109" Count="1" Chance="8" />		<!--魔法娃娃：史巴托-->
 	</TreasureBox>
 
 	<!--勇者的南瓜袋子-->
