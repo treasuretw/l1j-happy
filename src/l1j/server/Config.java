@@ -594,16 +594,16 @@ public final class Config {
 	public static boolean GUI;			// 管理者介面 by eric1300460
 	public static String PET_RATE_XP;	// 管理者介面 by eric1300460
 
-	public static boolean fdjy; // 是否开启在线给经验
-	public static int jy; 		// 设定经验值
-	public static int jytime; 	// 设定间隔时间
-	public static int itemid; 	// 设定需要的道具
-	public static int count; 	// 设定道具的数量
-	public static int x1;		// 设定x起始坐标
-	public static int x2;		// 设定x结束坐标
-	public static int y1;		// 设定y起始坐标
-	public static int y2;		// 设定y结束坐标
-	public static int map;		// 设定地图编号
+	public static boolean OnlineExpSwitch;	// 在线送经验 (开关)
+	public static int OnlineExpValue;		// 设定经验值
+	public static int OnlineExpTime;		// 设定间隔时间
+	public static int OnlineExpItem;		// 设定需要的道具
+	public static int OnlineExpItemCount; 	// 设定道具的数量
+	public static int OnlineExpStartX;		// 设定x起始坐标
+	public static int OnlineExpEndX;		// 设定x结束坐标
+	public static int OnlineExpStartY;		// 设定y起始坐标
+	public static int OnlineExpEndY;		// 设定y结束坐标
+	public static int OnlineExpMapId;		// 设定地图编号
 
 	// 怪打怪 A方
 	public static int A0;
@@ -1068,26 +1068,26 @@ public final class Config {
 					"GUI", "true"));
 
 			// 在线送经验
-			fdjy = Boolean.parseBoolean(otherSettings.getProperty(
-					"fdjy", "false"));
-			jy = Integer.parseInt(otherSettings.getProperty(
-					"jy", "10"));
-			jytime = Integer.parseInt(otherSettings.getProperty(
-					"jytime", "100"));
-			itemid = Integer.parseInt(otherSettings.getProperty(
-					"itemid","false"));
-			count = Integer.parseInt(otherSettings.getProperty(
-					"count","false"));
-			x1 = Integer.parseInt(otherSettings.getProperty(
-					"x1","false"));
-			x2 = Integer.parseInt(otherSettings.getProperty(
-					"x2","false"));
-			y1 = Integer.parseInt(otherSettings.getProperty(
-					"y1","false"));
-			y2 = Integer.parseInt(otherSettings.getProperty(
-					"y2","false"));
-			map = Integer.parseInt(otherSettings.getProperty(
-					"map","false"));
+			OnlineExpSwitch = Boolean.parseBoolean(otherSettings.getProperty(
+					"OnlineExpSwitch", "false"));
+			OnlineExpValue = Integer.parseInt(otherSettings.getProperty(
+					"OnlineExpValue", "10"));
+			OnlineExpTime = Integer.parseInt(otherSettings.getProperty(
+					"OnlineExpTime", "100"));
+			OnlineExpItem = Integer.parseInt(otherSettings.getProperty(
+					"OnlineExpItem","40308"));
+			OnlineExpItemCount = Integer.parseInt(otherSettings.getProperty(
+					"OnlineExpItemCount","30"));
+			OnlineExpStartX = Integer.parseInt(otherSettings.getProperty(
+					"OnlineExpStartX","32768"));
+			OnlineExpEndX = Integer.parseInt(otherSettings.getProperty(
+					"OnlineExpEndX","32768"));
+			OnlineExpStartY = Integer.parseInt(otherSettings.getProperty(
+					"OnlineExpStartY","32768"));
+			OnlineExpEndY = Integer.parseInt(otherSettings.getProperty(
+					"OnlineExpEndY","32768"));
+			OnlineExpMapId = Integer.parseInt(otherSettings.getProperty(
+					"OnlineExpMapId","4"));
 
 			// 怪打怪 A 与  B
 			A0 = Integer.parseInt(otherSettings.getProperty(

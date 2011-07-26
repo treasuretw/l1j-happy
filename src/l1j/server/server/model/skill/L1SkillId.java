@@ -1076,7 +1076,7 @@ public class L1SkillId {
 	public static final int ICE_LANCE_BASILISK = 15004;
 
 
-	//其他
+	// 其他
 	/** 双倍经验药水A */
 	public static final int EXP_UP_A = 41463;
 
@@ -1089,6 +1089,9 @@ public class L1SkillId {
 	public static final int BUFF_A = 41518;
 	public static final int BUFF_B = 41519;
 	public static final int BUFF_C = 41520;
+
+	/** 在线送经验 */
+	public static final int ONLINE_EXP = 7902;
 
 	/** 生命升华药水 */
 	public static final int BUFF_D = 41521;

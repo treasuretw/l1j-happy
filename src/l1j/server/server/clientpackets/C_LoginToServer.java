@@ -339,11 +339,6 @@ public class C_LoginToServer extends ClientBasePacket {
 			}
 		}
 
-		// 在线一段时间送经验
-		if (!pc.hasSkillEffect(7902)) {
-			pc.setSkillEffect(7902, Config.jytime*1000);
-		}
-
 		if ((pc.getLevel() >= 51) && (pc.getLevel() - 50 > pc.getBonusStats())) {
 			if ((pc.getBaseStr() + pc.getBaseDex() + pc.getBaseCon()
 					+ pc.getBaseInt() + pc.getBaseWis() + pc.getBaseCha()) < (Config.BONUS_STATS1 * 6)) {

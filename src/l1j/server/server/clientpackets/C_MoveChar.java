@@ -25,6 +25,7 @@ import static l1j.server.server.model.skill.L1SkillId.FREEZING_BREATH;
 import static l1j.server.server.model.skill.L1SkillId.EARTH_BIND;
 import static l1j.server.server.model.skill.L1SkillId.ICE_LANCE_COCKATRICE;
 import static l1j.server.server.model.skill.L1SkillId.ICE_LANCE_BASILISK;
+import static l1j.server.server.model.skill.L1SkillId.ONLINE_EXP;
 import static l1j.server.server.model.skill.L1SkillId.SHOCK_STUN;
 import static l1j.server.server.model.skill.L1SkillId.STATUS_CURSE_PARALYZED;
 import l1j.server.Config;
@@ -106,6 +107,17 @@ public class C_MoveChar extends ClientBasePacket {
 					return;
 */
 		// 防止外挂在不能移动的状态下移动 end
+
+		// 在线一段时间送经验 add
+		if (Config.OnlineExpSwitch && (!pc.isDead())) {
+			if (pc.getMapId() == Config.OnlineExpMapId // 判断地图与坐标位置
+					&& pc.getX() >= Config.OnlineExpStartX && pc.getX() <= Config.OnlineExpEndX
+					&& pc.getY() >= Config.OnlineExpStartY && pc.getY() <= Config.OnlineExpEndY
+					&& (!pc.hasSkillEffect(ONLINE_EXP))) {
+				pc.setSkillEffect(ONLINE_EXP, Config.OnlineExpTime * 1000);
+			}
+		}
+		// 在线一段时间送经验 end
 
 		if (pc.hasSkillEffect(MEDITATION)) { // 取消冥想效果
 			pc.removeSkillEffect(MEDITATION);

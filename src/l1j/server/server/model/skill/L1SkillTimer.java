@@ -788,24 +788,24 @@ class L1SkillStop {
 		}
 
 		// 在线一段时间送经验
-		else if (skillId == 7902) {
+		else if (skillId == ONLINE_EXP) {
 			L1PcInstance pc = (L1PcInstance) cha;
-			L1PcInstance l1pcinstance24 = (L1PcInstance)cha;
-			if (pc.getMapId() == Config.map	// 判断地图
-					&& pc.getX() >= Config.x1
-					&& pc.getX() <= Config.x2
-					&& pc.getY() >= Config.y1
-					&& pc.getY() <= Config.y2
-					&& pc.getInventory().checkItem(Config.itemid)	// 需要的道具编号
+			if (pc.getMapId() == Config.OnlineExpMapId // 判断地图与坐标位置
+					&& pc.getX() >= Config.OnlineExpStartX && pc.getX() <= Config.OnlineExpEndX
+					&& pc.getY() >= Config.OnlineExpStartY && pc.getY() <= Config.OnlineExpEndY
+					&& pc.getInventory().checkItem(Config.OnlineExpItem) // 需要的道具编号
 					&& cha instanceof L1PcInstance
-					&& l1pcinstance24.getExp() <= 1823000470){	// 判断经验 (防止溢位)
-				l1pcinstance24.setExp(l1pcinstance24.getExp() + Config.jy);
-				l1pcinstance24.setSkillEffect(7902, Config.jytime*1000); // 单位：秒 
-				pc.sendPackets(new S_SystemMessage(
-						"你每" + Config.jytime
-									+ "秒消耗" + Config.count
-													+ "元宝,获得 " + Config.jy + " 经验."));
-				pc.getInventory().consumeItem(Config.itemid, Config.count);	// 判断一次消耗的道具与数量
+					&& (!pc.isDead()) // 角色没有死亡
+					&& pc.getLevel() < 99) { // 多少级以后不增加
+				int i = Config.OnlineExpValue; // 一次给予的经验值
+				int time = Config.OnlineExpTime; // 间隔时间
+				int item = Config.OnlineExpItem; // 需要的道具
+				int count = Config.OnlineExpItemCount; // 道具的数量
+				pc.addExp(i);
+				pc.sendPackets(new S_OwnCharStatus(pc));
+				pc.sendPackets(new S_SystemMessage("您每 " + time + " 秒消耗 " + count + " 元宝,获得 " + i + " 经验。"));
+				pc.setSkillEffect(ONLINE_EXP, time * 1000); // 单位：秒 
+				pc.getInventory().consumeItem(item, count);	// 判断一次消耗的道具与数量
 			}
 		}
 
