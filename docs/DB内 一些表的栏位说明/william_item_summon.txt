@@ -1,0 +1,14 @@
+﻿召唤道具
+
+item_id 	道具 ID
+checkLevel	判断使用等级
+checkClass	判断使用职业 (0全职 1王族 2骑士 3法师 4精灵 5黑暗精灵 6龙骑士 7幻术师)
+checkItem	判断所需道具 (0不需要)
+hpConsume	消耗 HP
+mpConsume	消耗 MP
+material	材料
+material_count	材料的数量
+summon_id	召唤怪 ID
+summonCost	召唤所需魅力
+onlyOne		可召唤几只 (0依魅力 其他只可召唤一只)
+removeItem	是否删除道具 (0不删除 1删除)

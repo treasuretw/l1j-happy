@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-24 22:35:22
+Date: 2011-07-26 11:46:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -53,7 +53,7 @@ CREATE TABLE `z_copy_etcitem` (
   `delete_date` datetime DEFAULT NULL,
   `DropBoard` int(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`item_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=600010 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=600011 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of z_copy_etcitem
@@ -142,3 +142,4 @@ INSERT INTO `z_copy_etcitem` VALUES ('5079', '武器合成石', '$9564', '$9564'
 INSERT INTO `z_copy_etcitem` VALUES ('5080', '天空之城传送卷轴', '$9563', '$9563', 'TeleportScroll', 'normal', 'glass', '0', '3073', '3963', '2772', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `z_copy_etcitem` VALUES ('5081', '殷海薩的箱子', '$9565', '$9565', 'treasure_box', 'normal', 'gold', '0', '3729', '7203', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '1000', '0', '0', '1', '0', '0', null, '0');
 INSERT INTO `z_copy_etcitem` VALUES ('5082', '古代魔法(牵引)', '$9566', '$9566', 'ItemMagic', 'spell_long', 'paper', '630', '741', '766', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '1200', '0', '0', '1', '0', '0', null, '0');
+INSERT INTO `z_copy_etcitem` VALUES ('5083', '死亡骑士召唤球', '$371$9567', '$371$9567', 'ItemSummon', 'normal', 'paper', '0', '2328', '5828', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', null, '0');

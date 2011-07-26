@@ -53,6 +53,7 @@ import l1j.william.ItemMagic;
 import l1j.william.L1Blend;
 import l1j.william.L1CheckPcItem;	// 防止复制道具
 import l1j.william.L1WilliamItemMagic;
+import l1j.william.L1WilliamItemSummon;
 import l1j.william.L1WilliamTeleportScroll;
 import l1j.server.Config;
 import l1j.server.L1DatabaseFactory;
@@ -459,6 +460,13 @@ public class C_ItemUSe extends ClientBasePacket {
 					}
 				}
 
+				else if (l1iteminstance.getItem().getType() == 21) { // 召唤道具
+					if (L1WilliamItemSummon.checkItemId(itemId) != 0) {
+						L1WilliamItemSummon.getItemSummon(pc, l1iteminstance, itemId);
+					} else {
+						pc.sendPackets(new S_ServerMessage(79)); // \f1没有任何事情发生。
+					}
+				}
 				// 魔法道具  add
 				else if (itemId == L1WilliamItemMagic.checkItemId(itemId)) {
 					L1WilliamItemMagic Item_Magic = ItemMagic.getInstance().getTemplate(itemId);

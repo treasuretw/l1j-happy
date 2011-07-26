@@ -84,6 +84,7 @@ public class ItemTable {
 		_etcItemTypes.put("ItemBlend", new Integer(18)); // 道具融合系统
 		_etcItemTypes.put("TeleportScroll", new Integer(19)); // 传送卷轴 (DB化) by 丫杰
 		_etcItemTypes.put("ItemMagic", new Integer(20)); // 魔法道具
+		_etcItemTypes.put("ItemSummon", new Integer(21)); // 召唤道具
 
 		_useTypes.put("none", new Integer(-1)); // 使用不可能
 		_useTypes.put("normal", new Integer(0));

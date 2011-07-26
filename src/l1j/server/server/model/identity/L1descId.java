@@ -4723,12 +4723,16 @@ public class L1descId {
 		/**黑市商人：想买到好东西就来找我！不过我不要天宝我只要金币。*/
 		public static final int $8886 = 8886;
 
-		/** 古代魔法(牵引) */
-		public static final int $9562 = 9562;
 		/** 天空之城传送卷轴 */
 		public static final int $9563 = 9563;
 		/** 武器合成石 */
 		public static final int $9564 = 9564;
+		/** 殷海薩的箱子 */
+		public static final int $9565 = 9565;
+		/** 古代魔法(牵引) */
+		public static final int $9566 = 9566;
+		/** 召唤球 */
+		public static final int $9567 = 9567;
 		/** 隐藏之谷活动卷轴 */
 		public static final int $9568 = 9568;
 		/** 猎人项链 */
@@ -4994,47 +4998,47 @@ public class L1descId {
 		public static final int $9698 = 9698;
 		/** 在线礼物箱 */
 		public static final int $9699 = 9699;
-		/** 杂货商^\f=[龙之梦]\f2消耗品商人 */
+		/** 杂货商^消耗品商人 */
 		public static final int $9700 = 9700;
-		/** 杂货商^\f=[龙之梦]\f2装备商人 */
+		/** 杂货商^装备商人 */
 		public static final int $9701 = 9701;
-		/** 杂货商^\f=[龙之梦]\f2武器商人 */
+		/** 杂货商^武器商人 */
 		public static final int $9702 = 9702;
-		/** 杂货商^\f=[龙之梦]\f2传送卷商人 */
+		/** 杂货商^传送卷商人 */
 		public static final int $9703 = 9703;
-		/** 魔法书商^\f=[龙之梦]\f2骑士技能商人 */
+		/** 魔法书商^骑士技能商人 */
 		public static final int $9704 = 9704;
-		/** 魔法书商^\f=[龙之梦]\f2黑妖魔法商人 */
+		/** 魔法书商^黑妖魔法商人 */
 		public static final int $9705 = 9705;
-		/** 魔法书商^\f=[龙之梦]\f2王族魔法商人 */
+		/** 魔法书商^王族魔法商人 */
 		public static final int $9706 = 9706;
-		/** 魔法书商^\f=[龙之梦]\f2精灵魔法商人 */
+		/** 魔法书商^精灵魔法商人 */
 		public static final int $9707 = 9707;
-		/** 魔法书商^\f=[龙之梦]\f2法师魔法商人 */
+		/** 魔法书商^法师魔法商人 */
 		public static final int $9708 = 9708;
-		/** 魔法书商^\f=[龙之梦]\f2龙幻魔法商人 */
+		/** 魔法书商^龙幻魔法商人 */
 		public static final int $9709 = 9709;
-		/** 任务中心^\f=[龙之梦]\f3嫦娥 */
+		/** 任务中心^嫦娥 */
 		public static final int $9710 = 9710;
-		/** 天宝商城^\f=[龙之梦]\f4奇怪的商人 */
+		/** 天宝商城^奇怪的商人 */
 		public static final int $9711 = 9711;
-		/** 结晶体商城^\f=[龙之梦]\f4神秘商人 */
+		/** 结晶体商城^神秘商人 */
 		public static final int $9712 = 9712;
-		/** 决斗擂台^\f=[龙之梦]\f3后羿 */
+		/** 决斗擂台^后羿 */
 		public static final int $9713 = 9713;
-		/** 屠龙副本钥匙管理员^\f=[龙之梦]\f3多鲁嘉贝尔 */
+		/** 屠龙副本钥匙管理员^多鲁嘉贝尔 */
 		public static final int $9714 = 9714;
-		/** 任务传送^\f=[龙之梦]\f3奇岩地监管理员 */
+		/** 任务传送^奇岩地监管理员 */
 		public static final int $9715 = 9715;
-		/** 道具制作^\f=[龙之梦]\f3龙之魔眼制作师 */
+		/** 道具制作^龙之魔眼制作师 */
 		public static final int $9716 = 9716;
-		/** 传送门^\f=[龙之梦]\f3巨龙谷入口 */
+		/** 传送门^巨龙谷入口 */
 		public static final int $9717 = 9717;
-		/** 升级奖励^\f=[龙之梦]\f3圣诞老人 */
+		/** 升级奖励^圣诞老人 */
 		public static final int $9718 = 9718;
-		/** 银行职员^\f=[龙之梦]\f3中央储备银行 */
+		/** 银行职员^中央储备银行 */
 		public static final int $9719 = 9719;
-		/** 赌博商人^\f=[龙之梦]\f3赌鬼 */
+		/** 赌博商人^赌鬼 */
 		public static final int $9720 = 9720;
 		/** 传送门^\f=风龙副本 */
 		public static final int $9721 = 9721;
