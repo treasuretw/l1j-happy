@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost_3306
 Source Server Version : 50150
 Source Host           : localhost:3306
-Source Database       : weigai
+Source Database       : l1jdb_cn
 
 Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-15 18:49:18
+Date: 2011-07-26 19:34:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -2672,30 +2672,3 @@ INSERT INTO `shop` VALUES ('70006', '40010', '0', '37', '0', '-1', '-1', '0', '0
 INSERT INTO `shop` VALUES ('70006', '40011', '1', '200', '0', '-1', '-1', '0', '0', null);
 INSERT INTO `shop` VALUES ('70006', '40012', '2', '600', '0', '-1', '-1', '0', '0', null);
 INSERT INTO `shop` VALUES ('70006', '40017', '3', '70', '0', '-1', '-1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99000', '60', '0', '-1', '0', '-1', '1', '100', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5009', '0', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5010', '1', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5011', '2', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5012', '3', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5013', '4', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5015', '5', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5016', '6', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5017', '7', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5018', '8', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5019', '9', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5020', '10', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5021', '11', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5022', '12', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5023', '13', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5027', '14', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5028', '15', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5029', '16', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5030', '17', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5031', '18', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5032', '19', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5033', '20', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5034', '21', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5035', '22', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5036', '23', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5037', '24', '-1', '0', '-1', '1', '0', '0', null);
-INSERT INTO `shop` VALUES ('99001', '5038', '25', '-1', '0', '-1', '1', '0', '0', null);
