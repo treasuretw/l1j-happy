@@ -20,7 +20,6 @@ import l1j.server.server.datatables.UBTable;
 import l1j.server.server.model.L1UltimateBattle;
 import l1j.server.server.model.L1World;
 import l1j.server.server.serverpackets.S_SystemMessage;
-import l1j.william.L1WilliamSystemMessage;
 
 public class UbTimeController implements Runnable {
 	private static Logger _log = Logger.getLogger(UbTimeController.class
@@ -51,31 +50,9 @@ public class UbTimeController implements Runnable {
 		for (L1UltimateBattle ub : UBTable.getInstance().getAllUb()) {
 			if (ub.checkUbTime() && !ub.isActive()) {
 				ub.start(); // 无限大战开始
-
-				// TODO 竞技场广播
-				switch(ub.getUbId()) { // 以 DB内 竞技场编号判断
-				case 1: // 奇岩竞技场
-					L1World.getInstance().broadcastPacketToAll(new S_SystemMessage(L1WilliamSystemMessage.ShowMessage(1005)));
-					break;
-
-                case 2: // 威顿竞技场
-                	L1World.getInstance().broadcastPacketToAll(new S_SystemMessage(L1WilliamSystemMessage.ShowMessage(1006)));
-                    break;
-
-                case 3: // 古鲁丁竞技场
-                	L1World.getInstance().broadcastPacketToAll(new S_SystemMessage(L1WilliamSystemMessage.ShowMessage(1007)));
-                    break;
-
-                case 4: // 说话之岛竞技场
-                	L1World.getInstance().broadcastPacketToAll(new S_SystemMessage(L1WilliamSystemMessage.ShowMessage(1008)));
-                    break;
-
-                case 5: // 银骑士竞技场
-                	L1World.getInstance().broadcastPacketToAll(new S_SystemMessage(L1WilliamSystemMessage.ShowMessage(1009)));
-                    break;
+				L1World.getInstance().broadcastPacketToAll(new S_SystemMessage("【" + ub.getName() + "】5分钟后无限大战即将开始！想参赛者请赶快入场！！"));
                 }
 			}
 		}
-	}
-
+	
 }

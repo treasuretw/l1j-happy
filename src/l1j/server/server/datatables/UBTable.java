@@ -58,6 +58,7 @@ public class UBTable {
 
 				L1UltimateBattle ub = new L1UltimateBattle();
 				ub.setUbId(rs.getInt("ub_id"));
+				ub.setUbName(rs.getString("ub_name"));
 				ub.setMapId(rs.getShort("ub_mapid"));
 				ub.setLocX1(rs.getInt("ub_area_x1"));
 				ub.setLocY1(rs.getInt("ub_area_y1"));
