@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost_3306
 Source Server Version : 50150
 Source Host           : localhost:3306
-Source Database       : happy-weixiugai
+Source Database       : l1j-cn
 
 Target Server Type    : MYSQL
 Target Server Version : 50150
 File Encoding         : 65001
 
-Date: 2011-07-20 20:24:18
+Date: 2011-07-26 12:46:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -50,3 +50,4 @@ INSERT INTO `z_copy_npcaction` VALUES ('99017', 'cold1', 'cold1', '', '');
 INSERT INTO `z_copy_npcaction` VALUES ('99018', 'cold1', 'cold1', '', '');
 INSERT INTO `z_copy_npcaction` VALUES ('99019', 'cold1', 'cold1', '', '');
 INSERT INTO `z_copy_npcaction` VALUES ('99022', 'labar', 'labar', '', '');
+INSERT INTO `z_copy_npcaction` VALUES ('99023', 'sdjjc', 'sdjjc', '', '');

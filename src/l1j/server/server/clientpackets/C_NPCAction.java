@@ -127,6 +127,7 @@ import l1j.server.server.utils.Random;
 //import l1j.ABC.Place;
 
 import l1j.william.BossRoom;// TODO boss馆
+import l1j.william.Fight;
 import l1j.william.LaBarGame;
 //import l1j.ABC.DragonGate;
 import l1j.william.DragonGate;
@@ -1349,6 +1350,23 @@ public class C_NPCAction extends ClientBasePacket {
 			}
 		}
 		
+		// 死斗竞技场 add
+		else if (((L1NpcInstance)obj).getNpcTemplate().get_npcId() == 99023) {
+			if (s.equalsIgnoreCase("enterA")) {
+				Fight.getInstance().enterA(pc);
+			}
+			if (s.equalsIgnoreCase("enterB")) {
+				Fight.getInstance().enterB(pc);
+			}
+			if (s.equalsIgnoreCase("checkA")) {
+				Fight.getInstance().LookATeam(pc);
+			}
+			if (s.equalsIgnoreCase("checkB")) {
+				Fight.getInstance().LookBTeam(pc);
+			}
+		}
+		// 死斗竞技场 end
+
 		// 拉霸
 		 if (LaBarGame.forLaBarGame(s, pc, (L1NpcInstance)obj, ((L1NpcInstance)obj).getNpcTemplate().get_npcId(), objid)) {
 		       htmlid = "";

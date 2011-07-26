@@ -2673,6 +2673,28 @@ public class L1PcInstance extends L1Character {
 		}
 	}
 	// 防外挂自动喝水 end
+
+	// 死斗竞技场 add
+    private boolean _isATeam = false;
+
+    private boolean _isBTeam = false;
+
+    public boolean isATeam() {
+      return this._isATeam;
+    }
+
+    public void setATeam(boolean bool) {
+      this._isATeam = bool;
+    }
+
+    public boolean isBTeam() {
+      return this._isBTeam;
+    }
+
+    public void setBTeam(boolean bool) {
+      this._isBTeam = bool;
+    }
+    // 死斗竞技场 end
 	// TODO 新增 end //////////////////////////////////////////////////
 
 	/**

@@ -574,6 +574,12 @@ public final class Config {
 	
 	public static byte PET_MAX_LV;				// 设定宠物最高等级
 	public static double RATE_XP_PET;			// 设定宠物经验值倍率
+	
+	public static int FightMoney;				// 死斗竞技场参赛所需金额
+	public static int FightmaxPlayer;			// 死斗竞技场两队最大参加人数
+	public static int FightminPlayer;			// 死斗竞技场两队最低参加人数
+	public static int FightItem;				// 死斗竞技场优胜物品编号
+	public static int FightCount;				// 死斗竞技场优胜物品数量
 
 
 	/** 伺服器设定档 */
@@ -1153,6 +1159,22 @@ public final class Config {
 			// 设定宠物经验值倍率
 			RATE_XP_PET = Double.parseDouble(otherSettings.getProperty(
 					"PetRateXp","1.0"));
+			
+			// 死斗竞技场参赛所需金额
+			FightMoney = Integer.parseInt(otherSettings.getProperty(
+					"FightMoney", "100000"));
+			// 死斗竞技场两队最大参加人数
+			FightmaxPlayer = Integer.parseInt(otherSettings.getProperty(
+					"FightmaxPlayer", "20"));
+			// 死斗竞技场两队最低参加人数
+			FightminPlayer = Integer.parseInt(otherSettings.getProperty(
+					"FightminPlayer", "1"));
+			// 死斗竞技场优胜物品编号
+			FightItem = Integer.parseInt(otherSettings.getProperty(
+					"FightItem", "40308"));
+			// 死斗竞技场优胜物品数量
+			FightCount = Integer.parseInt(otherSettings.getProperty(
+					"FightCount", "1000000"));
 			
 		}
 		catch (Exception e) {
